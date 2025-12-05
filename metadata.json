@@ -1,0 +1,8 @@
+{
+  "name": "KDM Rulemaster - The Hand of the Watcher",
+  "description": "An atmospheric Game Master assistant for Kingdom Death: Monster, capable of interpreting rulebook pages and clarifying mechanics with a grim, poetic tone.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
