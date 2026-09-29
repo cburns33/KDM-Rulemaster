@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Lantern Archive · KDM Rules</title><link rel="stylesheet" href="/style.css?v=20260928-ui2"><script src="/app.js?v=20260928-ui4" defer></script></head>
+<body>
+<button id="drawer-scrim" class="drawer-scrim" aria-label="Close panel" hidden></button>
+<aside id="history-panel" class="drawer rail" role="dialog" aria-modal="true" aria-label="Conversations" hidden>
+  <div class="drawer-heading"><h2>Conversations</h2><button id="close-history" class="icon-button" aria-label="Close conversations">×</button></div>
+  <button id="new-chat" class="primary">＋ New conversation</button>
+  <div class="rail-section"><div id="chats"></div></div>
+</aside>
+<main>
+  <header class="app-header"><div class="header-start"><button id="open-history" class="icon-button" aria-label="Open conversations" aria-controls="history-panel" aria-expanded="false">☰</button><div class="app-title"><span class="sigil">◈</span><span>Lantern Archive</span></div></div><div class="header-actions"><button id="header-new-chat" aria-label="New conversation">＋ <span>New</span></button><button id="open-sources" aria-controls="source-panel" aria-expanded="false">Sources</button></div></header>
+  <section id="messages" aria-live="polite">
+    <div id="welcome"><span class="large-sigil">◈</span><h1>Ask a rule question.</h1><p>Answers link back to the rulebook.</p><div class="suggestions"><button data-prompt="In Hands of Heat, I rolled a 6">Hands of Heat: I rolled a 6 <span>↗</span></button><button data-prompt="How do puzzle affinities work?">How do puzzle affinities work? <span>↗</span></button><button data-prompt="Is a lantern 10 always a critical wound?">Is a lantern 10 always critical? <span>↗</span></button></div></div>
+  </section>
+  <form id="ask-form"><label for="question" class="sr-only">Ask a rule question</label><div class="composer"><textarea id="question" rows="2" maxlength="4000" placeholder="Ask a rule question…" required></textarea><button id="send" class="primary" type="submit">Ask ↑</button></div><div class="composer-footer"><span>Rules edition 1.5</span><button id="open-settings" type="button" aria-controls="settings-popover" aria-expanded="false">Answer settings ⚙</button></div><div id="settings-popover" class="settings-popover" hidden><label class="model-option"><input id="use-model" type="checkbox" disabled> <span>Use GPT-6 Sol for explanations</span></label><p id="provider-note">Loading model settings…</p><p id="provider-status">Local lookup</p><p id="coverage"></p><p>Edition 1.6 changes have not been verified.</p></div></form>
+</main>
+<aside id="source-panel" class="drawer evidence" role="dialog" aria-modal="true" aria-label="Rulebook sources" hidden>
+  <div class="drawer-heading"><h2>Sources</h2><button id="close-sources" class="icon-button" aria-label="Close sources">×</button></div>
+  <div class="page-nav"><label for="page">Revised PDF page</label><div><button id="previous" aria-label="Previous page">‹</button><input id="page" type="number" min="1" max="138" value="90"><button id="next" aria-label="Next page">›</button><button id="go">Go</button></div></div>
+  <p id="page-label" class="source-label"></p><a id="image-link" href="#" target="_blank" rel="noopener"><img id="page-image" alt="Rulebook source page"><span>Open full-size page ↗</span></a>
+  <details id="topic-browser"><summary>Browse reviewed topics</summary><label for="search">Find a topic</label><input id="search" type="search" placeholder="Event, gear, rule…"><div id="records" class="record-list"></div></details>
+  <details id="resolver"><summary>Resolve a Hands of Heat roll</summary><form id="roll-form"><label for="table">Table</label><select id="table"><option value="experiment">Experiment with Lanterns</option><option value="branding">Lantern Branding</option></select><label for="oven">Settlement already has Lantern Oven?</label><select id="oven"><option value="unknown">Not specified</option><option value="no">No</option><option value="yes">Yes</option></select><label for="roll">Final roll result</label><input id="roll" type="number" min="1" max="100" step="1" value="6" required><button class="primary" type="submit">Resolve with source</button></form></details>
+  <details id="source-tools"><summary>More source details</summary><details id="table-details" hidden><summary>Reviewed table records</summary><div id="table-records"></div></details><details id="layout"><summary>Reading this layout</summary><p id="layout-note"></p></details><div id="correction-area" hidden><button id="report">Flag a correction</button><form id="correction-form" hidden><label for="correction">What needs review?</label><textarea id="correction" maxlength="4000" rows="3" required></textarea><button type="submit">Save review note</button></form><p id="correction-status" role="status"></p></div></details>
+</aside>
+<div id="error" role="alert" hidden></div>
+</body></html>
