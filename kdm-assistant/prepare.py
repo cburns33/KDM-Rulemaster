@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import re
 import shutil
+import subprocess
 from records import RECORDS
 
 ROOT = Path(__file__).resolve().parent
@@ -16,9 +17,15 @@ def prepare():
     if len(mapping) != 138:
         raise ValueError('Expected 138 retained source pages')
     by_source = {r['original']: r for r in RECORDS}
+    legacy_pages = ROOT.parent.parent / 'work' / 'pdf-triage'
+    if not legacy_pages.exists() and not all((pages / f'{i}.jpg').exists() for i in range(1, 139)):
+        pdf = ROOT.parent / 'KDM_Rulebook_1.5_Rules_Focused.pdf'
+        subprocess.run(['pdftoppm', '-f', '1', '-l', '138', '-r', '100', '-jpeg', str(pdf), str(pages / 'render')], check=True)
+        for rendered in pages.glob('render-*.jpg'):
+            rendered.rename(pages / f'{int(rendered.stem.split("-")[-1])}.jpg')
     manifest = []
     for revised, original, printed in mapping:
-        source = ROOT.parent.parent / 'work' / 'pdf-triage' / f'page-{original:03}.jpg'
+        source = legacy_pages / f'page-{original:03}.jpg'
         target = pages / f'{revised}.jpg'
         if not target.exists():
             shutil.copy2(source, target)

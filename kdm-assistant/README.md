@@ -40,7 +40,7 @@ Ask questions in the main view. Use the menu button for conversation history and
 
 The reviewed records are scoped summaries checked by the building assistant against the scan. Review does not imply human verification or complete transcription of every section on a page. First Story and standard White Lion deployment have separate records. The Create a Survivor record covers its first page and flags the continuation. Rules elsewhere remain available as page images but are not indexed as text.
 
-Continuation pages and related references have separate clickable citations. The coverage count includes every source page used by current records. A Ground Fighting question involving Fuzzy Groin or a permanent priority target reports that card text is needed, because the persistent hit-location effect is absent from the reviewed sources. The Ground Fighting card pictured in the book has been checked.
+Continuation pages and related references have separate clickable citations. The coverage count includes every source page used by current records. Fuzzy Groin questions link to a community card transcription and the relevant rulebook pages. The Ground Fighting card pictured in the book has been checked.
 
 Local lookup is the default. General questions return relevant reviewed reference text; exact roll outcomes use code. Optional GPT-6 Sol explanations use only the selected reviewed records and may state that the available source is insufficient. A lexical match means “relevant reference,” not proof that the retrieved text answers every part of a question. Follow-up parsing is limited; use the explicit table form for exact resolution. Roll inputs represent a final result including any applicable modifiers; the app does not determine whether a modifier is legal.
 
@@ -70,6 +70,6 @@ Reference: https://github.com/ksycz/board-game-referee
 
 Run `python -m unittest -v test_rules test_core_rules test_server` from this folder. Tests cover roll bands, both table branches, prerequisites, conversation context, page mapping, persistence, unsupported questions, edition checks, server boundaries, community-scenario retrieval, adjacent cases, and continuation citations. These tests validate retrieval and reviewed content, not open-ended AI reasoning. Browser testing covers the actual local UI.
 
-Next: obtain the exact Fuzzy Groin card text for the unresolved interaction, then expand the reviewed source set to other hard layouts, including Age and severe injuries. Add reviewed 1.6 changes before current-edition claims. Keep deterministic row selection and source citations outside the Sol path. The interface identifies the current source as edition 1.5. Check the narrow-screen layout before relying on it during mobile play.
+Next: expand the reviewed source set to other hard layouts, including Age and severe injuries. Play uses edition 1.5. Keep deterministic row selection and source citations outside the Sol path. Check the narrow-screen layout before relying on it during mobile play.
 
 `prepare.py` was used to populate page images from this project's `work/pdf-triage` files and the existing page-map Markdown. It is only needed when regenerating assets in the original workspace. Normal use relies on the bundled data folder.

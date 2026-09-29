@@ -33,7 +33,7 @@ All 37 automated test methods passed, including the original 23, community scena
 
 ## Remaining work
 
-Obtain the Fuzzy Groin card text before asserting the complete permanent-priority/Ground Fighting ruling. Then expand structured coverage to Age, severe injuries, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Add 1.6 source material and precedence rules before making current-edition claims. Sol explanations remain limited to the reviewed records supplied with each question. The new narrow-screen layout has not had a separate visual check.
+Fuzzy Groin's community card transcription is now linked to the priority-target record and used for the Ground Fighting interaction. Expand structured coverage to Age, severe injuries, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Play uses edition 1.5. Sol explanations remain limited to the reviewed records supplied with each question. The narrow-screen layout has not had a separate visual check.
 
 Community prompts and evidence coverage are in `KDM_Community_Test_Questions.md`. The earlier Surge prompt was corrected to activating Tall Grass's hiding effect, rather than moving with Surge. The damage case is an adapted practice scenario from a reference post. These are source-guided regression checks, not a blind comprehension benchmark: search results exposed community replies during collection.
 

@@ -56,17 +56,18 @@ class CoreRuleTests(unittest.TestCase):
         self.assertEqual(result['record']['id'], 'attack-effects')
         self.assertIn('cannot be dodged', result['answer'])
 
-    def test_permanent_priority_requires_missing_card(self):
+    def test_permanent_priority_and_ground_fighting(self):
         for question in [
             'A White Lion critical wound creates a permanent priority target, then the Lion has Ground Fighting in play. How do those effects interact?',
             'Fuzzy Groin and Groundfighting: which wins?',
         ]:
             with self.subTest(question=question):
                 result = resolve(question)
-                self.assertEqual(result['status'], 'source-needed')
+                self.assertEqual(result['status'], 'reference')
                 self.assertEqual(result['record']['id'], 'priority-target')
                 self.assertIn('moods-and-flows', [r['id'] for r in result['related_records']])
-                self.assertIn('not establish the complete card-specific ruling', result['answer'])
+                self.assertIn('does not redirect this trigger', result['answer'])
+                self.assertEqual(result['record']['card_sources'][0]['edition'], '1.5')
 
     def test_general_ground_fighting_has_reviewed_source(self):
         result = resolve('What does the Ground Fighting mood do?')

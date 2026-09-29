@@ -103,6 +103,12 @@ function addMessage(role, text, payload) {
       citation.title = sourceText(p);
       citation.onclick = () => {showPage(p.revised); openDrawer($('source-panel'), $('open-sources'));}; sourceRow.append(citation);
     }
+    for (const card of r.card_sources || []) {
+      if (!sourceRow) {sourceRow = document.createElement('div'); sourceRow.className = 'source-row'; block.append(sourceRow);}
+      const citation = document.createElement('a'); citation.className = 'citation';
+      citation.textContent = `${card.title} · ${card.edition} card ↗`;
+      citation.href = card.url; citation.target = '_blank'; citation.rel = 'noopener noreferrer'; sourceRow.append(citation);
+    }
   }
   $('messages').append(block); $('messages').scrollTop = $('messages').scrollHeight;
 }

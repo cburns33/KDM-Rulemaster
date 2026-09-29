@@ -69,12 +69,13 @@ class ServerTests(unittest.TestCase):
         self.assertEqual([p['revised'] for p in result['record']['sources']], [55, 56])
         self.assertEqual([p['printed'] for p in result['record']['sources']], [78, 79])
 
-    def test_missing_card_status_and_related_sources_survive_history(self):
+    def test_card_source_and_related_sources_survive_history(self):
         result = self.request('/api/ask', {'question': 'Fuzzy Groin and Ground Fighting'})
         restored = self.request('/api/chats/' + result['chat_id'])[-1]['payload']
-        self.assertEqual(restored['status'], 'source-needed')
+        self.assertEqual(restored['status'], 'reference')
         self.assertEqual([p['revised'] for p in restored['record']['sources']], [45, 46])
         self.assertEqual(restored['related_records'][0]['source']['revised'], 44)
+        self.assertEqual(restored['record']['card_sources'][0]['url'], 'https://kingdomdeath.fandom.com/wiki/Fuzzy_Groin')
 
     def test_all_page_mapping(self):
         self.assertEqual(len(self.manifest),138)

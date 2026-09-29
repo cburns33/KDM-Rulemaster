@@ -67,11 +67,12 @@ CORE_RECORDS = [
             'Flows between AI actions create survival opportunities for eligible survivors. Finish survival actions before continuing the next monster action.',
             'Ground Fighting instructs a Basic Action targeting a survivor who spends activation in its Zone of Death before resolving that activation, with +2 speed and +1 damage for that attack. Its pictured zone must be consulted. It stops drawing AI cards while in play.',
             'After Ground Fighting is discarded by a wound, the book says the White Lion\'s behavior returns to normal.',
-            'For an interaction involving a permanent priority target, also read the Priority targeting record. The actual hit-location card creating that permanent effect has not been supplied as a reviewed source.',
+            'For an interaction involving a permanent priority target, also read the Priority targeting record and its linked Fuzzy Groin card source.',
         ], 'tables': [],
     },
     {
         'id': 'priority-target', 'title': 'Priority targeting and its exceptions', 'original': 72, 'supporting_originals': [73],
+        'card_sources': [{'title': 'Fuzzy Groin (White Lion hit location)', 'url': 'https://kingdomdeath.fandom.com/wiki/Fuzzy_Groin', 'edition': '1.5', 'provenance': 'community card transcription'}],
         'keywords': 'priority target token targeting permanent fuzzy groin ground fighting groundfighting pick target exceptions reaction',
         'layout': 'Printed page 68 puts Priority Target Token at the bottom of the right column. Its restrictions continue at the top left of printed page 69, before Move & Attack Target Actions. Those continuation paragraphs belong to priority targeting.',
         'summary': 'The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.',
@@ -79,7 +80,7 @@ CORE_RECORDS = [
             'Only one survivor holds the priority-target token at a time. Under the ordinary token rule, the survivor discards it when picked as the target.',
             'The continuation excludes AI cards targeting multiple or all survivors, monster-AI targeting outside a Pick Target action, and hit-location targeting. A reaction that targets the attacker is unaffected by the token.',
             'The continuation is printed page 69 (original PDF 73). The main Pick Target and token rules are printed page 68 (original PDF 72).',
-            'A named card that creates a permanent targeting effect may add specific instructions. The Fuzzy Groin card text is not present in this reviewed source set. Do not substitute the ordinary token\'s discard instruction for that missing persistent effect.',
+            'Fuzzy Groin critical wound gives the attacker a permanent priority-target token and directs the White Lion to attack that survivor until one of them dies. It also grants the monster +1 damage token. The ordinary token discard rule does not end this card-specific persistent effect.',
         ], 'tables': [],
     },
     {

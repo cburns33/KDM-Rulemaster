@@ -47,9 +47,9 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     by_id = {r['id']: r for r in RECORDS}
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
     chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
-    missing_card = bool(re.search(r'ground\s*fighting', question, re.I) and
+    card_interaction = bool(re.search(r'ground\s*fighting', question, re.I) and
                         re.search(r'fuzzy\s+groin|permanent\s+priority', question, re.I))
-    if missing_card and not record_id and not explicit:
+    if card_interaction and not record_id and not explicit:
         chosen = by_id['priority-target']
     if chosen is None and (parse_roll(question) is not None or re.search(r'\b(why|that|it|oven|edition|1\.6|branding|yes|no)\b', question.lower())):
         chosen = by_id.get(context.get('record_id'))
@@ -66,8 +66,8 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     if chosen['id'] != 'hands-of-heat':
         reply['answer'] += '\n\n' + '\n'.join(chosen['notes'])
         related = [by_id[rid] for rid in chosen.get('related_ids', [])]
-        if missing_card:
-            reply.update(status='source-needed', answer='The exact Fuzzy Groin hit-location card text is needed to confirm this interaction. Its permanent effect has not been reviewed here. The following general rules are available, but do not establish the complete card-specific ruling.\n\n' + reply['answer'])
+        if card_interaction:
+            reply['answer'] = ('Fuzzy Groin makes the attacker the White Lion\'s permanent priority target until either dies. Ground Fighting stops normal AI draws and instead triggers a Basic Action against a survivor who spends an activation in its Zone of Death. That named target is set by the mood; priority targeting applies to Pick Target actions and does not redirect this trigger. The permanent priority effect remains for later applicable targeting.\n\n' + reply['answer'])
             related = [by_id['moods-and-flows']]
         if related:
             reply['related_records'] = related
