@@ -13,7 +13,7 @@ Ask questions in the main view. Use the menu button for conversation history and
 ## What works
 
 - Local conversation history, stored in `data/history.sqlite3`.
-- Whole-record text search over 12 reviewed topics, supported by selected rules on 16 source pages.
+- Whole-record text search over 15 reviewed topics, supported by selected rules on 21 source pages.
 - Deterministic resolution of both Hands of Heat tables, including conditions and follow-ons.
 - Follow-ups such as “What about 7?”, “Lantern Branding roll 6”, and “We already have Lantern Oven and rolled 6”.
 - A form for choosing the table, settlement state, and roll when natural-language parsing is ambiguous.
@@ -37,6 +37,9 @@ Ask questions in the main view. Use the menu button for conversation history and
 | AI flows, moods, Ground Fighting | 44, 43 | 67, 66 | 71, 70 |
 | Priority targeting and exceptions | 45, 46 | 68, 69 | 72, 73 |
 | Survivor acts and attack sequence | 50, 51 | 73, 74 | 77, 78 |
+| Age: first Hunt XP milestone | 81, 24 | 107, 43 | 111, 47 |
+| Severe head injuries | 62 | 86 | 90 |
+| White Lion: Claw AI card | 9, 10 | 27, 28 | 31, 32 |
 
 The reviewed records are scoped summaries checked by the building assistant against the scan. Review does not imply human verification or complete transcription of every section on a page. First Story and standard White Lion deployment have separate records. The Create a Survivor record covers its first page and flags the continuation. Rules elsewhere remain available as page images but are not indexed as text.
 

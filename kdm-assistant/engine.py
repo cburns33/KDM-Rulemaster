@@ -27,7 +27,7 @@ def search(query):
     return ranked
 
 def parse_roll(question):
-    match = re.search(r'\b(?:roll(?:ed|ing)?|result(?:\s+of)?)\s*(?:a\s+|an\s+)?(?:lantern\s+)?(-?\d+)\b', question, re.I)
+    match = re.search(r'\b(?:roll(?:ed|ing)?|result)\s*(?:of\s+)?(?:a\s+|an\s+)?(?:lantern\s+)?(-?\d+)\b', question, re.I)
     if not match:
         match = re.search(r'\b(?:what about|how about|on|a)\s+(-?\d+)\b', question, re.I)
     if not match and re.fullmatch(r'\s*\d+\s*', question):
@@ -48,12 +48,10 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
     chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
     q = question.lower()
-    # The corpus describes injury resolution, not the severe-injury result tables,
-    # and lists AI cards without transcribing their instructions.
+    # Do not return adjacent rules for card text or tables not yet reviewed.
     unreviewed_detail = bool(
-        re.search(r'\bage\b.*(?:milestone|hunt xp)|(?:milestone|hunt xp).*\bage\b', q)
-        or re.search(r'severe\s+(?:head|arm|leg|body|waist)\s+injur(?:y|ies).*\b(?:roll|result)\b', q)
-        or re.search(r'\b(?:claw|chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
+        re.search(r'severe\s+(?:arm|leg|body|waist)\s+injur(?:y|ies).*\b(?:roll|result)\b', q)
+        or re.search(r'\b(?:chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
     )
     if unreviewed_detail and not record_id:
         return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
@@ -64,6 +62,12 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         chosen = by_id['priority-target']
     elif fuzzy and not record_id and not explicit:
         chosen = by_id['priority-target']
+    elif not record_id and re.search(r'\bage\b.*(?:milestone|hunt xp)|(?:milestone|hunt xp).*\bage\b', q):
+        chosen = by_id['age-first-milestone']
+    elif not record_id and re.search(r'severe\s+head\s+injur(?:y|ies)', q):
+        chosen = by_id['severe-head-injury']
+    elif not record_id and re.search(r'\bclaw\s+(?:ai\s+)?card\b', q):
+        chosen = by_id['white-lion-claw']
     if chosen is None and (parse_roll(question) is not None or re.search(r'\b(why|that|it|oven|edition|1\.6|branding|yes|no)\b', question.lower())):
         chosen = by_id.get(context.get('record_id'))
     if not chosen:
@@ -74,6 +78,19 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         return reply
     if re.search(r'\b1\.6\b|\bcurrent (?:rules|edition)\b', q):
         reply.update(status='edition-check', answer='This record is verified against the supplied 1.5 scan. No 1.6 errata or replacement source has been verified here, so I cannot confirm this as a 1.6 ruling.')
+        return reply
+    if chosen['id'] in {'age-first-milestone', 'severe-head-injury'}:
+        # An XP value is not a table roll. Require an explicit roll phrase.
+        result_roll = parse_roll(question)
+        if result_roll is not None:
+            table = chosen['tables'][0]
+            row = select_row(table, result_roll)
+            if row is None or (chosen['id'] == 'age-first-milestone' and result_roll > 20):
+                raise ValueError('Roll is outside this table.')
+            reply.update(status='resolved', table=table, row=row, roll=result_roll,
+                         answer=f"{table['title']}: {result_roll} is {row['label']}. " + ' '.join(row['effects']))
+        else:
+            reply['answer'] += '\n\n' + '\n'.join(chosen['notes'])
         return reply
     if chosen['id'] != 'hands-of-heat':
         reply['answer'] += '\n\n' + '\n'.join(chosen['notes'])

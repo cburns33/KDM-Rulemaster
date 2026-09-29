@@ -60,14 +60,21 @@ class ServerTests(unittest.TestCase):
 
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
-        self.assertEqual(len(library['records']), 12)
-        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 16)
+        self.assertEqual(len(library['records']), 15)
+        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 21)
         continuation = next(p for p in library['pages'] if p['revised'] == 56)
         self.assertTrue(continuation['reviewed'])
         self.assertEqual(continuation['record_id'], 'survival-actions')
         result = self.request('/api/ask', {'question': 'Survival actions and timing'})
         self.assertEqual([p['revised'] for p in result['record']['sources']], [55, 56])
         self.assertEqual([p['printed'] for p in result['record']['sources']], [78, 79])
+        age = self.request('/api/ask', {'question': 'How does the Age milestone work at 2 hunt XP?'})
+        self.assertEqual({p['printed'] for p in age['record']['sources']}, {43, 107})
+        head = self.request('/api/ask', {'question': 'Severe head injury roll of 8'})
+        self.assertEqual(head['status'], 'resolved')
+        self.assertEqual(head['record']['source']['printed'], 86)
+        claw = self.request('/api/ask', {'question': 'What does White Lion Claw card do?'})
+        self.assertEqual([p['printed'] for p in claw['record']['sources']], [27, 28])
 
     def test_card_source_and_related_sources_survive_history(self):
         result = self.request('/api/ask', {'question': 'Fuzzy Groin and Ground Fighting'})

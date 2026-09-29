@@ -6,6 +6,45 @@ Community questions are evaluation prompts, never rule authorities.
 
 CORE_RECORDS = [
     {
+        'id': 'age-first-milestone', 'title': 'Age: first Hunt XP milestone', 'original': 111, 'supporting_originals': [47],
+        'keywords': 'age hunt xp experience milestone 2 weapon proficiency story event first 2d10',
+        'layout': 'Printed page 43 shows heavy-bordered Hunt XP milestone boxes and explains the Age trigger. Printed page 107 has the Age event; the first milestone occupies its upper middle region and has a five-row 2d10 table.',
+        'summary': 'When a survivor fills the first heavy-bordered Hunt XP milestone (2 Hunt XP), resolve Age milestone 1, Weapon Proficiency. Choose a weapon type, then roll 2d10 on its table. Each milestone benefit is gained only once per survivor lifetime.',
+        'notes': ['The chosen weapon type makes the survivor eligible to gain proficiency from wounding with that type in victorious showdowns; it does not immediately grant a proficiency level.', 'The first milestone table yields: 2 +1 permanent evasion; 3-6 +1 permanent strength; 7-15 one random fighting art; 16-19 +1 permanent accuracy; 20 +1 permanent luck.', 'Later Age milestones have separate tables on the same event page and are outside this record.'],
+        'tables': [{'id': 'first', 'title': 'Age 1: Weapon Proficiency', 'die': '2d10', 'rows': [
+            {'min': 2, 'max': 2, 'label': '2', 'effects': ['Gain +1 permanent evasion.']},
+            {'min': 3, 'max': 6, 'label': '3-6', 'effects': ['Gain +1 permanent strength.']},
+            {'min': 7, 'max': 15, 'label': '7-15', 'effects': ['Gain 1 random fighting art.']},
+            {'min': 16, 'max': 19, 'label': '16-19', 'effects': ['Gain +1 permanent accuracy.']},
+            {'min': 20, 'max': 20, 'label': '20', 'effects': ['Gain +1 permanent luck.']},
+        ]}],
+    },
+    {
+        'id': 'severe-head-injury', 'title': 'Severe head injuries', 'original': 90,
+        'keywords': 'severe head injury injuries roll result concussion bleeding blind deaf intracranial hemorrhage decapitation',
+        'layout': 'Printed page 86 has severe-injury rules at left and a complete Head 1d10 table in the middle; Arms is a separate right-hand table.',
+        'summary': 'For a severe head injury, roll 1d10 on the Head table. Five bleeding tokens kill a survivor. If a permanent injury has reached its recording limit, gain one bleeding token instead.',
+        'notes': ['The Head table is separate from the Arms table on the same page. Result 8 is Concussion: gain one random disorder and one bleeding token.'],
+        'tables': [{'id': 'head', 'title': 'Severe injury: Head', 'die': '1d10', 'rows': [
+            {'min': 1, 'max': 2, 'label': '1-2', 'effects': ['Head explosion: survivor dies. Other survivors lose 1 survival.']},
+            {'min': 3, 'max': 4, 'label': '3-4', 'effects': ['Decapitation: survivor dies.']},
+            {'min': 5, 'max': 5, 'label': '5', 'effects': ['Intracranial hemorrhage: cannot use or gain survival; permanent, record once; gain 1 bleeding token.']},
+            {'min': 6, 'max': 6, 'label': '6', 'effects': ['Deaf: suffer -1 permanent evasion; permanent, record once; gain 1 bleeding token.']},
+            {'min': 7, 'max': 7, 'label': '7', 'effects': ['Blind: suffer -1 permanent accuracy; permanent, record twice. With two, suffer -4 permanent accuracy and retire at end of next hunt or settlement phase; gain 1 bleeding token.']},
+            {'min': 8, 'max': 8, 'label': '8', 'effects': ['Concussion: gain 1 random disorder and 1 bleeding token.']},
+            {'min': 9, 'max': 9, 'label': '9', 'effects': ['Shattered jaw: cannot consume or be affected by events requiring consumption; cannot encourage; permanent, record once; gain 1 bleeding token.']},
+            {'min': 10, 'max': None, 'label': '10+', 'effects': ['Destroyed tooth: with 3+ courage gain +2 insanity; otherwise be knocked down.']},
+        ]}],
+    },
+    {
+        'id': 'white-lion-claw', 'title': 'White Lion: Claw AI card', 'original': 31, 'supporting_originals': [32],
+        'keywords': 'white lion claw ai card instructions pick target closest threat facing range field of view sniff move attack speed accuracy damage',
+        'layout': 'Printed page 27 pictures the complete Claw card and explains target selection. Printed page 28 continues through movement, attack rolls, damage, and discarding the card.',
+        'summary': 'Claw first targets the closest threat facing the White Lion and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.',
+        'notes': ['The second target condition may select a threat beyond the lion’s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.', 'The White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn.'],
+        'tables': [],
+    },
+    {
         'id': 'white-lion-deployment', 'title': 'White Lion: standard showdown deployment', 'original': 183,
         'keywords': 'white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1',
         'layout': 'The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.',
