@@ -37,4 +37,6 @@ Fuzzy Groin's community card transcription is now linked to the priority-target 
 
 Community prompts and evidence coverage are in `KDM_Community_Test_Questions.md`. The earlier Surge prompt was corrected to activating Tall Grass's hiding effect, rather than moving with Surge. The damage case is an adapted practice scenario from a reference post. These are source-guided regression checks, not a blind comprehension benchmark: search results exposed community replies during collection.
 
+A 14-question local lookup evaluation found five inadequate initial results. Fuzzy Groin paraphrases now route to the card-backed priority record, and three uncovered details (Age milestone, severe head injury result, Claw card instructions) explicitly report missing coverage. The follow-up pass met those 14 expected behaviors; 39 automated tests pass. The evaluation did not invoke Sol or establish general answer accuracy. Details are in `KDM_Community_Test_Questions.md`.
+
 See `kdm-assistant/README.md` for launch, source coverage, data locations, and test commands. This state note can be used to resume after `/compact` or in a new session.

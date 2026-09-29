@@ -75,6 +75,23 @@ class CoreRuleTests(unittest.TestCase):
         self.assertEqual(result['status'], 'reference')
         self.assertIn('stops normal AI draws', result['answer'])
 
+    def test_fuzzy_groin_paraphrases_retrieve_card_effect(self):
+        result = resolve('Can the survivor marked by Fuzzy Groin hide in Tall Grass to lose priority?')
+        self.assertEqual(result['record']['id'], 'priority-target')
+        self.assertIn('does not end', result['answer'])
+        result = resolve('Ground Fighting is in play; my permanently marked survivor is outside its zone and another activates inside. Who gets attacked?')
+        self.assertEqual(result['record']['id'], 'priority-target')
+        self.assertIn('does not redirect this trigger', result['answer'])
+
+    def test_unreviewed_card_and_tables_do_not_return_nearby_reference(self):
+        for question in [
+            'How does the Age milestone work when a survivor reaches 2 hunt XP?',
+            'How do I resolve a severe head injury roll of 8?',
+            'What does the White Lion Claw card instruct the monster to do?',
+        ]:
+            with self.subTest(question=question):
+                self.assertEqual(resolve(question)['status'], 'unsupported')
+
     def test_new_topics_preserve_edition_guard(self):
         for question in ['White Lion blue zone setup in 1.6', 'Survival actions under current rules']:
             with self.subTest(question=question):

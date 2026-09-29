@@ -47,15 +47,27 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     by_id = {r['id']: r for r in RECORDS}
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
     chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
+    q = question.lower()
+    # The corpus describes injury resolution, not the severe-injury result tables,
+    # and lists AI cards without transcribing their instructions.
+    unreviewed_detail = bool(
+        re.search(r'\bage\b.*(?:milestone|hunt xp)|(?:milestone|hunt xp).*\bage\b', q)
+        or re.search(r'severe\s+(?:head|arm|leg|body|waist)\s+injur(?:y|ies).*\b(?:roll|result)\b', q)
+        or re.search(r'\b(?:claw|chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
+    )
+    if unreviewed_detail and not record_id:
+        return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
     card_interaction = bool(re.search(r'ground\s*fighting', question, re.I) and
-                        re.search(r'fuzzy\s+groin|permanent\s+priority', question, re.I))
+                        re.search(r'fuzzy\s+groin|permanent(?:ly)?\s+(?:marked|priority)|priority\s+target', question, re.I))
+    fuzzy = bool(re.search(r'fuzzy\s+groin', question, re.I))
     if card_interaction and not record_id and not explicit:
+        chosen = by_id['priority-target']
+    elif fuzzy and not record_id and not explicit:
         chosen = by_id['priority-target']
     if chosen is None and (parse_roll(question) is not None or re.search(r'\b(why|that|it|oven|edition|1\.6|branding|yes|no)\b', question.lower())):
         chosen = by_id.get(context.get('record_id'))
     if not chosen:
         return {'status': 'unsupported', 'answer': 'I do not have a reviewed rule record for this question yet. Use the source browser to inspect the book. I cannot make a supported ruling from the current collection.', 'record': None, 'context': {}}
-    q = question.lower()
     reply = {'record': chosen, 'status': 'reference', 'answer': chosen['summary'], 'context': {'record_id': chosen['id']}}
     if re.search(r'\b(?:which|what) (?:edition|version)\b', q):
         reply['answer'] = 'This reviewed record uses the supplied 1.5 scan. Edition 1.6 changes have not been verified.'
@@ -69,6 +81,8 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         if card_interaction:
             reply['answer'] = ('Fuzzy Groin makes the attacker the White Lion\'s permanent priority target until either dies. Ground Fighting stops normal AI draws and instead triggers a Basic Action against a survivor who spends an activation in its Zone of Death. That named target is set by the mood; priority targeting applies to Pick Target actions and does not redirect this trigger. The permanent priority effect remains for later applicable targeting.\n\n' + reply['answer'])
             related = [by_id['moods-and-flows']]
+        elif fuzzy:
+            reply['answer'] = ('Fuzzy Groin makes the attacker the White Lion\'s permanent priority target until either dies. Hiding in Tall Grass or being picked once does not end that card-specific effect.\n\n' + reply['answer'])
         if related:
             reply['related_records'] = related
             reply['answer'] += '\n\nRelated reviewed rules:\n' + '\n\n'.join(r['title'] + ': ' + r['summary'] for r in related)

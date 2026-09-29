@@ -36,8 +36,12 @@ A White Lion critical wound creates a permanent priority target, then Ground Fig
 
 Source: https://www.reddit.com/r/KingdomDeath/comments/1iq62di
 
-Partial coverage: revised PDF 43-46, printed 66-69, original 70-73. Ground Fighting is pictured in the rulebook, but the exact Fuzzy Groin hit-location card text is missing from the reviewed sources. The app must flag that gap instead of claiming the complete interaction is established.
+Coverage: revised PDF 43-46, printed 66-69, original 70-73, plus the linked Fuzzy Groin community card transcription. Ground Fighting is pictured in the rulebook. The app should distinguish the mood's named activation trigger from Pick Target actions and retain the card's permanent priority effect.
 
 ## Next evaluation step
 
 Use additional community questions after expanding the corpus, keeping a set of questions out of development tests. Do not count passing these source-guided checks as evidence of general rules comprehension.
+
+## Controlled local lookup evaluation, 29 September 2026
+
+Fourteen fresh, player-style prompts covered Fuzzy Groin, Ground Fighting, priority targeting, Hands of Heat, critical wounds, monster damage, survival timing, and three deliberately uncovered details. The initial pass gave 9 appropriate references or outcomes and 5 problematic references: two Fuzzy Groin paraphrases missed the interaction, while Age at 2 hunt XP, severe head injury roll 8, and the White Lion Claw card instructions returned adjacent material instead of acknowledging absent text. After retrieval and coverage guards were corrected, the same 14 prompts returned 11 pertinent references or resolved outcomes and 3 explicit unsupported responses. This is a local lookup check against the project's reviewed records and linked Fuzzy Groin transcription; it is not a blind benchmark or a live Sol evaluation. The three unsupported details still require source records. The new guards cover these examples, not every possible unsupported question.
