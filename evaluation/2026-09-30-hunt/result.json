@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-30",
+  "commit": "a6d1a98247022cc79e74e841f2f8c85ad841f8c3",
+  "question": "During a hunt event, my survivor suffers 3 damage to the body. They have 1 armor in that location and 1 insanity. What happens to the remaining damage, and does it cause a severe injury or brain trauma?",
+  "isolation": "Fresh chat per mode; temporary history database; production HTTP handler.",
+  "model": "gpt-6-sol",
+  "local": {
+    "chat_id": "f9c27ebd8b5802b3ce9a06f2",
+    "status": "unsupported",
+    "answer": "Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.",
+    "record": null,
+    "context": {},
+    "related_records": [],
+    "elapsed_seconds": 0.032
+  },
+  "sol_enabled": {
+    "chat_id": "5d59332e72113c4b759fa3a1",
+    "status": "unsupported",
+    "answer": "Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.",
+    "record": null,
+    "context": {},
+    "related_records": [],
+    "elapsed_seconds": 0.013
+  },
+  "calls": []
+}

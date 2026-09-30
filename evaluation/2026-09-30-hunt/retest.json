@@ -1,0 +1,189 @@
+{
+  "date": "2026-09-30",
+  "commit": "a6d1a98247022cc79e74e841f2f8c85ad841f8c3",
+  "question": "During a hunt event, my survivor suffers 3 damage to the body. They have 1 armor in that location and 1 insanity. What happens to the remaining damage, and does it cause a severe injury or brain trauma?",
+  "isolation": "Fresh chat per mode; temporary history database; production HTTP handler.",
+  "model": "gpt-6-sol",
+  "working_tree": " M KDM_Project_Status.md\n M kdm-assistant/core_records.py\n M kdm-assistant/engine.py\n M kdm-assistant/test_core_rules.py\n M kdm-assistant/test_server.py\n?? evaluation/2026-09-30-hunt/\n",
+  "local": {
+    "chat_id": "6f6a56d2831298b7d9f0c5b5",
+    "record": {
+      "id": "hunt-event-damage",
+      "title": "Hunt event damage and explicit injuries",
+      "original": 67,
+      "supporting_originals": [
+        74,
+        75
+      ],
+      "keywords": "hunt event damage nonlethal non lethal body head arms waist legs brain trauma insanity armor armour light heavy injury injuries boxes filled severe persist carryover showdown",
+      "layout": "Printed page 63 has Event Damage at the bottom of the left column. Its token-duration paragraph continues at the top of the center column, immediately before Severe Injuries and Brain Trauma. Those two headings form the hunt-specific rule unit. Printed page 70 supplies damage order; printed page 71 distinguishes brain damage from physical damage.",
+      "summary": "Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.",
+      "notes": [
+        "For damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.",
+        "Insanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.",
+        "State any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.",
+        "Tokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.",
+        "When an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.",
+        "The nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 41,
+        "original": 67,
+        "printed": 63,
+        "edition": "1.5",
+        "title": "Hunt event damage and explicit injuries",
+        "reviewed": true,
+        "record_id": "hunt-event-damage"
+      },
+      "sources": [
+        {
+          "revised": 41,
+          "original": 67,
+          "printed": 63,
+          "edition": "1.5",
+          "title": "Hunt event damage and explicit injuries",
+          "reviewed": true,
+          "record_id": "hunt-event-damage"
+        },
+        {
+          "revised": 47,
+          "original": 74,
+          "printed": 70,
+          "edition": "1.5",
+          "title": "Monster hits, damage, and injury order",
+          "reviewed": true,
+          "record_id": "monster-hit-damage"
+        },
+        {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "Attack effects and damage outside attacks",
+          "reviewed": true,
+          "record_id": "attack-effects"
+        }
+      ],
+      "image": "/pages/41.jpg"
+    },
+    "status": "reference",
+    "answer": "Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.\n\nFor damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.\nInsanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.\nState any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.\nTokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.\nWhen an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.\nThe nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma.",
+    "context": {
+      "record_id": "hunt-event-damage"
+    },
+    "related_records": [],
+    "elapsed_seconds": 0.04
+  },
+  "sol_enabled": {
+    "chat_id": "6c4afe0cf19656eb0d027e21",
+    "record": {
+      "id": "hunt-event-damage",
+      "title": "Hunt event damage and explicit injuries",
+      "original": 67,
+      "supporting_originals": [
+        74,
+        75
+      ],
+      "keywords": "hunt event damage nonlethal non lethal body head arms waist legs brain trauma insanity armor armour light heavy injury injuries boxes filled severe persist carryover showdown",
+      "layout": "Printed page 63 has Event Damage at the bottom of the left column. Its token-duration paragraph continues at the top of the center column, immediately before Severe Injuries and Brain Trauma. Those two headings form the hunt-specific rule unit. Printed page 70 supplies damage order; printed page 71 distinguishes brain damage from physical damage.",
+      "summary": "Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.",
+      "notes": [
+        "For damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.",
+        "Insanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.",
+        "State any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.",
+        "Tokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.",
+        "When an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.",
+        "The nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 41,
+        "original": 67,
+        "printed": 63,
+        "edition": "1.5",
+        "title": "Hunt event damage and explicit injuries",
+        "reviewed": true,
+        "record_id": "hunt-event-damage"
+      },
+      "sources": [
+        {
+          "revised": 41,
+          "original": 67,
+          "printed": 63,
+          "edition": "1.5",
+          "title": "Hunt event damage and explicit injuries",
+          "reviewed": true,
+          "record_id": "hunt-event-damage"
+        },
+        {
+          "revised": 47,
+          "original": 74,
+          "printed": 70,
+          "edition": "1.5",
+          "title": "Monster hits, damage, and injury order",
+          "reviewed": true,
+          "record_id": "monster-hit-damage"
+        },
+        {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "Attack effects and damage outside attacks",
+          "reviewed": true,
+          "record_id": "attack-effects"
+        }
+      ],
+      "image": "/pages/41.jpg"
+    },
+    "status": "model-reference",
+    "answer": "Assuming both body injury boxes are empty, the 3 damage removes the 1 body armor, then fills the light and heavy body injury boxes. **It does not cause a severe injury.** The survivor’s 1 insanity is unchanged because insanity protects only the brain.\n\nIf either body box was already checked, only the available box is filled; any remaining ordinary hunt-event damage causes no severe injury. An event that **explicitly instructs** a severe injury is different—follow that instruction.",
+    "context": {
+      "record_id": "hunt-event-damage"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": [],
+    "elapsed_seconds": 3.944
+  },
+  "calls": [
+    {
+      "record_ids": [
+        "hunt-event-damage"
+      ],
+      "source_payload": [
+        {
+          "title": "Hunt event damage and explicit injuries",
+          "original_pdf_page": 67,
+          "summary": "Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.",
+          "notes": [
+            "For damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.",
+            "Insanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.",
+            "State any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.",
+            "Tokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.",
+            "When an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.",
+            "The nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma."
+          ],
+          "tables": []
+        }
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 563,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 104,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 667
+      },
+      "incomplete_details": null
+    }
+  ]
+}

@@ -6,6 +6,21 @@ Community questions are evaluation prompts, never rule authorities.
 
 CORE_RECORDS = [
     {
+        'id': 'hunt-event-damage', 'title': 'Hunt event damage and explicit injuries', 'original': 67,
+        'supporting_originals': [74, 75],
+        'keywords': 'hunt event damage nonlethal non lethal body head arms waist legs brain trauma insanity armor armour light heavy injury injuries boxes filled severe persist carryover showdown',
+        'layout': 'Printed page 63 has Event Damage at the bottom of the left column. Its token-duration paragraph continues at the top of the center column, immediately before Severe Injuries and Brain Trauma. Those two headings form the hunt-specific rule unit. Printed page 70 supplies damage order; printed page 71 distinguishes brain damage from physical damage.',
+        'summary': 'Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.',
+        'notes': [
+            'For damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.',
+            'Insanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.',
+            'State any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.',
+            'Tokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.',
+            'When an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.',
+            'The nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma.',
+        ], 'tables': [],
+    },
+    {
         'id': 'age-first-milestone', 'title': 'Age: first Hunt XP milestone', 'original': 111, 'supporting_originals': [47],
         'keywords': 'age hunt xp experience milestone 2 weapon proficiency story event first 2d10',
         'layout': 'Printed page 43 shows heavy-bordered Hunt XP milestone boxes and explains the Age trigger. Printed page 107 has the Age event; the first milestone occupies its upper middle region and has a five-row 2d10 table.',
@@ -40,8 +55,9 @@ CORE_RECORDS = [
         'id': 'white-lion-claw', 'title': 'White Lion: Claw AI card', 'original': 31, 'supporting_originals': [32],
         'keywords': 'white lion claw ai card instructions pick target closest threat facing range field of view sniff move attack speed accuracy damage',
         'layout': 'Printed page 27 pictures the complete Claw card and explains target selection. Printed page 28 continues through movement, attack rolls, damage, and discarding the card.',
-        'summary': 'Claw first targets the closest threat facing the White Lion and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.',
-        'notes': ['The second target condition may select a threat beyond the lion’s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.', 'The White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn.'],
+        'related_ids': ['monster-movement'],
+        'summary': 'Claw first targets the closest threat in the area the White Lion faces and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.',
+        'notes': ['The second target condition may select a threat beyond the lion’s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.', 'The White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn.', 'The pictured White Lion Basic Action uses a different target list: closest survivor in field of view; if no target, Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1. A knocked-down survivor can be its closest survivor even though they are not a threat.', 'Sniff ends the turn. Until the end of the next round, all survivors are threats, even if knocked down or affected by an effect that says otherwise.'],
         'tables': [],
     },
     {
@@ -56,7 +72,7 @@ CORE_RECORDS = [
         'id': 'survival-actions', 'title': 'Survival actions and timing', 'original': 82, 'supporting_originals': [83],
         'keywords': 'survival actions surge dash dodge encourage endure attacking attacker fellow survivor before after movement activation tall grass hide timing opportunity opportunities interrupt',
         'layout': 'Printed page 78 has three columns: action definitions, survival opportunities, then limitations and examples. Its monster-flow example continues at the top left of printed page 79. The During Survivor Attacks heading on page 79 defines two separate interrupt windows.',
-        'summary': 'Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. During the survivors\' turn, survival opportunities occur before or after completed movement or activation. A survivor who is attacking cannot perform survival actions, including dodge.',
+        'summary': 'Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. Dash and Surge require survival opportunities, including before or after completed movement or activation during the survivors\' turn. A standing survivor may encourage at any time subject to the survival-action restrictions. A survivor who is attacking cannot perform survival actions, including dodge.',
         'notes': [
             'The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.',
             'During another survivor\'s attack, a fellow survivor has an opportunity after the wound roll but before the monster\'s reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.',
@@ -64,7 +80,8 @@ CORE_RECORDS = [
             'Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.',
             'Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.',
             'A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.',
-            'Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Their stated timing rules still apply.',
+            'Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. A survivor may encourage at any time during the survivors\' turn, including outside Dash and Surge opportunity windows. Deaf survivors may not be encouraged. The action must be unlocked, its cost paid, and its once-per-round and attacking-survivor restrictions observed; it cannot interrupt an unresolved survival action. On the monster turn, the separate flow or knocked-down-monster limitation still applies.',
+            'Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Luck includes the permanent attribute, tokens, gear, abilities, and other current modifiers.',
         ], 'tables': [],
     },
     {
@@ -124,17 +141,33 @@ CORE_RECORDS = [
     },
     {
         'id': 'survivor-attack-sequence', 'title': 'Survivor acts and attack sequence', 'original': 77, 'supporting_originals': [78],
-        'related_ids': ['survival-actions'],
+        'related_ids': ['survival-actions', 'critical-wound-examples'],
         'keywords': 'survivor act attack activation movement move adjacent melee reach ranged range wound steps reaction first strike before after',
         'layout': 'Printed page 73 separates Survivors\' Turn and Act Overview from Movement, Activation, and How Survivors Attack. Printed page 74 has the attack sequence in the left column and a shaded wound-steps panel across the middle and right columns. Read that panel down the middle and then down the right.',
         'summary': 'A survivor\'s act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.',
         'notes': [
             'Survivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.',
+            'If a survivor is knocked down during their attack, their unresolved hits are canceled. Standing again through Encourage does not restore those canceled hits. A knocked-down survivor is not a threat, cannot spend movement or activation, and may only spend survival to dodge, remaining knocked down. They stand at the end of the next monster turn or when another survivor Encourages them. Already knocked-down survivors cannot be knocked down again.',
             'Normal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.',
             'Melee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.',
             'For an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.',
             'Resolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.',
+            'A wound attempt totals the wound roll (1d10) + weapon strength + survivor strength modifier. It succeeds if the total meets or exceeds monster toughness including toughness modifiers; otherwise it fails. Survivor modifiers include attributes, tokens, gear, abilities, injuries, and other applicable effects. Then check critical wounds and their exceptions using the linked critical-wound rules.',
             'Wound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages.',
+        ], 'tables': [],
+    },
+    {
+        'id': 'monster-movement', 'title': 'Monster movement and target definitions', 'original': 73,
+        'supporting_originals': [72], 'related_ids': ['white-lion-claw'],
+        'keywords': 'monster movement move again round basic action reaction target threat survivor facing range field view knocked down',
+        'layout': 'Printed page 69 defines Move & Attack Target and Monster Movement. The Pick Target definitions on printed page 68 supply the target conditions. White Lion card text is in the linked Claw record.',
+        'summary': 'Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.',
+        'notes': [
+            'Actions dictate when the monster moves, including actions instructed by reactions. Move along a shortest path, one cardinal space at a time, with no diagonal movement; choose among equally short paths. If already adjacent, turn and attack without moving. After moving, face the survivor and resolve collisions before the attack. For an attack with reach, move only the minimum spaces needed to attack.',
+            'An instruction only to attack does not grant movement. Full move uses the current movement value including positive and negative modifiers.',
+            'A threat is a survivor who is not knocked down and is not using an effect that prevents being a threat. Closest survivor includes knocked-down survivors; closest threat excludes them unless an effect such as Sniff overrides that restriction.',
+            'Facing means the area in front of the monster, the area the monster faces. It does not refer to a survivor facing toward the monster. Field of view excludes the blind spot and sight blocked by Obstacle terrain. In range uses current movement, including modifiers, unless the condition specifies a number.',
+            'Check the Pick Target list from top to bottom and stop at the first condition with an eligible target. If multiple survivors satisfy it, the monster controller chooses. A no-target instruction replaces the other actions on that card. Priority targeting and card-specific overrides need their own applicable rules.',
         ], 'tables': [],
     },
 ]

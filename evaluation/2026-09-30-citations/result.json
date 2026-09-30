@@ -1,0 +1,25 @@
+{
+  "question": "My survivor attacks and scores two hits. The reaction on the first hit location knocks the attacker down. Another survivor then Encourages them to stand. Can the attacker resolve the second hit location?",
+  "model": "gpt-6-sol",
+  "record_ids": [
+    "survivor-attack-sequence",
+    "survival-actions",
+    "critical-wound-examples"
+  ],
+  "paid_call_limit": 1,
+  "usage": {
+    "input_tokens": 1637,
+    "input_tokens_details": {
+      "cache_write_tokens": 1634,
+      "cached_tokens": 0
+    },
+    "output_tokens": 54,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 1691
+  },
+  "response_status": "completed",
+  "answer": "No. If the first hit location\u2019s reaction knocks the attacker down during their attack, their unresolved hits are canceled. Another survivor can Encourage them to stand, if Encourage is available and its conditions are met, but standing does not restore the second hit.",
+  "has_page_reference": false
+}

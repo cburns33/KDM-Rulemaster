@@ -1,0 +1,273 @@
+{
+  "date": "2026-09-30",
+  "model": "gpt-6-sol",
+  "paid_call_limit": 6,
+  "commit": "a6d1a98247022cc79e74e841f2f8c85ad841f8c3",
+  "working_tree": " M KDM_Project_Status.md\n M kdm-assistant/README.md\n M kdm-assistant/core_records.py\n M kdm-assistant/engine.py\n M kdm-assistant/test_core_rules.py\n M kdm-assistant/test_server.py\n?? evaluation/2026-09-30-combat/\n?? evaluation/2026-09-30-hunt/\n?? evaluation/2026-09-30-timing-age/\n",
+  "method": "Unblinded assistant-graded targeted source audit of known coverage risks and contrasts. Prompts and expectations frozen before responses. Fresh chat per case/mode, production handler, temporary history. No app changes or prompt tuning.",
+  "sources": [
+    {
+      "revised": 9,
+      "printed": 27,
+      "original": 31
+    },
+    {
+      "revised": 45,
+      "printed": 68,
+      "original": 72
+    },
+    {
+      "revised": 46,
+      "printed": 69,
+      "original": 73
+    },
+    {
+      "revised": 51,
+      "printed": 74,
+      "original": 78
+    },
+    {
+      "revised": 53,
+      "printed": 76,
+      "original": 80
+    },
+    {
+      "revised": 135,
+      "printed": 232,
+      "original": 236
+    }
+  ],
+  "calls": [
+    {
+      "case": "C01",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "moods-and-flows",
+        "priority-target"
+      ],
+      "source_payload": [
+        {
+          "title": "AI flows, moods, and Ground Fighting",
+          "original_pdf_page": 71,
+          "summary": "Moods and traits have persistent effects while their cards remain in play. Apply their conditional actions when triggered. The book's Ground Fighting example stops normal AI draws, monitors the pictured Zone of Death for survivors spending activation, and is discarded when the White Lion is wounded.",
+          "notes": [
+            "Normally a monster turn has Start Turn, Draw AI, and End Turn. Read the full AI card, then complete its actions in order. If instructed to draw another AI card, finish applicable actions on the current card first.",
+            "Flows between AI actions create survival opportunities for eligible survivors. Finish survival actions before continuing the next monster action.",
+            "Ground Fighting instructs a Basic Action targeting a survivor who spends activation in its Zone of Death before resolving that activation, with +2 speed and +1 damage for that attack. Its pictured zone must be consulted. It stops drawing AI cards while in play.",
+            "After Ground Fighting is discarded by a wound, the book says the White Lion's behavior returns to normal.",
+            "For an interaction involving a permanent priority target, also read the Priority targeting record and its linked Fuzzy Groin card source."
+          ],
+          "tables": []
+        },
+        {
+          "title": "Priority targeting and its exceptions",
+          "original_pdf_page": 72,
+          "summary": "The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.",
+          "notes": [
+            "Only one survivor holds the priority-target token at a time. Under the ordinary token rule, the survivor discards it when picked as the target.",
+            "The continuation excludes AI cards targeting multiple or all survivors, monster-AI targeting outside a Pick Target action, and hit-location targeting. A reaction that targets the attacker is unaffected by the token.",
+            "The continuation is printed page 69 (original PDF 73). The main Pick Target and token rules are printed page 68 (original PDF 72).",
+            "Fuzzy Groin critical wound gives the attacker a permanent priority-target token and directs the White Lion to attack that survivor until one of them dies. It also grants the monster +1 damage token. The ordinary token discard rule does not end this card-specific persistent effect."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 663,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 145,
+        "output_tokens_details": {
+          "reasoning_tokens": 35
+        },
+        "total_tokens": 808
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "C02",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "white-lion-claw"
+      ],
+      "source_payload": [
+        {
+          "title": "White Lion: Claw AI card",
+          "original_pdf_page": 31,
+          "summary": "Claw first targets the closest threat facing the White Lion and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.",
+          "notes": [
+            "The second target condition may select a threat beyond the lion\u2019s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.",
+            "The White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 346,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 186,
+        "output_tokens_details": {
+          "reasoning_tokens": 48
+        },
+        "total_tokens": 532
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "C03",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "survivor-attack-sequence",
+        "survival-actions"
+      ],
+      "source_payload": [
+        {
+          "title": "Survivor acts and attack sequence",
+          "original_pdf_page": 77,
+          "summary": "A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+          "notes": [
+            "Survivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.",
+            "Normal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.",
+            "Melee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.",
+            "For an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.",
+            "Resolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.",
+            "Wound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages."
+          ],
+          "tables": []
+        },
+        {
+          "title": "Survival actions and timing",
+          "original_pdf_page": 82,
+          "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. During the survivors' turn, survival opportunities occur before or after completed movement or activation. A survivor who is attacking cannot perform survival actions, including dodge.",
+          "notes": [
+            "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+            "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+            "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+            "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+            "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+            "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+            "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Their stated timing rules still apply."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 901,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 134,
+        "output_tokens_details": {
+          "reasoning_tokens": 25
+        },
+        "total_tokens": 1035
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "C04",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "critical-wound-examples"
+      ],
+      "source_payload": [
+        {
+          "title": "Critical wound examples",
+          "original_pdf_page": 81,
+          "summary": "These examples distinguish a successful wound from a critical wound. The hit location's critical-wound effect matters, and luck can make a lower die result critical.",
+          "notes": [
+            "Fleshy Gut: Allister rolls a lantern 10, wounds, gains +3 insanity and a random basic resource from the critical effect.",
+            "Furious Gut: Erza rolls a lantern 10. This location has no critical-wound effect, so the result is a normal wound and its wound reaction is performed.",
+            "Restless Rump: Lucy has two +1 luck tokens and rolls 8, causing a critical wound. The Reflex reaction that would knock down Erza is canceled; the critical effect is performed instead."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 343,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 197,
+        "output_tokens_details": {
+          "reasoning_tokens": 72
+        },
+        "total_tokens": 540
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "C05",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "critical-wound-examples"
+      ],
+      "source_payload": [
+        {
+          "title": "Critical wound examples",
+          "original_pdf_page": 81,
+          "summary": "These examples distinguish a successful wound from a critical wound. The hit location's critical-wound effect matters, and luck can make a lower die result critical.",
+          "notes": [
+            "Fleshy Gut: Allister rolls a lantern 10, wounds, gains +3 insanity and a random basic resource from the critical effect.",
+            "Furious Gut: Erza rolls a lantern 10. This location has no critical-wound effect, so the result is a normal wound and its wound reaction is performed.",
+            "Restless Rump: Lucy has two +1 luck tokens and rolls 8, causing a critical wound. The Reflex reaction that would knock down Erza is canceled; the critical effect is performed instead."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 328,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 171,
+        "output_tokens_details": {
+          "reasoning_tokens": 61
+        },
+        "total_tokens": 499
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "C06",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "critical-wound-examples"
+      ],
+      "source_payload": [
+        {
+          "title": "Critical wound examples",
+          "original_pdf_page": 81,
+          "summary": "These examples distinguish a successful wound from a critical wound. The hit location's critical-wound effect matters, and luck can make a lower die result critical.",
+          "notes": [
+            "Fleshy Gut: Allister rolls a lantern 10, wounds, gains +3 insanity and a random basic resource from the critical effect.",
+            "Furious Gut: Erza rolls a lantern 10. This location has no critical-wound effect, so the result is a normal wound and its wound reaction is performed.",
+            "Restless Rump: Lucy has two +1 luck tokens and rolls 8, causing a critical wound. The Reflex reaction that would knock down Erza is canceled; the critical effect is performed instead."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 330,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 157,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 487
+      },
+      "response_status": "completed"
+    }
+  ]
+}

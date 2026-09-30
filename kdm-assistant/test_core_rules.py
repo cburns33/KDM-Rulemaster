@@ -142,6 +142,53 @@ class CoreRuleTests(unittest.TestCase):
         self.assertEqual(followup['status'], 'resolved')
         self.assertEqual(followup['roll'], 9)
 
+    def test_hunt_damage_questions_retrieve_phase_exception(self):
+        questions = [
+            'During a hunt event, my survivor suffers 3 damage to the body. They have 1 armor in that location and 1 insanity. What happens to the remaining damage, and does it cause a severe injury or brain trauma?',
+            'On the hunt I take 3 body damage with no armor and both injury boxes already filled. Do I roll a severe injury?',
+            'A hunt event deals 3 brain damage. I have 1 insanity and my brain injury box is checked. Do I suffer brain trauma?',
+            'The hunt event explicitly instructs a severe body injury. Does the nonlethal rule prevent it?',
+            'Does event damage persist into the showdown?',
+        ]
+        for question in questions:
+            for options in [{}, {'context': {'record_id': 'severe-head-injury'}}]:
+                with self.subTest(question=question, options=options):
+                    result = resolve(question, **options)
+                    self.assertEqual(result['status'], 'reference')
+                    self.assertEqual(result['record']['id'], 'hunt-event-damage')
+                    self.assertNotIn('row', result)
+                    self.assertIn('does not cause severe injuries or brain trauma', result['answer'])
+                    self.assertIn('explicitly instruct', result['answer'])
+                    self.assertIn('persists into the showdown', result['answer'])
+
+    def test_hunt_damage_source_preserves_physical_and_brain_distinction(self):
+        result = resolve('Hunt event damage')
+        record = result['record']
+        self.assertEqual(record['original'], 67)
+        self.assertEqual(record['supporting_originals'], [74, 75])
+        self.assertIn('Insanity protects only the brain', result['answer'])
+        self.assertIn('already checked', result['answer'])
+        self.assertIn('light, then heavy', result['answer'])
+
+    def test_showdown_damage_is_not_an_injury_table_lookup(self):
+        for question in [
+            'During a showdown, I take 3 damage to my body with no armor and both injury boxes filled. Does this cause a severe injury?',
+            'During a showdown, I take 3 damage to my head with no armor and its injury box filled. Does this cause a severe injury?',
+        ]:
+            for options in [{}, {'context': {'record_id': 'severe-head-injury'}}]:
+                with self.subTest(question=question, options=options):
+                    result = resolve(question, **options)
+                    self.assertEqual(result['status'], 'reference')
+                    self.assertEqual(result['record']['id'], 'monster-hit-damage')
+                    self.assertIn('one severe injury roll', result['answer'])
+                    self.assertNotIn('row', result)
+
+    def test_hunt_exception_does_not_resolve_unreviewed_injury_table(self):
+        result = resolve('On the hunt, after damage, the event tells me to roll on the severe waist injury table. I rolled 8.')
+        self.assertEqual(result['status'], 'unsupported')
+        self.assertNotIn('row', result)
+        self.assertEqual(resolve('Hunt event damage under edition 1.6')['status'], 'edition-check')
+
     def test_continuation_page_identifiers(self):
         records = {r['id']: r for r in RECORDS}
         self.assertEqual(records['survival-actions']['supporting_originals'], [83])

@@ -13,7 +13,7 @@ Ask questions in the main view. Use the menu button for conversation history and
 ## What works
 
 - Local conversation history, stored in `data/history.sqlite3`.
-- Whole-record text search over 15 reviewed topics, supported by selected rules on 21 source pages.
+- Whole-record text search over 17 reviewed topics, supported by selected rules on 23 source pages.
 - Deterministic resolution of both Hands of Heat tables, including conditions and follow-ons.
 - Follow-ups such as “What about 7?”, “Lantern Branding roll 6”, and “We already have Lantern Oven and rolled 6”.
 - A form for choosing the table, settlement state, and roll when natural-language parsing is ambiguous.
@@ -23,11 +23,15 @@ Ask questions in the main view. Use the menu button for conversation history and
 
 ## Current coverage
 
+Hunt event damage is reviewed on revised PDF page 41 (book 63, original PDF 67), with damage-order and brain-damage support on revised pages 47 and 48. The record covers nonlethal damage, existing injury boxes, carryover, and events that explicitly instruct severe injuries or brain trauma. Injury-table guards preserve general damage questions while refusing results from unreviewed locations.
+
+Combat records include attacker-knockdown cancellation, Encourage timing and restrictions, the wound formula, critical-wound and Impervious exceptions, monster movement, target definitions, and the pictured White Lion Basic Action. Age rolls require a milestone identity before resolution. Only the first milestone table is reviewed; later milestones return a missing-coverage response and retain their identity across short follow-ups. Unspecified or conflicting milestones require clarification. A roll supplied before a clarification is not carried forward; enter the roll again after identifying the milestone.
+
 | Topic | Revised PDF | Printed book | Original PDF |
 | --- | ---: | ---: | ---: |
 | Hands of Heat | 90 | 125 | 129 |
 | Affinities | 28 | 47 | 51 |
-| Critical wound examples | 54 | 77 | 81 |
+| Critical wound rules and examples | 54, 53 | 77, 76 | 81, 80 |
 | Create a Survivor | 6 | 24 | 28 |
 | First Story: White Lion | 8 | 26 | 30 |
 | White Lion: standard deployment | 120 | 179 | 183 |
@@ -40,6 +44,7 @@ Ask questions in the main view. Use the menu button for conversation history and
 | Age: first Hunt XP milestone | 81, 24 | 107, 43 | 111, 47 |
 | Severe head injuries | 62 | 86 | 90 |
 | White Lion: Claw AI card | 9, 10 | 27, 28 | 31, 32 |
+| Monster movement and target definitions | 46, 45 | 69, 68 | 73, 72 |
 
 The reviewed records are scoped summaries checked by the building assistant against the scan. Review does not imply human verification or complete transcription of every section on a page. First Story and standard White Lion deployment have separate records. The Create a Survivor record covers its first page and flags the continuation. Rules elsewhere remain available as page images but are not indexed as text.
 
@@ -52,6 +57,8 @@ Local lookup is the default. General questions return relevant reviewed referenc
 Sol is available through Answer settings beside the question box. It is off by default. Exact table resolution and clear reviewed lookups stay local, so they never make an API call. The GPT-6 Sol option is configured through a local `.env` file in the project folder and uses the OpenAI Responses API. It sends only the current question and selected reviewed records, returns source-linked answers, and reports when the source does not establish the answer.
 
 GPT-6 Astra is excluded from the app's normal answer path. Reserve it for project work such as interpreting difficult layouts, structuring new source records, and designing tests. It is not a fallback for missing card text or unreviewed rules.
+
+The app owns page citations. Sol's source payload omits original-PDF page metadata, and a separate high-priority instruction tells it to leave page numbers, links, and citation markers out of its prose. Clickable citations retain the revised, printed, and original mappings. Existing saved answers are unchanged. This prompt contract was verified with automated request checks and a one-call live smoke test; it is not a guarantee of compliance on every generated answer.
 
 OpenAI API billing is separate from a ChatGPT or Codex subscription. The app accepts `OPENAI_API_KEY` or `OPENAI_API_SECRET_KEY` from `D:\Documents\KDM\.env`; that file is excluded from version control and never served to the browser. With Sol selected, a source-reference question sends the current question and up to three selected reviewed records to OpenAI. Each request uses low reasoning effort and a 700-token output cap. The full rulebook and unrelated conversation history are excluded.
 
@@ -71,7 +78,7 @@ Reference: https://github.com/ksycz/board-game-referee
 
 ## Verification and next steps
 
-Run `python -m unittest -v test_rules test_core_rules test_server` from this folder. Tests cover roll bands, both table branches, prerequisites, conversation context, page mapping, persistence, unsupported questions, edition checks, server boundaries, community-scenario retrieval, adjacent cases, and continuation citations. These tests validate retrieval and reviewed content, not open-ended AI reasoning. Browser testing covers the actual local UI.
+Run `python -m unittest discover -v` from this folder. Tests cover roll bands, both table branches, prerequisites, conversation context, page mapping, persistence, unsupported questions, edition checks, server boundaries, community-scenario retrieval, adjacent cases, and continuation citations. The combat regression module checks Age identity and context guards, attacker knockdown, Encourage, movement, wound calculation, and critical-wound evidence. These tests validate retrieval and reviewed content, not open-ended AI reasoning. Browser testing covers the actual local UI.
 
 Next: expand the reviewed source set to other hard layouts, including Age and severe injuries. Play uses edition 1.5. Keep deterministic row selection and source citations outside the Sol path. Check the narrow-screen layout before relying on it during mobile play.
 

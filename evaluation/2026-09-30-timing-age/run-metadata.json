@@ -1,0 +1,208 @@
+{
+  "date": "2026-09-30",
+  "model": "gpt-6-sol",
+  "paid_call_limit": 5,
+  "commit": "a6d1a98247022cc79e74e841f2f8c85ad841f8c3",
+  "working_tree": " M KDM_Project_Status.md\n M kdm-assistant/README.md\n M kdm-assistant/core_records.py\n M kdm-assistant/engine.py\n M kdm-assistant/test_core_rules.py\n M kdm-assistant/test_server.py\n?? evaluation/2026-09-30-hunt/\n?? evaluation/2026-09-30-timing-age/\n",
+  "method": "Unblinded assistant-graded targeted source audit; prompts frozen before responses. Fresh chat per case/mode except labeled follow-up. Production handler and temporary history database. No application changes.",
+  "sources": [
+    {
+      "revised": 24,
+      "printed": 43,
+      "original": 47
+    },
+    {
+      "revised": 50,
+      "printed": 73,
+      "original": 77
+    },
+    {
+      "revised": 55,
+      "printed": 78,
+      "original": 82
+    },
+    {
+      "revised": 56,
+      "printed": 79,
+      "original": 83
+    },
+    {
+      "revised": 81,
+      "printed": 107,
+      "original": 111
+    }
+  ],
+  "calls": [
+    {
+      "case": "T01",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "source_payload": [
+        {
+          "title": "Monster hits, damage, and injury order",
+          "original_pdf_page": 74,
+          "summary": "A monster rolls attack dice equal to its attack speed and rolls one hit-location die for each successful hit. Damage is the amount dealt by each hit. Resolve hits separately, one at a time, in the target's chosen order, even if several hits land on the same location.",
+          "notes": [
+            "Speed and damage include the applicable monster attributes and tokens. An attack roll plus monster accuracy modifier must meet or exceed attack-profile accuracy plus survivor evasion.",
+            "For one hit, spend damage at its single location: reduce armor to zero first, then fill light and heavy injury boxes in that order. Filling the heavy box knocks the survivor down.",
+            "If damage remains after armor and the available injury boxes are exhausted, expend all remaining damage from that hit on one severe injury roll for that location. Another hit to the same location is a separate instance and can cause another severe injury.",
+            "Worked application: a Speed 2, Damage 3 attack with two successful hits has two hits worth 3 damage each, before applicable modifiers. If the survivor is allowed to dodge and dodges one, the remaining hit deals 3 damage to its rolled location. The final injury depends on that location's current armor and checked boxes.",
+            "Dodge eligibility and timing are on the linked Survival actions pages. Attack triggers such as After Hit and After Damage have their own timing on the linked Attack effects page."
+          ],
+          "tables": []
+        },
+        {
+          "title": "Survival actions and timing",
+          "original_pdf_page": 82,
+          "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. During the survivors' turn, survival opportunities occur before or after completed movement or activation. A survivor who is attacking cannot perform survival actions, including dodge.",
+          "notes": [
+            "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+            "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+            "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+            "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+            "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+            "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+            "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Their stated timing rules still apply."
+          ],
+          "tables": []
+        },
+        {
+          "title": "Attack effects and damage outside attacks",
+          "original_pdf_page": 75,
+          "summary": "Attack-profile effects trigger once per attack at their specified step. Damage outside an attack profile cannot be dodged because it does not come from a hit.",
+          "notes": [
+            "After Hit: if there are successful hits, apply the effect before rolling hit-location dice. Before Damage: apply after attack and location rolls, before damage. After Damage: resolve all hits' damage first; apply the effect if the attack dealt damage.",
+            "Bash knocks the survivor down. Bleed X grants X bleeding tokens, or 1 if no number is specified. Knockback X pushes the target X spaces in the stated direction; the monster controller chooses the direction when none is stated.",
+            "Intimidate actions are not attacks, cause brain damage instead of physical-location damage, and cannot be dodged. Follow the action's specific rules.",
+            "Brain damage uses insanity as armor, then the brain injury box, then Brain Trauma rolls. It is distinct from physical head damage.",
+            "Damage outside attack profiles is resolved normally but is not modified by monster attributes or tokens. If no location is specified, roll a hit-location die. The book gives White Lion Grab as an example of additional damage."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 1117,
+        "input_tokens_details": {
+          "cache_write_tokens": 1114,
+          "cached_tokens": 0
+        },
+        "output_tokens": 246,
+        "output_tokens_details": {
+          "reasoning_tokens": 97
+        },
+        "total_tokens": 1363
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "T02",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "survival-actions"
+      ],
+      "source_payload": [
+        {
+          "title": "Survival actions and timing",
+          "original_pdf_page": 82,
+          "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. During the survivors' turn, survival opportunities occur before or after completed movement or activation. A survivor who is attacking cannot perform survival actions, including dodge.",
+          "notes": [
+            "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+            "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+            "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+            "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+            "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+            "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+            "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Their stated timing rules still apply."
+          ],
+          "tables": []
+        }
+      ],
+      "usage": {
+        "input_tokens": 571,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 99,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 670
+      },
+      "response_status": "completed"
+    },
+    {
+      "case": "T04",
+      "mode": "sol_enabled",
+      "record_ids": [
+        "age-first-milestone"
+      ],
+      "source_payload": [
+        {
+          "title": "Age: first Hunt XP milestone",
+          "original_pdf_page": 111,
+          "summary": "When a survivor fills the first heavy-bordered Hunt XP milestone (2 Hunt XP), resolve Age milestone 1, Weapon Proficiency. Choose a weapon type, then roll 2d10 on its table. Each milestone benefit is gained only once per survivor lifetime.",
+          "notes": [
+            "The chosen weapon type makes the survivor eligible to gain proficiency from wounding with that type in victorious showdowns; it does not immediately grant a proficiency level.",
+            "The first milestone table yields: 2 +1 permanent evasion; 3-6 +1 permanent strength; 7-15 one random fighting art; 16-19 +1 permanent accuracy; 20 +1 permanent luck.",
+            "Later Age milestones have separate tables on the same event page and are outside this record."
+          ],
+          "tables": [
+            {
+              "title": "Age 1: Weapon Proficiency",
+              "rows": [
+                {
+                  "range": "2",
+                  "effects": [
+                    "Gain +1 permanent evasion."
+                  ]
+                },
+                {
+                  "range": "3-6",
+                  "effects": [
+                    "Gain +1 permanent strength."
+                  ]
+                },
+                {
+                  "range": "7-15",
+                  "effects": [
+                    "Gain 1 random fighting art."
+                  ]
+                },
+                {
+                  "range": "16-19",
+                  "effects": [
+                    "Gain +1 permanent accuracy."
+                  ]
+                },
+                {
+                  "range": "20",
+                  "effects": [
+                    "Gain +1 permanent luck."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "usage": {
+        "input_tokens": 427,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 115,
+        "output_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "total_tokens": 542
+      },
+      "response_status": "completed"
+    }
+  ]
+}

@@ -56,7 +56,6 @@ def source_payload(records):
     for record in records[:3]:
         source_records.append({
             'title': record['title'],
-            'original_pdf_page': record['original'],
             'summary': record['summary'],
             'notes': record['notes'],
             'tables': [{
@@ -94,6 +93,7 @@ REVIEWED SOURCE RECORDS:
 {source_payload(records)}'''
     body = json.dumps({
         'model': MODEL,
+        'instructions': 'The application adds verified clickable citations with revised PDF and printed-book page mappings. Do not include page numbers, page labels, links, or citation markers in your answer, even when the question or source text includes page references. Leave source navigation to those clickable citations. You may identify a rule or source by its title.',
         'reasoning': {'effort': 'low'},
         'max_output_tokens': OUTPUT_LIMIT,
         'store': False,

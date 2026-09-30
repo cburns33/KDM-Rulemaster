@@ -73,10 +73,30 @@ class ServerTests(unittest.TestCase):
                     self.assertEqual(restored['status'], 'unsupported')
             sol.assert_not_called()
 
+    def test_hunt_damage_source_reaches_model_and_saved_citations(self):
+        question = ('During a hunt event, my survivor suffers 3 damage to the body. '
+                    'They have 1 armor in that location and 1 insanity. What happens to '
+                    'the remaining damage, and does it cause a severe injury or brain trauma?')
+        with patch('server.sol_answer', return_value='Hunt event damage is nonlethal.') as sol:
+            local = self.request('/api/ask', {'question': question})
+            self.assertEqual(local['status'], 'reference')
+            self.assertEqual(local['record']['id'], 'hunt-event-damage')
+            sol.assert_not_called()
+            result = self.request('/api/ask', {'question': question, 'use_model': True})
+            self.assertEqual(result['status'], 'model-reference')
+            sol.assert_called_once()
+            supplied = sol.call_args.args[1]
+            self.assertEqual(supplied[0]['id'], 'hunt-event-damage')
+            self.assertIn('does not cause severe injuries or brain trauma', supplied[0]['summary'])
+            self.assertEqual([p['revised'] for p in result['record']['sources']], [41, 47, 48])
+            self.assertEqual([p['printed'] for p in result['record']['sources']], [63, 70, 71])
+            restored = self.request('/api/chats/' + result['chat_id'])[-1]['payload']
+            self.assertEqual(restored['record']['sources'], result['record']['sources'])
+
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
-        self.assertEqual(len(library['records']), 15)
-        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 21)
+        self.assertEqual(len(library['records']), 17)
+        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 23)
         continuation = next(p for p in library['pages'] if p['revised'] == 56)
         self.assertTrue(continuation['reviewed'])
         self.assertEqual(continuation['record_id'], 'survival-actions')
@@ -98,6 +118,39 @@ class ServerTests(unittest.TestCase):
         self.assertEqual([p['revised'] for p in restored['record']['sources']], [45, 46])
         self.assertEqual(restored['related_records'][0]['source']['revised'], 44)
         self.assertEqual(restored['record']['card_sources'][0]['url'], 'https://kingdomdeath.fandom.com/wiki/Fuzzy_Groin')
+
+    def test_age_guard_and_followup_persist_without_model_calls(self):
+        with patch('server.sol_answer') as sol:
+            for use_model in [False, True]:
+                second = self.request('/api/ask', {'question': 'Second Age milestone at 6 Hunt XP, rolled 8', 'use_model': use_model})
+                self.assertEqual(second['status'], 'unsupported')
+                followup = self.request('/api/ask', {'question': 'I rolled 8. What do I gain?', 'chat_id': second['chat_id'], 'use_model': use_model})
+                self.assertEqual(followup['status'], 'unsupported')
+                self.assertEqual(followup['context']['age_milestone'], 2)
+                saved = self.request('/api/chats/' + second['chat_id'])[-1]['payload']
+                self.assertEqual(saved['context'], followup['context'])
+                self.assertEqual(saved['record']['source']['revised'], 81)
+                unknown = self.request('/api/ask', {'question': 'Age rolled 8', 'use_model': use_model})
+                self.assertEqual(unknown['status'], 'clarify')
+                first = self.request('/api/ask', {'question': 'First Age milestone roll 8', 'use_model': use_model})
+                self.assertEqual(first['status'], 'resolved')
+                self.assertIn('Choose a weapon type', first['answer'])
+            sol.assert_not_called()
+
+    def test_combat_evidence_and_citations_reach_model(self):
+        cases = [
+            ('Attacker knocked down: can unresolved hits resume after Encourage?', 'unresolved hits are canceled', 50),
+            ('Must Encourage wait for a survival opportunity?', 'encourage at any time', 55),
+            ('Basic Action movement after moving this round?', 'each instructed action', 46),
+            ('Natural 9 with +1 luck on an Impervious critical location: wound?', 'Impervious prevents', 53),
+        ]
+        for question, text, revised in cases:
+            with self.subTest(question=question), patch('server.sol_answer', return_value='Reviewed explanation.') as sol:
+                result = self.request('/api/ask', {'question': question, 'use_model': True})
+                self.assertEqual(result['status'], 'model-reference')
+                supplied = sol.call_args.args[1]
+                self.assertIn(text, ' '.join(r['summary'] + ' '.join(r['notes']) for r in supplied))
+                self.assertIn(revised, [p['revised'] for r in [result['record']] + result['related_records'] for p in r['sources']])
 
     def test_all_page_mapping(self):
         self.assertEqual(len(self.manifest),138)

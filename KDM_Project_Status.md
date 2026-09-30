@@ -1,8 +1,16 @@
 # KDM rules assistant: project state
 
-Updated 29 September 2026.
+Updated 30 September 2026.
 
 Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs from `kdm-assistant` in that folder. The preceding non-Git working folder is preserved at `D:\Documents\KDM\archive-pre-git-source` as a recoverable archive.
+
+## Current snapshot
+
+Lantern Archive has 17 reviewed topics supported by 23 source pages from the supplied edition 1.5 scan. It serves local lookup by default, plus opt-in GPT-6 Sol explanations grounded only in selected reviewed records. The app is healthy on local port 8765. All 64 automated tests pass.
+
+The September 30 fixes cover hunt-event damage, attacker knockdown, Encourage timing, Age-milestone identity and follow-ups, monster movement and target definitions, wound calculation, critical wounds, and mapped model citations. Four earlier targeted audits and their regression retest are preserved in `evaluation/2026-09-30-*`. The latest citation smoke test used one Sol call and returned no page references in generated prose.
+
+Primary remaining coverage work: later Age milestones, severe injuries outside Head, more AI cards, and fresh holdouts with new wording. Rule coverage remains limited to the reviewed records; the assistant does not claim complete rulebook coverage or edition 1.6 compatibility.
 
 ## Deliverables
 
@@ -23,13 +31,13 @@ Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs
 
 ## Implemented
 
-Fifteen reviewed topics using selected rules on twenty-one source pages. The original records are joined by the first Age milestone, the severe Head table, and the White Lion Claw AI card shown in the book. Both Hands of Heat subtables retain explicit ranges, rewards, conditions, and follow-ons. All 138 retained pages can be viewed. Conversation history and pending correction notes are stored locally in SQLite. Continuation pages and related records receive clickable source citations. The server computes current review coverage from records at startup.
+Seventeen reviewed topics using selected rules on twenty-three source pages. The original records are joined by the first Age milestone, the severe Head table, the White Lion Claw AI card, attacker-knockdown, Encourage, critical-wound, and monster-movement rules. Both Hands of Heat subtables retain explicit ranges, rewards, conditions, and follow-ons. All 138 retained pages can be viewed. Conversation history and pending correction notes are stored locally in SQLite. Continuation pages and related records receive clickable source citations. The server computes current review coverage from records at startup.
 
 The browser now opens to a conversation-focused view. In response to feedback that the three-column layout felt crowded, conversation history and rulebook pages were moved into drawers. Clicking a compact citation selects its mapped page and opens Sources. Answer settings contain the opt-in Sol control, API disclosure, coverage count, and edition caveat. The source drawer retains page navigation, reviewed-topic search, Hands of Heat resolution, layout notes, and correction reporting. Answer text renders bold emphasis without showing raw Markdown markers.
 
 ## Verification
 
-All 39 automated test methods passed, including the original 23, community scenarios and variations, missing-card evidence, continuation-page mapping, related citations, persisted answers, the GPT-6 Sol integration, and the newer Age, severe-head-injury, Claw, and Fuzzy Groin records. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation passed after the interface change. Browser checks covered the conversation-focused home view, opening and closing both drawers, restoring a saved chat, opening its mapped source page from a citation, and finding the Sol switch in Answer settings. Earlier browser checks confirmed the 12-topic/16-page coverage count, survival citations, the missing-card notice, and a live source-grounded Sol answer for Affinities. The initial build decoded all 138 images. GitHub `main` matches commit `20864d5`, which contains the three laptop update commits.
+All 64 automated test methods pass, including the original interface and persistence coverage, rule-table boundaries, injury and Age guards, saved follow-up scope, model payload and citation contracts, related sources, and local HTTP boundaries. Targeted live checks cover source-grounded Sol answers for the added combat rules and the page-reference mitigation. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation and the earlier browser checks covered the conversation-focused home view, drawers, saved chats, mapped source pages, and Answer settings. The initial build decoded all 138 images.
 
 ## Remaining work
 
@@ -54,3 +62,65 @@ Fixed the first holdout defect in `kdm-assistant/engine.py`. Injury location che
 Added five regression test methods in `test_core_rules.py` and `test_server.py`. The original H12 question and nearby variations reproduced the failure before the fix. All 44 automated tests pass after the fix, including HTTP checks in both local and Sol-enabled modes and saved-history checks. These checks use a mocked model service and made no API calls. No new source coverage was added. Changes remain local and uncommitted; an existing app process needs a restart to load the updated Python code.
 
 Next: review and add the hunt-event damage exception, complete the source records identified in the evaluation, and validate Age milestone selection. Then rerun the evaluation questions and collect new holdouts. The other severe-injury tables still require reviewed records. This status is ready for `/compact` or a new session.
+
+## Hunt-event test, 30 September 2026
+
+The evaluation and injury guard above were committed and pushed to GitHub main as `a6d1a98` on 29 September. This supersedes their earlier uncommitted status notes.
+
+Tested the proposed hunt-event body-damage question against that commit through the production HTTP handler with isolated chat history. Both local and Sol-enabled modes returned the missing Head-table coverage notice. The new guard mistakes a question about whether damage causes a severe injury for a request to resolve an injury table. Zero API calls were made. Source review of revised PDF pages 41, 47, and 48 confirms that ordinary hunt-event damage cannot cause severe injuries or brain trauma, while explicitly instructed event injuries remain an exception. Body damage does not reduce insanity. The question omits existing injury-box states, so the expected answer must state its assumption; an already-injured variant is needed to test damage overflow.
+
+Saved the response and source audit under `evaluation/2026-09-30-hunt/`. Application code and rule records are unchanged. Next: narrow the table guard, add the complete hunt-event damage rule unit, and verify normal hunt damage, filled-box overflow, brain damage, explicit event instructions, and showdown contrasts. Then run a bounded live model retest. Today's evaluation and documentation changes remain local and uncommitted. This state is ready for `/compact` or a new session.
+
+## Hunt-event fix and retest, 30 September 2026
+
+Completed the fix described above. General damage questions now pass the injury-table guard, while actual unreviewed table results remain unsupported. Added a reviewed hunt-event record covering the complete Event Damage and Severe Injuries and Brain Trauma rule unit on revised PDF page 41, including its token-duration continuation, with supporting rules on revised pages 47 and 48. Current coverage is 16 topics on 22 source pages.
+
+All 49 automated tests pass, including five new methods for hunt/showdown distinctions, filled boxes, brain damage, explicit event instructions, carryover, prior Head context, edition checks, evidence delivery, citations, and persisted responses. One live Sol retest returned the supported core ruling and explicit-event exception. Its brain-trauma answer remained implicit in the body-versus-brain distinction. The call used 563 input and 104 output tokens. Nearby variations have local and mocked integration coverage, not live model evaluation. See `evaluation/2026-09-30-hunt/REPORT.md` and `retest.json`.
+
+Changes remain local and uncommitted. Next: complete the source units identified in the earlier evaluation, including attacker knockdown and Encourage timing, then validate Age milestone selection and rerun the broader evaluation before collecting fresh holdouts. This state is ready for `/compact` or a new session.
+
+## Timing and Age tests, 30 September 2026
+
+Completed seven targeted scenarios in local and Sol-enabled modes through the production HTTP handler, using isolated history and the uncommitted hunt fix above. Visually reviewed revised PDF pages 24, 50, 55, 56, and 81. All 49 existing automated tests pass. Three live Sol requests used 2,115 input and 460 output tokens, totaling 2,575 tokens. This is an unblinded assistant-graded source audit, not a general accuracy benchmark.
+
+Confirmed missing attacker-knockdown cancellation evidence and incorrect Sol answers requiring a survival opportunity for Encourage. The source permits Encourage at any time subject to applicable restrictions. A first-milestone Age roll of 8 selects the correct reward, though its answer omits weapon-type selection. The second-milestone question without a roll gets a safe missing-evidence response from Sol. Adding a roll of 8 instead resolves the first milestone in both modes and awards a fighting art, where the second milestone grants +1 permanent strength. An unspecified Age milestone also defaults to the first table. A follow-up to the second-milestone question switches to an unrelated severe-injury location clarification.
+
+Artifacts and exact prompts are in `evaluation/2026-09-30-timing-age/`. No application code or reviewed records were changed in this batch; normal app history was untouched. All changes remain local and uncommitted, including the earlier hunt fix.
+
+Next: add regression coverage, complete the attacker-knockdown and Encourage rule units, fix relevant retrieval, validate Age milestone identity before table resolution, and preserve it across follow-ups. Unsupported milestones should abstain and unspecified milestones should ask. Then rerun the targeted batch before broader holdouts. This state is ready for `/compact` or a new session.
+
+## Combat source tests, 30 September 2026
+
+Completed six further scenarios in local and Sol-enabled modes: repeated monster movement, Claw versus Basic Action targeting, the wound threshold and Failure reaction, luck-based critical wounds below toughness, locations without critical effects, and Impervious. Used fresh chats and an isolated history database with the current uncommitted hunt fix. Questions and expected rulings were frozen before responses. Reviewed complete revised PDF pages 9, 45, 46, 51, 53, and 135.
+
+Sol returned partial or missing-evidence responses in all six cases. No complete direct ruling or definite wrong ruling was identified in this batch. Local lookup returned related reference text without the decisive rules. Captured source payloads confirm missing monster-movement and Basic Action rules, threat definitions, the wound formula and threshold, and general critical-wound exceptions. C02's wording confuses a survivor facing the lion with the lion's facing area; its intended first-condition expectation is conditional, so correct that wording before a future pass/fail retest. The Claw record has the same wording risk.
+
+Six live calls used 2,911 input and 990 output tokens, totaling 3,901 tokens. All 49 existing automated tests pass. This is an unblinded assistant-graded source audit of known coverage risks, not a general accuracy benchmark. Full artifacts are in `evaluation/2026-09-30-combat/`.
+
+No app code, source records, or model prompt changed; no commit or push occurred. Earlier hunt changes and the September 30 evaluations remain local and uncommitted. Next: address the confirmed timing and Age errors, then complete these core combat rule units, add regression coverage, and run bounded live retests. This state is ready for `/compact` or a new session.
+
+## Timing, Age, and combat fixes, 30 September 2026
+
+Implemented the requested fixes in `engine.py`, `core_records.py`, and `records.py`. Attacker knockdown cancels unresolved hits; Encourage does not restore them. The survival record states Encourage's own timing, deaf-recipient restriction, action costs, unlock requirements, and shared restrictions, while retaining the separate monster-turn limitation. Attack evidence now includes the wound formula and threshold. Critical-wound evidence includes luck, no-critical-effect locations, Impervious, reaction cancellation, and persistent injuries. Added monster movement and target definitions, linked the pictured White Lion Basic Action and Sniff, and corrected the Claw facing wording. Coverage is 17 topics on 23 source pages.
+
+Age resolution validates milestone identity before selecting a roll band. Unspecified, conflicting, and unrecognized milestones require clarification. Milestones 2-4 remain outside reviewed table coverage and return unsupported instead of first-milestone rewards. Short follow-ups preserve the milestone, while explicit topic changes can select other records. First-milestone outcomes include weapon-type selection and the lifetime limit. A roll given before a milestone clarification must be entered again after the milestone is identified.
+
+Added 11 regression methods in `test_combat_fixes.py` and two HTTP methods in `test_server.py`, with updated coverage assertions. The new tests reproduced the defects before implementation. All 62 automated tests pass after the fixes, including saved Age context, model bypass for guarded table questions, source delivery, and citations. `git diff --check` passes. The README is updated. Restarted the production app hidden on port 8765; health reports 17 records, 138 pages, and Sol configured. History was preserved. The model prompt is unchanged.
+
+Prepared `evaluation/2026-09-30-fixes/run.py` to rerun the 13 previous timing/Age and combat cases in both modes, with C02 facing wording corrected and an eight-call API cap. The live retest has not run yet. Awaiting the user's confirmation to reuse the saved questions and inspect targeted fields from the result files under their large-file reading rule. No API credits were used for this fix turn so far. No commit or push. Next: run and grade that retest after approval, address any remaining failures, then consider fresh holdouts. This state is ready for `/compact` if pausing here.
+
+## Fix retest completed, 30 September 2026
+
+After the user's approval, ran the prepared 13-case retest in local and Sol-enabled modes. All core ruling and safety expectations were met. The eight live answers now resolve the knockdown, Encourage, movement, targeting, wound-threshold, and critical-wound contrasts. Five Age cases bypassed the model: one first-milestone resolution, three second-milestone missing-coverage responses, and one milestone clarification. T07 retained second-milestone scope across its roll follow-up. Local mode supplies corrected reference text for general questions and the same guarded Age outcomes. C02's facing wording was corrected before requests and its original wording was retained in the artifact.
+
+Eight live calls completed without retries, using 7,375 input and 880 output tokens, totaling 8,255. All 26 evaluation requests succeeded. All 62 automated tests pass; app health reports 17 records, 138 pages, and Sol configured. Normal chat history was untouched. No app code or model prompt changed during the retest. This is an assistant-graded regression check informed by the earlier findings, not an independent accuracy benchmark. See `evaluation/2026-09-30-fixes/REPORT.md` and its captured questions, responses, and metadata.
+
+Remaining presentation issue: T01 generated unlabeled original-PDF page references in its prose. The response's clickable citations retain correct revised/printed/original mappings. This did not affect the ruling, but generated references should be made consistent with the app's numbering. Later Age milestones remain unreviewed. Next: address prose citation consistency, then collect fresh wording and counterexamples. All current fixes and September 30 evaluations remain local and uncommitted; nothing was pushed. This state is ready for `/compact`.
+
+## Citation fix, 30 September 2026
+
+Removed `original_pdf_page` from the model-only source payload in `sol_answer.py`. Added a separate Responses API `instructions` message that directs the model to omit page numbers, links, and citation markers, leaving navigation to the app's mapped clickable citations. Rule text and source records remain intact, including any embedded page mentions; the instruction covers those mentions too. The local citation metadata, deterministic responses, and saved historical answers are unchanged. Used official OpenAI documentation to select the higher-priority instructions field: https://developers.openai.com/api/docs/guides/text.
+
+Two tests in `test_sol_answer.py` reproduced the missing contract before the fix and now pass. All 64 automated tests pass, including existing HTTP citation and persistence checks. One live retest of T01 returned the correct cancellation ruling with no page references, using 1,637 input and 54 output tokens, totaling 1,691. Exact output and the one-call harness are in `evaluation/2026-09-30-citations/`. This is one sampled response, not a guarantee that the model will always follow the format instruction. No model change or broader rules changes were made.
+
+README updated. Restarted the app hidden on port 8765 and confirmed healthy status with 17 records and Sol configured. `git diff --check` passes. No commit or push. Next: fresh holdouts and continued coverage expansion; watch for citation-format regressions. This state is ready for `/compact`.
