@@ -1,8 +1,8 @@
 # KDM rules assistant: project state
 
-Updated 28 September 2026.
+Updated 29 September 2026.
 
-Canonical project location: `D:\Documents\KDM`. The live app runs from `kdm-assistant` in that folder. A residual copy may remain in the old Codex outputs folder after the relocation; it is not the active application.
+Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs from `kdm-assistant` in that folder. The preceding non-Git working folder is preserved at `D:\Documents\KDM\archive-pre-git-source` as a recoverable archive.
 
 ## Deliverables
 
@@ -14,7 +14,7 @@ Canonical project location: `D:\Documents\KDM`. The live app runs from `kdm-assi
 
 - Local lookup is the default. GPT-6 Sol explanations are available when selected for a question. Exact tables and clear reviewed lookups stay local.
 - Do not use GPT-6 Astra in the app's normal or fallback answer path. Reserve Astra for project work that benefits from careful source interpretation and test design.
-- API billing is separate from ChatGPT and Codex billing. The configured Sol path reads `OPENAI_API_KEY` or `OPENAI_API_SECRET_KEY` from `D:\Documents\KDM\.env`, never serves it to the browser, and sends only a Sol-enabled question plus up to three selected reviewed records. Sol is opt-in per question, uses low reasoning effort, and has a 700-token output cap.
+- API billing is separate from ChatGPT and Codex billing. The configured Sol path reads `OPENAI_API_KEY` or `OPENAI_API_SECRET_KEY` from `D:\Documents\KDM\KDM-Rulemaster\.env`, never serves it to the browser, and sends only a Sol-enabled question plus up to three selected reviewed records. Sol is opt-in per question, uses low reasoning effort, and has a 700-token output cap.
 - Revised PDF numbering is the default for user requests. Preserve all three page identifiers in citations.
 - Treat the supplied scan as edition 1.5, regardless of its original filename. Edition 1.6 compatibility remains unverified.
 - Use a small standalone implementation with Python's standard library and a plain browser frontend. The inspected board-game-referee project informed the source-preview workflow; no community project code was copied.
@@ -29,7 +29,7 @@ The browser now opens to a conversation-focused view. In response to feedback th
 
 ## Verification
 
-All 37 automated test methods passed, including the original 23, community scenarios and variations, missing-card evidence, continuation-page mapping, related citations, persisted answers, and the GPT-6 Sol integration. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation passed after the interface change. Browser checks covered the conversation-focused home view, opening and closing both drawers, restoring a saved chat, opening its mapped source page from a citation, and finding the Sol switch in Answer settings. Earlier browser checks confirmed the 12-topic/16-page coverage count, survival citations, the missing-card notice, and a live source-grounded Sol answer for Affinities. The initial build decoded all 138 images.
+All 39 automated test methods passed, including the original 23, community scenarios and variations, missing-card evidence, continuation-page mapping, related citations, persisted answers, the GPT-6 Sol integration, and the newer Age, severe-head-injury, Claw, and Fuzzy Groin records. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation passed after the interface change. Browser checks covered the conversation-focused home view, opening and closing both drawers, restoring a saved chat, opening its mapped source page from a citation, and finding the Sol switch in Answer settings. Earlier browser checks confirmed the 12-topic/16-page coverage count, survival citations, the missing-card notice, and a live source-grounded Sol answer for Affinities. The initial build decoded all 138 images. GitHub `main` matches commit `20864d5`, which contains the three laptop update commits.
 
 ## Remaining work
 
