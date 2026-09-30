@@ -100,6 +100,48 @@ class CoreRuleTests(unittest.TestCase):
             with self.subTest(question=question):
                 self.assertEqual(resolve(question)['status'], 'edition-check')
 
+    def test_unreviewed_injury_locations_never_resolve_head_table(self):
+        questions = [
+            'In edition 1.5, I rolled an 8 on the severe injuries table for my waist. What happens to my survivor?',
+            'What happens on a severe waist injury result of 8?',
+            'Arms severe injury roll 8',
+            'I rolled 8 for a severe injury to my legs',
+            'Body injury table result 8',
+            'Waist injury table',
+        ]
+        for question in questions:
+            for options in [{}, {'record_id': 'severe-head-injury'},
+                            {'context': {'record_id': 'severe-head-injury'}}]:
+                with self.subTest(question=question, options=options):
+                    result = resolve(question, **options)
+                    self.assertEqual(result['status'], 'unsupported')
+                    self.assertIsNone(result['record'])
+                    self.assertNotIn('row', result)
+
+    def test_injury_followup_cannot_switch_to_unreviewed_location(self):
+        initial = resolve('Severe head injury roll 8')
+        result = resolve('What about waist, rolled 8?', initial['context'])
+        self.assertEqual(result['status'], 'unsupported')
+        self.assertNotIn('row', result)
+
+    def test_unspecified_or_ambiguous_injury_location_needs_clarification(self):
+        for question in ['Severe injury roll 8', 'Head or waist severe injury roll 8']:
+            with self.subTest(question=question):
+                result = resolve(question)
+                self.assertEqual(result['status'], 'clarify')
+                self.assertNotIn('row', result)
+
+    def test_head_injury_wording_and_followup_still_resolve(self):
+        for question in ['Severe head injury roll 8',
+                         'I rolled 8 on the severe injuries table for my head']:
+            with self.subTest(question=question):
+                result = resolve(question)
+                self.assertEqual(result['status'], 'resolved')
+                self.assertEqual(result['record']['id'], 'severe-head-injury')
+        followup = resolve('What about 9?', result['context'])
+        self.assertEqual(followup['status'], 'resolved')
+        self.assertEqual(followup['roll'], 9)
+
     def test_continuation_page_identifiers(self):
         records = {r['id']: r for r in RECORDS}
         self.assertEqual(records['survival-actions']['supporting_originals'], [83])

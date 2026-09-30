@@ -58,6 +58,21 @@ class ServerTests(unittest.TestCase):
         self.assertFalse(result['model']['used'])
         self.assertIn('Adjacent half-squares', result['answer'])
 
+    def test_waist_injury_is_unsupported_in_both_answer_modes(self):
+        with patch('server.sol_answer') as sol:
+            for use_model in [False, True]:
+                with self.subTest(use_model=use_model):
+                    result = self.request('/api/ask', {
+                        'question': 'In edition 1.5, I rolled an 8 on the severe injuries table for my waist. What happens to my survivor?',
+                        'use_model': use_model,
+                    })
+                    self.assertEqual(result['status'], 'unsupported')
+                    self.assertIsNone(result['record'])
+                    self.assertNotIn('row', result)
+                    restored = self.request('/api/chats/' + result['chat_id'])[-1]['payload']
+                    self.assertEqual(restored['status'], 'unsupported')
+            sol.assert_not_called()
+
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
         self.assertEqual(len(library['records']), 15)

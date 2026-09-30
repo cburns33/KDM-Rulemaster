@@ -1,0 +1,243 @@
+{
+  "baseline_commit": "892a5ed1031f29b1e59f15ed42c178304e1ec69f",
+  "questions_sha256": "84b8b3c89cdd5d86f60442a0cfedd6c32eb503c05dcda54c3f8c1a461c7dfa7e",
+  "model": "gpt-6-sol",
+  "max_output_tokens": 700,
+  "api_calls": 11,
+  "calls": [
+    {
+      "question": "In edition 1.5, my attack draws two hit locations. The first reaction knocks me down. Another survivor immediately Encourages me to stand. Can I still attempt the second wound?",
+      "record_ids": [
+        "survivor-attack-sequence",
+        "survival-actions"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 871,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 300,
+        "output_tokens_details": {
+          "reasoning_tokens": 118
+        },
+        "total_tokens": 1171
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, the White Lion has already moved its full movement during the monster turn. A ranged attack now triggers a reaction instructing it to perform Basic Action against the attacker. Can it move again during this survivor turn?",
+      "record_ids": [
+        "survivor-attack-sequence",
+        "survival-actions"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 881,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 108,
+        "output_tokens_details": {
+          "reasoning_tokens": 18
+        },
+        "total_tokens": 989
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In the edition 1.5 first White Lion fight, are knocked-down survivors excluded from every target selection, or does targeting a survivor differ from targeting a threat?",
+      "record_ids": [
+        "white-lion-claw"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 311,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 188,
+        "output_tokens_details": {
+          "reasoning_tokens": 40
+        },
+        "total_tokens": 499
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, I scored a hit with my weapon. Do I deal my Strength as damage before drawing a hit location, or do I make another roll? When does a Failure reaction happen?",
+      "record_ids": [
+        "survivor-attack-sequence",
+        "survival-actions"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 875,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 207,
+        "output_tokens_details": {
+          "reasoning_tokens": 60
+        },
+        "total_tokens": 1082
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, an effect says to take 3 damage to a random hit location. Do I roll three hit-location dice and deal 1 damage to each, or roll one die and deal all 3 damage there?",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 1127,
+        "input_tokens_details": {
+          "cache_write_tokens": 1124,
+          "cached_tokens": 0
+        },
+        "output_tokens": 152,
+        "output_tokens_details": {
+          "reasoning_tokens": 29
+        },
+        "total_tokens": 1279
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, one monster attack hits my arms and body for 3 damage each. I have no armor and no injury boxes marked at either location. If the arms hit knocks me down, does that cancel the body hit? Assume the arms severe-injury result does not kill me or end the attack.",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 1144,
+        "input_tokens_details": {
+          "cache_write_tokens": 1141,
+          "cached_tokens": 0
+        },
+        "output_tokens": 189,
+        "output_tokens_details": {
+          "reasoning_tokens": 50
+        },
+        "total_tokens": 1333
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, can damage during a hunt event knock a survivor down or cause a severe injury, using the usual showdown injury boxes? Assume the event has no special instruction overriding the general damage rules.",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 1122,
+        "input_tokens_details": {
+          "cache_write_tokens": 1119,
+          "cached_tokens": 0
+        },
+        "output_tokens": 187,
+        "output_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "total_tokens": 1309
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, can a survivor have armor points at a hit location while its light or heavy injury box is still marked? I am designing an armor tracker and need to know whether those states can coexist.",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 1123,
+        "input_tokens_details": {
+          "cache_write_tokens": 1120,
+          "cached_tokens": 0
+        },
+        "output_tokens": 166,
+        "output_tokens_details": {
+          "reasoning_tokens": 39
+        },
+        "total_tokens": 1289
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "For edition 1.5, I have +1 luck and roll a natural 9 to wound, but my wound total is below the monster's toughness. Does it wound if the hit location has a critical-wound effect? What if it has no critical-wound effect?",
+      "record_ids": [
+        "critical-wound-examples"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 335,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 205,
+        "output_tokens_details": {
+          "reasoning_tokens": 61
+        },
+        "total_tokens": 540
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, I Dodged once during the monster turn. During the survivors' turn of that same round, another survivor's attack causes a reaction that hits me. I am standing, have survival, and have no ability granting extra Dodges. Can I Dodge again because the turn changed?",
+      "record_ids": [
+        "monster-hit-damage",
+        "survival-actions",
+        "attack-effects"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 1141,
+        "input_tokens_details": {
+          "cache_write_tokens": 1138,
+          "cached_tokens": 0
+        },
+        "output_tokens": 102,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1243
+      },
+      "incomplete_details": null
+    },
+    {
+      "question": "In edition 1.5, my survivor reaches the Age milestone at 6 hunt XP. What rewards and roll table do I use for this milestone?",
+      "record_ids": [
+        "age-first-milestone"
+      ],
+      "response_status": "completed",
+      "usage": {
+        "input_tokens": 439,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 127,
+        "output_tokens_details": {
+          "reasoning_tokens": 20
+        },
+        "total_tokens": 566
+      },
+      "incomplete_details": null
+    }
+  ],
+  "isolation": "fresh chat per request; temporary database; unchanged production handler"
+}

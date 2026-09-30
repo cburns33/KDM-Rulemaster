@@ -48,10 +48,26 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
     chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
     q = question.lower()
+    locations = {location.rstrip('s') for location in
+                 re.findall(r'\b(?:head|arms?|body|waist|legs?)\b', q)}
+    injury_request = bool(
+        re.search(r'\binjur(?:y|ies)\b', q)
+        and (re.search(r'\b(?:severe|table)\b', q) or parse_roll(question) is not None)
+    )
+    head_selected = record_id == 'severe-head-injury'
+    head_context = context.get('record_id') == 'severe-head-injury'
+    injury_scope = injury_request or head_selected or head_context or (
+        chosen is not None and chosen['id'] == 'severe-head-injury')
+    if injury_scope and locations:
+        if len(locations) > 1:
+            return {'status': 'clarify', 'answer': 'Which hit location is this severe injury roll for? Choose one location before resolving its table.', 'record': None, 'context': {}}
+        if locations != {'head'}:
+            return {'status': 'unsupported', 'answer': 'Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.', 'record': None, 'context': {}}
+    if injury_request and locations == {'head'} and not record_id:
+        chosen = by_id['severe-head-injury']
     # Do not return adjacent rules for card text or tables not yet reviewed.
     unreviewed_detail = bool(
-        re.search(r'severe\s+(?:arm|leg|body|waist)\s+injur(?:y|ies).*\b(?:roll|result)\b', q)
-        or re.search(r'\b(?:chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
+        re.search(r'\b(?:chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
     )
     if unreviewed_detail and not record_id:
         return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
@@ -83,6 +99,10 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         # An XP value is not a table roll. Require an explicit roll phrase.
         result_roll = parse_roll(question)
         if result_roll is not None:
+            if chosen['id'] == 'severe-head-injury' and not (
+                locations == {'head'} or head_selected or head_context
+            ):
+                return {'status': 'clarify', 'answer': 'Which hit location is this severe injury roll for? Only the Head table is reviewed in this collection.', 'record': None, 'context': {}}
             table = chosen['tables'][0]
             row = select_row(table, result_roll)
             if row is None or (chosen['id'] == 'age-first-milestone' and result_roll > 20):
