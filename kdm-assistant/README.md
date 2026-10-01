@@ -14,7 +14,7 @@ Ask questions in the main view. Use the menu button for conversation history and
 
 The Vercel project uses `kdm-assistant` as its Root Directory. Static files and the authorized page images are in `public`; `api/index.py` is a stateless Python Vercel Function. `vercel.json` routes browser API calls to that function and excludes local test files and unused source images from the function bundle.
 
-Import `OPENAI_API_KEY` from the local `.env` into Vercel's Production environment. The key stays in Vercel's server-side environment settings and is never served to a browser. Enable Vercel Authentication for all deployments in the Vercel project, then approve access requests from each friend. This avoids building a separate account system and lets you revoke a person's access in Vercel.
+Import `OPENAI_API_KEY` from the local `.env` into Vercel's Production environment. The key stays in Vercel's server-side environment settings and is never served to a browser. Hosted Sol starts disabled even when the key exists. Enable Vercel Authentication for all deployments in the Vercel project, approve access requests from each friend, then add `KDM_ENABLE_SOL=true` to Vercel's Production environment and redeploy. This avoids building a separate account system and lets you revoke a person's access in Vercel.
 
 The hosted app keeps chat history and follow-up context in each player's browser. Local use retains server-side SQLite history and local correction notes. The hosted correction form is hidden because the serverless deployment has no review database.
 

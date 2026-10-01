@@ -3,6 +3,7 @@ from http.server import BaseHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 import json
+import os
 import secrets
 import sys
 
@@ -39,9 +40,16 @@ def library():
         'records': [enrich(record) for record in RECORDS],
         'mode': 'Reviewed rules lookup',
         'edition': '1.5',
-        'model': sol_status(),
+        'model': hosted_model_status(),
         'hosting': 'vercel',
     }
+
+
+def hosted_model_status():
+    model = sol_status()
+    if os.environ.get('KDM_ENABLE_SOL') != 'true':
+        return {**model, 'configured': False}
+    return model
 
 
 def ask(body):
@@ -55,7 +63,7 @@ def ask(body):
     if not isinstance(context, dict):
         raise ValueError('Conversation context is invalid')
     result = resolve(question, context, body.get('record_id'), body.get('table_id'), body.get('roll'), body.get('oven', 'unknown'))
-    if use_model and result['status'] == 'reference' and result['record']:
+    if use_model and result['status'] == 'reference' and result['record'] and hosted_model_status()['configured']:
         model_records = [result['record']] + result.get('related_records', [])
         try:
             result['answer'] = sol_answer(question, model_records)
@@ -63,6 +71,8 @@ def ask(body):
             result['model'] = {'used': True, 'name': 'GPT-6 Sol'}
         except SolUnavailable:
             result['model'] = {'used': False, 'name': 'GPT-6 Sol', 'message': 'Sol was unavailable. Showing the local reviewed reference.'}
+    elif use_model and result['status'] == 'reference':
+        result['model'] = {'used': False, 'name': 'GPT-6 Sol', 'message': 'Sol is disabled for this hosted deployment.'}
     result['record'] = enrich(result['record'])
     result['related_records'] = [enrich(record) for record in result.get('related_records', [])]
     return {'chat_id': secrets.token_hex(12), **result}

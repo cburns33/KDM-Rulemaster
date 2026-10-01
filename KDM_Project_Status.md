@@ -30,6 +30,7 @@ Primary remaining coverage work: later Age milestones, severe injuries outside H
 - The obsolete Obsidian session-note instruction is revoked. Do not create Obsidian notes.
 - Host the friend-group deployment on Vercel with Vercel Authentication, rather than storing player passwords in the app. The owner approves only named friends with Vercel accounts.
 - The hosted function is stateless. Browser-local storage holds hosted chat history and follow-up context; local SQLite history and correction reports remain local-only features.
+- Hosted Sol is disabled by default, even when `OPENAI_API_KEY` is present. Enable `KDM_ENABLE_SOL=true` only after Vercel Authentication protects production.
 
 ## Implemented
 

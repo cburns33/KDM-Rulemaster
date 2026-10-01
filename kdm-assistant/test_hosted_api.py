@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import os
 from pathlib import Path
 import threading
 import urllib.request
@@ -45,7 +46,7 @@ class HostedApiTests(unittest.TestCase):
         self.assertEqual(second['record']['source']['revised'], 90)
 
     def test_model_remains_opt_in(self):
-        with patch.object(hosted_api, 'sol_answer', return_value='Reviewed explanation.') as sol:
+        with patch.dict(os.environ, {'KDM_ENABLE_SOL': 'true'}), patch.object(hosted_api, 'sol_answer', return_value='Reviewed explanation.') as sol:
             result = hosted_api.ask({'question': 'How do puzzle affinities work?', 'use_model': True})
         self.assertEqual(result['status'], 'model-reference')
         sol.assert_called_once()
