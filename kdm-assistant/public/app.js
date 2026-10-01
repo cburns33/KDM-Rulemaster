@@ -1,5 +1,8 @@
 const $ = id => document.getElementById(id);
-let library, chatId = null, selectedRecord = null, busy = false;
+let library, chatId = null, chatContext = {}, selectedRecord = null, busy = false;
+let browserChats = [];
+const hosted = () => library?.hosting === 'vercel';
+const browserChatKey = 'lantern-archive-chats';
 const welcome = $('welcome').cloneNode(true);
 let openPanel = null;
 function closeDrawer() {
@@ -33,7 +36,7 @@ $('open-settings').onclick = () => {const panel = $('settings-popover'); panel.h
 async function api(path, body) {
   const response = await fetch(path, body === undefined ? {} : {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
   const data = await response.json();
-  if (!response.ok) throw new Error(data.error || 'The local server could not complete the request.');
+  if (!response.ok) throw new Error(data.error || 'The app could not complete the request.');
   return data;
 }
 function error(message) { $('error').textContent = message; $('error').hidden = false; setTimeout(() => $('error').hidden = true, 8000); }
@@ -51,7 +54,7 @@ function showPage(number) {
   selectedRecord = library.records.find(r => r.id === p.record_id) || null;
   $('layout').hidden = !selectedRecord;
   $('layout-note').textContent = selectedRecord?.layout || '';
-  $('correction-area').hidden = !selectedRecord;
+  $('correction-area').hidden = hosted() || !selectedRecord;
   $('correction-form').hidden = true;
   $('correction-status').textContent = '';
   $('table-details').hidden = !selectedRecord?.tables.length;
@@ -113,6 +116,15 @@ function addMessage(role, text, payload) {
   $('messages').append(block); $('messages').scrollTop = $('messages').scrollHeight;
 }
 async function loadChats() {
+  if (hosted()) {
+    $('chats').replaceChildren();
+    for (const chat of browserChats) {
+      const b = document.createElement('button'); b.textContent = chat.title; b.classList.toggle('active', chat.id === chatId);
+      b.onclick = () => {if(busy)return; chatId=chat.id; chatContext=chat.context || {}; $('messages').replaceChildren(); for(const message of chat.messages || [])addMessage(message.role,message.content,message.payload); const last=[...(chat.messages || [])].reverse().find(message=>message.payload?.record); if(last)showPage(last.payload.record.source.revised); loadChats(); closeDrawer();};
+      $('chats').append(b);
+    }
+    return;
+  }
   const chats = await api('/api/chats'); $('chats').replaceChildren();
   for (const chat of chats) {
     const b = document.createElement('button'); b.textContent = chat.title; b.classList.toggle('active', chat.id === chatId);
@@ -120,13 +132,24 @@ async function loadChats() {
     $('chats').append(b);
   }
 }
+function saveHostedChat(question, result) {
+  if (!hosted()) return;
+  let chat = browserChats.find(item => item.id === chatId);
+  if (!chat) {chat = {id: chatId, title: question.slice(0, 64), messages: [], context: {}}; browserChats.unshift(chat);}
+  chat.context = result.context || {};
+  chat.messages.push({role: 'user', content: question}, {role: 'assistant', content: result.answer, payload: result});
+  localStorage.setItem(browserChatKey, JSON.stringify(browserChats.slice(0, 30)));
+}
 async function ask(question, extra = {}) {
   if (busy) return;
   busy = true; $('send').disabled = true;
   addMessage('user', question);
   try {
-    const result = await api('/api/ask', {question, chat_id:chatId, use_model:$('use-model').checked, ...extra});
-    chatId = result.chat_id; addMessage('assistant', result.answer, result);
+    const body = {question, chat_id:chatId, use_model:$('use-model').checked, ...extra};
+    if (hosted()) body.context = chatContext;
+    const result = await api('/api/ask', body);
+    if (hosted()) {if(!chatId)chatId='browser-'+Date.now(); chatContext=result.context || {}; saveHostedChat(question, result);} else chatId = result.chat_id;
+    addMessage('assistant', result.answer, result);
     if (result.model?.message) error(result.model.message);
     if (result.record) showPage(result.record.source.revised);
     if (result.table) $('table').value = result.table.id;
@@ -138,7 +161,7 @@ async function ask(question, extra = {}) {
 $('ask-form').onsubmit = e => {e.preventDefault(); const q=$('question').value.trim(); if(q)ask(q);};
 $('question').onkeydown = e => {if(e.key==='Enter'&&!e.shiftKey){e.preventDefault(); $('ask-form').requestSubmit();}};
 $('messages').onclick=e=>{const b=e.target.closest('[data-prompt]'); if(b)ask(b.dataset.prompt);};
-function newChat(){if(busy)return; chatId=null; $('table').value='experiment'; $('oven').value='unknown'; $('messages').replaceChildren(welcome.cloneNode(true)); closeDrawer(); loadChats().catch(e=>error(e.message)); $('question').focus();}
+function newChat(){if(busy)return; chatId=null; chatContext={}; $('table').value='experiment'; $('oven').value='unknown'; $('messages').replaceChildren(welcome.cloneNode(true)); closeDrawer(); loadChats().catch(e=>error(e.message)); $('question').focus();}
 $('new-chat').onclick=newChat;
 $('header-new-chat').onclick=newChat;
 $('go').onclick=()=>showPage($('page').value);
@@ -151,5 +174,5 @@ $('oven').onchange=()=>{if($('oven').value==='yes')$('table').value='branding';i
 $('roll-form').onsubmit=e=>{e.preventDefault();const table=$('table').value,roll=Number($('roll').value);ask(`Hands of Heat: ${table==='experiment'?'Experiment with Lanterns':'Lantern Branding'}, roll ${roll}`,{record_id:'hands-of-heat',table_id:table,roll,oven:$('oven').value});};
 $('report').onclick=()=>{$('correction-form').hidden=!$('correction-form').hidden;};
 $('correction-form').onsubmit=async e=>{e.preventDefault();try{const r=await api('/api/corrections',{record_id:selectedRecord.id,note:$('correction').value});$('correction-status').textContent=r.message;$('correction').value='';$('correction-form').hidden=true;}catch(e){error(e.message);}};
-async function init(){try{library=await api('/api/library');$('coverage').textContent=`${library.records.length} reviewed topics from ${library.pages.filter(p=>p.reviewed).length} pages. All 138 retained pages are browsable in Sources.`;const model=library.model;$('use-model').disabled=!model.configured;$('provider-status').textContent=model.configured?'GPT-6 Sol available · Local lookup is the default':'Local lookup';$('provider-note').textContent=model.configured?'When enabled, Sol receives this question and selected reviewed records.':'No model connected. Your questions stay local.';recordList(library.records);showPage(library.records.find(r=>r.id==='hands-of-heat').source.revised);await loadChats();}catch(e){error('Could not load the source library. '+e.message);}}
+async function init(){try{library=await api('/api/library');if(hosted()){try{browserChats=JSON.parse(localStorage.getItem(browserChatKey) || '[]');if(!Array.isArray(browserChats))browserChats=[];}catch{browserChats=[];}}$('coverage').textContent=`${library.records.length} reviewed topics from ${library.pages.filter(p=>p.reviewed).length} pages. All 138 retained pages are browsable in Sources.`;const model=library.model;$('use-model').disabled=!model.configured;$('provider-status').textContent=model.configured?'GPT-6 Sol available · Local lookup is the default':'Local lookup';$('provider-note').textContent=model.configured?'When enabled, Sol receives this question and selected reviewed records.':'No model connected. Your questions stay local.';recordList(library.records);showPage(library.records.find(r=>r.id==='hands-of-heat').source.revised);await loadChats();}catch(e){error('Could not load the source library. '+e.message);}}
 init();

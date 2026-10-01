@@ -1,6 +1,6 @@
 # Lantern Archive
 
-A local browser companion for the supplied Kingdom Death: Monster 1.5 scan.
+A browser companion for the supplied Kingdom Death: Monster 1.5 scan. It runs locally or as an invite-only Vercel deployment.
 
 ## Open the app
 
@@ -10,9 +10,17 @@ If the app is already running, the launcher opens that instance. When the launch
 
 Ask questions in the main view. Use the menu button for conversation history and Sources for page browsing, reviewed-topic search, the Hands of Heat resolver, and correction notes. Clicking an answer citation opens its page in Sources. Answer settings controls the optional Sol explanation and shows the current review coverage.
 
+## Invite-only Vercel deployment
+
+The Vercel project uses `kdm-assistant` as its Root Directory. Static files and the authorized page images are in `public`; `api/index.py` is a stateless Python Vercel Function. `vercel.json` routes browser API calls to that function and excludes local test files and unused source images from the function bundle.
+
+Import `OPENAI_API_KEY` from the local `.env` into Vercel's Production environment. The key stays in Vercel's server-side environment settings and is never served to a browser. Enable Vercel Authentication for all deployments in the Vercel project, then approve access requests from each friend. This avoids building a separate account system and lets you revoke a person's access in Vercel.
+
+The hosted app keeps chat history and follow-up context in each player's browser. Local use retains server-side SQLite history and local correction notes. The hosted correction form is hidden because the serverless deployment has no review database.
+
 ## What works
 
-- Local conversation history, stored in `data/history.sqlite3`.
+- Local conversation history, stored in `data/history.sqlite3`, plus browser-local hosted history.
 - Whole-record text search over 17 reviewed topics, supported by selected rules on 23 source pages.
 - Deterministic resolution of both Hands of Heat tables, including conditions and follow-ons.
 - Follow-ups such as “What about 7?”, “Lantern Branding roll 6”, and “We already have Lantern Oven and rolled 6”.
@@ -64,7 +72,7 @@ OpenAI API billing is separate from a ChatGPT or Codex subscription. The app acc
 
 ## Source handling
 
-The original and revised PDFs remain in their existing locations. The app contains copies of the rendered retained page images. Keep this folder private. It binds to 127.0.0.1 only and loads no remote scripts or fonts. Opt-in Sol questions are sent to the OpenAI API.
+The original and revised PDFs remain in their existing locations. The app contains copies of the rendered retained page images in `public/pages`. Local use binds to 127.0.0.1 and loads no remote scripts or fonts. The hosted deployment is access-controlled through Vercel. Opt-in Sol questions are sent to the OpenAI API.
 
 `data/manifest.json` maps all 138 retained pages. `data/source-manifest.json` accounts for all 239 original pages and marks excluded pages. The server computes current review flags and topic titles from the records at startup, so the original stored review flags are not the current coverage inventory. `records.py` and `core_records.py` store structured summaries, layout notes, source continuations, and explicit table ranges. Corrections are saved in the SQLite `corrections` table as pending review and never overwrite verified records automatically.
 

@@ -6,7 +6,7 @@ Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs
 
 ## Current snapshot
 
-Lantern Archive has 17 reviewed topics supported by 23 source pages from the supplied edition 1.5 scan. It serves local lookup by default, plus opt-in GPT-6 Sol explanations grounded only in selected reviewed records. The app is healthy on local port 8765. All 64 automated tests pass.
+Lantern Archive has 17 reviewed topics supported by 23 source pages from the supplied edition 1.5 scan. It serves local lookup by default, plus opt-in GPT-6 Sol explanations grounded only in selected reviewed records. The local app is healthy on port 8765. A Vercel hosting conversion is ready for the linked project, with the first production check pending deployment. All 69 automated tests pass.
 
 The September 30 fixes cover hunt-event damage, attacker knockdown, Encourage timing, Age-milestone identity and follow-ups, monster movement and target definitions, wound calculation, critical wounds, and mapped model citations. Four earlier targeted audits and their regression retest are preserved in `evaluation/2026-09-30-*`. The latest citation smoke test used one Sol call and returned no page references in generated prose.
 
@@ -16,7 +16,7 @@ Primary remaining coverage work: later Age milestones, severe injuries outside H
 
 - `KDM_Rulebook_1.5_Rules_Focused.pdf`: 138 retained pages from the 239-page scan. Table of contents retained.
 - `KDM_Rules_Focused_Page_Map.md`: revised PDF, original PDF, and printed-book page map.
-- `kdm-assistant/`: working local browser prototype, Lantern Archive. Run `Start.cmd` or open http://127.0.0.1:8765 when running.
+- `kdm-assistant/`: Lantern Archive for local use and Vercel hosting. Run `Start.cmd` or open http://127.0.0.1:8765 when running locally.
 
 ## Decisions
 
@@ -28,20 +28,22 @@ Primary remaining coverage work: later Age milestones, severe injuries outside H
 - Use a small standalone implementation with Python's standard library and a plain browser frontend. The inspected board-game-referee project informed the source-preview workflow; no community project code was copied.
 - Preserve complete rule units and resolve reviewed roll bands in code.
 - The obsolete Obsidian session-note instruction is revoked. Do not create Obsidian notes.
+- Host the friend-group deployment on Vercel with Vercel Authentication, rather than storing player passwords in the app. The owner approves only named friends with Vercel accounts.
+- The hosted function is stateless. Browser-local storage holds hosted chat history and follow-up context; local SQLite history and correction reports remain local-only features.
 
 ## Implemented
 
-Seventeen reviewed topics using selected rules on twenty-three source pages. The original records are joined by the first Age milestone, the severe Head table, the White Lion Claw AI card, attacker-knockdown, Encourage, critical-wound, and monster-movement rules. Both Hands of Heat subtables retain explicit ranges, rewards, conditions, and follow-ons. All 138 retained pages can be viewed. Conversation history and pending correction notes are stored locally in SQLite. Continuation pages and related records receive clickable source citations. The server computes current review coverage from records at startup.
+Seventeen reviewed topics using selected rules on twenty-three source pages. The original records are joined by the first Age milestone, the severe Head table, the White Lion Claw AI card, attacker-knockdown, Encourage, critical-wound, and monster-movement rules. Both Hands of Heat subtables retain explicit ranges, rewards, conditions, and follow-ons. All 138 retained pages can be viewed. Conversation history and pending correction notes are stored locally in SQLite. Continuation pages and related records receive clickable source citations. The server computes current review coverage from records at startup. Authorized page images are now static deployment assets in `kdm-assistant/public/pages`.
 
 The browser now opens to a conversation-focused view. In response to feedback that the three-column layout felt crowded, conversation history and rulebook pages were moved into drawers. Clicking a compact citation selects its mapped page and opens Sources. Answer settings contain the opt-in Sol control, API disclosure, coverage count, and edition caveat. The source drawer retains page navigation, reviewed-topic search, Hands of Heat resolution, layout notes, and correction reporting. Answer text renders bold emphasis without showing raw Markdown markers.
 
 ## Verification
 
-All 64 automated test methods pass, including the original interface and persistence coverage, rule-table boundaries, injury and Age guards, saved follow-up scope, model payload and citation contracts, related sources, and local HTTP boundaries. Targeted live checks cover source-grounded Sol answers for the added combat rules and the page-reference mitigation. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation and the earlier browser checks covered the conversation-focused home view, drawers, saved chats, mapped source pages, and Answer settings. The initial build decoded all 138 images.
+All 69 automated test methods pass, including the original interface and persistence coverage, rule-table boundaries, injury and Age guards, saved follow-up scope, model payload and citation contracts, related sources, and local HTTP boundaries. The hosted API tests cover stateless browser-supplied follow-up context, Sol opt-in behavior, and Vercel rewrite routing. Local static-asset checks cover the moved browser UI and source images. Targeted live checks cover source-grounded Sol answers for the added combat rules and the page-reference mitigation. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation and the earlier browser checks covered the conversation-focused home view, drawers, saved chats, mapped source pages, and Answer settings. The initial build decoded all 138 images.
 
 ## Remaining work
 
-Fuzzy Groin's community card transcription is linked to the priority-target record and used for the Ground Fighting interaction. Expand structured coverage to the other Age milestones, severe-injury locations, AI cards, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Play uses edition 1.5. Sol explanations remain limited to the reviewed records supplied with each question. The narrow-screen layout has not had a separate visual check.
+Fuzzy Groin's community card transcription is linked to the priority-target record and used for the Ground Fighting interaction. Expand structured coverage to the other Age milestones, severe-injury locations, AI cards, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Play uses edition 1.5. Sol explanations remain limited to the reviewed records supplied with each question. The narrow-screen layout has not had a separate visual check. After the Vercel push, enable Vercel Authentication, approve each friend, and run a live production smoke test.
 
 Community prompts and evidence coverage are in `KDM_Community_Test_Questions.md`. The earlier Surge prompt was corrected to activating Tall Grass's hiding effect, rather than moving with Surge. The damage case is an adapted practice scenario from a reference post. These are source-guided regression checks, not a blind comprehension benchmark: search results exposed community replies during collection.
 

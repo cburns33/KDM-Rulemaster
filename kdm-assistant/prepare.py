@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 
 def prepare():
     data = ROOT / 'data'
-    pages = data / 'pages'
+    pages = ROOT / 'public' / 'pages'
     pages.mkdir(parents=True, exist_ok=True)
     map_path = ROOT.parent / 'KDM_Rules_Focused_Page_Map.md'
     mapping = [(int(a), int(b), None if c == 'Unnumbered' else int(c)) for a, b, c in re.findall(r'^\| (\d+) \| (\d+) \| (\d+|Unnumbered) \|', map_path.read_text(encoding='utf-8'), re.M)]

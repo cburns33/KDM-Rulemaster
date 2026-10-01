@@ -1,0 +1,1244 @@
+[
+  {
+    "revised": 1,
+    "original": 2,
+    "printed": null,
+    "edition": "1.5",
+    "title": "Table of contents",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 2,
+    "original": 3,
+    "printed": null,
+    "edition": "1.5",
+    "title": "Strain System",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 3,
+    "original": 5,
+    "printed": 2,
+    "edition": "1.5",
+    "title": "Book page 2",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 4,
+    "original": 7,
+    "printed": 3,
+    "edition": "1.5",
+    "title": "Book page 3",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 5,
+    "original": 26,
+    "printed": 22,
+    "edition": "1.5",
+    "title": "Book page 22",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 6,
+    "original": 28,
+    "printed": 24,
+    "edition": "1.5",
+    "title": "Create a Survivor",
+    "reviewed": true,
+    "record_id": "create-survivor"
+  },
+  {
+    "revised": 7,
+    "original": 29,
+    "printed": 25,
+    "edition": "1.5",
+    "title": "Book page 25",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 8,
+    "original": 30,
+    "printed": 26,
+    "edition": "1.5",
+    "title": "First Story: White Lion",
+    "reviewed": true,
+    "record_id": "white-lion-setup"
+  },
+  {
+    "revised": 9,
+    "original": 31,
+    "printed": 27,
+    "edition": "1.5",
+    "title": "Book page 27",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 10,
+    "original": 32,
+    "printed": 28,
+    "edition": "1.5",
+    "title": "Book page 28",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 11,
+    "original": 33,
+    "printed": 29,
+    "edition": "1.5",
+    "title": "Book page 29",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 12,
+    "original": 34,
+    "printed": 30,
+    "edition": "1.5",
+    "title": "Book page 30",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 13,
+    "original": 35,
+    "printed": 31,
+    "edition": "1.5",
+    "title": "Book page 31",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 14,
+    "original": 36,
+    "printed": 32,
+    "edition": "1.5",
+    "title": "Book page 32",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 15,
+    "original": 37,
+    "printed": 33,
+    "edition": "1.5",
+    "title": "Book page 33",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 16,
+    "original": 38,
+    "printed": 34,
+    "edition": "1.5",
+    "title": "Book page 34",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 17,
+    "original": 39,
+    "printed": 35,
+    "edition": "1.5",
+    "title": "Book page 35",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 18,
+    "original": 40,
+    "printed": 36,
+    "edition": "1.5",
+    "title": "Book page 36",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 19,
+    "original": 41,
+    "printed": 37,
+    "edition": "1.5",
+    "title": "Book page 37",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 20,
+    "original": 42,
+    "printed": 38,
+    "edition": "1.5",
+    "title": "Book page 38",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 21,
+    "original": 43,
+    "printed": 39,
+    "edition": "1.5",
+    "title": "Book page 39",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 22,
+    "original": 45,
+    "printed": 41,
+    "edition": "1.5",
+    "title": "Book page 41",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 23,
+    "original": 46,
+    "printed": 42,
+    "edition": "1.5",
+    "title": "Book page 42",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 24,
+    "original": 47,
+    "printed": 43,
+    "edition": "1.5",
+    "title": "Book page 43",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 25,
+    "original": 48,
+    "printed": 44,
+    "edition": "1.5",
+    "title": "Book page 44",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 26,
+    "original": 49,
+    "printed": 45,
+    "edition": "1.5",
+    "title": "Book page 45",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 27,
+    "original": 50,
+    "printed": 46,
+    "edition": "1.5",
+    "title": "Book page 46",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 28,
+    "original": 51,
+    "printed": 47,
+    "edition": "1.5",
+    "title": "Affinities",
+    "reviewed": true,
+    "record_id": "affinities"
+  },
+  {
+    "revised": 29,
+    "original": 53,
+    "printed": 49,
+    "edition": "1.5",
+    "title": "Book page 49",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 30,
+    "original": 54,
+    "printed": 50,
+    "edition": "1.5",
+    "title": "Book page 50",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 31,
+    "original": 55,
+    "printed": 51,
+    "edition": "1.5",
+    "title": "Book page 51",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 32,
+    "original": 56,
+    "printed": 52,
+    "edition": "1.5",
+    "title": "Book page 52",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 33,
+    "original": 57,
+    "printed": 53,
+    "edition": "1.5",
+    "title": "Book page 53",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 34,
+    "original": 58,
+    "printed": 54,
+    "edition": "1.5",
+    "title": "Book page 54",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 35,
+    "original": 59,
+    "printed": 55,
+    "edition": "1.5",
+    "title": "Book page 55",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 36,
+    "original": 60,
+    "printed": 56,
+    "edition": "1.5",
+    "title": "Book page 56",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 37,
+    "original": 61,
+    "printed": 57,
+    "edition": "1.5",
+    "title": "Book page 57",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 38,
+    "original": 63,
+    "printed": 59,
+    "edition": "1.5",
+    "title": "Book page 59",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 39,
+    "original": 65,
+    "printed": 61,
+    "edition": "1.5",
+    "title": "Book page 61",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 40,
+    "original": 66,
+    "printed": 62,
+    "edition": "1.5",
+    "title": "Book page 62",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 41,
+    "original": 67,
+    "printed": 63,
+    "edition": "1.5",
+    "title": "Book page 63",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 42,
+    "original": 69,
+    "printed": 65,
+    "edition": "1.5",
+    "title": "Book page 65",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 43,
+    "original": 70,
+    "printed": 66,
+    "edition": "1.5",
+    "title": "Book page 66",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 44,
+    "original": 71,
+    "printed": 67,
+    "edition": "1.5",
+    "title": "AI flows, moods, and Ground Fighting",
+    "reviewed": true,
+    "record_id": "moods-and-flows"
+  },
+  {
+    "revised": 45,
+    "original": 72,
+    "printed": 68,
+    "edition": "1.5",
+    "title": "Priority targeting and its exceptions",
+    "reviewed": true,
+    "record_id": "priority-target"
+  },
+  {
+    "revised": 46,
+    "original": 73,
+    "printed": 69,
+    "edition": "1.5",
+    "title": "Book page 69",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 47,
+    "original": 74,
+    "printed": 70,
+    "edition": "1.5",
+    "title": "Monster hits, damage, and injury order",
+    "reviewed": true,
+    "record_id": "monster-hit-damage"
+  },
+  {
+    "revised": 48,
+    "original": 75,
+    "printed": 71,
+    "edition": "1.5",
+    "title": "Attack effects and damage outside attacks",
+    "reviewed": true,
+    "record_id": "attack-effects"
+  },
+  {
+    "revised": 49,
+    "original": 76,
+    "printed": 72,
+    "edition": "1.5",
+    "title": "Book page 72",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 50,
+    "original": 77,
+    "printed": 73,
+    "edition": "1.5",
+    "title": "Survivor acts and attack sequence",
+    "reviewed": true,
+    "record_id": "survivor-attack-sequence"
+  },
+  {
+    "revised": 51,
+    "original": 78,
+    "printed": 74,
+    "edition": "1.5",
+    "title": "Book page 74",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 52,
+    "original": 79,
+    "printed": 75,
+    "edition": "1.5",
+    "title": "Book page 75",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 53,
+    "original": 80,
+    "printed": 76,
+    "edition": "1.5",
+    "title": "Book page 76",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 54,
+    "original": 81,
+    "printed": 77,
+    "edition": "1.5",
+    "title": "Critical wound examples",
+    "reviewed": true,
+    "record_id": "critical-wound-examples"
+  },
+  {
+    "revised": 55,
+    "original": 82,
+    "printed": 78,
+    "edition": "1.5",
+    "title": "Survival actions and timing",
+    "reviewed": true,
+    "record_id": "survival-actions"
+  },
+  {
+    "revised": 56,
+    "original": 83,
+    "printed": 79,
+    "edition": "1.5",
+    "title": "Book page 79",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 57,
+    "original": 85,
+    "printed": 81,
+    "edition": "1.5",
+    "title": "Book page 81",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 58,
+    "original": 86,
+    "printed": 82,
+    "edition": "1.5",
+    "title": "Book page 82",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 59,
+    "original": 87,
+    "printed": 83,
+    "edition": "1.5",
+    "title": "Book page 83",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 60,
+    "original": 88,
+    "printed": 84,
+    "edition": "1.5",
+    "title": "Book page 84",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 61,
+    "original": 89,
+    "printed": 85,
+    "edition": "1.5",
+    "title": "Book page 85",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 62,
+    "original": 90,
+    "printed": 86,
+    "edition": "1.5",
+    "title": "Book page 86",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 63,
+    "original": 91,
+    "printed": 87,
+    "edition": "1.5",
+    "title": "Book page 87",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 64,
+    "original": 93,
+    "printed": 89,
+    "edition": "1.5",
+    "title": "Book page 89",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 65,
+    "original": 94,
+    "printed": 90,
+    "edition": "1.5",
+    "title": "Book page 90",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 66,
+    "original": 95,
+    "printed": 91,
+    "edition": "1.5",
+    "title": "Book page 91",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 67,
+    "original": 96,
+    "printed": 92,
+    "edition": "1.5",
+    "title": "Book page 92",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 68,
+    "original": 97,
+    "printed": 93,
+    "edition": "1.5",
+    "title": "Book page 93",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 69,
+    "original": 98,
+    "printed": 94,
+    "edition": "1.5",
+    "title": "Book page 94",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 70,
+    "original": 99,
+    "printed": 95,
+    "edition": "1.5",
+    "title": "Book page 95",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 71,
+    "original": 100,
+    "printed": 96,
+    "edition": "1.5",
+    "title": "Book page 96",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 72,
+    "original": 101,
+    "printed": 97,
+    "edition": "1.5",
+    "title": "Book page 97",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 73,
+    "original": 102,
+    "printed": 98,
+    "edition": "1.5",
+    "title": "Book page 98",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 74,
+    "original": 103,
+    "printed": 99,
+    "edition": "1.5",
+    "title": "Book page 99",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 75,
+    "original": 104,
+    "printed": 100,
+    "edition": "1.5",
+    "title": "Book page 100",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 76,
+    "original": 105,
+    "printed": 101,
+    "edition": "1.5",
+    "title": "Book page 101",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 77,
+    "original": 106,
+    "printed": 102,
+    "edition": "1.5",
+    "title": "Book page 102",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 78,
+    "original": 107,
+    "printed": 103,
+    "edition": "1.5",
+    "title": "Book page 103",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 79,
+    "original": 108,
+    "printed": 104,
+    "edition": "1.5",
+    "title": "Book page 104",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 80,
+    "original": 109,
+    "printed": 105,
+    "edition": "1.5",
+    "title": "Book page 105",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 81,
+    "original": 111,
+    "printed": 107,
+    "edition": "1.5",
+    "title": "Book page 107",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 82,
+    "original": 113,
+    "printed": 109,
+    "edition": "1.5",
+    "title": "Book page 109",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 83,
+    "original": 115,
+    "printed": 111,
+    "edition": "1.5",
+    "title": "Book page 111",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 84,
+    "original": 117,
+    "printed": 113,
+    "edition": "1.5",
+    "title": "Book page 113",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 85,
+    "original": 119,
+    "printed": 115,
+    "edition": "1.5",
+    "title": "Book page 115",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 86,
+    "original": 121,
+    "printed": 117,
+    "edition": "1.5",
+    "title": "Book page 117",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 87,
+    "original": 123,
+    "printed": 119,
+    "edition": "1.5",
+    "title": "Book page 119",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 88,
+    "original": 125,
+    "printed": 121,
+    "edition": "1.5",
+    "title": "Book page 121",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 89,
+    "original": 127,
+    "printed": 123,
+    "edition": "1.5",
+    "title": "Book page 123",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 90,
+    "original": 129,
+    "printed": 125,
+    "edition": "1.5",
+    "title": "Hands of Heat",
+    "reviewed": true,
+    "record_id": "hands-of-heat"
+  },
+  {
+    "revised": 91,
+    "original": 130,
+    "printed": 126,
+    "edition": "1.5",
+    "title": "Book page 126",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 92,
+    "original": 131,
+    "printed": 127,
+    "edition": "1.5",
+    "title": "Book page 127",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 93,
+    "original": 133,
+    "printed": 129,
+    "edition": "1.5",
+    "title": "Book page 129",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 94,
+    "original": 135,
+    "printed": 131,
+    "edition": "1.5",
+    "title": "Book page 131",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 95,
+    "original": 137,
+    "printed": 133,
+    "edition": "1.5",
+    "title": "Book page 133",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 96,
+    "original": 139,
+    "printed": 135,
+    "edition": "1.5",
+    "title": "Book page 135",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 97,
+    "original": 141,
+    "printed": 137,
+    "edition": "1.5",
+    "title": "Book page 137",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 98,
+    "original": 143,
+    "printed": 139,
+    "edition": "1.5",
+    "title": "Book page 139",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 99,
+    "original": 145,
+    "printed": 141,
+    "edition": "1.5",
+    "title": "Book page 141",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 100,
+    "original": 146,
+    "printed": 142,
+    "edition": "1.5",
+    "title": "Book page 142",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 101,
+    "original": 147,
+    "printed": 143,
+    "edition": "1.5",
+    "title": "Book page 143",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 102,
+    "original": 148,
+    "printed": 144,
+    "edition": "1.5",
+    "title": "Book page 144",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 103,
+    "original": 149,
+    "printed": 145,
+    "edition": "1.5",
+    "title": "Book page 145",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 104,
+    "original": 151,
+    "printed": 147,
+    "edition": "1.5",
+    "title": "Book page 147",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 105,
+    "original": 153,
+    "printed": 149,
+    "edition": "1.5",
+    "title": "Book page 149",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 106,
+    "original": 155,
+    "printed": 151,
+    "edition": "1.5",
+    "title": "Book page 151",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 107,
+    "original": 157,
+    "printed": 153,
+    "edition": "1.5",
+    "title": "Book page 153",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 108,
+    "original": 159,
+    "printed": 155,
+    "edition": "1.5",
+    "title": "Book page 155",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 109,
+    "original": 161,
+    "printed": 157,
+    "edition": "1.5",
+    "title": "Book page 157",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 110,
+    "original": 163,
+    "printed": 159,
+    "edition": "1.5",
+    "title": "Book page 159",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 111,
+    "original": 165,
+    "printed": 161,
+    "edition": "1.5",
+    "title": "Book page 161",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 112,
+    "original": 167,
+    "printed": 163,
+    "edition": "1.5",
+    "title": "Book page 163",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 113,
+    "original": 169,
+    "printed": 165,
+    "edition": "1.5",
+    "title": "Book page 165",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 114,
+    "original": 171,
+    "printed": 167,
+    "edition": "1.5",
+    "title": "Book page 167",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 115,
+    "original": 173,
+    "printed": 169,
+    "edition": "1.5",
+    "title": "Book page 169",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 116,
+    "original": 175,
+    "printed": 171,
+    "edition": "1.5",
+    "title": "Book page 171",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 117,
+    "original": 177,
+    "printed": 173,
+    "edition": "1.5",
+    "title": "Book page 173",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 118,
+    "original": 179,
+    "printed": 175,
+    "edition": "1.5",
+    "title": "Book page 175",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 119,
+    "original": 181,
+    "printed": 177,
+    "edition": "1.5",
+    "title": "Book page 177",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 120,
+    "original": 183,
+    "printed": 179,
+    "edition": "1.5",
+    "title": "White Lion: standard showdown deployment",
+    "reviewed": true,
+    "record_id": "white-lion-deployment"
+  },
+  {
+    "revised": 121,
+    "original": 185,
+    "printed": 181,
+    "edition": "1.5",
+    "title": "Book page 181",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 122,
+    "original": 187,
+    "printed": 183,
+    "edition": "1.5",
+    "title": "Book page 183",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 123,
+    "original": 189,
+    "printed": 185,
+    "edition": "1.5",
+    "title": "Book page 185",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 124,
+    "original": 191,
+    "printed": 187,
+    "edition": "1.5",
+    "title": "Book page 187",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 125,
+    "original": 193,
+    "printed": 189,
+    "edition": "1.5",
+    "title": "Book page 189",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 126,
+    "original": 195,
+    "printed": 191,
+    "edition": "1.5",
+    "title": "Book page 191",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 127,
+    "original": 197,
+    "printed": 193,
+    "edition": "1.5",
+    "title": "Book page 193",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 128,
+    "original": 199,
+    "printed": 195,
+    "edition": "1.5",
+    "title": "Book page 195",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 129,
+    "original": 230,
+    "printed": 226,
+    "edition": "1.5",
+    "title": "Book page 226",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 130,
+    "original": 231,
+    "printed": 227,
+    "edition": "1.5",
+    "title": "Book page 227",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 131,
+    "original": 232,
+    "printed": 228,
+    "edition": "1.5",
+    "title": "Book page 228",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 132,
+    "original": 233,
+    "printed": 229,
+    "edition": "1.5",
+    "title": "Book page 229",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 133,
+    "original": 234,
+    "printed": 230,
+    "edition": "1.5",
+    "title": "Book page 230",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 134,
+    "original": 235,
+    "printed": 231,
+    "edition": "1.5",
+    "title": "Book page 231",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 135,
+    "original": 236,
+    "printed": 232,
+    "edition": "1.5",
+    "title": "Book page 232",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 136,
+    "original": 237,
+    "printed": 233,
+    "edition": "1.5",
+    "title": "Book page 233",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 137,
+    "original": 238,
+    "printed": 234,
+    "edition": "1.5",
+    "title": "Book page 234",
+    "reviewed": false,
+    "record_id": null
+  },
+  {
+    "revised": 138,
+    "original": 239,
+    "printed": 235,
+    "edition": "1.5",
+    "title": "Book page 235",
+    "reviewed": false,
+    "record_id": null
+  }
+]

@@ -91,12 +91,12 @@ class Handler(BaseHTTPRequestHandler):
         if path == '/api/health':
             return self.send(200, {'ok': True, 'app': 'lantern-archive', 'pages': len(MANIFEST), 'records': len(RECORDS), 'sol_configured': sol_status()['configured']})
         if path.startswith('/pages/') and path.removeprefix('/pages/').removesuffix('.jpg').isdigit() and path.endswith('.jpg'):
-            file = DATA / 'pages' / path.rsplit('/', 1)[-1]
+            file = ROOT / 'public' / 'pages' / path.rsplit('/', 1)[-1]
         else:
             assets = {'/': 'index.html', '/app.js': 'app.js', '/style.css': 'style.css'}
             if path not in assets:
                 return self.send(404, {'error': 'Not found'})
-            file = ROOT / 'web' / assets[path]
+            file = ROOT / 'public' / assets[path]
         if not file.is_file():
             return self.send(404, {'error': 'Not found'})
         return self.send(200, file.read_bytes(), mimetypes.guess_type(file.name)[0] or 'application/octet-stream')

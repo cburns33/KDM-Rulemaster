@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {"source": "/api/(.*)", "destination": "/api/index?route=$1"}
+  ],
+  "functions": {
+    "api/**/*.py": {
+      "excludeFiles": "{data/pages/**,data/history.sqlite3,test_*.py,__pycache__/**}"
+    }
+  }
+}

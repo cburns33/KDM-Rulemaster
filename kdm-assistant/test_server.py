@@ -186,6 +186,12 @@ class ServerTests(unittest.TestCase):
         self.assertEqual(result.exception.code,404)
         result.exception.close()
 
+    def test_public_assets_are_served(self):
+        with urllib.request.urlopen(self.url + '/') as response:
+            self.assertIn('text/html', response.headers['Content-Type'])
+        with urllib.request.urlopen(self.url + '/pages/1.jpg') as response:
+            self.assertIn('image/jpeg', response.headers['Content-Type'])
+
     def test_empty_question_rejected(self):
         with self.assertRaises(urllib.error.HTTPError) as result:
             self.request('/api/ask',{'question':''})
