@@ -1,6 +1,6 @@
 # Rules assistant, iteration 2
 
-This is the active worktree for the source-grounded rules assistant. It is at `D:\Documents\KDM\KDM-Rulemaster-v2` on branch `rules-v2`, created from `main` commit `809a4f8` on 2 October 2026. The original checkout at `D:\Documents\KDM\KDM-Rulemaster` retains its uncommitted work, including the separate access-gate changes.
+This is the active development worktree for the source-grounded rules assistant. It is at `D:\Documents\KDM\KDM-Rulemaster-v2` on branch `rules-v2`, created from `main` commit `809a4f8` on 2 October 2026. Its rules and wiki-source work was committed as `1e3f1c4`. The separate `main` checkout at `D:\Documents\KDM\KDM-Rulemaster` contains the shared-code access gate and Grasp rule work in local commit `7027df5`. Local `main` has not been pushed. The Vercel production deployment uses `809a4f8`; pushing `main` can start a production deployment. The `rules-v2` Vercel config disables automatic deployments for this branch. This branch has not been cleared for hosting.
 
 ## Mission
 
