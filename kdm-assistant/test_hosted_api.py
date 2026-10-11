@@ -37,7 +37,7 @@ class HostedApiTests(unittest.TestCase):
     def test_library_marks_the_hosted_mode(self):
         result = hosted_api.library()
         self.assertEqual(result['hosting'], 'vercel')
-        self.assertEqual(len(result['records']), 17)
+        self.assertEqual(len(result['records']), 18)
 
     def test_ask_keeps_context_sent_by_the_browser(self):
         first = hosted_api.ask({'question': 'Hands of Heat roll 6'})
@@ -46,7 +46,7 @@ class HostedApiTests(unittest.TestCase):
         self.assertEqual(second['record']['source']['revised'], 90)
 
     def test_model_remains_opt_in(self):
-        with patch.dict(os.environ, {'KDM_ENABLE_SOL': 'true'}), patch.object(hosted_api, 'sol_answer', return_value='Reviewed explanation.') as sol:
+        with patch.dict(os.environ, {'KDM_ENABLE_SOL': 'true'}), patch.object(hosted_api, 'sol_status', return_value={'configured': True}), patch.object(hosted_api, 'sol_answer', return_value='Reviewed explanation.') as sol:
             result = hosted_api.ask({'question': 'How do puzzle affinities work?', 'use_model': True})
         self.assertEqual(result['status'], 'model-reference')
         sol.assert_called_once()

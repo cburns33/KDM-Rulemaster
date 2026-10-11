@@ -26,6 +26,28 @@ def search(query):
     ranked.sort(key=lambda r: (r['title'].lower() not in query.lower(), -len(set(terms) & set(words(r['keywords']+' '+r['title'])))))
     return ranked
 
+def supporting_records(question, chosen, hits, by_id):
+    """Add reviewed topics that cover question terms missing from the main record."""
+    terms = set(words(question))
+    covered = set(words(chosen['keywords'] + ' ' + chosen['title']))
+    related = []
+    for candidate in hits:
+        if candidate['id'] == chosen['id']:
+            continue
+        topic_terms = set(words(candidate['keywords'] + ' ' + candidate['title']))
+        overlap = terms & topic_terms
+        if len(overlap) >= 2 and overlap - covered:
+            related.append(candidate)
+            covered.update(topic_terms)
+        if len(related) == 2:
+            break
+    for record_id in chosen.get('related_ids', []):
+        if len(related) == 2:
+            break
+        if record_id not in {record['id'] for record in related}:
+            related.append(by_id[record_id])
+    return related
+
 def parse_roll(question):
     match = re.search(r'\b(?:roll(?:ed|ing)?|result)\s*(?:of\s+)?(?:a\s+|an\s+)?(?:lantern\s+)?(-?\d+)\b', question, re.I)
     if not match:
@@ -105,7 +127,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
             chosen = by_id['attack-effects' if 'brain' in q else 'monster-hit-damage']
     # Do not return adjacent rules for card text or tables not yet reviewed.
     unreviewed_detail = bool(
-        re.search(r'\b(?:chomp|maul|power swat|grasp)\s+card\b.*\b(?:instruct|do|effect)', q)
+        re.search(r'\b(?:chomp|maul|power swat)\s+card\b.*\b(?:instruct|do|effect)', q)
     )
     if unreviewed_detail and not record_id:
         return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
@@ -173,7 +195,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         return reply
     if chosen['id'] != 'hands-of-heat':
         reply['answer'] += '\n\n' + '\n'.join(chosen['notes'])
-        related = [by_id[rid] for rid in chosen.get('related_ids', [])]
+        related = supporting_records(question, chosen, hits, by_id)
         if card_interaction:
             reply['answer'] = ('Fuzzy Groin makes the attacker the White Lion\'s permanent priority target until either dies. Ground Fighting stops normal AI draws and instead triggers a Basic Action against a survivor who spends an activation in its Zone of Death. That named target is set by the mood; priority targeting applies to Pick Target actions and does not redirect this trigger. The permanent priority effect remains for later applicable targeting.\n\n' + reply['answer'])
             related = [by_id['moods-and-flows']]

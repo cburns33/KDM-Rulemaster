@@ -61,6 +61,20 @@ CORE_RECORDS = [
         'tables': [],
     },
     {
+        'id': 'white-lion-grasp-damage', 'title': 'White Lion: Grasp, Enraged, and damage tokens',
+        'original': 75, 'supporting_originals': [33, 74],
+        'related_ids': ['monster-hit-damage', 'attack-effects'],
+        'card_sources': [{'title': 'Grasp (White Lion AI)', 'url': '/cards/white-lion-grasp.png', 'edition': 'Simulator, edition unverified', 'provenance': 'Simulator core asset; decoded pixels match the separate AI deck asset'}],
+        'keywords': 'white lion grasp ai card enraged damage token grab after damage level 1 hit',
+        'layout': 'Printed page 71 separates attack-profile damage from damage outside attacks and names White Lion Grab. Printed page 29 gives Enraged a +1 damage token in the First Story example. Printed page 70 defines damage per attack-profile hit. The linked Simulator Grasp card supplies its profile and Grab text.',
+        'summary': 'For a level 1 White Lion with Enraged in play, a Grasp hit that deals damage causes 2 damage from the attack-profile hit (Grasp Damage 1 plus the +1 damage token), followed by 1 separate Grab damage. The token does not increase Grab, which is damage outside the attack profile and cannot be dodged.',
+        'notes': [
+            'Grasp has Speed 1, Accuracy 2+, Damage 1. Its After Damage effect causes Grab after the attack deals damage. If the attack deals no damage, its After Damage effect does not trigger.',
+            'Grab places the knocked-down target in front of the White Lion and causes 1 damage per monster level. Resolve that damage separately at level 1. The rulebook says damage outside attack profiles ignores monster attributes and tokens.',
+            'The +1 token is verified from the First Story Enraged example. The full Enraged card and higher-level interactions have not been reviewed here.',
+        ], 'tables': [],
+    },
+    {
         'id': 'white-lion-deployment', 'title': 'White Lion: standard showdown deployment', 'original': 183,
         'keywords': 'white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1',
         'layout': 'The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.',
@@ -101,7 +115,7 @@ CORE_RECORDS = [
     {
         'id': 'attack-effects', 'title': 'Attack effects and damage outside attacks', 'original': 75,
         'related_ids': ['monster-hit-damage', 'survival-actions'],
-        'keywords': 'trigger after hit before damage after damage dodge grab intimidate brain damage insanity bash bleed knockback',
+        'keywords': 'trigger after hit before damage after damage dodge grab intimidate brain damage insanity bash bleed knockback outside attack profile monster token survivor',
         'layout': 'The left column lists attack triggers and common effects. Intimidate continues into the center column, followed by Brain Damage. Damage Outside of Attack Actions is a separate right-column heading. Duration and survivor-status AI sections are outside this record.',
         'summary': 'Attack-profile effects trigger once per attack at their specified step. Damage outside an attack profile cannot be dodged because it does not come from a hit.',
         'notes': [

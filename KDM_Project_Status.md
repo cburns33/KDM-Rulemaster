@@ -1,10 +1,32 @@
 # KDM rules assistant: project state
 
-Updated 30 September 2026.
+## Current handoff, 7 October 2026, rules-v2 worktree
 
-Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs from `kdm-assistant` in that folder. The preceding non-Git working folder is preserved at `D:\Documents\KDM\archive-pre-git-source` as a recoverable archive.
+Mission: build a source-grounded rules assistant that handles diverse, unseen play questions using verified card and rulebook evidence. It must combine applicable sources, cite them, and state uncertainty or missing coverage. Early-game cases set review priority and serve as tests; they must not drive one-off routing or answer patches. Evaluate changes with held-out questions, nearby counterexamples, and unsupported cases. `ITERATION_2.md` is the detailed mission and folder guide.
 
-## Current snapshot
+The active source-grounded iteration is in `D:\Documents\KDM\KDM-Rulemaster-v2` on branch `rules-v2`, based on `main` commit `809a4f8`. See `ITERATION_2.md` for the folder map and scope. The original checkout retains its uncommitted app work; the access-gate changes were not copied here.
+
+This worktree carries the early-game metadata shortlist, the Enraged plus Grasp source audit, the linked Grasp sample, one reviewed level 1 ruling record, and general selection of up to two additional reviewed records for compound questions. It has 18 reviewed records covering 24 source pages. All 81 Python tests pass. Live Sol answer quality remains untested.
+
+The source strategy has shifted to digitized wiki card text for a limited local test. The MediaWiki API supplied three page revisions: Maul, Combo Claw, and White Lion Data Card. `kdm-assistant/wiki_stage.py` saved their wikitext, page URLs, and revision IDs. `kdm-assistant/wiki_extract.py` converted those saved pages into structured drafts without making further wiki requests. The supplied card photos were comparison checks; no card text was extracted from the images in this test. The drafts preserve target order, attack tables, flow markers, links, templates, and categories. They remain unreviewed and outside live answer retrieval. See `evaluation/2026-10-05-wiki-extraction/REPORT.md`.
+
+A read-only Maul answer preview is complete in `evaluation/2026-10-07-maul-preview/REPORT.md`. It summarizes target order, attack profile, and After Damage text from the existing draft; shows the wiki URL and revision; and flags that the linked Grab definition is missing. It is labeled unreviewed and edition unverified. No app code, reviewed record, wiki request, or OCR step was involved. The preview was composed for evaluation, so automated answer composition remains untested. Next: decide whether to test a general draft-answer path with held-out card questions and linked-definition gaps, while keeping drafts outside reviewed 1.5 rulings. The current [Fandom terms](https://www.fandom.com/terms-of-use) restrict automated extraction and software use without permission; do not expand this into a bulk wiki pull until access and reuse are resolved. Physical 1.5 remains the group's target, with selective edition checks rather than exhaustive card-by-card comparisons.
+
+An isolated `kdm-assistant/wiki_preview.py` command accepts one explicit draft and question, or selects from the three local drafts when given their directory. It uses the existing GPT-6 Sol Responses API pattern and appends source revision, unreviewed status, and a requested missing linked-definition notice outside the model answer. The first bounded test covered five distinct live questions and one full preview; see `evaluation/2026-10-07-wiki-preview/REPORT.md`. A second fixed-question evaluation selected the expected source in seven cases, declined two missing or ambiguous cases before a model call, and produced seven source-grounded live answers; see `evaluation/2026-10-07-wiki-selection/REPORT.md`. The full Python suite passes 88 tests. The original checkout's key was used in memory and was not copied, so this worktree has no configured key. The command remains outside live answer retrieval and hosted deployment. `evaluation/2026-10-07-wiki-selection/SOURCE_AUDIT.md` records the visual check of the Grasp image and rulebook pages 30, 47, and 48. Those sources establish Grab's effect in the Grasp context, while `combined-grab-preview.md` preserves the unverified physical 1.5 Maul relationship. The October 7 `CARD_SOURCE_SEARCH.md` records a visual check of focused rulebook file page 120, printed page 179: it lists Cunning at White Lion levels 2 and 3 but does not define the effect. A targeted official-site search did not find a card-face source or definition in the pages examined. Local Maul, Combo Claw, and White Lion Data Card photo files are unavailable. Next: acquire readable physical 1.5 faces for those three cards and Cunning, then check their text and linked mechanics before considering any draft for reviewed retrieval. This state is ready for `/compact` or a new session.
+
+### Paused OCR track
+
+`KDM_OCR_Queue.md` retains first-pass candidates, three confirmed duplicate-image skips, and unverified holds. The duplicate evidence covers only the matching Claw, Size Up, and Grasp pairs compared by decoded pixels. Size Up, Claw, and Grasp OCR trials exposed missing numbers, spacing, or trigger structure; their reports remain under `evaluation/2026-10-02-*`. These trials added no app rule records. Enraged and Ground Fighting remain queued without available images.
+
+`KDM_OCR_Benchmark_Selection.md` preserves a seeded, metadata-only selection of 24 provisional paths across six card families. Their image identity, edition, decoded-pixel uniqueness, and availability remain unverified. The encrypted core bundle still blocks further image acquisition. OCR work is paused while the wiki-text path is evaluated.
+
+## Archived chronology
+
+The dated entries below preserve earlier baselines, test counts, and decisions. Use the current handoff above for active scope and next steps.
+
+At the 30 September baseline, the canonical project location was `D:\Documents\KDM\KDM-Rulemaster`. The app ran from `kdm-assistant` in that folder. The preceding non-Git working folder was preserved at `D:\Documents\KDM\archive-pre-git-source` as a recoverable archive.
+
+### Snapshot on 30 September 2026
 
 Lantern Archive has 17 reviewed topics supported by 23 source pages from the supplied edition 1.5 scan. It serves local lookup by default, plus opt-in GPT-6 Sol explanations grounded only in selected reviewed records. The local app is healthy on port 8765. A Vercel hosting conversion is ready for the linked project, with the first production check pending deployment. All 69 automated tests pass.
 
@@ -12,13 +34,13 @@ The September 30 fixes cover hunt-event damage, attacker knockdown, Encourage ti
 
 Primary remaining coverage work: later Age milestones, severe injuries outside Head, more AI cards, and fresh holdouts with new wording. Rule coverage remains limited to the reviewed records; the assistant does not claim complete rulebook coverage or edition 1.6 compatibility.
 
-## Deliverables
+### Deliverables at that date
 
 - `KDM_Rulebook_1.5_Rules_Focused.pdf`: 138 retained pages from the 239-page scan. Table of contents retained.
 - `KDM_Rules_Focused_Page_Map.md`: revised PDF, original PDF, and printed-book page map.
 - `kdm-assistant/`: Lantern Archive for local use and Vercel hosting. Run `Start.cmd` or open http://127.0.0.1:8765 when running locally.
 
-## Decisions
+### Decisions at that date
 
 - Local lookup is the default. GPT-6 Sol explanations are available when selected for a question. Exact tables and clear reviewed lookups stay local.
 - Do not use GPT-6 Astra in the app's normal or fallback answer path. Reserve Astra for project work that benefits from careful source interpretation and test design.
@@ -32,17 +54,17 @@ Primary remaining coverage work: later Age milestones, severe injuries outside H
 - The hosted function is stateless. Browser-local storage holds hosted chat history and follow-up context; local SQLite history and correction reports remain local-only features.
 - Hosted Sol is disabled by default, even when `OPENAI_API_KEY` is present. Enable `KDM_ENABLE_SOL=true` only after Vercel Authentication protects production.
 
-## Implemented
+### Implemented at that date
 
 Seventeen reviewed topics using selected rules on twenty-three source pages. The original records are joined by the first Age milestone, the severe Head table, the White Lion Claw AI card, attacker-knockdown, Encourage, critical-wound, and monster-movement rules. Both Hands of Heat subtables retain explicit ranges, rewards, conditions, and follow-ons. All 138 retained pages can be viewed. Conversation history and pending correction notes are stored locally in SQLite. Continuation pages and related records receive clickable source citations. The server computes current review coverage from records at startup. Authorized page images are now static deployment assets in `kdm-assistant/public/pages`.
 
 The browser now opens to a conversation-focused view. In response to feedback that the three-column layout felt crowded, conversation history and rulebook pages were moved into drawers. Clicking a compact citation selects its mapped page and opens Sources. Answer settings contain the opt-in Sol control, API disclosure, coverage count, and edition caveat. The source drawer retains page navigation, reviewed-topic search, Hands of Heat resolution, layout notes, and correction reporting. Answer text renders bold emphasis without showing raw Markdown markers.
 
-## Verification
+### Verification at that date
 
 All 69 automated test methods pass, including the original interface and persistence coverage, rule-table boundaries, injury and Age guards, saved follow-up scope, model payload and citation contracts, related sources, and local HTTP boundaries. The hosted API tests cover stateless browser-supplied follow-up context, Sol opt-in behavior, and Vercel rewrite routing. Local static-asset checks cover the moved browser UI and source images. Targeted live checks cover source-grounded Sol answers for the added combat rules and the page-reference mitigation. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation and the earlier browser checks covered the conversation-focused home view, drawers, saved chats, mapped source pages, and Answer settings. The initial build decoded all 138 images.
 
-## Remaining work
+### Remaining work recorded then
 
 Fuzzy Groin's community card transcription is linked to the priority-target record and used for the Ground Fighting interaction. Expand structured coverage to the other Age milestones, severe-injury locations, AI cards, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Play uses edition 1.5. Sol explanations remain limited to the reviewed records supplied with each question. The narrow-screen layout has not had a separate visual check. After the Vercel push, enable Vercel Authentication, approve each friend, and run a live production smoke test.
 

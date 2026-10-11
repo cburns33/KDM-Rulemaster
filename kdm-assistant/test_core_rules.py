@@ -56,6 +56,40 @@ class CoreRuleTests(unittest.TestCase):
         self.assertEqual(result['record']['id'], 'attack-effects')
         self.assertIn('cannot be dodged', result['answer'])
 
+    def test_level_one_enraged_grasp_combines_card_and_rulebook_evidence(self):
+        result = resolve('Level 1 White Lion is Enraged. Grasp hits and deals damage. Does Grab get the damage token too, and can I dodge Grab?')
+        self.assertEqual(result['status'], 'reference')
+        self.assertEqual(result['record']['id'], 'white-lion-grasp-damage')
+        self.assertIn('2 damage from the attack-profile hit', result['answer'])
+        self.assertIn('1 separate Grab damage', result['answer'])
+        self.assertIn('cannot be dodged', result['answer'])
+        self.assertEqual(result['record']['supporting_originals'], [33, 74])
+        self.assertEqual(result['record']['card_sources'][0]['url'], '/cards/white-lion-grasp.png')
+        self.assertEqual({r['id'] for r in result['related_records']}, {'monster-hit-damage', 'attack-effects'})
+
+    def test_grasp_after_damage_requires_attack_damage(self):
+        result = resolve('White Lion Grasp card: if its only hit is dodged, does After Damage still cause Grab?')
+        self.assertEqual(result['record']['id'], 'white-lion-grasp-damage')
+        self.assertIn('If the attack deals no damage, its After Damage effect does not trigger', result['answer'])
+
+    def test_compound_question_retrieves_independent_reviewed_topics(self):
+        result = resolve('Can I Surge to hide in Tall Grass, and how does priority targeting from Fuzzy Groin work?')
+        self.assertEqual(result['record']['id'], 'priority-target')
+        related = [record['id'] for record in result['related_records']]
+        self.assertIn('survival-actions', related)
+        self.assertNotIn('white-lion-deployment', related)
+        self.assertLessEqual(len(related), 2)
+
+    def test_generic_grab_question_does_not_pull_the_grasp_case(self):
+        for question in [
+            'Can I dodge Grab damage outside an attack profile?',
+            'Does a monster damage token change Grab damage, and can a survivor dodge the Grab?',
+        ]:
+            with self.subTest(question=question):
+                result = resolve(question)
+                self.assertEqual(result['record']['id'], 'attack-effects')
+                self.assertNotIn('white-lion-grasp-damage', [record['id'] for record in result['related_records']])
+
     def test_permanent_priority_and_ground_fighting(self):
         for question in [
             'A White Lion critical wound creates a permanent priority target, then the Lion has Ground Fighting in play. How do those effects interact?',

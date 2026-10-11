@@ -1,6 +1,10 @@
 # Lantern Archive
 
-A browser companion for the supplied Kingdom Death: Monster 1.5 scan. It runs locally or as an invite-only Vercel deployment.
+A browser companion for the supplied Kingdom Death: Monster 1.5 scan. It runs locally and includes a Vercel deployment path.
+
+## Iteration 2 mission
+
+This branch aims to answer unseen play questions from verified card and rulebook evidence, with source citations and clear limits when coverage is missing. Example rulings are tests of general retrieval and reasoning behavior. They are not templates for case-specific answer routing. See `../ITERATION_2.md` for the mission, evaluation standard, and worktree boundary. This branch has not been cleared for hosted deployment.
 
 ## Open the app
 
@@ -21,7 +25,7 @@ The hosted app keeps chat history and follow-up context in each player's browser
 ## What works
 
 - Local conversation history, stored in `data/history.sqlite3`, plus browser-local hosted history.
-- Whole-record text search over 17 reviewed topics, supported by selected rules on 23 source pages.
+- Whole-record text search over 18 reviewed topics, supported by selected rules on 24 source pages, with up to two additional reviewed records selected for compound questions.
 - Deterministic resolution of both Hands of Heat tables, including conditions and follow-ons.
 - Follow-ups such as “What about 7?”, “Lantern Branding roll 6”, and “We already have Lantern Oven and rolled 6”.
 - A form for choosing the table, settlement state, and roll when natural-language parsing is ambiguous.
@@ -71,6 +75,16 @@ The app owns page citations. Sol's source payload omits original-PDF page metada
 OpenAI API billing is separate from a ChatGPT or Codex subscription. The app accepts `OPENAI_API_KEY` or `OPENAI_API_SECRET_KEY` from `D:\Documents\KDM\.env`; that file is excluded from version control and never served to the browser. With Sol selected, a source-reference question sends the current question and up to three selected reviewed records to OpenAI. Each request uses low reasoning effort and a 700-token output cap. The full rulebook and unrelated conversation history are excluded.
 
 ## Source handling
+
+For one wiki page at a time, run `python wiki_stage.py "Maul"` from this folder, replacing `Maul` with an exact page title. The command uses the MediaWiki API and saves a revision-specific JSON file in `data/wiki-candidates/`. It does not crawl categories, overwrite an existing revision, or promote wiki text into reviewed answer records. The original wikitext stays intact so templates and linked rules can be checked during review. Treat the saved page as an unreviewed candidate for the group's physical 1.5 set; a wiki revision does not establish edition compatibility by itself.
+
+Run `python wiki_extract.py data/wiki-candidates/6042-28126.json` to turn an already staged page into a structured draft in the ignored `data/wiki-drafts/` folder. This local step makes no wiki request. It preserves source revision, ordered card text, table rows, links, and template placeholders. It does not add the draft to the app's reviewed records. The three-sample result and photo comparison are in `../evaluation/2026-10-05-wiki-extraction/REPORT.md`.
+
+The read-only answer preview from the existing Maul draft is in `../evaluation/2026-10-07-maul-preview/REPORT.md`. It shows the source URL and revision and flags the linked Grab definition as missing. The preview was composed for evaluation; it does not add the draft to reviewed answer retrieval. The current [Fandom terms](https://www.fandom.com/terms-of-use) restrict automated extraction and software use without permission, so do not turn the single-page intake into a bulk pull while access and reuse are unresolved. The test's card text came from wiki wikitext; the supplied photos served only as comparison checks. No OCR was used for this wiki-text test.
+
+`wiki_preview.py` is a separate local command for asking GPT-6 Sol about one explicit unreviewed draft, for example `python wiki_preview.py data/wiki-drafts/6042-28126.json "What does Maul instruct?"`. It appends the draft's source URL, revision, unreviewed label, and a missing linked-page notice when the question asks for that definition. It requires a local OpenAI API key and sends the selected draft blocks and question to the Responses API. It does not alter reviewed records, `/api/ask`, or the hosted app. Its request and boundary tests pass. A bounded live evaluation used the existing key in the original checkout without copying it; this worktree itself has no configured key.
+
+Pass `data/wiki-drafts` instead of one JSON file to select among the local drafts by question: `python wiki_preview.py data/wiki-drafts "How many Basic AI cards does a level 2 White Lion use?"`. The command declines missing or ambiguous sources. Its nine fixed selection cases and seven live answers are recorded in `../evaluation/2026-10-07-wiki-selection/`. This local evaluation does not promote wiki drafts into reviewed answers.
 
 The original and revised PDFs remain in their existing locations. The app contains copies of the rendered retained page images in `public/pages`. Local use binds to 127.0.0.1 and loads no remote scripts or fonts. The hosted deployment is access-controlled through Vercel. Opt-in Sol questions are sent to the OpenAI API.
 
