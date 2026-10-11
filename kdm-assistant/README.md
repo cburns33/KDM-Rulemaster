@@ -2,6 +2,12 @@
 
 A browser companion for the supplied Kingdom Death: Monster 1.5 scan. It runs locally or as an invite-only Vercel deployment.
 
+## Branches
+
+`main` is the GitHub production branch and the checkout at `D:\Documents\KDM\KDM-Rulemaster`. The local `main` branch contains the shared-code access gate and Grasp rule work in commit `7027df5`. Those changes have not been pushed or deployed. The current Vercel production deployment uses the earlier `809a4f8` commit. A push to `main` can start a production deployment, so review the access gate and production settings before pushing it.
+
+`rules-v2` is the active rules and wiki-source development branch in `D:\Documents\KDM\KDM-Rulemaster-v2`. It began at `809a4f8` and contains the separate iteration 2 work. The access gate from local `main` is absent there. See `../ITERATION_2.md` in that checkout for its mission and source-review status. Its Vercel config disables automatic deployments for this branch; it has not been cleared for hosting.
+
 ## Open the app
 
 Double-click `Start.cmd` in this folder. It opens http://127.0.0.1:8765 in your browser. Python 3.10 or newer is required and is already available on this computer. Local lookup needs no package installation, account, API key, or internet connection. Optional Sol explanations use the configured OpenAI API key and an internet connection.
