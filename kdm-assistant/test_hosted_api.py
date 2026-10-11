@@ -3,6 +3,7 @@ import json
 import os
 from pathlib import Path
 import threading
+from urllib.error import HTTPError
 import urllib.request
 from unittest.mock import patch
 import unittest
@@ -37,7 +38,7 @@ class HostedApiTests(unittest.TestCase):
     def test_library_marks_the_hosted_mode(self):
         result = hosted_api.library()
         self.assertEqual(result['hosting'], 'vercel')
-        self.assertEqual(len(result['records']), 17)
+        self.assertEqual(len(result['records']), 18)
 
     def test_ask_keeps_context_sent_by_the_browser(self):
         first = hosted_api.ask({'question': 'Hands of Heat roll 6'})
@@ -54,6 +55,34 @@ class HostedApiTests(unittest.TestCase):
     def test_rewritten_route_serves_library(self):
         result = self.request('/api/index?route=library')
         self.assertEqual(result['hosting'], 'vercel')
+
+    def test_shared_access_code_issues_a_signed_session(self):
+        with patch.dict(os.environ, {'KDM_ACCESS_CODE': 'group-code', 'KDM_SESSION_SECRET': 'session-secret'}, clear=False):
+            request = urllib.request.Request(
+                self.url + '/api/index?route=access',
+                data=json.dumps({'code': 'group-code'}).encode(),
+                method='POST',
+            )
+            with urllib.request.urlopen(request) as response:
+                cookie = response.headers['Set-Cookie']
+            self.assertIn('HttpOnly', cookie)
+            self.assertIn('Secure', cookie)
+            library_request = urllib.request.Request(self.url + '/api/index?route=library', headers={'Cookie': cookie.split(';', 1)[0]})
+            with urllib.request.urlopen(library_request) as response:
+                result = json.load(response)
+        self.assertEqual(result['hosting'], 'vercel')
+
+    def test_shared_access_code_rejects_invalid_code(self):
+        with patch.dict(os.environ, {'KDM_ACCESS_CODE': 'group-code', 'KDM_SESSION_SECRET': 'session-secret'}, clear=False):
+            request = urllib.request.Request(
+                self.url + '/api/index?route=access',
+                data=json.dumps({'code': 'wrong-code'}).encode(),
+                method='POST',
+            )
+            with self.assertRaises(HTTPError) as error:
+                urllib.request.urlopen(request)
+            error.exception.close()
+        self.assertEqual(error.exception.code, 401)
 
 
 if __name__ == '__main__':

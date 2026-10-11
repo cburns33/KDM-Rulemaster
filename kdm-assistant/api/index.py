@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT))
 from engine import resolve, search
 from records import RECORDS
 from sol_answer import SolUnavailable, answer as sol_answer, status as sol_status
+from access import COOKIE_NAME, SESSION_SECONDS, configured as access_configured, create_session, request_has_access, valid_code
 
 DATA = ROOT / 'data'
 MANIFEST = json.loads((DATA / 'manifest.json').read_text(encoding='utf-8'))
@@ -79,15 +80,20 @@ def ask(body):
 
 
 class handler(BaseHTTPRequestHandler):
-    def send_json(self, status, body):
+    def send_json(self, status, body, headers=None):
         payload = json.dumps(body, ensure_ascii=False).encode('utf-8')
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.send_header('Content-Length', str(len(payload)))
         self.send_header('Cache-Control', 'no-store')
         self.send_header('X-Content-Type-Options', 'nosniff')
+        for name, value in (headers or {}).items():
+            self.send_header(name, value)
         self.end_headers()
         self.wfile.write(payload)
+
+    def denied(self):
+        return self.send_json(401, {'error': 'Enter the shared access code to use Lantern Archive.'})
 
     def route(self):
         uri = urlparse(self.path)
@@ -99,6 +105,8 @@ class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path, query = self.route()
+        if not request_has_access(self.headers):
+            return self.denied()
         if path == '/api/library':
             return self.send_json(200, library())
         if path == '/api/search':
@@ -119,6 +127,16 @@ class handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length))
             if not isinstance(body, dict):
                 raise ValueError('Expected an object')
+            if path == '/api/access':
+                if not access_configured():
+                    return self.send_json(503, {'error': 'Hosted access has not been configured.'})
+                if not valid_code(body.get('code')):
+                    return self.send_json(401, {'error': 'The access code is incorrect.'})
+                session = create_session()
+                cookie = f'{COOKIE_NAME}={session}; Path=/; Max-Age={SESSION_SECONDS}; HttpOnly; Secure; SameSite=Lax'
+                return self.send_json(200, {'ok': True}, {'Set-Cookie': cookie})
+            if not request_has_access(self.headers):
+                return self.denied()
             if path == '/api/ask':
                 return self.send_json(200, ask(body))
             if path == '/api/corrections':

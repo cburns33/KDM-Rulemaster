@@ -41,6 +41,11 @@ class ServerTests(unittest.TestCase):
     def test_health(self):
         self.assertEqual(self.request('/api/health')['app'],'lantern-archive')
 
+    def test_grasp_card_source_is_served(self):
+        with urllib.request.urlopen(self.url + '/cards/white-lion-grasp.png') as response:
+            self.assertEqual(response.headers.get_content_type(), 'image/png')
+            self.assertEqual(response.read(8), b'\x89PNG\r\n\x1a\n')
+
     def test_sol_is_opt_in_and_only_for_references(self):
         with patch('server.sol_answer', return_value='A source-grounded explanation.') as sol:
             reference = self.request('/api/ask', {'question':'How do puzzle affinities work?', 'use_model':True})
@@ -95,8 +100,8 @@ class ServerTests(unittest.TestCase):
 
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
-        self.assertEqual(len(library['records']), 17)
-        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 23)
+        self.assertEqual(len(library['records']), 18)
+        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 24)
         continuation = next(p for p in library['pages'] if p['revised'] == 56)
         self.assertTrue(continuation['reviewed'])
         self.assertEqual(continuation['record_id'], 'survival-actions')

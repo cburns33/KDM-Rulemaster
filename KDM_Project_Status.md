@@ -1,10 +1,34 @@
 # KDM rules assistant: project state
 
-Updated 30 September 2026.
+Updated 2 October 2026.
 
 Canonical project location: `D:\Documents\KDM\KDM-Rulemaster`. The live app runs from `kdm-assistant` in that folder. The preceding non-Git working folder is preserved at `D:\Documents\KDM\archive-pre-git-source` as a recoverable archive.
 
-## Current snapshot
+## Current handoff, 2 October 2026
+
+The assistant remains a narrow reference tool. It has 18 curated rule records covering 24 source pages from the edition 1.5 scan and an optional GPT-6 Sol explanation path. During a real prologue White Lion fight, the user found several answers incoherent or about the wrong rule. The next design goal is a source-grounded ruling assistant that can combine card text and rulebook mechanics in context. Do not treat more one-off case handlers as the default solution.
+
+The motivating question is whether the White Lion's Enraged damage bonus affects Grasp's attack damage, the separate effect where its target suffers Grab, or both. The level 1 case now has a reviewed app record backed by the existing Grasp sample image and three rulebook pages. A Grasp hit that deals damage causes 2 attack-profile damage with Enraged's +1 token, then 1 separate Grab damage; the token does not increase Grab. The app cites the linked card image and rulebook pages. The full Enraged card and higher-level cases remain unverified. Similar compound questions should be handled through a general retrieval and reasoning workflow, with code reserved for clear arithmetic, tables, and validation.
+
+Kingdom Death Simulator is installed under `C:\Users\chase\AppData\Local\Launcher Of Death\KingdomDeathSimulator`. Its DLC contains 12 Unity Addressables catalogs. A metadata inventory found 4,472 unique image asset paths under `Import/Cards/` across those catalogs. This counts paths, not distinct cards. Package counts are 1,178 Gambler's Chest, 1,136 Expansions of Death 001, 897 core expansion, 801 Miscellaneous 001, 448 Miscellaneous 002, and 12 common content. Image assets are embedded in Unity bundles rather than stored as ordinary browseable image folders. No complete card-text database has been found.
+
+The earlier broad inventory left 844 paths in an “Other card groups” bucket. Parsing deeper folder levels classified 236 as AI, 180 as hit locations, 36 as resources, 30 as hunt events, 16 as constellations, and 1 as terrain. The remaining 345 are in named specialist or standalone folders and still need review. These are folder-based labels, not verified card identities or campaign availability.
+
+White Lion metadata provides a focused duplicate check. Its nested folders contain 28 AI, 24 hit-location, 9 hunt-event, and 11 resource image paths. A separate `AI White Lion Deck` folder contains 23 paths, 22 of whose filenames match those in the nested White Lion AI folder. Three matched pairs, Grasp, Claw, and Size Up, were extracted and compared by decoded pixel hash; each pair has identical pixels at 1024 by 1024. The user visually confirmed that the images in the two sample folders match. The samples are in `D:\Documents\KDM\White Lion AI comparison`, with one subfolder for each source location. The other matching filenames, extra `-2` variants, and card backs have not been image-checked.
+
+The user inspected the sample and confirmed that the images in the two folders match. A metadata-based shortlist is in `KDM_Early_Game_Card_Shortlist.md`, centered on White Lion, starting gear and resources, and first-settlement candidates. Its progression labels remain uncertain. The catalog shows 22 shared AI filenames, three nested-only `-2` files, three other nested-only back/front files, and one deck-only back. Further extraction is blocked by the encrypted core bundle. The app now has a first general multi-source retrieval step; broader reasoning quality still needs evaluation, with new card text added only after source verification. The user's group is unlikely to reach midgame, so broad expansion ingestion is not a current priority.
+
+The shared-code Vercel access gate exists as local, uncommitted changes in `kdm-assistant` as of this handoff. The latest committed revision is `809a4f8`, which keeps hosted Sol disabled until access is protected. The production gate state has not been verified in this handoff. Preserve those local changes when working on the card pipeline. Do not read or expose `.env` secrets.
+
+The sections below preserve the earlier implementation and test history. Their September 30 status and next-step statements are historical where they conflict with this handoff.
+
+A follow-up check of the three `-2` AI images, Enraged in both folders, and the two AI backs could not proceed to extraction. The core expansion bundle is encrypted. A bounded search of the installed game's managed assemblies, executable, and UnityPlayer.dll found no usable bundle key. No new images or OCR were produced. The catalog filenames remain evidence of overlapping asset groups, not verified card copy counts. A level 1 Enraged plus Grasp ruling is now supported by the extracted Grasp image and the supplied edition 1.5 scan. The source audit and bounded app test are in `evaluation/2026-10-02-enraged-grasp/REPORT.md`. The Enraged card illustration in the rulebook is partly covered, so its full wording and higher-level scaling still need a card image.
+
+The bounded app test is implemented as `white-lion-grasp-damage`, with a copy of the already extracted Grasp image served at `/cards/white-lion-grasp.png`. It uses revised PDF pages 11, 47, and 48, corresponding to original pages 33, 74, and 75. It adds no OCR or new extraction. The local lookup and source-link regression tests pass; the full Python suite passes 74 tests. The optional Sol explanation path was not exercised against the live model in this check.
+
+A general retrieval addition now selects up to two further reviewed records when their curated title or keyword terms cover distinct parts of a question. The local path presents those sources without composing a new ruling; the optional Sol path receives the selected records for synthesis. Tests cover an independent Surge plus Fuzzy Groin question, generic Grab wording that must not select the Grasp-specific case, and unsupported card and expansion questions. The full Python suite passes 76 tests. Live Sol behavior has not been retested.
+
+## Historical snapshot, 30 September 2026
 
 Lantern Archive has 17 reviewed topics supported by 23 source pages from the supplied edition 1.5 scan. It serves local lookup by default, plus opt-in GPT-6 Sol explanations grounded only in selected reviewed records. The local app is healthy on port 8765. A Vercel hosting conversion is ready for the linked project, with the first production check pending deployment. All 69 automated tests pass.
 
@@ -42,7 +66,7 @@ The browser now opens to a conversation-focused view. In response to feedback th
 
 All 69 automated test methods pass, including the original interface and persistence coverage, rule-table boundaries, injury and Age guards, saved follow-up scope, model payload and citation contracts, related sources, and local HTTP boundaries. The hosted API tests cover stateless browser-supplied follow-up context, Sol opt-in behavior, and Vercel rewrite routing. Local static-asset checks cover the moved browser UI and source images. Targeted live checks cover source-grounded Sol answers for the added combat rules and the page-reference mitigation. The model checks confirm that Sol is opt-in, runs only for source-reference answers, and falls back to the local reference if the service is unavailable. JavaScript syntax validation and the earlier browser checks covered the conversation-focused home view, drawers, saved chats, mapped source pages, and Answer settings. The initial build decoded all 138 images.
 
-## Remaining work
+## Historical remaining work, 30 September 2026
 
 Fuzzy Groin's community card transcription is linked to the priority-target record and used for the Ground Fighting interaction. Expand structured coverage to the other Age milestones, severe-injury locations, AI cards, and more layout archetypes. Existing summaries have been checked by the building assistant against page images; they are not complete transcriptions or a claim of independent human verification. Play uses edition 1.5. Sol explanations remain limited to the reviewed records supplied with each question. The narrow-screen layout has not had a separate visual check. After the Vercel push, enable Vercel Authentication, approve each friend, and run a live production smoke test.
 

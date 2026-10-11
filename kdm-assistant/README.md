@@ -14,7 +14,9 @@ Ask questions in the main view. Use the menu button for conversation history and
 
 The Vercel project uses `kdm-assistant` as its Root Directory. Static files and the authorized page images are in `public`; `api/index.py` is a stateless Python Vercel Function. `vercel.json` routes browser API calls to that function and excludes local test files and unused source images from the function bundle.
 
-Import `OPENAI_API_KEY` from the local `.env` into Vercel's Production environment. The key stays in Vercel's server-side environment settings and is never served to a browser. Hosted Sol starts disabled even when the key exists. Enable Vercel Authentication for all deployments in the Vercel project, approve access requests from each friend, then add `KDM_ENABLE_SOL=true` to Vercel's Production environment and redeploy. This avoids building a separate account system and lets you revoke a person's access in Vercel.
+Set these Production environment variables in Vercel, then redeploy: `KDM_ACCESS_CODE` is the shared group code, and `KDM_SESSION_SECRET` is a long random value used to sign browser sessions. The deployed app protects every app page, rulebook image, and API call with this gate. Entering the group code issues a secure 30-day browser session. Rotate `KDM_SESSION_SECRET` to end every active session. To remove one person, rotate both variables and give the new code only to the remaining group.
+
+Import `OPENAI_API_KEY` from the local `.env` into Vercel's Production environment. The key stays in Vercel's server-side environment settings and is never served to a browser. Hosted Sol starts disabled even when the key exists. After the access gate is deployed and those two variables are set, add `KDM_ENABLE_SOL=true` to Production and redeploy. Vercel Authentication can stay enabled for preview deployments, but Hobby plans do not provide named production members.
 
 The hosted app keeps chat history and follow-up context in each player's browser. Local use retains server-side SQLite history and local correction notes. The hosted correction form is hidden because the serverless deployment has no review database.
 
@@ -72,7 +74,7 @@ OpenAI API billing is separate from a ChatGPT or Codex subscription. The app acc
 
 ## Source handling
 
-The original and revised PDFs remain in their existing locations. The app contains copies of the rendered retained page images in `public/pages`. Local use binds to 127.0.0.1 and loads no remote scripts or fonts. The hosted deployment is access-controlled through Vercel. Opt-in Sol questions are sent to the OpenAI API.
+The original and revised PDFs remain in their existing locations. The app contains copies of the rendered retained page images in `public/pages`. Local use binds to 127.0.0.1 and loads no remote scripts or fonts. The hosted deployment uses the shared-code gate. Opt-in Sol questions are sent to the OpenAI API.
 
 `data/manifest.json` maps all 138 retained pages. `data/source-manifest.json` accounts for all 239 original pages and marks excluded pages. The server computes current review flags and topic titles from the records at startup, so the original stored review flags are not the current coverage inventory. `records.py` and `core_records.py` store structured summaries, layout notes, source continuations, and explicit table ranges. Corrections are saved in the SQLite `corrections` table as pending review and never overwrite verified records automatically.
 
