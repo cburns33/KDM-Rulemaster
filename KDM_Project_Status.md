@@ -1,5 +1,9 @@
 # KDM rules assistant: project state
 
+## Current handoff, 24 October 2026, fresh card question check
+
+The 15 questions fixed in `evaluation/2026-10-24-fresh-card-questions/QUESTIONS.md` were run against local lookup. The first pass selected the expected primary source or decline status for 14, but an unspecified no-target question returned an unrelated record. Maul and Size Up needed clearer answer boundaries, and some secondary sources were irrelevant. The retrieval and record changes in `evaluation/2026-10-24-fresh-card-questions/REPORT.md` corrected those cases. All 15 fixed questions now match their expected source or decline category; this is a development regression check. The Python suite passes 92 tests. Cunning remains source-needed. Next: another unseen set with paraphrases, follow-ups, and card versus general-rule conflicts. The active branch is `rules-v2`; automatic deployments remain disabled. The separate `main` checkout is unchanged.
+
 ## Current handoff, 24 October 2026, White Lion card retrieval
 
 The `rules-v2` checkout now has 22 reviewed topics. Four new records cover Maul, Combo Claw, Power Swat, and Size Up from the group's physical 1.5 cards. Claw and Grasp now link to the group's photos. The six card photos are in `kdm-assistant/public/cards/`, with original evidence copies in the ignored `data/card-reference-images/` folder. Maul and Combo Claw were compared with their staged wiki revisions; the wiki drafts remain outside live retrieval. The card photos support card text, and the linked rulebook pages support general targeting and attack mechanics.

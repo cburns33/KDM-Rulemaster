@@ -77,17 +77,16 @@ CORE_RECORDS = [
     },
     {
         'id': 'white-lion-maul', 'title': 'White Lion: Maul AI card', 'original': 75,
-        'related_ids': ['attack-effects', 'white-lion-grasp-damage'],
-        'card_sources': [{'title': 'Maul (group physical card)', 'url': '/cards/white-lion-maul-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Photo of the group physical set; matches wiki revision 28126'}],
+        'related_ids': ['attack-effects'],
+        'card_sources': [{'title': 'Maul (group physical card)', 'url': '/cards/white-lion-maul-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Photo of the group physical set; matches wiki revision 28126'}, {'title': 'Grasp (Grab definition)', 'url': '/cards/white-lion-grasp-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Photo of the group physical set'}],
         'keywords': 'white lion maul advanced ai card grab victim last round knocked down survivor sniff speed accuracy damage after damage bleed bash',
         'layout': 'The photographed Maul face supplies its target order, attack profile, and After Damage effects. Printed page 71 defines the attack trigger, Bleed, and Bash; the linked Grasp card defines Grab.',
         'summary': 'Maul is Advanced AI. It first targets the victim of Grab last round, then the closest knocked-down survivor in range. With no target, it uses Sniff. It moves and attacks with Speed 2, Accuracy 2+, Damage 3. After the attack deals damage, Bleed gives the target 1 bleeding token and Bash knocks the target down.',
-        'notes': ['Follow the target conditions in order. The Grasp card defines Grab as placing the knocked-down target in front of the monster and causing 1 damage per monster level.', 'After Damage applies only when the attack deals damage. Printed page 71 supplies the trigger and effect definitions; the photographed card supplies this attack profile.'],
+        'notes': ['Follow the target conditions in order. The Grasp card defines Grab as placing the knocked-down target in front of the monster and causing 1 damage per monster level. Selecting that survivor on Maul does not perform Grab again.', 'After Damage applies only when the attack deals damage. Printed page 71 supplies the trigger and effect definitions; the photographed card supplies this attack profile.'],
         'tables': [],
     },
     {
         'id': 'white-lion-combo-claw', 'title': 'White Lion: Combo Claw AI card', 'original': 75,
-        'related_ids': ['monster-movement', 'critical-wound-examples'],
         'card_sources': [{'title': 'Combo Claw (group physical card)', 'url': '/cards/white-lion-combo-claw-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Photo of the group physical set; matches wiki revision 28091'}],
         'keywords': 'white lion combo claw basic ai card target threat facing range field view sniff speed accuracy damage twice draw ai lost hand persistent injury understanding',
         'layout': 'The photographed Combo Claw face supplies the ordered targets, attack profile, extra AI draw condition, and Lost Hand persistent injury. Printed page 71 gives general AI flow; printed page 76 defines persistent injuries.',
@@ -97,7 +96,7 @@ CORE_RECORDS = [
     },
     {
         'id': 'white-lion-power-swat', 'title': 'White Lion: Power Swat AI card', 'original': 75,
-        'related_ids': ['attack-effects', 'monster-movement'],
+        'related_ids': ['attack-effects'],
         'card_sources': [{'title': 'Power Swat (group physical card)', 'url': '/cards/white-lion-power-swat-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Photo of the group physical set'}],
         'keywords': 'white lion power swat basic ai card target threat facing range field view sniff speed accuracy damage after damage knockback 6',
         'layout': 'The photographed Power Swat face supplies its target order, attack profile, and Knockback 6 text. Printed page 71 defines After Damage and Knockback.',
@@ -112,7 +111,7 @@ CORE_RECORDS = [
         'keywords': 'white lion size up basic ai card random threat field view sniff intimidate target face roll 1d10 4 brain damage monster level knocked down',
         'layout': 'The photographed Size Up face supplies its target and Intimidate instructions. Printed page 71 distinguishes Intimidate and brain damage from an attack.',
         'summary': 'Size Up is Basic AI. Pick a random threat in field of view; with no target, use Sniff. Otherwise turn to face the target and roll 1d10. On 4+, the target suffers 1 brain damage per monster level and is knocked down.',
-        'notes': ['Intimidate is not an attack. This card has no Move & Attack profile. The printed rulebook explains that Intimidate cannot be dodged.'],
+        'notes': ['A knocked-down survivor is normally not a threat. If Size Up finds no eligible threat, use its Sniff instruction. A 1-3 roll has no printed Intimidate effect.', 'Intimidate is not an attack. This card has no Move & Attack profile. The printed rulebook explains that Intimidate cannot be dodged.'],
         'tables': [],
     },
     {

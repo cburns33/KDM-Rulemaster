@@ -89,7 +89,8 @@ class CoreRuleTests(unittest.TestCase):
     def test_maul_can_include_grab_definition_without_cunning(self):
         result = resolve('Maul targets last round\'s Grab victim. What does Grab do?')
         self.assertEqual(result['record']['id'], 'white-lion-maul')
-        self.assertIn('white-lion-grasp-damage', [record['id'] for record in result['related_records']])
+        self.assertIn('/cards/white-lion-grasp-physical-1.5.jpeg', [card['url'] for card in result['record']['card_sources']])
+        self.assertIn('attack-effects', [record['id'] for record in result['related_records']])
         self.assertIn('placing the knocked-down target', result['answer'])
         missing = resolve('What does Cunning do for a level 2 White Lion?')
         self.assertEqual(missing['status'], 'source-needed')
@@ -102,6 +103,17 @@ class CoreRuleTests(unittest.TestCase):
         ambiguous = resolve('If nobody is a target, what does the monster do?')
         self.assertEqual(ambiguous['status'], 'clarify')
         self.assertIsNone(ambiguous['record'])
+        paraphrase = resolve('No eligible target remains. What happens next?')
+        self.assertEqual(paraphrase['status'], 'clarify')
+
+    def test_card_target_conditions_do_not_add_unwritten_effects(self):
+        maul = resolve('Maul picks the survivor Grasp grabbed last round. Does Maul perform Grab again just because that survivor was selected?')
+        self.assertEqual(maul['record']['id'], 'white-lion-maul')
+        self.assertIn('does not perform Grab again', maul['answer'])
+        self.assertIn('/cards/white-lion-grasp-physical-1.5.jpeg', [card['url'] for card in maul['record']['card_sources']])
+        size_up = resolve('Size Up has one knocked-down survivor in field of view and no standing survivors. Can it pick that knocked-down survivor as a threat?')
+        self.assertEqual(size_up['record']['id'], 'white-lion-size-up')
+        self.assertIn('If Size Up finds no eligible threat, use its Sniff instruction', size_up['answer'])
 
     def test_compound_question_retrieves_independent_reviewed_topics(self):
         result = resolve('Can I Surge to hide in Tall Grass, and how does priority targeting from Fuzzy Groin work?')

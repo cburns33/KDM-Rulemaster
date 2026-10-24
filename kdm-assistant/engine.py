@@ -34,6 +34,12 @@ def supporting_records(question, chosen, hits, by_id):
     for candidate in hits:
         if candidate['id'] == chosen['id']:
             continue
+        if candidate['id'] == 'white-lion-setup' and not re.search(r'\b(?:first story|prologue)\b', question, re.I):
+            continue
+        if candidate['id'].startswith('white-lion-') and chosen['id'].startswith('white-lion-'):
+            card_name = candidate['title'].removeprefix('White Lion: ').removesuffix(' AI card')
+            if not re.search(r'\b' + re.escape(card_name) + r'\b', question, re.I):
+                continue
         topic_terms = set(words(candidate['keywords'] + ' ' + candidate['title']))
         overlap = terms & topic_terms
         if len(overlap) >= 2 and overlap - covered:
@@ -91,7 +97,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     card = next((r for r in sorted(RECORDS, key=lambda item: -len(item['title']))
                  if r['title'].startswith('White Lion: ') and r['title'].endswith(' AI card')
                  and re.search(r'\b' + re.escape(r['title'][12:-8]) + r'\b', question, re.I)), None)
-    if not card and not record_id and 'basic action' not in question.lower() and re.search(r'\b(?:if|when)\s+(?:nobody|no one|no target)\b', question, re.I) and re.search(r'\btarget\b', question, re.I):
+    if not card and not record_id and 'basic action' not in question.lower() and re.search(r'\b(?:no (?:eligible )?target|nobody|no one)\b', question, re.I) and re.search(r'\btarget\b', question, re.I):
         return {'status': 'clarify', 'answer': 'Which card or action has no target? Its no-target instruction decides what happens next.', 'record': None, 'context': {}}
     chosen = by_id.get(record_id) or explicit or card or (hits[0] if hits else None)
     q = question.lower()
