@@ -1,0 +1,14 @@
+# Physical 1.5 White Lion card check, 24 October 2026
+
+The user identified six photos as cards from the group's physical Kingdom Death: Monster 1.5 set. The JPEGs are kept in the ignored `kdm-assistant/data/card-reference-images/` folder. This check compares their visible faces with existing source work. It made no wiki request, OCR run, or change to live answer retrieval.
+
+| Attachment and local copy | Visual check |
+| --- | --- |
+| `IMG_1140.jpeg`, `white-lion-power-swat-physical-1.5.jpeg` | Power Swat is Basic AI. It targets the closest facing threat in range, then the closest threat in field of view, then uses Sniff. Its profile is Speed 1, Accuracy 2+, Damage 2. After Damage, Knockback 6 moves the target six spaces directly away from the monster. This is a new photographed candidate without a staged wiki draft or reviewed app record. |
+| `IMG_1141.jpeg`, `white-lion-claw-physical-1.5.jpeg` | Claw is Basic AI. Its ordered targets and Speed 2, Accuracy 2+, Damage 1 profile match the earlier image-checked Claw transcription. The Trigger field is blank. |
+| `IMG_1142.jpeg`, `white-lion-size-up-physical-1.5.jpeg` | Size Up is Basic AI. Its random threat in field of view, Sniff fallback, and Intimidate instruction match the earlier image-checked report: face the target, roll 1d10, and on 4+ cause one brain damage per monster level and knockdown. |
+| `IMG_1137.jpeg`, `white-lion-combo-claw-physical-1.5.jpeg` | Combo Claw is Basic AI. The target order, Speed 2, Accuracy 4+, Damage 1 profile, conditional AI draw after the attack deals damage more than once, and Lost Hand persistent injury match staged wiki revision 28091. The condition depends on damage occurring more than once. |
+| `IMG_1138.jpeg`, `white-lion-maul-physical-1.5.jpeg` | Maul is Advanced AI. It selects the prior round's Grab victim before the closest knocked-down survivor in range, then uses Sniff. Its Speed 2, Accuracy 2+, Damage 3 profile and After Damage Bleed and Bash effects match staged wiki revision 28126. |
+| `IMG_1139.jpeg`, `white-lion-grasp-physical-1.5.jpeg` | Grasp is Basic AI. Its targets, Speed 1, Accuracy 2+, Damage 1 profile, After Damage movement, and Grab definition match the existing Grasp source audit. The pictured Grab definition supplies the linked mechanic named by Maul's first target condition. |
+
+The two staged wiki drafts match the photographed Maul and Combo Claw faces in the checked fields. The physical Grasp photo supports the Grab term used by Maul. These comparisons establish card-face evidence for the user's 1.5 set; they do not establish every interaction with other rules. The drafts remain outside reviewed answer retrieval while their source relationships and held-out behavior are evaluated. The Cunning effect still lacks a card face or other checked definition. The White Lion Data Card has an online image comparison from 11 October, but no photo from this physical set was supplied here.

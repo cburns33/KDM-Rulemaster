@@ -2,6 +2,10 @@
 
 This is the active development worktree for the source-grounded rules assistant. It is at `D:\Documents\KDM\KDM-Rulemaster-v2` on branch `rules-v2`, created from `main` commit `809a4f8` on 2 October 2026. Its rules and wiki-source work was committed as `1e3f1c4`. The separate `main` checkout at `D:\Documents\KDM\KDM-Rulemaster` contains the shared-code access gate and Grasp rule work in local commit `7027df5`. Local `main` has not been pushed. The Vercel production deployment uses `809a4f8`; pushing `main` can start a production deployment. The `rules-v2` Vercel config disables automatic deployments for this branch. This branch has not been cleared for hosting.
 
+## Source update, 24 October 2026
+
+The user supplied six photos from the group's physical 1.5 White Lion set. Maul and Combo Claw match the checked fields in their staged wiki drafts, and the photographed Grasp card defines the Grab term used by Maul. Claw and Size Up support earlier checks; Power Swat is a new photographed candidate. See `evaluation/2026-10-24-physical-white-lion-cards/REPORT.md`. Cunning's effect and a physical-set White Lion Data Card photo remain missing. The draft sources remain outside live answer retrieval. The older source-availability notes below record the state before these photos arrived.
+
 ## Mission
 
 Build a rules assistant that can answer diverse, unseen Kingdom Death: Monster play questions from verified card and rulebook sources. It should find the relevant evidence, combine rules within their stated scope, show where the answer came from, and identify missing or conflicting evidence. Coverage should grow through reusable source records and retrieval behavior that transfer across questions.

@@ -1,6 +1,10 @@
 # KDM rules assistant: project state
 
-## Current handoff, 7 October 2026, rules-v2 worktree
+## Current handoff, 24 October 2026, rules-v2 worktree
+
+The user supplied six photos from the group's physical 1.5 White Lion set: Power Swat, Claw, Size Up, Combo Claw, Maul, and Grasp. They are stored in the ignored `kdm-assistant/data/card-reference-images/` folder. The visual audit in `evaluation/2026-10-24-physical-white-lion-cards/REPORT.md` found that Maul and Combo Claw match their staged wiki draft fields, while Grasp supplies the Grab definition linked by Maul. Claw and Size Up match earlier checked source work; Power Swat is a new photographed candidate. No draft was promoted into live answer retrieval. Cunning still lacks a checked definition, and the White Lion Data Card has no photo from this physical set. The next app check is a held-out evaluation of source selection, multi-source answers, and unsupported questions before adding bounded reviewed records.
+
+## Earlier handoff, 7 October 2026, rules-v2 worktree
 
 Mission: build a source-grounded rules assistant that handles diverse, unseen play questions using verified card and rulebook evidence. It must combine applicable sources, cite them, and state uncertainty or missing coverage. Early-game cases set review priority and serve as tests; they must not drive one-off routing or answer patches. Evaluate changes with held-out questions, nearby counterexamples, and unsupported cases. `ITERATION_2.md` is the detailed mission and folder guide.
 
