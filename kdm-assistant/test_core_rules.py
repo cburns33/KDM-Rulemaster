@@ -86,15 +86,16 @@ class CoreRuleTests(unittest.TestCase):
                 self.assertIn(text, result['answer'])
                 self.assertEqual(result['record']['card_sources'][0]['edition'], '1.5')
 
-    def test_maul_can_include_grab_definition_without_cunning(self):
+    def test_maul_uses_physical_cards_for_grab_and_target_priority(self):
         result = resolve('Maul targets last round\'s Grab victim. What does Grab do?')
         self.assertEqual(result['record']['id'], 'white-lion-maul')
         self.assertIn('/cards/white-lion-grasp-physical-1.5.jpeg', [card['url'] for card in result['record']['card_sources']])
         self.assertIn('attack-effects', [record['id'] for record in result['related_records']])
         self.assertIn('placing the knocked-down target', result['answer'])
-        missing = resolve('What does Cunning do for a level 2 White Lion?')
-        self.assertEqual(missing['status'], 'source-needed')
-        self.assertIsNone(missing['record'])
+        distant = resolve('The survivor grabbed last round is beyond the White Lion\'s movement range, while a different knocked-down survivor is in range. Maul is drawn. Who does it pick?')
+        self.assertEqual(distant['record']['id'], 'white-lion-maul')
+        self.assertIn('first targets the victim of Grab last round', distant['answer'])
+        self.assertEqual(distant['record']['card_sources'][0]['url'], '/cards/white-lion-maul-physical-1.5.jpeg')
 
     def test_uncovered_monster_and_unspecified_no_target_do_not_borrow_white_lion_rules(self):
         phoenix = resolve('What does the Phoenix do on its Basic Action?')

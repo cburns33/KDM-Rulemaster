@@ -67,10 +67,10 @@ class WikiPreviewTests(unittest.TestCase):
                 model_answer('What does the card say?', DRAFT)
 
     def test_selects_named_or_distinctive_draft(self):
-        other = {**DRAFT, 'title': 'Other Card', 'blocks': [
-            {'type': 'text', 'text': 'Level 2 deck list and Cunning'}], 'linked_pages': ['Cunning']}
+        other = {**DRAFT, 'title': 'Combo Claw', 'blocks': [
+            {'type': 'text', 'text': 'Speed 2, Accuracy 4+, Damage 1'}], 'linked_pages': []}
         self.assertIs(select_draft('What does Sample Card say?', [DRAFT, other]), DRAFT)
-        self.assertIs(select_draft('What does Cunning do?', [DRAFT, other]), other)
+        self.assertIs(select_draft('What does Combo Claw do?', [DRAFT, other]), other)
 
     def test_declines_missing_or_ambiguous_source(self):
         other = {**DRAFT, 'title': 'Other Card'}

@@ -15,3 +15,7 @@ After these changes, all 15 fixed questions returned the expected primary card o
 ## Limits
 
 The app still returns long reference summaries in local mode, including some general rule context that a short answer would omit. The unknown named-subject guard covers a simple question form. Model-based synthesis, new card families, and the missing Cunning effect were not verified here. The next evaluation should use another unseen set with paraphrases, follow-up turns, and conflicts between card instructions and general rules.
+
+## User-directed test substitution
+
+After the first run, the user asked to drop the Cunning test and use a supplied card photo. Active question 13 now tests Maul's first target condition when its prior Grab victim is beyond movement range and a different knocked-down survivor is in range. The resolver selects Maul and links the group's Maul and Grasp photos. Its answer keeps the prior Grab victim first. The original Cunning response remains described above as historical run evidence; it is no longer in the active question set or Python tests. The runtime still marks Cunning's effect as unverified because the available data card lists the trait without defining it.

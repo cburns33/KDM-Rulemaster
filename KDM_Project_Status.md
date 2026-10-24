@@ -1,5 +1,9 @@
 # KDM rules assistant: project state
 
+## Current handoff, 24 October 2026, photo-backed test substitution
+
+The user asked to remove Cunning from the active tests and use a supplied card photo. Active question 13 in `evaluation/2026-10-24-fresh-card-questions/QUESTIONS.md` now tests Maul's first target condition with a distant prior Grab victim and a closer knocked-down survivor. The matching Python test checks Maul selection and the physical Maul photo citation; the preview selector test now uses Combo Claw. No Python test asks for Cunning. All 92 tests pass. The six physical card photos are sufficient for the bounded White Lion records currently in the app. Cunning's effect remains unverified, so the runtime source-needed response stays. The revised evaluation report preserves the original run history and labels the substituted question as a regression case. `rules-v2` is the active development branch, with automatic Vercel deployments disabled.
+
 ## Current handoff, 24 October 2026, fresh card question check
 
 The 15 questions fixed in `evaluation/2026-10-24-fresh-card-questions/QUESTIONS.md` were run against local lookup. The first pass selected the expected primary source or decline status for 14, but an unspecified no-target question returned an unrelated record. Maul and Size Up needed clearer answer boundaries, and some secondary sources were irrelevant. The retrieval and record changes in `evaluation/2026-10-24-fresh-card-questions/REPORT.md` corrected those cases. All 15 fixed questions now match their expected source or decline category; this is a development regression check. The Python suite passes 92 tests. Cunning remains source-needed. Next: another unseen set with paraphrases, follow-ups, and card versus general-rule conflicts. The active branch is `rules-v2`; automatic deployments remain disabled. The separate `main` checkout is unchanged.

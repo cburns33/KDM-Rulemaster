@@ -1,6 +1,6 @@
 # Fresh White Lion questions, fixed before the lookup run
 
-These questions were written after the card promotion and before querying the updated assistant. Expected sources and answer boundaries were fixed at the same time. They are a small challenge set, not a population accuracy estimate.
+The original questions were written after the card promotion and before querying the updated assistant. Expected sources and answer boundaries were fixed at the same time. On the user's request, question 13 was replaced after that run. Its current version is a photo-backed Maul regression case. The original question 13 asked for Cunning's effect and received a source-needed response. This is a small challenge set, not a population accuracy estimate.
 
 1. After Grasp grabbed Erza last round, Maul is drawn. A different knocked-down survivor is closer. Who does Maul target? Expected: Maul card, with Grasp context. The previous Grab victim has priority.
 2. Maul rolls two attacks and neither deals damage. Do Bleed and Bash occur? Expected: Maul card and After Damage rule. Neither effect triggers.
@@ -14,6 +14,6 @@ These questions were written after the card promotion and before querying the up
 10. A level 3 White Lion rolls 3 for Size Up. Is any brain damage dealt? Expected: Size Up card. Its effect requires 4+.
 11. Size Up rolls 4+. Can the target Dodge the brain damage? Expected: Size Up card and Intimidate rule. No.
 12. Does Claw choose a knocked-down survivor as its closest threat when the Basic Action would choose a closest survivor? Expected: Claw and targeting definitions. A knocked-down survivor is normally excluded from threats, while Basic Action says survivor.
-13. What does the White Lion's Cunning trait do? Expected: source needed. No checked Cunning effect.
+13. The survivor grabbed last round is beyond the White Lion's movement range, while a different knocked-down survivor is in range. Maul is drawn. Who does it pick? Expected: Maul's photographed card. The prior Grab victim retains first target priority because that condition has no range qualifier; movement and attack still follow the general movement rules.
 14. What does the Dung Beetle Knight do on its Basic Action? Expected: unsupported. No reviewed source for that monster.
 15. No eligible target remains. What happens next? Expected: clarification. The card or action must be named.
