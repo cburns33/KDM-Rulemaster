@@ -80,10 +80,20 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         raise ValueError('Unknown record')
     if oven not in {'unknown', 'yes', 'no'}:
         raise ValueError('Choose yes, no, or unknown for Lantern Oven')
+    if re.search(r'\bcunning\b', question, re.I):
+        return {'status': 'source-needed', 'answer': 'Cunning is listed for the White Lion, but its effect has not been verified from a card or rule source in this collection. I cannot give its effect yet.', 'record': None, 'context': {}}
+    named_subject = re.search(r'\b(?:What|How) does (?:the )?([A-Z][a-z]+)\b', question)
+    if named_subject and not any(named_subject[1].lower() in words(r['title'] + ' ' + r['keywords']) for r in RECORDS):
+        return {'status': 'unsupported', 'answer': 'I do not have a reviewed source for that named subject. I cannot give its action or effect from this collection.', 'record': None, 'context': {}}
     hits = search(question)
     by_id = {r['id']: r for r in RECORDS}
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
-    chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
+    card = next((r for r in sorted(RECORDS, key=lambda item: -len(item['title']))
+                 if r['title'].startswith('White Lion: ') and r['title'].endswith(' AI card')
+                 and re.search(r'\b' + re.escape(r['title'][12:-8]) + r'\b', question, re.I)), None)
+    if not card and not record_id and 'basic action' not in question.lower() and re.search(r'\b(?:if|when)\s+(?:nobody|no one|no target)\b', question, re.I) and re.search(r'\btarget\b', question, re.I):
+        return {'status': 'clarify', 'answer': 'Which card or action has no target? Its no-target instruction decides what happens next.', 'record': None, 'context': {}}
+    chosen = by_id.get(record_id) or explicit or card or (hits[0] if hits else None)
     q = question.lower()
     age_followup = (context.get('record_id') == 'age-first-milestone' and
                     set(words(q)) <= {'gain', 'first', 'second', 'third', 'fourth', 'milestone',
@@ -127,7 +137,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
             chosen = by_id['attack-effects' if 'brain' in q else 'monster-hit-damage']
     # Do not return adjacent rules for card text or tables not yet reviewed.
     unreviewed_detail = bool(
-        re.search(r'\b(?:chomp|maul|power swat)\s+card\b.*\b(?:instruct|do|effect)', q)
+        re.search(r'\bchomp\s+card\b.*\b(?:instruct|do|effect)', q)
     )
     if unreviewed_detail and not record_id:
         return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
@@ -142,7 +152,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         chosen = by_id['age-first-milestone']
     elif not record_id and not (damage_question or hunt_damage) and re.search(r'severe\s+head\s+injur(?:y|ies)', q):
         chosen = by_id['severe-head-injury']
-    elif not record_id and re.search(r'\bclaw\s+(?:ai\s+)?card\b', q):
+    elif not record_id and not card and re.search(r'\bclaw\s+(?:ai\s+)?card\b', q):
         chosen = by_id['white-lion-claw']
     elif not record_id and not explicit and re.search(r'knock(?:ed|s)?\s+(?:the\s+attacker\s+)?down', q) and re.search(r'attacker|attacking survivor|survivor attacks|unresolved hits', q):
         chosen = by_id['survivor-attack-sequence']

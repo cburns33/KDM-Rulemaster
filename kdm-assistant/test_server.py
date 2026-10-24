@@ -45,6 +45,9 @@ class ServerTests(unittest.TestCase):
         with urllib.request.urlopen(self.url + '/cards/white-lion-grasp.png') as response:
             self.assertEqual(response.headers.get_content_type(), 'image/png')
             self.assertEqual(response.read(8), b'\x89PNG\r\n\x1a\n')
+        with urllib.request.urlopen(self.url + '/cards/white-lion-maul-physical-1.5.jpeg') as response:
+            self.assertEqual(response.headers.get_content_type(), 'image/jpeg')
+            self.assertEqual(response.read(3), b'\xff\xd8\xff')
 
     def test_sol_is_opt_in_and_only_for_references(self):
         with patch('server.sol_answer', return_value='A source-grounded explanation.') as sol:
@@ -100,7 +103,7 @@ class ServerTests(unittest.TestCase):
 
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
-        self.assertEqual(len(library['records']), 18)
+        self.assertEqual(len(library['records']), 22)
         self.assertEqual(sum(p['reviewed'] for p in library['pages']), 24)
         continuation = next(p for p in library['pages'] if p['revised'] == 56)
         self.assertTrue(continuation['reviewed'])

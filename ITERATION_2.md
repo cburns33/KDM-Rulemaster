@@ -1,5 +1,9 @@
 # Rules assistant, iteration 2
 
+## Card retrieval update, 24 October 2026
+
+The group-photo audit led to four reviewed White Lion AI card records: Maul, Combo Claw, Power Swat, and Size Up. Claw and Grasp now cite photos from the same physical 1.5 set. The images are in `kdm-assistant/public/cards/`, while the staged wiki drafts remain outside runtime retrieval. The source-selection check, limitations, and 91-test result are in `evaluation/2026-10-24-white-lion-promotion/REPORT.md`. Cunning is still unsupported because its effect has no checked source. The next evaluation needs unseen phrasings and compound card and rulebook questions.
+
 This is the active development worktree for the source-grounded rules assistant. It is at `D:\Documents\KDM\KDM-Rulemaster-v2` on branch `rules-v2`, created from `main` commit `809a4f8` on 2 October 2026. Its rules and wiki-source work was committed as `1e3f1c4`. The separate `main` checkout at `D:\Documents\KDM\KDM-Rulemaster` contains the shared-code access gate and Grasp rule work in local commit `7027df5`. Local `main` has not been pushed. The Vercel production deployment uses `809a4f8`; pushing `main` can start a production deployment. The `rules-v2` Vercel config disables automatic deployments for this branch. This branch has not been cleared for hosting.
 
 ## Source update, 24 October 2026

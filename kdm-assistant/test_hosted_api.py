@@ -37,7 +37,7 @@ class HostedApiTests(unittest.TestCase):
     def test_library_marks_the_hosted_mode(self):
         result = hosted_api.library()
         self.assertEqual(result['hosting'], 'vercel')
-        self.assertEqual(len(result['records']), 18)
+        self.assertEqual(len(result['records']), 22)
 
     def test_ask_keeps_context_sent_by_the_browser(self):
         first = hosted_api.ask({'question': 'Hands of Heat roll 6'})
