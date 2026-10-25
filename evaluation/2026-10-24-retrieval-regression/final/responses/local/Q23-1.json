@@ -1,0 +1,16 @@
+{
+  "case": "Q23",
+  "turn": 1,
+  "mode": "local",
+  "question": "We have reached our first settlement and are looking at Language. What does that innovation give the settlement, and which survival actions are available afterward? Please identify the source for each unlock.",
+  "ended_utc": "2026-10-25T02:48:11.872767+00:00",
+  "elapsed_seconds": 0.012,
+  "response": {
+    "chat_id": "538fd7a642d184092a27b47d",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete Language instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case": "Q25",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We rolled 84 on the hunt-event table. Tell us the exact event and all of its results. We haven't supplied the event text or a photograph.",
+  "ended_utc": "2026-10-25T02:45:01.180569+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "978d72a412527a1cd075903c",
+    "status": "unsupported",
+    "answer": "The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

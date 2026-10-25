@@ -1,0 +1,62 @@
+{
+  "question": "In our first settlement, how do we craft gear, spend resources, and put unworn gear into storage? What source gives the exact recipe?",
+  "response": {
+    "chat_id": "f0c31260033c173dcfe80933",
+    "record": {
+      "id": "first-settlement-develop",
+      "title": "First settlement: development, crafting, and storage",
+      "original": 39,
+      "supporting_originals": [
+        38
+      ],
+      "keywords": "first settlement develop development craft crafting gear spend resources resource recipe cost archive storage unspent unworn endeavors lantern hoard bonesmith organ grinder skinnery innovate innovation departing survivors prepare gear armor",
+      "layout": "Step 7 starts in the left column and continues at the top of the middle column; Craft Gear and step 8 follow. Step 8 continues at the top of the right column before steps 10-11.",
+      "summary": "During first-settlement development, spend endeavors at Lantern Hoard to build initial locations. Each location costs 1 endeavor: Bonesmith, Organ Grinder, and Skinnery can all be built with 3. Crafting spends the resources listed on the chosen location, archives those resource cards, and takes the crafted gear from the box. Record unspent resources and unworn gear in settlement storage before archiving their cards.",
+      "notes": [
+        "With fewer than 3 starting endeavors, choose which initial locations to build. Place built location cards below the settlement board. Each spent endeavor reduces the available total by 1.",
+        "If endeavors remain, an Organ Grinder permits Augury for 1 endeavor; follow its own rules. A birth triggers Principle: New Life. Those detailed outcomes are not included in this record.",
+        "The first-settlement overview permits innovating at Lantern Hoard by spending 1 endeavor and 3 resources, one bone, one organ, and one hide. Draw the top 2 innovation cards and choose 1 to add permanently. Full innovation and resource-substitution rules require their own reviewed sources.",
+        "A specific crafting recipe or crafted gear effect requires its location/gear source. This procedure does not establish the cost of an unreviewed recipe or whether a particular resource is a legal substitute.",
+        "Before departure, choose an available quarry and departing survivors, place acquired gear on their grids, update armor points, and apply departing bonuses. After First Story only White Lion is available until story events add more quarries.",
+        "Skip step 9 in the First Story settlement. Record unspent resources and unworn gear in storage and return their cards to the box; they may be retrieved later. Preserve the settlement record when putting the game away."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 17,
+        "original": 39,
+        "printed": 35,
+        "edition": "1.5",
+        "title": "First settlement: development, crafting, and storage",
+        "reviewed": true,
+        "record_id": "first-settlement-develop"
+      },
+      "sources": [
+        {
+          "revised": 17,
+          "original": 39,
+          "printed": 35,
+          "edition": "1.5",
+          "title": "First settlement: development, crafting, and storage",
+          "reviewed": true,
+          "record_id": "first-settlement-develop"
+        },
+        {
+          "revised": 16,
+          "original": 38,
+          "printed": 34,
+          "edition": "1.5",
+          "title": "First settlement: returning survivors and timeline",
+          "reviewed": true,
+          "record_id": "first-settlement-return"
+        }
+      ],
+      "image": "/pages/17.jpg"
+    },
+    "status": "reference",
+    "answer": "During first-settlement development, spend endeavors at Lantern Hoard to build initial locations. Each location costs 1 endeavor: Bonesmith, Organ Grinder, and Skinnery can all be built with 3. Crafting spends the resources listed on the chosen location, archives those resource cards, and takes the crafted gear from the box. Record unspent resources and unworn gear in settlement storage before archiving their cards.\n\nWith fewer than 3 starting endeavors, choose which initial locations to build. Place built location cards below the settlement board. Each spent endeavor reduces the available total by 1.\nIf endeavors remain, an Organ Grinder permits Augury for 1 endeavor; follow its own rules. A birth triggers Principle: New Life. Those detailed outcomes are not included in this record.\nThe first-settlement overview permits innovating at Lantern Hoard by spending 1 endeavor and 3 resources, one bone, one organ, and one hide. Draw the top 2 innovation cards and choose 1 to add permanently. Full innovation and resource-substitution rules require their own reviewed sources.\nA specific crafting recipe or crafted gear effect requires its location/gear source. This procedure does not establish the cost of an unreviewed recipe or whether a particular resource is a legal substitute.\nBefore departure, choose an available quarry and departing survivors, place acquired gear on their grids, update armor points, and apply departing bonuses. After First Story only White Lion is available until story events add more quarries.\nSkip step 9 in the First Story settlement. Record unspent resources and unworn gear in storage and return their cards to the box; they may be retrieved later. Preserve the settlement record when putting the game away.",
+    "context": {
+      "record_id": "first-settlement-develop"
+    },
+    "related_records": []
+  }
+}

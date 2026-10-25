@@ -1,0 +1,16 @@
+{
+  "case": "Q16",
+  "turn": 1,
+  "mode": "local",
+  "question": "Claw has finished and the next AI card is Chomp. Please walk us through Chomp's target list, attack numbers, and any additional instructions using its own card.",
+  "ended_utc": "2026-10-25T02:48:11.751668+00:00",
+  "elapsed_seconds": 0.03,
+  "response": {
+    "chat_id": "1d4bb990fd3870080636d3d4",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete Chomp instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

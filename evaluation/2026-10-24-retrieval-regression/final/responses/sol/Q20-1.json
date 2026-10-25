@@ -1,0 +1,58 @@
+{
+  "case": "Q20",
+  "turn": 1,
+  "mode": "sol",
+  "question": "For our opening Prologue fight, how far away do the survivors start, and do we use the normal random level 1 AI setup?",
+  "ended_utc": "2026-10-25T02:48:16.742111+00:00",
+  "elapsed_seconds": 2.335,
+  "response": {
+    "chat_id": "054bf5110d1cc5b3c8738da0",
+    "record": {
+      "id": "white-lion-setup",
+      "title": "First Story: White Lion",
+      "original": 30,
+      "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
+      "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
+      "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
+      "notes": [
+        "Set Claw aside, shuffle the rest face down, then place Claw face down on top.",
+        "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.",
+        "Place the double-sided Basic Action / Monster Reference card on the monster control panel.",
+        "Arrange survivor records and gear grids around the showdown board.",
+        "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 8,
+        "original": 30,
+        "printed": 26,
+        "edition": "1.5",
+        "title": "First Story: White Lion",
+        "reviewed": true,
+        "record_id": "white-lion-setup"
+      },
+      "sources": [
+        {
+          "revised": 8,
+          "original": 30,
+          "printed": 26,
+          "edition": "1.5",
+          "title": "First Story: White Lion",
+          "reviewed": true,
+          "record_id": "white-lion-setup"
+        }
+      ],
+      "image": "/pages/8.jpg"
+    },
+    "status": "model-reference",
+    "answer": "For the opening Prologue White Lion fight, place each survivor **6 spaces from the White Lion**, counting cardinally—not diagonally—on the blue diagram spaces.\n\n**Do not use a normal random level 1 AI setup.** *First Story: White Lion* specifies a predetermined deck: Claw, Chomp, Size Up, Power Swat, and Grasp as Basic cards; Maul, Terrifying Roar, and Enraged as Advanced cards; and no Legendary cards. Set Claw aside, shuffle the other AI cards face down, then put Claw face down on top.",
+    "context": {
+      "record_id": "white-lion-setup"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

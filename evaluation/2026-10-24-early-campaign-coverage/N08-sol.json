@@ -1,0 +1,74 @@
+{
+  "question": "Standard level 1 White Lion victory: who gains weapon proficiency, what are the rewards, and when do we add Catarium?",
+  "response": {
+    "chat_id": "d7c34969e1f8f086b12f61d8",
+    "record": {
+      "id": "white-lion-aftermath",
+      "title": "White Lion level 1 aftermath and rewards",
+      "original": 183,
+      "supporting_originals": [
+        47,
+        55
+      ],
+      "keywords": "standard white lion level one level 1 aftermath victory victorious defeated defeat rewards resources hunt xp weapon proficiency level catarium jewelry loss return",
+      "layout": "The story-event Aftermath column gives level 1 victory and defeat. The right reward panel gives the level-specific resource counts and first-victory Catarium addition. Printed page 43 supplies proficiency eligibility.",
+      "summary": "On a standard level 1 White Lion victory, survivors gain +1 Hunt XP and eligible survivors gain +1 weapon proficiency level. The group gains 4 basic resources and 4 White Lion resources. The first time the group defeats a White Lion, add Catarium to the settlement locations. Apply proficiency eligibility rather than granting it to every survivor.",
+      "notes": [
+        "To gain the proficiency level, a survivor must have selected a weapon type and wounded a monster at least once with that type during the showdown, then be victorious. Without a selected type the survivor cannot gain proficiency unless a rule states otherwise.",
+        "The White Lion defeat instruction applies when the survivors lose: roll 1d10; on 6+, archive one jewelry gear of your choice. If survivors have no jewelry, nothing happens. Consult other applicable death/return rules separately.",
+        "The First Story has its own victory instructions and dead-survivor gear exception. Do not apply that exception to every later showdown.",
+        "These records cover the level 1 aftermath; level 2/3 rewards and Saga effects remain outside this unit."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        },
+        {
+          "revised": 24,
+          "original": 47,
+          "printed": 43,
+          "edition": "1.5",
+          "title": "Age: first Hunt XP milestone",
+          "reviewed": true,
+          "record_id": "age-first-milestone"
+        },
+        {
+          "revised": 31,
+          "original": 55,
+          "printed": 51,
+          "edition": "1.5",
+          "title": "White Lion Basic Action and Monster Reference card",
+          "reviewed": true,
+          "record_id": "white-lion-basic-action"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "model-reference",
+    "answer": "On a **standard level 1 White Lion victory**:\n\n- **Hunt XP:** Each survivor gains +1 Hunt XP.\n- **Weapon proficiency:** An eligible survivor gains +1 weapon proficiency level only if they had selected a weapon type, wounded the monster at least once with that type during the showdown, and were victorious. It is not granted to every survivor automatically.\n- **Resources:** The group gains 4 basic resources and 4 White Lion resources.\n- **Catarium:** Add Catarium to the settlement locations the first time the group defeats a White Lion.",
+    "context": {
+      "record_id": "white-lion-aftermath"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

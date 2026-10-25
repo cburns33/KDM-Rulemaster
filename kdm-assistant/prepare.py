@@ -12,14 +12,14 @@ def prepare():
     data = ROOT / 'data'
     pages = ROOT / 'public' / 'pages'
     pages.mkdir(parents=True, exist_ok=True)
-    map_path = ROOT.parent / 'KDM_Rules_Focused_Page_Map.md'
+    map_path = ROOT.parent / 'sources' / 'KDM_Rules_Focused_Page_Map.md'
     mapping = [(int(a), int(b), None if c == 'Unnumbered' else int(c)) for a, b, c in re.findall(r'^\| (\d+) \| (\d+) \| (\d+|Unnumbered) \|', map_path.read_text(encoding='utf-8'), re.M)]
     if len(mapping) != 138:
         raise ValueError('Expected 138 retained source pages')
     by_source = {r['original']: r for r in RECORDS}
     legacy_pages = ROOT.parent.parent / 'work' / 'pdf-triage'
     if not legacy_pages.exists() and not all((pages / f'{i}.jpg').exists() for i in range(1, 139)):
-        pdf = ROOT.parent / 'KDM_Rulebook_1.5_Rules_Focused.pdf'
+        pdf = ROOT.parent / 'sources' / 'KDM_Rulebook_1.5_Rules_Focused.pdf'
         subprocess.run(['pdftoppm', '-f', '1', '-l', '138', '-r', '100', '-jpeg', str(pdf), str(pages / 'render')], check=True)
         for rendered in pages.glob('render-*.jpg'):
             rendered.rename(pages / f'{int(rendered.stem.split("-")[-1])}.jpg')

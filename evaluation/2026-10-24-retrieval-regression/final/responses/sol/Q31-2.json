@@ -1,0 +1,204 @@
+{
+  "case": "Q31",
+  "turn": 2,
+  "mode": "sol",
+  "question": "I checked the die again: the damaged location was Head instead. The severe injury roll is still 8.",
+  "ended_utc": "2026-10-25T02:48:19.043258+00:00",
+  "elapsed_seconds": 0.016,
+  "response": {
+    "chat_id": "704e9003f61338fc07701d9c",
+    "record": {
+      "id": "severe-head-injury",
+      "title": "Severe head injuries",
+      "original": 90,
+      "keywords": "severe head injury injuries roll result concussion bleeding blind deaf intracranial hemorrhage decapitation",
+      "layout": "Printed page 86 has severe-injury rules at left and a complete Head 1d10 table in the middle; Arms is a separate right-hand table.",
+      "summary": "For a severe head injury, roll 1d10 on the Head table. Five bleeding tokens kill a survivor. If a permanent injury has reached its recording limit, gain one bleeding token instead.",
+      "notes": [
+        "The Head table is separate from the Arms table on the same page. Result 8 is Concussion: gain one random disorder and one bleeding token."
+      ],
+      "tables": [
+        {
+          "id": "head",
+          "title": "Severe injury: Head",
+          "die": "1d10",
+          "rows": [
+            {
+              "min": 1,
+              "max": 2,
+              "label": "1-2",
+              "effects": [
+                "Head explosion: survivor dies. Other survivors lose 1 survival."
+              ]
+            },
+            {
+              "min": 3,
+              "max": 4,
+              "label": "3-4",
+              "effects": [
+                "Decapitation: survivor dies."
+              ]
+            },
+            {
+              "min": 5,
+              "max": 5,
+              "label": "5",
+              "effects": [
+                "Intracranial hemorrhage: cannot use or gain survival; permanent, record once; gain 1 bleeding token."
+              ]
+            },
+            {
+              "min": 6,
+              "max": 6,
+              "label": "6",
+              "effects": [
+                "Deaf: suffer -1 permanent evasion; permanent, record once; gain 1 bleeding token."
+              ]
+            },
+            {
+              "min": 7,
+              "max": 7,
+              "label": "7",
+              "effects": [
+                "Blind: suffer -1 permanent accuracy; permanent, record twice. With two, suffer -4 permanent accuracy and retire at end of next hunt or settlement phase; gain 1 bleeding token."
+              ]
+            },
+            {
+              "min": 8,
+              "max": 8,
+              "label": "8",
+              "effects": [
+                "Concussion: gain 1 random disorder and 1 bleeding token."
+              ]
+            },
+            {
+              "min": 9,
+              "max": 9,
+              "label": "9",
+              "effects": [
+                "Shattered jaw: cannot consume or be affected by events requiring consumption; cannot encourage; permanent, record once; gain 1 bleeding token."
+              ]
+            },
+            {
+              "min": 10,
+              "max": null,
+              "label": "10+",
+              "effects": [
+                "Destroyed tooth: with 3+ courage gain +2 insanity; otherwise be knocked down."
+              ]
+            }
+          ]
+        }
+      ],
+      "source": {
+        "revised": 62,
+        "original": 90,
+        "printed": 86,
+        "edition": "1.5",
+        "title": "Severe head injuries",
+        "reviewed": true,
+        "record_id": "severe-head-injury"
+      },
+      "sources": [
+        {
+          "revised": 62,
+          "original": 90,
+          "printed": 86,
+          "edition": "1.5",
+          "title": "Severe head injuries",
+          "reviewed": true,
+          "record_id": "severe-head-injury"
+        }
+      ],
+      "image": "/pages/62.jpg"
+    },
+    "status": "resolved",
+    "answer": "Severe injury: Head: 8 is 8. Concussion: gain 1 random disorder and 1 bleeding token.",
+    "context": {
+      "record_id": "severe-head-injury",
+      "topic": "severe-injury",
+      "location": "head"
+    },
+    "table": {
+      "id": "head",
+      "title": "Severe injury: Head",
+      "die": "1d10",
+      "rows": [
+        {
+          "min": 1,
+          "max": 2,
+          "label": "1-2",
+          "effects": [
+            "Head explosion: survivor dies. Other survivors lose 1 survival."
+          ]
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "label": "3-4",
+          "effects": [
+            "Decapitation: survivor dies."
+          ]
+        },
+        {
+          "min": 5,
+          "max": 5,
+          "label": "5",
+          "effects": [
+            "Intracranial hemorrhage: cannot use or gain survival; permanent, record once; gain 1 bleeding token."
+          ]
+        },
+        {
+          "min": 6,
+          "max": 6,
+          "label": "6",
+          "effects": [
+            "Deaf: suffer -1 permanent evasion; permanent, record once; gain 1 bleeding token."
+          ]
+        },
+        {
+          "min": 7,
+          "max": 7,
+          "label": "7",
+          "effects": [
+            "Blind: suffer -1 permanent accuracy; permanent, record twice. With two, suffer -4 permanent accuracy and retire at end of next hunt or settlement phase; gain 1 bleeding token."
+          ]
+        },
+        {
+          "min": 8,
+          "max": 8,
+          "label": "8",
+          "effects": [
+            "Concussion: gain 1 random disorder and 1 bleeding token."
+          ]
+        },
+        {
+          "min": 9,
+          "max": 9,
+          "label": "9",
+          "effects": [
+            "Shattered jaw: cannot consume or be affected by events requiring consumption; cannot encourage; permanent, record once; gain 1 bleeding token."
+          ]
+        },
+        {
+          "min": 10,
+          "max": null,
+          "label": "10+",
+          "effects": [
+            "Destroyed tooth: with 3+ courage gain +2 insanity; otherwise be knocked down."
+          ]
+        }
+      ]
+    },
+    "row": {
+      "min": 8,
+      "max": 8,
+      "label": "8",
+      "effects": [
+        "Concussion: gain 1 random disorder and 1 bleeding token."
+      ]
+    },
+    "roll": 8,
+    "related_records": []
+  }
+}

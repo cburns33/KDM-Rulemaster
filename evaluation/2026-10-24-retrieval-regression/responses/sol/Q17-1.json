@@ -1,0 +1,16 @@
+{
+  "case": "Q17",
+  "turn": 1,
+  "mode": "sol",
+  "question": "The next card in our opening fight is Terrifying Roar. What do we resolve, in what order, and which printed source are you using for those instructions?",
+  "ended_utc": "2026-10-25T02:44:54.625848+00:00",
+  "elapsed_seconds": 0.012,
+  "response": {
+    "chat_id": "185e1627cc1313f2192a2e77",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete Terrifying Roar instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

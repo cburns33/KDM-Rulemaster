@@ -80,7 +80,7 @@ class CombatFixTests(unittest.TestCase):
         result = resolve('The White Lion already used its movement this round. A reaction now instructs a Basic Action. Can it move again?')
         self.assertEqual(result['record']['id'], 'monster-movement')
         self.assertIn('each instructed action', result['answer'])
-        self.assertIn('white-lion-claw', [r['id'] for r in result['related_records']])
+        self.assertIn('white-lion-basic-action', [r['id'] for r in result['related_records']])
         result = resolve('Claw AI card versus Basic Action: closest knocked-down survivor or a standing threat?')
         records = [result['record']] + result.get('related_records', [])
         evidence = ' '.join(r['summary'] + ' '.join(r['notes']) for r in records)

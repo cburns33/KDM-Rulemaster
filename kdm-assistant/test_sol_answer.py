@@ -33,6 +33,22 @@ class SolCitationTests(unittest.TestCase):
         self.assertFalse(body['store'])
         self.assertEqual(answer, 'Unresolved hits are canceled.')
 
+    def test_linked_diagram_availability_and_geometry_limit_reach_the_model(self):
+        record = next(r for r in RECORDS if r['id'] == 'moods-and-flows')
+        supplied = json.loads(sol_answer.source_payload([record]))[0]
+        self.assertEqual(supplied['layout'], record['layout'])
+        self.assertEqual(supplied['images']['linked_sources'][0]['kind'], 'app image')
+        self.assertIn('Zone of Death', supplied['images']['linked_sources'][0]['title'])
+        self.assertIn('Exact square coordinates have not been transcribed', supplied['images']['interpretation_limits'][0])
+        self.assertIn('Image pixels are not included', supplied['images']['delivery'])
+        response = MagicMock()
+        response.__enter__.return_value.read.return_value = json.dumps({'output_text': 'Consult the linked diagram.'}).encode()
+        with patch('sol_answer.api_key', return_value='test-placeholder'), patch('sol_answer.urlopen', return_value=response) as request:
+            sol_answer.answer('Where is the zone?', [record])
+        instructions = json.loads(request.call_args.args[0].data)['instructions']
+        self.assertIn('Do not claim a listed image is missing', instructions)
+        self.assertIn('Do not infer untranscribed geometry', instructions)
+
 
 if __name__ == '__main__':
     unittest.main()

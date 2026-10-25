@@ -1,0 +1,45 @@
+{
+  "question": "The final AI card is now in the wound stack and both other piles are empty. Has the lion died?",
+  "response": {
+    "chat_id": "927002cc85a89844102b0cfc",
+    "record": {
+      "id": "monster-defeat",
+      "title": "Empty AI decks and the killing wound",
+      "original": 37,
+      "keywords": "monster defeat dead killed kill killing last final wound empty ai deck discard pile remaining no cards shuffle basic action",
+      "layout": "Finish the Showdown in the left column explains reshuffling and Basic Action; How Do We Kill It in the center gives the killing-wound condition.",
+      "summary": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.",
+      "notes": [
+        "The next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 15,
+        "original": 37,
+        "printed": 33,
+        "edition": "1.5",
+        "title": "Empty AI decks and the killing wound",
+        "reviewed": true,
+        "record_id": "monster-defeat"
+      },
+      "sources": [
+        {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        }
+      ],
+      "image": "/pages/15.jpg"
+    },
+    "status": "reference",
+    "answer": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.\n\nThe next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records.",
+    "context": {
+      "record_id": "monster-defeat"
+    },
+    "related_records": []
+  }
+}

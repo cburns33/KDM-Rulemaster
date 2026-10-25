@@ -2,12 +2,42 @@
 import json
 import re
 import sqlite3
-from records import RECORDS
+from records import RECORDS, SOURCE_GAPS
 
 STOP = set('a an the of on in is are do does can i my we our what happens how why it this that if with to for and roll rolled result have has already get give me tell about'.split())
 
 def words(text):
     return [w for w in re.findall(r"[a-z]+", text.lower()) if w not in STOP]
+
+def card_name(record):
+    if record.get('card_name'):
+        return record['card_name']
+    if record['title'].startswith('White Lion: ') and record['title'].endswith(' AI card'):
+        return record['title'][12:-8]
+    return None
+
+def completed_subject(question, match):
+    return bool(re.match(r'\s+(?:(?:has|is|was)\s+)?(?:finished|discarded|resolved|completed)\b', question[match.end():], re.I) or
+                re.search(r'\b(?:resolved|discarded|completed|after resolving|after discarding)\s+$', question[:match.start()], re.I))
+
+def reference_candidates(question, hits):
+    """Require topic evidence for a primary reference, beyond common words."""
+    terms = set(words(question))
+    frequency = {}
+    for record in RECORDS:
+        for term in set(words(record['keywords'] + ' ' + record['title'])):
+            frequency[term] = frequency.get(term, 0) + 1
+    candidates = []
+    for record in hits:
+        if card_name(record) or record['tables']:
+            continue
+        if record['id'] == 'white-lion-setup' and not re.search(r'\b(?:setup|set(?:ting)?\s+up|prepare|start|starting|shuffle)\b', question, re.I):
+            continue
+        overlap = terms & set(words(record['keywords'] + ' ' + record['title']))
+        title_terms = set(words(record['title'])) - {'white', 'lion', 'survivor', 'monster', 'first', 'story', 'rules', 'examples'}
+        if len(overlap) >= 2 and (terms & title_terms or any(frequency[term] <= 2 for term in overlap)):
+            candidates.append(record)
+    return candidates
 
 def search(query):
     # Complete records are indexed as a unit, including every table and outcome.
@@ -30,26 +60,41 @@ def supporting_records(question, chosen, hits, by_id):
     """Add reviewed topics that cover question terms missing from the main record."""
     terms = set(words(question))
     covered = set(words(chosen['keywords'] + ' ' + chosen['title']))
-    related = []
+    related = [by_id[record_id] for record_id in chosen.get('related_ids', [])][:2]
+    scope_question = re.sub(r'\bnot\s+(?:the\s+)?(?:prologue|first story)\b', '', question.lower())
+    scope_terms = {'prologue': r'\b(?:prologue|first story|opening fight|first fight)\b',
+                   'standard-white-lion': r'\b(?:standard|level\s*(?:1|one))\b',
+                   'first-settlement': r'\bfirst settlement\b', 'hunt': r'\bhunt(?:ing)?\b'}
+    common = {'first', 'story', 'prologue', 'opening', 'fight', 'white', 'lion', 'level', 'one', 'standard', 'survivor', 'survivors', 'settlement', 'hunt', 'phase', 'card', 'cards', 'gear', 'resource', 'resources', 'rule', 'rules'}
     for candidate in hits:
-        if candidate['id'] == chosen['id']:
+        if len(related) == 2:
+            break
+        if candidate['id'] in {chosen['id']} | {record['id'] for record in related}:
             continue
+        scope = candidate.get('scope')
+        if scope and scope != chosen.get('scope') and not re.search(scope_terms[scope], scope_question):
+            continue
+        name = card_name(candidate)
+        named = bool(name and re.search(r'\b' + re.escape(name) + r'\b', question, re.I))
+        if name and not named:
+            continue
+        if candidate['id'] == 'white-lion-setup' and not re.search(r'\b(?:first story|prologue)\b', question, re.I):
+            continue
+        if candidate['id'].startswith('white-lion-') and chosen['id'].startswith('white-lion-'):
+            candidate_name = candidate['title'].removeprefix('White Lion: ').removesuffix(' AI card')
+            if not re.search(r'\b' + re.escape(candidate_name) + r'\b', question, re.I):
+                continue
         topic_terms = set(words(candidate['keywords'] + ' ' + candidate['title']))
         overlap = terms & topic_terms
-        if len(overlap) >= 2 and overlap - covered:
+        if len(overlap) >= 2 and (named or overlap - covered - common):
             related.append(candidate)
             covered.update(topic_terms)
         if len(related) == 2:
             break
-    for record_id in chosen.get('related_ids', []):
-        if len(related) == 2:
-            break
-        if record_id not in {record['id'] for record in related}:
-            related.append(by_id[record_id])
     return related
 
 def parse_roll(question):
-    match = re.search(r'\b(?:roll(?:ed|ing)?|result)\s*(?:of\s+)?(?:a\s+|an\s+)?(?:lantern\s+)?(-?\d+)\b', question, re.I)
+    match = re.search(r'\b(?:roll(?:ed|ing)?|result)(?:\s+(?:is|was|of|a|an|the|final|total|still|again|lantern))*\s*(-?\d+)\b', question, re.I)
     if not match:
         match = re.search(r'\b(?:what about|how about|on|a)\s+(-?\d+)\b', question, re.I)
     if not match and re.fullmatch(r'\s*\d+\s*', question):
@@ -66,6 +111,7 @@ def age_milestone(question, context):
     if 'milestone' in question or set(words(question)) <= {'first', 'second', 'third', 'fourth', 'about', 'actually'}:
         stated.update(ordinals[word] for word in re.findall(r'\b(first|second|third|fourth)\b', question))
         stated.update(int(n) for n in re.findall(r'\b(\d+)(?:st|nd|rd|th)\s+(?:age\s+)?milestone\b', question))
+    stated.update(ordinals[word] for word in re.findall(r'\b(first|second|third|fourth)\s+(?:heavy[- ]bordered\s+)?hunt\s*xp\s+box\b', question))
     stated.update(int(n) for n in re.findall(r'\b(?:milestone|age)\s*(\d+)\b', question))
     xp = re.findall(r'\b(\d+)\s*(?:hunt\s*)?xp\b', question)
     xp += re.findall(r'\bhunt\s*xp\s*(?:of\s*)?(\d+)\b', question)
@@ -80,10 +126,32 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         raise ValueError('Unknown record')
     if oven not in {'unknown', 'yes', 'no'}:
         raise ValueError('Choose yes, no, or unknown for Lantern Oven')
+    if re.search(r'\bcunning\b', question, re.I):
+        return {'status': 'source-needed', 'answer': 'Cunning is listed for the White Lion, but its effect has not been verified from a card or rule source in this collection. I cannot give its effect yet.', 'record': None, 'context': {}}
+    named_subject = re.search(r'\b(?:What|How) does (?:the )?([A-Z][a-z]+)\b', question)
+    if named_subject and not any(named_subject[1].lower() in words(r['title'] + ' ' + r['keywords']) for r in RECORDS):
+        return {'status': 'unsupported', 'answer': 'I do not have a reviewed source for that named subject. I cannot give its action or effect from this collection.', 'record': None, 'context': {}}
     hits = search(question)
     by_id = {r['id']: r for r in RECORDS}
     explicit = next((r for r in RECORDS if r['title'].lower() in question.lower()), None)
-    chosen = by_id.get(record_id) or explicit or (hits[0] if hits else None)
+    card_matches = []
+    for candidate in RECORDS:
+        name = card_name(candidate)
+        for match in re.finditer(r'\b' + re.escape(name) + r'\b', question, re.I) if name else []:
+            if not completed_subject(question, match):
+                card_matches.append((match.start(), -len(name), candidate))
+    card = min(card_matches, key=lambda item: item[:2])[2] if card_matches else None
+    for name, detail_terms in SOURCE_GAPS.items():
+        for match in re.finditer(r'\b' + re.escape(name) + r'\b', question, re.I):
+            if completed_subject(question, match):
+                continue
+            focused = re.search(r'\b(?:next|current|card is|card called)\b[^.!?]*$', question[:match.start()], re.I)
+            if (not detail_terms or set(detail_terms) & set(words(question))) and (not card or focused):
+                return {'status': 'unsupported', 'answer': f'The reviewed collection does not include the complete {name} instructions. Consult that source; I cannot substitute another card or rule for its effect.', 'record': None, 'context': {}}
+    if not card and not record_id and 'basic action' not in question.lower() and re.search(r'\b(?:no (?:eligible )?target|nobody|no one)\b', question, re.I) and re.search(r'\btarget\b', question, re.I):
+        return {'status': 'clarify', 'answer': 'Which card or action has no target? Its no-target instruction decides what happens next.', 'record': None, 'context': {}}
+    candidates = reference_candidates(question, hits)
+    chosen = by_id.get(record_id) or explicit or card or (candidates[0] if candidates else None)
     q = question.lower()
     age_followup = (context.get('record_id') == 'age-first-milestone' and
                     set(words(q)) <= {'gain', 'first', 'second', 'third', 'fourth', 'milestone',
@@ -91,7 +159,8 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
                                       'hunt', 'xp', 'experience'})
     age_scope = bool(re.search(r'\bage\b', q) or age_followup or
                      record_id == 'age-first-milestone' or
-                     (chosen and chosen['id'] == 'age-first-milestone' and not record_id))
+                     (re.search(r'\bhunt\s*xp\b', q) and
+                      (re.search(r'\bmilestone\b', q) or age_milestone(q, {}) is not None)))
     if age_scope and (not record_id or record_id == 'age-first-milestone'):
         chosen = by_id['age-first-milestone']
     locations = {location.rstrip('s') for location in
@@ -106,6 +175,11 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         and (re.search(r'\btable\b', q) or
              (re.search(r'\b(?:roll(?:ed|ing)?|result)\b', q) and parse_roll(question) is not None))
     )
+    different_topic = explicit or card or age_scope or re.search(r'\bhands of heat\b|\blantern branding\b|\bhunt[- ]events?\b', q)
+    if context.get('topic') == 'severe-injury' and parse_roll(question) is not None and not (damage_question or different_topic):
+        injury_request = True
+        if not locations:
+            locations = {context['location']}
     head_selected = record_id == 'severe-head-injury'
     head_context = context.get('record_id') == 'severe-head-injury' and not age_scope
     injury_scope = injury_request or (not (damage_question or hunt_damage) and (
@@ -117,7 +191,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
         if len(locations) > 1:
             return {'status': 'clarify', 'answer': 'Which hit location is this severe injury roll for? Choose one location before resolving its table.', 'record': None, 'context': {}}
         if locations != {'head'}:
-            return {'status': 'unsupported', 'answer': 'Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.', 'record': None, 'context': {}}
+            return {'status': 'unsupported', 'answer': 'Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.', 'record': None, 'context': {'topic': 'severe-injury', 'location': next(iter(locations))}}
     if injury_request and locations == {'head'} and not record_id:
         chosen = by_id['severe-head-injury']
     if not injury_request and (not record_id or head_selected):
@@ -125,34 +199,45 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
             chosen = by_id['hunt-event-damage']
         elif damage_question and chosen is not None and chosen['id'] in {'severe-head-injury', 'hunt-event-damage'}:
             chosen = by_id['attack-effects' if 'brain' in q else 'monster-hit-damage']
-    # Do not return adjacent rules for card text or tables not yet reviewed.
-    unreviewed_detail = bool(
-        re.search(r'\b(?:chomp|maul|power swat)\s+card\b.*\b(?:instruct|do|effect)', q)
-    )
-    if unreviewed_detail and not record_id:
+    # A numbered table request requires an identified reviewed table.
+    contextual_table = by_id.get(context.get('record_id'))
+    if contextual_table and (not contextual_table['tables'] or re.search(r'\b(?:hunt[- ]event|showdown|card)\b', q)):
+        contextual_table = None
+    table_subject = age_scope or injury_request or explicit or re.search(r'\bhands of heat\b|\blantern branding\b', q)
+    if re.search(r'\btable\b', q) and parse_roll(question) is not None and not (record_id or table_subject or contextual_table or card):
         return {'status': 'unsupported', 'answer': 'The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.', 'record': None, 'context': {}}
+    if not (record_id or explicit or card or age_scope or injury_request) and re.search(r'\bhands of heat\b|\blantern branding\b', q):
+        chosen = by_id['hands-of-heat']
+    elif not (record_id or explicit or card or age_scope or injury_request) and contextual_table and (parse_roll(question) is not None or len(words(q)) <= 1):
+        chosen = contextual_table
     card_interaction = bool(re.search(r'ground\s*fighting', question, re.I) and
                         re.search(r'fuzzy\s+groin|permanent(?:ly)?\s+(?:marked|priority)|priority\s+target', question, re.I))
     fuzzy = bool(re.search(r'fuzzy\s+groin', question, re.I))
+    encounter = re.sub(r'\bnot\s+(?:the\s+)?(?:prologue|first story)\b', '', q)
+    prologue_setup = bool(re.search(r'\b(?:setup|deployment|deploy|start|far|distance|deck)\b', q) and re.search(r'\b(?:prologue|first story)\b', encounter))
     if card_interaction and not record_id and not explicit:
         chosen = by_id['priority-target']
     elif fuzzy and not record_id and not explicit:
         chosen = by_id['priority-target']
     elif not record_id and age_scope:
         chosen = by_id['age-first-milestone']
+    elif not record_id and not explicit and not card and prologue_setup:
+        chosen = by_id['white-lion-setup']
+    elif not record_id and not explicit and not card and re.search(r'\b(?:ai|deck|discard)\b', q) and re.search(r'\b(?:empty|no|last|final)\b', q) and re.search(r'\b(?:dead|kill|killed|wound|wounded)\b', q):
+        chosen = by_id['monster-defeat']
     elif not record_id and not (damage_question or hunt_damage) and re.search(r'severe\s+head\s+injur(?:y|ies)', q):
         chosen = by_id['severe-head-injury']
-    elif not record_id and re.search(r'\bclaw\s+(?:ai\s+)?card\b', q):
+    elif not record_id and not card and re.search(r'\bclaw\s+(?:ai\s+)?card\b', q):
         chosen = by_id['white-lion-claw']
-    elif not record_id and not explicit and re.search(r'knock(?:ed|s)?\s+(?:the\s+attacker\s+)?down', q) and re.search(r'attacker|attacking survivor|survivor attacks|unresolved hits', q):
+    elif not record_id and not explicit and not card and re.search(r'knock(?:ed|s)?\s+(?:the\s+attacker\s+)?down', q) and re.search(r'attacker|attacking survivor|survivor attacks|unresolved hits', q):
         chosen = by_id['survivor-attack-sequence']
-    elif not record_id and not explicit and re.search(r'\bbasic action\b', q) and re.search(r'\bmove(?:ment)?\b', q) and not re.search(r'ground\s*fighting', q):
+    elif not record_id and not explicit and (not card or card['id'] == 'white-lion-basic-action') and re.search(r'\bbasic action\b', q) and re.search(r'\bmove(?:ment)?\b', q) and not re.search(r'ground\s*fighting', q):
         chosen = by_id['monster-movement']
-    elif not record_id and not explicit and re.search(r'\bwound\b', q) and re.search(r'\bstrength\b', q):
+    elif not record_id and not explicit and not card and re.search(r'\bwound\b', q) and re.search(r'\bstrength\b', q):
         chosen = by_id['survivor-attack-sequence']
-    elif not record_id and not explicit and re.search(r'\b(?:luck|impervious|critical)\b', q) and re.search(r'\bwound|\breflex\b|\btoughness\b', q):
+    elif not record_id and not explicit and not card and re.search(r'\b(?:luck|impervious|critical)\b', q) and re.search(r'\bwound|\breflex\b|\btoughness\b', q):
         chosen = by_id['critical-wound-examples']
-    elif not record_id and not explicit and re.search(r'\bwound\b', q) and re.search(r'\b(?:strength|toughness)\b', q):
+    elif not record_id and not explicit and not card and re.search(r'\bwound\b', q) and re.search(r'\b(?:strength|toughness)\b', q):
         chosen = by_id['survivor-attack-sequence']
     if chosen is None and (parse_roll(question) is not None or re.search(r'\b(why|that|it|oven|edition|1\.6|branding|yes|no)\b', question.lower())):
         chosen = by_id.get(context.get('record_id'))
@@ -175,6 +260,8 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
             reply.update(status='unsupported', answer=f'Age milestone {milestone} has its own table, which is not reviewed in this collection. I cannot use the first milestone table for this result. Consult the Age event on revised PDF page 81 (book 107).')
             return reply
     if chosen['id'] in {'age-first-milestone', 'severe-head-injury'}:
+        if chosen['id'] == 'severe-head-injury':
+            reply['context'].update(topic='severe-injury', location='head')
         # An XP value is not a table roll. Require an explicit roll phrase.
         result_roll = parse_roll(question)
         if result_roll is not None:
@@ -235,7 +322,7 @@ def resolve(question, context=None, record_id=None, table_id=None, roll=None, ov
     if table_key == 'experiment':
         condition = 'Assuming the settlement does not already have Lantern Oven. Before this roll, nominate a survivor and grant +1 courage.'
     else:
-        condition = "For Lantern Branding, discard half the settlement's total resources (including storage), rounded down. Nominate a survivor and roll separately."
+        condition = "For Lantern Branding, discard half the settlement's total resources (including storage), rounded down, and nominate a survivor. This result uses the supplied Branding roll."
     reply['answer'] = f"{table['title']}: {roll} falls in {row['label']}.\n\n" + '\n'.join(row['effects']) + '\n\n' + condition
     if table_key == 'experiment' and row['label'] == '4-6':
         reply['answer'] += '\nThis outcome does not instruct you to roll on Lantern Branding.'

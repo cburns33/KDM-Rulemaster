@@ -58,6 +58,12 @@ def source_payload(records):
             'title': record['title'],
             'summary': record['summary'],
             'notes': record['notes'],
+            'layout': record.get('layout', ''),
+            'images': {
+                'delivery': 'Reviewed page images and listed sources are linked through app citations. Image pixels are not included in this text request.',
+                'linked_sources': [{'title': source['title'], 'kind': 'app image' if source['url'].startswith('/') else 'external source link'} for source in record.get('card_sources', [])],
+                'interpretation_limits': record.get('image_notes', []),
+            },
             'tables': [{
                 'title': table['title'],
                 'rows': [{'range': row['label'], 'effects': row['effects']} for row in table['rows']],
@@ -93,7 +99,7 @@ REVIEWED SOURCE RECORDS:
 {source_payload(records)}'''
     body = json.dumps({
         'model': MODEL,
-        'instructions': 'The application adds verified clickable citations with revised PDF and printed-book page mappings. Do not include page numbers, page labels, links, or citation markers in your answer, even when the question or source text includes page references. Leave source navigation to those clickable citations. You may identify a rule or source by its title.',
+        'instructions': 'The application adds clickable citations to reviewed book pages and card photos. Do not include page numbers, page labels, links, or citation markers in your answer, even when the question or source text includes page references. Leave source navigation to those clickable citations. You may identify a rule or source by its title. Linked images are available to the player through the app citations, even though this text request does not include their pixels. When an exact spatial detail is not transcribed, direct the player to the linked diagram and state that interpretation limit. Do not claim a listed image is missing or ask the player to upload it. Do not infer untranscribed geometry. Use plain language without em dashes.',
         'reasoning': {'effort': 'low'},
         'max_output_tokens': OUTPUT_LIMIT,
         'store': False,

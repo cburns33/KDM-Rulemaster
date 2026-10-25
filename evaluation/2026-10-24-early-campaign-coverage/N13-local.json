@@ -1,0 +1,11 @@
+{
+  "question": "We rolled 84 on the hunt-event table. What are the exact event results?",
+  "response": {
+    "chat_id": "334f461a6d92abcb80c41716",
+    "status": "unsupported",
+    "answer": "The reviewed records do not include that specific table or card text. Consult the source page or card; I cannot give its result from this collection.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

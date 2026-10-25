@@ -1,0 +1,58 @@
+{
+  "case": "Q23",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We have reached our first settlement and are looking at Language. What does that innovation give the settlement, and which survival actions are available afterward? Please identify the source for each unlock.",
+  "ended_utc": "2026-10-25T02:10:46.973442+00:00",
+  "elapsed_seconds": 1.873,
+  "response": {
+    "chat_id": "506d41fce0f77d776e83e10b",
+    "record": {
+      "id": "create-survivor",
+      "title": "Create a Survivor",
+      "original": 28,
+      "keywords": "starting gear cloth founding stone name survival dodge movement speed accuracy survivor record",
+      "layout": "Top photo labels gear grid and record sheet. Lower text reads down each of three columns; survival explanation continues into the right column.",
+      "summary": "In the First Story setup, each survivor starts with one Cloth armor gear card and one Founding Stone weapon gear card. Put them in any two gear-grid spaces. Naming the survivor grants +1 survival.",
+      "notes": [
+        "The survivor record sheet tracks the survivor's life and changing attributes.",
+        "Only dodge is available in the First Story; dash, encourage, and surge are gained as play develops.",
+        "Spending survival reduces the recorded total. Survival does not replenish at the end of each showdown.",
+        "Starting attributes shown here: movement 5, speed 0, accuracy 0. Speed is attack rate; accuracy is attack precision.",
+        "The attribute explanation continues on the following book page; this record is limited to printed page 24."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 6,
+        "original": 28,
+        "printed": 24,
+        "edition": "1.5",
+        "title": "Create a Survivor",
+        "reviewed": true,
+        "record_id": "create-survivor"
+      },
+      "sources": [
+        {
+          "revised": 6,
+          "original": 28,
+          "printed": 24,
+          "edition": "1.5",
+          "title": "Create a Survivor",
+          "reviewed": true,
+          "record_id": "create-survivor"
+        }
+      ],
+      "image": "/pages/6.jpg"
+    },
+    "status": "model-reference",
+    "answer": "The reviewed **Create a Survivor** record establishes that **dodge** is available in the First Story, while **dash, encourage, and surge** are gained as play develops. It does not say what **Language** gives the settlement or which, if any, of those actions Language unlocks.\n\nTo answer the ruling, I’d need the reviewed **Language innovation** record and the relevant **survival actions** rules.",
+    "context": {
+      "record_id": "create-survivor"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

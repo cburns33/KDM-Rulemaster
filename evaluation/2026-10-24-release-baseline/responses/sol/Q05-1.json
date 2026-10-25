@@ -1,0 +1,143 @@
+{
+  "case": "Q05",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We just wounded the lion and removed the final AI card from its discard pile. There are now no AI cards left anywhere except the wound stack. Is the lion dead now, or does something else have to happen?",
+  "ended_utc": "2026-10-25T02:10:05.910748+00:00",
+  "elapsed_seconds": 2.248,
+  "response": {
+    "chat_id": "d2c6190d946cb7c0747bead7",
+    "record": {
+      "id": "white-lion-clever-ploy",
+      "title": "White Lion: Clever Ploy trap card",
+      "card_name": "Clever Ploy",
+      "original": 36,
+      "supporting_originals": [
+        79
+      ],
+      "card_sources": [
+        {
+          "title": "Clever Ploy face and trap rules (book 32)",
+          "url": "/pages/14.jpg",
+          "edition": "1.5",
+          "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+        }
+      ],
+      "keywords": "white lion clever ploy hit location trap doomed attacker basic action dodge survival remaining hits unresolved locations knocked down stand reshuffle discard",
+      "layout": "Printed page 32 shows the complete Clever Ploy face and its reminder text. Printed page 75 supplies the general Trap and Doomed rules, including simultaneous attacks and the end of the restriction.",
+      "summary": "Clever Ploy is the White Lion hit-location Trap. The attacker is doomed: perform Basic Action targeting the attacker, who cannot spend survival until this card is resolved. Resolve the trap, then reshuffle all hit locations, including Clever Ploy.",
+      "notes": [
+        "Resolve a drawn Trap immediately. If the monster is knocked down, it stands to resolve it. End all survivors' current attacks and discard unresolved hit locations, then perform the trap actions. This ends the attacks, while the survivor's act can continue.",
+        "The attacker cannot dodge this Basic Action because the card makes them doomed and forbids spending survival until it is resolved. General Doomed rules also prevent actions during that interval.",
+        "After resolving the trap, shuffle all hit-location cards in the deck and discard pile together, including the trap card. Do not leave Clever Ploy out of the reshuffled deck."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 14,
+        "original": 36,
+        "printed": 32,
+        "edition": "1.5",
+        "title": "White Lion: Clever Ploy trap card",
+        "reviewed": true,
+        "record_id": "white-lion-clever-ploy"
+      },
+      "sources": [
+        {
+          "revised": 14,
+          "original": 36,
+          "printed": 32,
+          "edition": "1.5",
+          "title": "White Lion: Clever Ploy trap card",
+          "reviewed": true,
+          "record_id": "white-lion-clever-ploy"
+        },
+        {
+          "revised": 52,
+          "original": 79,
+          "printed": 75,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        }
+      ],
+      "image": "/pages/14.jpg"
+    },
+    "status": "model-reference",
+    "answer": "The reviewed records don’t establish whether the lion dies when its last AI card is removed from the discard pile. They cover a hit-location trap and Founding Stone, not the rule for defeating a monster when its AI cards are exhausted.\n\nTo answer, we’d need the edition 1.5 rules for monster wounds and death when no AI cards remain outside the wound stack.",
+    "context": {
+      "record_id": "white-lion-clever-ploy"
+    },
+    "related_records": [
+      {
+        "id": "founding-stone",
+        "title": "Founding Stone gear card",
+        "card_name": "Founding Stone",
+        "original": 34,
+        "supporting_originals": [
+          79,
+          80
+        ],
+        "card_sources": [
+          {
+            "title": "Founding Stone face and attack example (book 30)",
+            "url": "/pages/12.jpg",
+            "edition": "1.5",
+            "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+          }
+        ],
+        "keywords": "founding stone starting gear weapon melee stone sling archive throw activation automatic hit critical wound speed accuracy strength",
+        "layout": "Printed page 30 shows the full gear face, labeled attack profile, and normal melee attack example. Printed pages 75 and 76 supply Impervious and critical-wound limits.",
+        "summary": "Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.",
+        "notes": [
+          "A normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.",
+          "Resolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 12,
+          "original": 34,
+          "printed": 30,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        "sources": [
+          {
+            "revised": 12,
+            "original": 34,
+            "printed": 30,
+            "edition": "1.5",
+            "title": "Founding Stone gear card",
+            "reviewed": true,
+            "record_id": "founding-stone"
+          },
+          {
+            "revised": 52,
+            "original": 79,
+            "printed": 75,
+            "edition": "1.5",
+            "title": "Founding Stone gear card",
+            "reviewed": true,
+            "record_id": "founding-stone"
+          },
+          {
+            "revised": 53,
+            "original": 80,
+            "printed": 76,
+            "edition": "1.5",
+            "title": "Critical wound examples",
+            "reviewed": true,
+            "record_id": "critical-wound-examples"
+          }
+        ],
+        "image": "/pages/12.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

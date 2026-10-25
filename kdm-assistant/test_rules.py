@@ -81,7 +81,7 @@ class RulesTests(unittest.TestCase):
         self.assertIsNone(r['record'])
 
     def test_other_sources(self):
-        for question,expected in [('How do puzzle affinities work?','affinities'),('Is a lantern 10 always a critical wound?','critical-wound-examples'),('What starting gear do survivors get?','create-survivor'),('White Lion setup AI deck','white-lion-setup')]:
+        for question,expected in [('How do puzzle affinities work?','affinities'),('Is a lantern 10 always a critical wound?','critical-wound-examples'),('What starting gear do survivors get?','create-survivor'),('White Lion setup AI deck','white-lion-level-one')]:
             with self.subTest(question=question):
                 self.assertEqual(search(question)[0]['id'],expected)
 

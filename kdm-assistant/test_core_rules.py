@@ -64,13 +64,57 @@ class CoreRuleTests(unittest.TestCase):
         self.assertIn('1 separate Grab damage', result['answer'])
         self.assertIn('cannot be dodged', result['answer'])
         self.assertEqual(result['record']['supporting_originals'], [33, 74])
-        self.assertEqual(result['record']['card_sources'][0]['url'], '/cards/white-lion-grasp.png')
+        self.assertEqual(result['record']['card_sources'][0]['url'], '/cards/white-lion-grasp-physical-1.5.jpeg')
         self.assertEqual({r['id'] for r in result['related_records']}, {'monster-hit-damage', 'attack-effects'})
 
     def test_grasp_after_damage_requires_attack_damage(self):
         result = resolve('White Lion Grasp card: if its only hit is dodged, does After Damage still cause Grab?')
         self.assertEqual(result['record']['id'], 'white-lion-grasp-damage')
         self.assertIn('If the attack deals no damage, its After Damage effect does not trigger', result['answer'])
+
+    def test_physical_white_lion_cards_select_their_own_sources(self):
+        cases = [
+            ('On White Lion Maul, nobody was grabbed last round. Who is next?', 'white-lion-maul', 'closest knocked-down survivor'),
+            ('If Combo Claw deals damage once, does it draw another AI card?', 'white-lion-combo-claw', 'more than once'),
+            ('What is the effect of Power Swat?', 'white-lion-power-swat', 'Knockback 6'),
+            ('What happens on Size Up after a 4+ roll?', 'white-lion-size-up', '1 brain damage per monster level'),
+        ]
+        for question, record_id, text in cases:
+            with self.subTest(question=question):
+                result = resolve(question)
+                self.assertEqual(result['record']['id'], record_id)
+                self.assertIn(text, result['answer'])
+                self.assertEqual(result['record']['card_sources'][0]['edition'], '1.5')
+
+    def test_maul_uses_physical_cards_for_grab_and_target_priority(self):
+        result = resolve('Maul targets last round\'s Grab victim. What does Grab do?')
+        self.assertEqual(result['record']['id'], 'white-lion-maul')
+        self.assertIn('/cards/white-lion-grasp-physical-1.5.jpeg', [card['url'] for card in result['record']['card_sources']])
+        self.assertIn('attack-effects', [record['id'] for record in result['related_records']])
+        self.assertIn('placing the knocked-down target', result['answer'])
+        distant = resolve('The survivor grabbed last round is beyond the White Lion\'s movement range, while a different knocked-down survivor is in range. Maul is drawn. Who does it pick?')
+        self.assertEqual(distant['record']['id'], 'white-lion-maul')
+        self.assertIn('first targets the victim of Grab last round', distant['answer'])
+        self.assertEqual(distant['record']['card_sources'][0]['url'], '/cards/white-lion-maul-physical-1.5.jpeg')
+
+    def test_uncovered_monster_and_unspecified_no_target_do_not_borrow_white_lion_rules(self):
+        phoenix = resolve('What does the Phoenix do on its Basic Action?')
+        self.assertEqual(phoenix['status'], 'unsupported')
+        self.assertIsNone(phoenix['record'])
+        ambiguous = resolve('If nobody is a target, what does the monster do?')
+        self.assertEqual(ambiguous['status'], 'clarify')
+        self.assertIsNone(ambiguous['record'])
+        paraphrase = resolve('No eligible target remains. What happens next?')
+        self.assertEqual(paraphrase['status'], 'clarify')
+
+    def test_card_target_conditions_do_not_add_unwritten_effects(self):
+        maul = resolve('Maul picks the survivor Grasp grabbed last round. Does Maul perform Grab again just because that survivor was selected?')
+        self.assertEqual(maul['record']['id'], 'white-lion-maul')
+        self.assertIn('does not perform Grab again', maul['answer'])
+        self.assertIn('/cards/white-lion-grasp-physical-1.5.jpeg', [card['url'] for card in maul['record']['card_sources']])
+        size_up = resolve('Size Up has one knocked-down survivor in field of view and no standing survivors. Can it pick that knocked-down survivor as a threat?')
+        self.assertEqual(size_up['record']['id'], 'white-lion-size-up')
+        self.assertIn('If Size Up finds no eligible threat, use its Sniff instruction', size_up['answer'])
 
     def test_compound_question_retrieves_independent_reviewed_topics(self):
         result = resolve('Can I Surge to hide in Tall Grass, and how does priority targeting from Fuzzy Groin work?')

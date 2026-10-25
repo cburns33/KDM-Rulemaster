@@ -1,0 +1,161 @@
+{
+  "case": "Q09",
+  "turn": 1,
+  "mode": "sol",
+  "question": "Size Up rolls a 6 against a standing survivor with 2 insanity during a level 1 fight. What changes on that survivor's record, and do they remain standing?",
+  "ended_utc": "2026-10-25T02:10:12.757173+00:00",
+  "elapsed_seconds": 2.963,
+  "response": {
+    "chat_id": "3873c0e73f00c8ec077406cd",
+    "record": {
+      "id": "white-lion-size-up",
+      "title": "White Lion: Size Up AI card",
+      "original": 75,
+      "related_ids": [
+        "attack-effects",
+        "monster-movement"
+      ],
+      "card_sources": [
+        {
+          "title": "Size Up (group physical card)",
+          "url": "/cards/white-lion-size-up-physical-1.5.jpeg",
+          "edition": "1.5",
+          "provenance": "Photo of the group physical set"
+        }
+      ],
+      "keywords": "white lion size up basic ai card random threat field view sniff intimidate target face roll 1d10 4 brain damage monster level knocked down",
+      "layout": "The photographed Size Up face supplies its target and Intimidate instructions. Printed page 71 distinguishes Intimidate and brain damage from an attack.",
+      "summary": "Size Up is Basic AI. Pick a random threat in field of view; with no target, use Sniff. Otherwise turn to face the target and roll 1d10. On 4+, the target suffers 1 brain damage per monster level and is knocked down.",
+      "notes": [
+        "A knocked-down survivor is normally not a threat. If Size Up finds no eligible threat, use its Sniff instruction. A 1-3 roll has no printed Intimidate effect.",
+        "Intimidate is not an attack. This card has no Move & Attack profile. The printed rulebook explains that Intimidate cannot be dodged."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 48,
+        "original": 75,
+        "printed": 71,
+        "edition": "1.5",
+        "title": "White Lion: Grasp, Enraged, and damage tokens",
+        "reviewed": true,
+        "record_id": "white-lion-grasp-damage"
+      },
+      "sources": [
+        {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "White Lion: Grasp, Enraged, and damage tokens",
+          "reviewed": true,
+          "record_id": "white-lion-grasp-damage"
+        }
+      ],
+      "image": "/pages/48.jpg"
+    },
+    "status": "model-reference",
+    "answer": "If that standing survivor is the threat selected by Size Up, a roll of 6 deals 1 brain damage in a level 1 fight. Reduce their insanity from 2 to 1 on their record. Size Up also knocks them down, so they do **not** remain standing.\n\nIf they were not an eligible threat in the White Lion’s field of view, they would not be selected for this effect.",
+    "context": {
+      "record_id": "white-lion-size-up"
+    },
+    "related_records": [
+      {
+        "id": "attack-effects",
+        "title": "Attack effects and damage outside attacks",
+        "original": 75,
+        "related_ids": [
+          "monster-hit-damage",
+          "survival-actions"
+        ],
+        "keywords": "trigger after hit before damage after damage dodge grab intimidate brain damage insanity bash bleed knockback outside attack profile monster token survivor",
+        "layout": "The left column lists attack triggers and common effects. Intimidate continues into the center column, followed by Brain Damage. Damage Outside of Attack Actions is a separate right-column heading. Duration and survivor-status AI sections are outside this record.",
+        "summary": "Attack-profile effects trigger once per attack at their specified step. Damage outside an attack profile cannot be dodged because it does not come from a hit.",
+        "notes": [
+          "After Hit: if there are successful hits, apply the effect before rolling hit-location dice. Before Damage: apply after attack and location rolls, before damage. After Damage: resolve all hits' damage first; apply the effect if the attack dealt damage.",
+          "Bash knocks the survivor down. Bleed X grants X bleeding tokens, or 1 if no number is specified. Knockback X pushes the target X spaces in the stated direction; the monster controller chooses the direction when none is stated.",
+          "Intimidate actions are not attacks, cause brain damage instead of physical-location damage, and cannot be dodged. Follow the action's specific rules.",
+          "Brain damage uses insanity as armor, then the brain injury box, then Brain Trauma rolls. It is distinct from physical head damage.",
+          "Damage outside attack profiles is resolved normally but is not modified by monster attributes or tokens. If no location is specified, roll a hit-location die. The book gives White Lion Grab as an example of additional damage."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "White Lion: Grasp, Enraged, and damage tokens",
+          "reviewed": true,
+          "record_id": "white-lion-grasp-damage"
+        },
+        "sources": [
+          {
+            "revised": 48,
+            "original": 75,
+            "printed": 71,
+            "edition": "1.5",
+            "title": "White Lion: Grasp, Enraged, and damage tokens",
+            "reviewed": true,
+            "record_id": "white-lion-grasp-damage"
+          }
+        ],
+        "image": "/pages/48.jpg"
+      },
+      {
+        "id": "monster-movement",
+        "title": "Monster movement and target definitions",
+        "original": 73,
+        "supporting_originals": [
+          72
+        ],
+        "related_ids": [
+          "white-lion-claw"
+        ],
+        "keywords": "monster movement move again round basic action reaction target threat survivor facing range field view knocked down",
+        "layout": "Printed page 69 defines Move & Attack Target and Monster Movement. The Pick Target definitions on printed page 68 supply the target conditions. White Lion card text is in the linked Claw record.",
+        "summary": "Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.",
+        "notes": [
+          "Actions dictate when the monster moves, including actions instructed by reactions. Move along a shortest path, one cardinal space at a time, with no diagonal movement; choose among equally short paths. If already adjacent, turn and attack without moving. After moving, face the survivor and resolve collisions before the attack. For an attack with reach, move only the minimum spaces needed to attack.",
+          "An instruction only to attack does not grant movement. Full move uses the current movement value including positive and negative modifiers.",
+          "A threat is a survivor who is not knocked down and is not using an effect that prevents being a threat. Closest survivor includes knocked-down survivors; closest threat excludes them unless an effect such as Sniff overrides that restriction.",
+          "Facing means the area in front of the monster, the area the monster faces. It does not refer to a survivor facing toward the monster. Field of view excludes the blind spot and sight blocked by Obstacle terrain. In range uses current movement, including modifiers, unless the condition specifies a number.",
+          "Check the Pick Target list from top to bottom and stop at the first condition with an eligible target. If multiple survivors satisfy it, the monster controller chooses. A no-target instruction replaces the other actions on that card. Priority targeting and card-specific overrides need their own applicable rules."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 46,
+          "original": 73,
+          "printed": 69,
+          "edition": "1.5",
+          "title": "Monster movement and target definitions",
+          "reviewed": true,
+          "record_id": "monster-movement"
+        },
+        "sources": [
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          },
+          {
+            "revised": 45,
+            "original": 72,
+            "printed": 68,
+            "edition": "1.5",
+            "title": "Priority targeting and its exceptions",
+            "reviewed": true,
+            "record_id": "priority-target"
+          }
+        ],
+        "image": "/pages/46.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case": "Q05",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We just wounded the lion and removed the final AI card from its discard pile. There are now no AI cards left anywhere except the wound stack. Is the lion dead now, or does something else have to happen?",
+  "ended_utc": "2026-10-25T02:44:54.586547+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "958deb5215d0fa7162f2c41f",
+    "status": "unsupported",
+    "answer": "I do not have a reviewed rule record for this question yet. Use the source browser to inspect the book. I cannot make a supported ruling from the current collection.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

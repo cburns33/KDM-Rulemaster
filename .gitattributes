@@ -1,0 +1,6 @@
+# Preserve saved evaluation bytes across Windows and Unix checkouts.
+/evaluation/2026-10-24-release-baseline/** -text -whitespace
+/evaluation/2026-10-24-retrieval-regression/** -text -whitespace
+/evaluation/2026-10-24-early-campaign-coverage/** -text -whitespace
+# Archived documents retain their original formatting.
+/docs/history/** -whitespace

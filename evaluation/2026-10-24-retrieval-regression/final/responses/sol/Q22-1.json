@@ -1,0 +1,16 @@
+{
+  "case": "Q22",
+  "turn": 1,
+  "mode": "sol",
+  "question": "Do the four people who fought the Prologue determine our entire starting population, or does First Day establish that? Walk us through the actual First Day instructions before we record the settlement.",
+  "ended_utc": "2026-10-25T02:48:18.867268+00:00",
+  "elapsed_seconds": 0.015,
+  "response": {
+    "chat_id": "ef291f44b36400bb7c0fe0a2",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete First Day instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "question": "For our opening Prologue fight, how far away do the survivors start, and do we use the normal random level 1 AI setup?",
+  "response": {
+    "chat_id": "ea94167f045aa8193b179512",
+    "record": {
+      "id": "white-lion-setup",
+      "title": "First Story: White Lion",
+      "original": 30,
+      "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
+      "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
+      "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
+      "notes": [
+        "Set Claw aside, shuffle the rest face down, then place Claw face down on top.",
+        "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.",
+        "Place the double-sided Basic Action / Monster Reference card on the monster control panel.",
+        "Arrange survivor records and gear grids around the showdown board.",
+        "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 8,
+        "original": 30,
+        "printed": 26,
+        "edition": "1.5",
+        "title": "First Story: White Lion",
+        "reviewed": true,
+        "record_id": "white-lion-setup"
+      },
+      "sources": [
+        {
+          "revised": 8,
+          "original": 30,
+          "printed": 26,
+          "edition": "1.5",
+          "title": "First Story: White Lion",
+          "reviewed": true,
+          "record_id": "white-lion-setup"
+        }
+      ],
+      "image": "/pages/8.jpg"
+    },
+    "status": "reference",
+    "answer": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.\n\nSet Claw aside, shuffle the rest face down, then place Claw face down on top.\nSet Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.\nPlace the double-sided Basic Action / Monster Reference card on the monster control panel.\nArrange survivor records and gear grids around the showdown board.\nPlace the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces.\n\nRelated reviewed rules:\nHunt board setup and event sequence: Choose an available quarry and level, then use its story-event hunt diagram to set up the hunt board. Shuffle monster hunt events onto E spaces, fill other eligible spaces with basic hunt event cards, place the monster at its level marker and survivors at Start. Survivors take turns revealing and resolving the events in their current space before advancing one space toward the monster.\n\nFirst Story victory and rewards: In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+    "context": {
+      "record_id": "white-lion-setup"
+    },
+    "related_records": [
+      {
+        "id": "hunt-phase",
+        "title": "Hunt board setup and event sequence",
+        "original": 65,
+        "supporting_originals": [
+          66,
+          183
+        ],
+        "card_sources": [
+          {
+            "title": "Random Event basic hunt event card and percentile example",
+            "url": "/pages/40.jpg",
+            "edition": "1.5",
+            "provenance": "Card face and instructions pictured in the supplied 1.5 rulebook scan"
+          }
+        ],
+        "keywords": "hunt board hunt phase setup prepare departing survivors quarry level advancing advance movement event revealer events cards random event percentile d100 arrival arrive find monster starvation overwhelming darkness",
+        "layout": "Printed page 61 has the board setup list. Page 62 starts Hunt Your Quarry at the bottom left and continues at the top center; the percentile explanation continues from bottom center to top right. The White Lion story event supplies its hunt placement diagram.",
+        "summary": "Choose an available quarry and level, then use its story-event hunt diagram to set up the hunt board. Shuffle monster hunt events onto E spaces, fill other eligible spaces with basic hunt event cards, place the monster at its level marker and survivors at Start. Survivors take turns revealing and resolving the events in their current space before advancing one space toward the monster.",
+        "notes": [
+          "The board has 13 spaces. Do not put basic hunt event cards on monster-event spaces, Start, Overwhelming Darkness, or Starvation. Place any hunt events triggered by gear according to their rules.",
+          "The event revealer reads and resolves the top card in the survivors' space. After completing it, archive that card and pass revealer duty to the next survivor. Resolve stacked events one at a time from top to bottom before moving, unless an event compels movement.",
+          "When no cards remain in the current space, move one space toward the monster and resolve the top event in the new space. The monster stays still unless an event moves it.",
+          "An empty entered space requires a hunt-event-table roll before moving again, unless instructed to skip spaces. The first landing on Overwhelming Darkness during each hunt triggers that story event instead of a hunt-table roll.",
+          "Moving into the monster's space ends the hunt and starts the showdown immediately. Do not resolve hunt events in its space except Starvation. The Starvation and Overwhelming Darkness event effects are not included here.",
+          "A basic Random Event card directs a 1d100 hunt-event-table roll: roll two d10s, designate tens and ones, and combine them. The pictured example uses tens 3 and ones 5 for event 35. This record provides the procedure, not the 100 event outcomes.",
+          "An event specifies who rolls. If no survivor is specified, the event revealer rolls and makes required random choices. Add gathering events only with the appropriate tools, once per hunt per event, on top of existing cards and outside Start, Overwhelming Darkness, and Starvation."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 39,
+          "original": 65,
+          "printed": 61,
+          "edition": "1.5",
+          "title": "Hunt board setup and event sequence",
+          "reviewed": true,
+          "record_id": "hunt-phase"
+        },
+        "sources": [
+          {
+            "revised": 39,
+            "original": 65,
+            "printed": 61,
+            "edition": "1.5",
+            "title": "Hunt board setup and event sequence",
+            "reviewed": true,
+            "record_id": "hunt-phase"
+          },
+          {
+            "revised": 40,
+            "original": 66,
+            "printed": 62,
+            "edition": "1.5",
+            "title": "Hunt board setup and event sequence",
+            "reviewed": true,
+            "record_id": "hunt-phase"
+          },
+          {
+            "revised": 120,
+            "original": 183,
+            "printed": 179,
+            "edition": "1.5",
+            "title": "White Lion: standard showdown deployment",
+            "reviewed": true,
+            "record_id": "white-lion-deployment"
+          }
+        ],
+        "image": "/pages/39.jpg"
+      },
+      {
+        "id": "prologue-victory",
+        "title": "First Story victory and rewards",
+        "original": 37,
+        "keywords": "prologue first story opening fight victory victorious win won aftermath rewards hunt xp gear resources dead survivor",
+        "layout": "Left column finishes the fight; center distinguishes the killing wound and survivor aftermath; blue right panel gives the First Story rewards and dead-survivor gear exception.",
+        "summary": "In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+        "notes": [
+          "The First Story rewards are in addition to resources earned from critical wounds. Shuffle each resource deck before drawing its four cards and put the resources face up.",
+          "Players who lost their survivor in the First Story can create new survivors in the settlement. Their dead survivor's gear and resources return with the remaining survivors. This is a First Story exception, not a general recovery rule for every death.",
+          "If the survivors perish, the First Story instructs players to try again until victorious. A first successful fight gives one Hunt XP; it does not immediately reach the first Age milestone."
+        ],
+        "related_ids": [
+          "monster-defeat"
+        ],
+        "tables": [],
+        "source": {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        },
+        "sources": [
+          {
+            "revised": 15,
+            "original": 37,
+            "printed": 33,
+            "edition": "1.5",
+            "title": "Empty AI decks and the killing wound",
+            "reviewed": true,
+            "record_id": "monster-defeat"
+          }
+        ],
+        "image": "/pages/15.jpg"
+      }
+    ]
+  }
+}

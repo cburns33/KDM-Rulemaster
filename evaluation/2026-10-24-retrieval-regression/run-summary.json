@@ -1,0 +1,68 @@
+{
+  "started_utc": "2026-10-25T02:44:54.145737+00:00",
+  "modes": {
+    "local": {
+      "unsupported": 12,
+      "executed": 20,
+      "clarify": 1,
+      "reference": 3,
+      "resolved": 4,
+      "not_run": 0,
+      "stopped_after_failure": false
+    },
+    "sol": {
+      "unsupported": 12,
+      "executed": 20,
+      "clarify": 1,
+      "model-reference": 3,
+      "resolved": 4,
+      "not_run": 0,
+      "stopped_after_failure": false
+    }
+  },
+  "api": {
+    "attempts": 3,
+    "successful_responses": 3,
+    "usage": [
+      {
+        "input_tokens": 789,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 71,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 860
+      },
+      {
+        "input_tokens": 380,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 126,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 506
+      },
+      {
+        "input_tokens": 357,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 130,
+        "output_tokens_details": {
+          "reasoning_tokens": 22
+        },
+        "total_tokens": 487
+      }
+    ]
+  },
+  "port": 54841,
+  "finished_utc": "2026-10-25T02:45:01.783356+00:00",
+  "inputs_unchanged": true
+}

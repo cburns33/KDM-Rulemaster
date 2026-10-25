@@ -1,0 +1,16 @@
+{
+  "case": "Q06",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We won the opening fight, but one survivor died carrying gear and a resource gained during the fight. What happens to those items, and what rewards and Hunt XP do the living survivors receive?",
+  "ended_utc": "2026-10-25T02:44:54.599393+00:00",
+  "elapsed_seconds": 0.012,
+  "response": {
+    "chat_id": "15d92f7766103957ea8942e9",
+    "status": "unsupported",
+    "answer": "I do not have a reviewed rule record for this question yet. Use the source browser to inspect the book. I cannot make a supported ruling from the current collection.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

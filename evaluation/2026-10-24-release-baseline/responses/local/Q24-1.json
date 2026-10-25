@@ -1,0 +1,111 @@
+{
+  "case": "Q24",
+  "turn": 1,
+  "mode": "local",
+  "question": "At our first settlement, we have resources in storage and a location card with a gear recipe. Walk us through how to check whether we can craft it, pay for it, and put the gear on a survivor. What additional card text would you need to tell us the recipe's exact cost?",
+  "ended_utc": "2026-10-25T02:09:53.622177+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "f58e0e7f866583412ee94598",
+    "record": {
+      "id": "create-survivor",
+      "title": "Create a Survivor",
+      "original": 28,
+      "keywords": "starting gear cloth founding stone name survival dodge movement speed accuracy survivor record",
+      "layout": "Top photo labels gear grid and record sheet. Lower text reads down each of three columns; survival explanation continues into the right column.",
+      "summary": "In the First Story setup, each survivor starts with one Cloth armor gear card and one Founding Stone weapon gear card. Put them in any two gear-grid spaces. Naming the survivor grants +1 survival.",
+      "notes": [
+        "The survivor record sheet tracks the survivor's life and changing attributes.",
+        "Only dodge is available in the First Story; dash, encourage, and surge are gained as play develops.",
+        "Spending survival reduces the recorded total. Survival does not replenish at the end of each showdown.",
+        "Starting attributes shown here: movement 5, speed 0, accuracy 0. Speed is attack rate; accuracy is attack precision.",
+        "The attribute explanation continues on the following book page; this record is limited to printed page 24."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 6,
+        "original": 28,
+        "printed": 24,
+        "edition": "1.5",
+        "title": "Create a Survivor",
+        "reviewed": true,
+        "record_id": "create-survivor"
+      },
+      "sources": [
+        {
+          "revised": 6,
+          "original": 28,
+          "printed": 24,
+          "edition": "1.5",
+          "title": "Create a Survivor",
+          "reviewed": true,
+          "record_id": "create-survivor"
+        }
+      ],
+      "image": "/pages/6.jpg"
+    },
+    "status": "reference",
+    "answer": "In the First Story setup, each survivor starts with one Cloth armor gear card and one Founding Stone weapon gear card. Put them in any two gear-grid spaces. Naming the survivor grants +1 survival.\n\nThe survivor record sheet tracks the survivor's life and changing attributes.\nOnly dodge is available in the First Story; dash, encourage, and surge are gained as play develops.\nSpending survival reduces the recorded total. Survival does not replenish at the end of each showdown.\nStarting attributes shown here: movement 5, speed 0, accuracy 0. Speed is attack rate; accuracy is attack precision.\nThe attribute explanation continues on the following book page; this record is limited to printed page 24.\n\nRelated reviewed rules:\nSurvivor acts and attack sequence: A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+    "context": {
+      "record_id": "create-survivor"
+    },
+    "related_records": [
+      {
+        "id": "survivor-attack-sequence",
+        "title": "Survivor acts and attack sequence",
+        "original": 77,
+        "supporting_originals": [
+          78
+        ],
+        "related_ids": [
+          "survival-actions",
+          "critical-wound-examples"
+        ],
+        "keywords": "survivor act attack activation movement move adjacent melee reach ranged range wound steps reaction first strike before after",
+        "layout": "Printed page 73 separates Survivors' Turn and Act Overview from Movement, Activation, and How Survivors Attack. Printed page 74 has the attack sequence in the left column and a shaded wound-steps panel across the middle and right columns. Read that panel down the middle and then down the right.",
+        "summary": "A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+        "notes": [
+          "Survivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.",
+          "If a survivor is knocked down during their attack, their unresolved hits are canceled. Standing again through Encourage does not restore those canceled hits. A knocked-down survivor is not a threat, cannot spend movement or activation, and may only spend survival to dodge, remaining knocked down. They stand at the end of the next monster turn or when another survivor Encourages them. Already knocked-down survivors cannot be knocked down again.",
+          "Normal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.",
+          "Melee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.",
+          "For an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.",
+          "Resolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.",
+          "A wound attempt totals the wound roll (1d10) + weapon strength + survivor strength modifier. It succeeds if the total meets or exceeds monster toughness including toughness modifiers; otherwise it fails. Survivor modifiers include attributes, tokens, gear, abilities, injuries, and other applicable effects. Then check critical wounds and their exceptions using the linked critical-wound rules.",
+          "Wound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 50,
+          "original": 77,
+          "printed": 73,
+          "edition": "1.5",
+          "title": "Survivor acts and attack sequence",
+          "reviewed": true,
+          "record_id": "survivor-attack-sequence"
+        },
+        "sources": [
+          {
+            "revised": 50,
+            "original": 77,
+            "printed": 73,
+            "edition": "1.5",
+            "title": "Survivor acts and attack sequence",
+            "reviewed": true,
+            "record_id": "survivor-attack-sequence"
+          },
+          {
+            "revised": 51,
+            "original": 78,
+            "printed": 74,
+            "edition": "1.5",
+            "title": "Survivor acts and attack sequence",
+            "reviewed": true,
+            "record_id": "survivor-attack-sequence"
+          }
+        ],
+        "image": "/pages/50.jpg"
+      }
+    ]
+  }
+}

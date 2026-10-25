@@ -1,0 +1,111 @@
+{
+  "question": "We just wounded the lion and removed the final AI card from its discard pile. There are now no AI cards left anywhere except the wound stack. Is the lion dead now, or does something else have to happen?",
+  "response": {
+    "chat_id": "b411f95866e7b980f5a0df49",
+    "record": {
+      "id": "monster-defeat",
+      "title": "Empty AI decks and the killing wound",
+      "original": 37,
+      "keywords": "monster defeat dead killed kill killing last final wound empty ai deck discard pile remaining no cards shuffle basic action",
+      "layout": "Finish the Showdown in the left column explains reshuffling and Basic Action; How Do We Kill It in the center gives the killing-wound condition.",
+      "summary": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.",
+      "notes": [
+        "The next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 15,
+        "original": 37,
+        "printed": 33,
+        "edition": "1.5",
+        "title": "Empty AI decks and the killing wound",
+        "reviewed": true,
+        "record_id": "monster-defeat"
+      },
+      "sources": [
+        {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        }
+      ],
+      "image": "/pages/15.jpg"
+    },
+    "status": "reference",
+    "answer": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.\n\nThe next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records.\n\nRelated reviewed rules:\nFounding Stone gear card: Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.",
+    "context": {
+      "record_id": "monster-defeat"
+    },
+    "related_records": [
+      {
+        "id": "founding-stone",
+        "title": "Founding Stone gear card",
+        "card_name": "Founding Stone",
+        "original": 34,
+        "supporting_originals": [
+          79,
+          80
+        ],
+        "card_sources": [
+          {
+            "title": "Founding Stone face and attack example (book 30)",
+            "url": "/pages/12.jpg",
+            "edition": "1.5",
+            "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+          }
+        ],
+        "keywords": "founding stone starting gear weapon melee stone sling archive throw activation automatic hit critical wound speed accuracy strength",
+        "layout": "Printed page 30 shows the full gear face, labeled attack profile, and normal melee attack example. Printed pages 75 and 76 supply Impervious and critical-wound limits.",
+        "summary": "Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.",
+        "notes": [
+          "A normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.",
+          "Resolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 12,
+          "original": 34,
+          "printed": 30,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        "sources": [
+          {
+            "revised": 12,
+            "original": 34,
+            "printed": 30,
+            "edition": "1.5",
+            "title": "Founding Stone gear card",
+            "reviewed": true,
+            "record_id": "founding-stone"
+          },
+          {
+            "revised": 52,
+            "original": 79,
+            "printed": 75,
+            "edition": "1.5",
+            "title": "Founding Stone gear card",
+            "reviewed": true,
+            "record_id": "founding-stone"
+          },
+          {
+            "revised": 53,
+            "original": 80,
+            "printed": 76,
+            "edition": "1.5",
+            "title": "Critical wound examples",
+            "reviewed": true,
+            "record_id": "critical-wound-examples"
+          }
+        ],
+        "image": "/pages/12.jpg"
+      }
+    ]
+  }
+}

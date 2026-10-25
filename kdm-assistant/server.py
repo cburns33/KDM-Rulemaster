@@ -92,8 +92,11 @@ class Handler(BaseHTTPRequestHandler):
             return self.send(200, {'ok': True, 'app': 'lantern-archive', 'pages': len(MANIFEST), 'records': len(RECORDS), 'sol_configured': sol_status()['configured']})
         if path.startswith('/pages/') and path.removeprefix('/pages/').removesuffix('.jpg').isdigit() and path.endswith('.jpg'):
             file = ROOT / 'public' / 'pages' / path.rsplit('/', 1)[-1]
-        elif path == '/cards/white-lion-grasp.png':
-            file = ROOT / 'public' / 'cards' / 'white-lion-grasp.png'
+        elif path == '/cards/white-lion-grasp.png' or path.removeprefix('/cards/') in {
+            f'white-lion-{name}-physical-1.5.jpeg'
+            for name in ('power-swat', 'claw', 'size-up', 'combo-claw', 'maul', 'grasp')
+        }:
+            file = ROOT / 'public' / 'cards' / path.rsplit('/', 1)[-1]
         else:
             assets = {'/': 'index.html', '/app.js': 'app.js', '/style.css': 'style.css'}
             if path not in assets:

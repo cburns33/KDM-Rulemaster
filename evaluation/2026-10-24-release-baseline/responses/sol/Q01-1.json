@@ -1,0 +1,111 @@
+{
+  "case": "Q01",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We just named our four starting survivors and put their two starting cards on their grids. Do we each begin with some survival, and can I spend it to Encourage someone during this opening fight?",
+  "ended_utc": "2026-10-25T02:09:56.704964+00:00",
+  "elapsed_seconds": 2.923,
+  "response": {
+    "chat_id": "591e9cd2be3677331f576e2c",
+    "record": {
+      "id": "create-survivor",
+      "title": "Create a Survivor",
+      "original": 28,
+      "keywords": "starting gear cloth founding stone name survival dodge movement speed accuracy survivor record",
+      "layout": "Top photo labels gear grid and record sheet. Lower text reads down each of three columns; survival explanation continues into the right column.",
+      "summary": "In the First Story setup, each survivor starts with one Cloth armor gear card and one Founding Stone weapon gear card. Put them in any two gear-grid spaces. Naming the survivor grants +1 survival.",
+      "notes": [
+        "The survivor record sheet tracks the survivor's life and changing attributes.",
+        "Only dodge is available in the First Story; dash, encourage, and surge are gained as play develops.",
+        "Spending survival reduces the recorded total. Survival does not replenish at the end of each showdown.",
+        "Starting attributes shown here: movement 5, speed 0, accuracy 0. Speed is attack rate; accuracy is attack precision.",
+        "The attribute explanation continues on the following book page; this record is limited to printed page 24."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 6,
+        "original": 28,
+        "printed": 24,
+        "edition": "1.5",
+        "title": "Create a Survivor",
+        "reviewed": true,
+        "record_id": "create-survivor"
+      },
+      "sources": [
+        {
+          "revised": 6,
+          "original": 28,
+          "printed": 24,
+          "edition": "1.5",
+          "title": "Create a Survivor",
+          "reviewed": true,
+          "record_id": "create-survivor"
+        }
+      ],
+      "image": "/pages/6.jpg"
+    },
+    "status": "model-reference",
+    "answer": "Yes. Naming each starting survivor grants that survivor **+1 survival**, so each of your four named survivors begins with 1 survival.\n\n**No, you cannot spend it to Encourage during the opening fight.** The campaign starts with Dodge as its only available survival action; Encourage must be learned later. Once Encourage is unlocked, a standing survivor can spend 1 survival to stand another knocked-down survivor, provided that survivor is not deaf and the action’s other restrictions are met.",
+    "context": {
+      "record_id": "create-survivor"
+    },
+    "related_records": [
+      {
+        "id": "survival-actions",
+        "title": "Survival actions and timing",
+        "original": 82,
+        "supporting_originals": [
+          83
+        ],
+        "keywords": "survival actions surge dash dodge encourage endure attacking attacker fellow survivor before after movement activation tall grass hide timing opportunity opportunities interrupt",
+        "layout": "Printed page 78 has three columns: action definitions, survival opportunities, then limitations and examples. Its monster-flow example continues at the top left of printed page 79. The During Survivor Attacks heading on page 79 defines two separate interrupt windows.",
+        "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. Dash and Surge require survival opportunities, including before or after completed movement or activation during the survivors' turn. A standing survivor may encourage at any time subject to the survival-action restrictions. A survivor who is attacking cannot perform survival actions, including dodge.",
+        "notes": [
+          "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+          "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+          "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+          "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+          "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+          "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+          "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. A survivor may encourage at any time during the survivors' turn, including outside Dash and Surge opportunity windows. Deaf survivors may not be encouraged. The action must be unlocked, its cost paid, and its once-per-round and attacking-survivor restrictions observed; it cannot interrupt an unresolved survival action. On the monster turn, the separate flow or knocked-down-monster limitation still applies.",
+          "Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Luck includes the permanent attribute, tokens, gear, abilities, and other current modifiers."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 55,
+          "original": 82,
+          "printed": 78,
+          "edition": "1.5",
+          "title": "Survival actions and timing",
+          "reviewed": true,
+          "record_id": "survival-actions"
+        },
+        "sources": [
+          {
+            "revised": 55,
+            "original": 82,
+            "printed": 78,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          },
+          {
+            "revised": 56,
+            "original": 83,
+            "printed": 79,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          }
+        ],
+        "image": "/pages/55.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

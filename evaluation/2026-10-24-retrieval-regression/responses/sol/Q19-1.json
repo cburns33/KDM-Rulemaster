@@ -1,0 +1,16 @@
+{
+  "case": "Q19",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We're resolving a lion AI card and nobody meets its target conditions. Does the lion still do the attack printed below them?",
+  "ended_utc": "2026-10-25T02:44:54.664193+00:00",
+  "elapsed_seconds": 0.026,
+  "response": {
+    "chat_id": "5d1abae122d975da2cca3d0f",
+    "status": "clarify",
+    "answer": "Which card or action has no target? Its no-target instruction decides what happens next.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}
