@@ -1,0 +1,113 @@
+{
+  "case": "Q06",
+  "turn": 1,
+  "mode": "local",
+  "question": "We won the opening fight, but one survivor died carrying gear and a resource gained during the fight. What happens to those items, and what rewards and Hunt XP do the living survivors receive?",
+  "ended_utc": "2026-10-25T02:09:53.274317+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "dce9b3204ead952cc8b4b9e2",
+    "record": {
+      "id": "age-first-milestone",
+      "title": "Age: first Hunt XP milestone",
+      "original": 111,
+      "supporting_originals": [
+        47
+      ],
+      "keywords": "age hunt xp experience milestone 2 weapon proficiency story event first 2d10",
+      "layout": "Printed page 43 shows heavy-bordered Hunt XP milestone boxes and explains the Age trigger. Printed page 107 has the Age event; the first milestone occupies its upper middle region and has a five-row 2d10 table.",
+      "summary": "When a survivor fills the first heavy-bordered Hunt XP milestone (2 Hunt XP), resolve Age milestone 1, Weapon Proficiency. Choose a weapon type, then roll 2d10 on its table. Each milestone benefit is gained only once per survivor lifetime.",
+      "notes": [
+        "The chosen weapon type makes the survivor eligible to gain proficiency from wounding with that type in victorious showdowns; it does not immediately grant a proficiency level.",
+        "The first milestone table yields: 2 +1 permanent evasion; 3-6 +1 permanent strength; 7-15 one random fighting art; 16-19 +1 permanent accuracy; 20 +1 permanent luck.",
+        "Later Age milestones have separate tables on the same event page and are outside this record."
+      ],
+      "tables": [
+        {
+          "id": "first",
+          "title": "Age 1: Weapon Proficiency",
+          "die": "2d10",
+          "rows": [
+            {
+              "min": 2,
+              "max": 2,
+              "label": "2",
+              "effects": [
+                "Gain +1 permanent evasion."
+              ]
+            },
+            {
+              "min": 3,
+              "max": 6,
+              "label": "3-6",
+              "effects": [
+                "Gain +1 permanent strength."
+              ]
+            },
+            {
+              "min": 7,
+              "max": 15,
+              "label": "7-15",
+              "effects": [
+                "Gain 1 random fighting art."
+              ]
+            },
+            {
+              "min": 16,
+              "max": 19,
+              "label": "16-19",
+              "effects": [
+                "Gain +1 permanent accuracy."
+              ]
+            },
+            {
+              "min": 20,
+              "max": 20,
+              "label": "20",
+              "effects": [
+                "Gain +1 permanent luck."
+              ]
+            }
+          ]
+        }
+      ],
+      "source": {
+        "revised": 81,
+        "original": 111,
+        "printed": 107,
+        "edition": "1.5",
+        "title": "Age: first Hunt XP milestone",
+        "reviewed": true,
+        "record_id": "age-first-milestone"
+      },
+      "sources": [
+        {
+          "revised": 81,
+          "original": 111,
+          "printed": 107,
+          "edition": "1.5",
+          "title": "Age: first Hunt XP milestone",
+          "reviewed": true,
+          "record_id": "age-first-milestone"
+        },
+        {
+          "revised": 24,
+          "original": 47,
+          "printed": 43,
+          "edition": "1.5",
+          "title": "Age: first Hunt XP milestone",
+          "reviewed": true,
+          "record_id": "age-first-milestone"
+        }
+      ],
+      "image": "/pages/81.jpg"
+    },
+    "status": "clarify",
+    "answer": "Which Age milestone did you reach: first (2 Hunt XP), second (6), third (10), or fourth (15)? Confirm one milestone before resolving a roll. Only the first milestone table is reviewed here.",
+    "context": {
+      "record_id": "age-first-milestone",
+      "age_milestone": null
+    },
+    "related_records": []
+  }
+}

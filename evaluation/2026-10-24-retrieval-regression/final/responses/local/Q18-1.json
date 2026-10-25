@@ -1,0 +1,16 @@
+{
+  "case": "Q18",
+  "turn": 1,
+  "mode": "local",
+  "question": "Enraged has just been drawn. Beyond the damage-token example in the tutorial, what happens when the mood enters play, what does it change while it stays out, and what makes us discard it?",
+  "ended_utc": "2026-10-25T02:48:11.778708+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "c86686e8a627b12a58bfa03b",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete Enraged instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

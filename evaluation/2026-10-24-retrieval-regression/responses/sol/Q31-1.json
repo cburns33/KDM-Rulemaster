@@ -1,0 +1,19 @@
+{
+  "case": "Q31",
+  "turn": 1,
+  "mode": "sol",
+  "question": "A survivor rolled 8 for a severe Arms injury. What is the result?",
+  "ended_utc": "2026-10-25T02:45:01.268586+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "1048d672e4365132b8ed9930",
+    "status": "unsupported",
+    "answer": "Only the severe Head injury table is reviewed in this collection. I cannot resolve the requested location from that table. Consult its severe injury table in the source browser.",
+    "record": null,
+    "context": {
+      "topic": "severe-injury",
+      "location": "arm"
+    },
+    "related_records": []
+  }
+}

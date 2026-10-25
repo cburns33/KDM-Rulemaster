@@ -1,0 +1,82 @@
+{
+  "question": "How do we prepare the hunt board and advance through events until reaching the monster?",
+  "response": {
+    "chat_id": "4327c50e73b19311b8c5a7f7",
+    "record": {
+      "id": "hunt-phase",
+      "title": "Hunt board setup and event sequence",
+      "scope": "hunt",
+      "original": 65,
+      "supporting_originals": [
+        66,
+        183
+      ],
+      "card_sources": [
+        {
+          "title": "Random Event basic hunt event card and percentile example",
+          "url": "/pages/40.jpg",
+          "edition": "1.5",
+          "provenance": "Card face and instructions pictured in the supplied 1.5 rulebook scan"
+        }
+      ],
+      "keywords": "hunt board hunt phase setup prepare departing survivors quarry level advancing advance movement event revealer events cards random event percentile d100 arrival arrive find monster starvation overwhelming darkness",
+      "layout": "Printed page 61 has the board setup list. Page 62 starts Hunt Your Quarry at the bottom left and continues at the top center; the percentile explanation continues from bottom center to top right. The White Lion story event supplies its hunt placement diagram.",
+      "summary": "Choose an available quarry and level, then use its story-event hunt diagram to set up the hunt board. Shuffle monster hunt events onto E spaces, fill other eligible spaces with basic hunt event cards, place the monster at its level marker and survivors at Start. Survivors take turns revealing and resolving the events in their current space before advancing one space toward the monster.",
+      "notes": [
+        "The board has 13 spaces. Do not put basic hunt event cards on monster-event spaces, Start, Overwhelming Darkness, or Starvation. Place any hunt events triggered by gear according to their rules.",
+        "The event revealer reads and resolves the top card in the survivors' space. After completing it, archive that card and pass revealer duty to the next survivor. Resolve stacked events one at a time from top to bottom before moving, unless an event compels movement.",
+        "When no cards remain in the current space, move one space toward the monster and resolve the top event in the new space. The monster stays still unless an event moves it.",
+        "An empty entered space requires a hunt-event-table roll before moving again, unless instructed to skip spaces. The first landing on Overwhelming Darkness during each hunt triggers that story event instead of a hunt-table roll.",
+        "Moving into the monster's space ends the hunt and starts the showdown immediately. Do not resolve hunt events in its space except Starvation. The Starvation and Overwhelming Darkness event effects are not included here.",
+        "A basic Random Event card directs a 1d100 hunt-event-table roll: roll two d10s, designate tens and ones, and combine them. The pictured example uses tens 3 and ones 5 for event 35. This record provides the procedure, not the 100 event outcomes.",
+        "An event specifies who rolls. If no survivor is specified, the event revealer rolls and makes required random choices. Add gathering events only with the appropriate tools, once per hunt per event, on top of existing cards and outside Start, Overwhelming Darkness, and Starvation."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 39,
+        "original": 65,
+        "printed": 61,
+        "edition": "1.5",
+        "title": "Hunt board setup and event sequence",
+        "reviewed": true,
+        "record_id": "hunt-phase"
+      },
+      "sources": [
+        {
+          "revised": 39,
+          "original": 65,
+          "printed": 61,
+          "edition": "1.5",
+          "title": "Hunt board setup and event sequence",
+          "reviewed": true,
+          "record_id": "hunt-phase"
+        },
+        {
+          "revised": 40,
+          "original": 66,
+          "printed": 62,
+          "edition": "1.5",
+          "title": "Hunt board setup and event sequence",
+          "reviewed": true,
+          "record_id": "hunt-phase"
+        },
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/39.jpg"
+    },
+    "status": "reference",
+    "answer": "Choose an available quarry and level, then use its story-event hunt diagram to set up the hunt board. Shuffle monster hunt events onto E spaces, fill other eligible spaces with basic hunt event cards, place the monster at its level marker and survivors at Start. Survivors take turns revealing and resolving the events in their current space before advancing one space toward the monster.\n\nThe board has 13 spaces. Do not put basic hunt event cards on monster-event spaces, Start, Overwhelming Darkness, or Starvation. Place any hunt events triggered by gear according to their rules.\nThe event revealer reads and resolves the top card in the survivors' space. After completing it, archive that card and pass revealer duty to the next survivor. Resolve stacked events one at a time from top to bottom before moving, unless an event compels movement.\nWhen no cards remain in the current space, move one space toward the monster and resolve the top event in the new space. The monster stays still unless an event moves it.\nAn empty entered space requires a hunt-event-table roll before moving again, unless instructed to skip spaces. The first landing on Overwhelming Darkness during each hunt triggers that story event instead of a hunt-table roll.\nMoving into the monster's space ends the hunt and starts the showdown immediately. Do not resolve hunt events in its space except Starvation. The Starvation and Overwhelming Darkness event effects are not included here.\nA basic Random Event card directs a 1d100 hunt-event-table roll: roll two d10s, designate tens and ones, and combine them. The pictured example uses tens 3 and ones 5 for event 35. This record provides the procedure, not the 100 event outcomes.\nAn event specifies who rolls. If no survivor is specified, the event revealer rolls and makes required random choices. Add gathering events only with the appropriate tools, once per hunt per event, on top of existing cards and outside Start, Overwhelming Darkness, and Starvation.",
+    "context": {
+      "record_id": "hunt-phase"
+    },
+    "related_records": []
+  }
+}

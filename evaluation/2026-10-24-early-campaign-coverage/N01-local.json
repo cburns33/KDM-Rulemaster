@@ -1,0 +1,116 @@
+{
+  "question": "The final AI card is now in the wound stack and both other piles are empty. Has the lion died?",
+  "response": {
+    "chat_id": "bcea7f68411f69004b4076be",
+    "record": {
+      "id": "monster-defeat",
+      "title": "Empty AI decks and the killing wound",
+      "original": 37,
+      "keywords": "monster defeat dead killed kill killing last final wound empty ai deck discard pile remaining no cards shuffle basic action",
+      "layout": "Finish the Showdown in the left column explains reshuffling and Basic Action; How Do We Kill It in the center gives the killing-wound condition.",
+      "summary": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.",
+      "notes": [
+        "The next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 15,
+        "original": 37,
+        "printed": 33,
+        "edition": "1.5",
+        "title": "Empty AI decks and the killing wound",
+        "reviewed": true,
+        "record_id": "monster-defeat"
+      },
+      "sources": [
+        {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        }
+      ],
+      "image": "/pages/15.jpg"
+    },
+    "status": "reference",
+    "answer": "Emptying the AI deck and discard pile does not kill the monster. It must suffer one more wound when neither pile has a card to move to the wound stack. Until then, an empty AI deck with a nonempty discard is replenished by shuffling the discard; if both are empty, perform Basic Action instead of drawing AI.\n\nThe next wound kills the monster only when no AI card remains in either the deck or discard to absorb that wound. Apply the appropriate encounter aftermath afterward; First Story and standard level 1 aftermath have separate reviewed records.\n\nRelated reviewed rules:\nWhite Lion Basic Action and Monster Reference card: White Lion Basic Action picks the closest survivor in field of view; if there is no target, perform Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1, before applicable modifiers.",
+    "context": {
+      "record_id": "monster-defeat"
+    },
+    "related_records": [
+      {
+        "id": "white-lion-basic-action",
+        "title": "White Lion Basic Action and Monster Reference card",
+        "card_name": "Basic Action",
+        "original": 55,
+        "supporting_originals": [
+          73,
+          183
+        ],
+        "card_sources": [
+          {
+            "title": "Basic Action and White Lion Monster Reference faces",
+            "url": "/pages/31.jpg",
+            "edition": "1.5",
+            "provenance": "Both faces pictured in the supplied 1.5 rulebook scan"
+          }
+        ],
+        "keywords": "white lion basic action reference card closest survivor field view target no target sniff speed accuracy damage first story prologue toughness movement",
+        "layout": "The right column shows both faces, including the Basic Action target, flow, attack profile, and the reference face with First Story and level rows. Sniff is also readable at full size on the showdown story event.",
+        "summary": "White Lion Basic Action picks the closest survivor in field of view; if there is no target, perform Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1, before applicable modifiers.",
+        "notes": [
+          "When another rule supplies a specific Basic Action target, use that target instead of choosing one. Performing Basic Action does not count as drawing an AI card.",
+          "Sniff ends the monster turn. Until the end of the next round, all survivors are threats despite any other effects. The level 3+ extra accuracy instruction is outside the level 1 scope.",
+          "The pictured reference face gives the First Story White Lion movement 6 and toughness 6 with a custom AI deck. The standard level 1 White Lion has movement 6 and toughness 8. These are distinct encounters.",
+          "Move & Attack uses the monster movement rules; it is not an instruction to spend all movement when the target is already in range."
+        ],
+        "related_ids": [
+          "monster-movement"
+        ],
+        "tables": [],
+        "source": {
+          "revised": 31,
+          "original": 55,
+          "printed": 51,
+          "edition": "1.5",
+          "title": "White Lion Basic Action and Monster Reference card",
+          "reviewed": true,
+          "record_id": "white-lion-basic-action"
+        },
+        "sources": [
+          {
+            "revised": 31,
+            "original": 55,
+            "printed": 51,
+            "edition": "1.5",
+            "title": "White Lion Basic Action and Monster Reference card",
+            "reviewed": true,
+            "record_id": "white-lion-basic-action"
+          },
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          },
+          {
+            "revised": 120,
+            "original": 183,
+            "printed": 179,
+            "edition": "1.5",
+            "title": "White Lion: standard showdown deployment",
+            "reviewed": true,
+            "record_id": "white-lion-deployment"
+          }
+        ],
+        "image": "/pages/31.jpg"
+      }
+    ]
+  }
+}

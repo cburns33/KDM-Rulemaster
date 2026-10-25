@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-10-25T02:46:41.334308+00:00",
+  "modes": {
+    "local": {
+      "resolved": 2,
+      "executed": 2,
+      "not_run": 0,
+      "stopped_after_failure": false
+    },
+    "sol": {
+      "resolved": 2,
+      "executed": 2,
+      "not_run": 0,
+      "stopped_after_failure": false
+    }
+  },
+  "api": {
+    "attempts": 0,
+    "successful_responses": 0,
+    "usage": []
+  },
+  "port": 64043,
+  "finished_utc": "2026-10-25T02:46:42.071601+00:00",
+  "inputs_unchanged": true
+}

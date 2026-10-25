@@ -1,0 +1,58 @@
+{
+  "case": "Q02",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We're setting up our first-ever lion encounter. Which cards should be guaranteed to appear first in the AI and hit-location decks, and should the rest of each deck be shuffled?",
+  "ended_utc": "2026-10-25T02:09:58.770386+00:00",
+  "elapsed_seconds": 2.064,
+  "response": {
+    "chat_id": "e9ee880a8c1bb9c161ef9627",
+    "record": {
+      "id": "white-lion-setup",
+      "title": "First Story: White Lion",
+      "original": 30,
+      "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
+      "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
+      "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
+      "notes": [
+        "Set Claw aside, shuffle the rest face down, then place Claw face down on top.",
+        "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.",
+        "Place the double-sided Basic Action / Monster Reference card on the monster control panel.",
+        "Arrange survivor records and gear grids around the showdown board.",
+        "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 8,
+        "original": 30,
+        "printed": 26,
+        "edition": "1.5",
+        "title": "First Story: White Lion",
+        "reviewed": true,
+        "record_id": "white-lion-setup"
+      },
+      "sources": [
+        {
+          "revised": 8,
+          "original": 30,
+          "printed": 26,
+          "edition": "1.5",
+          "title": "First Story: White Lion",
+          "reviewed": true,
+          "record_id": "white-lion-setup"
+        }
+      ],
+      "image": "/pages/8.jpg"
+    },
+    "status": "model-reference",
+    "answer": "For the **First Story: White Lion**, **Claw** is guaranteed to be the first AI card, and **Strange Hand** is guaranteed to be the first hit-location card. Set each aside, shuffle the rest of its respective deck face down, then place the set-aside card face down on top.\n\nThe First Story uses its predetermined White Lion AI deck: Claw, Chomp, Size Up, Power Swat, Grasp, Maul, Terrifying Roar, and Enraged. Include no Legendary AI cards.",
+    "context": {
+      "record_id": "white-lion-setup"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

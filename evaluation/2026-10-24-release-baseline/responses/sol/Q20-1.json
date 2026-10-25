@@ -1,0 +1,56 @@
+{
+  "case": "Q20",
+  "turn": 1,
+  "mode": "sol",
+  "question": "For our opening Prologue fight, how far away do the survivors start, and do we use the normal random level 1 AI setup?",
+  "ended_utc": "2026-10-25T02:10:37.916694+00:00",
+  "elapsed_seconds": 2.179,
+  "response": {
+    "chat_id": "bd5f0c89b305a8604b4dabf4",
+    "record": {
+      "id": "white-lion-deployment",
+      "title": "White Lion: standard showdown deployment",
+      "original": 183,
+      "keywords": "white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1",
+      "layout": "The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.",
+      "summary": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.",
+      "notes": [
+        "Place the White Lion in the center of the board.",
+        "Use 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.",
+        "This record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "model-reference",
+    "answer": "The reviewed record covers **standard White Lion showdown deployment**, not the opening Prologue. It does not establish how far away survivors start or whether the Prologue uses a random level 1 AI setup.\n\nTo answer both questions, I’d need the **First Story: White Lion** Prologue setup instructions.",
+    "context": {
+      "record_id": "white-lion-deployment"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

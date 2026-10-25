@@ -1,0 +1,73 @@
+mode,case,turn,scope,evidence,meaning,response,sources,context,note
+local,Q01,1,covered,pass,pass,pass,pass,not applicable,Starting survival and Prologue unlock restriction are supported.
+sol,Q01,1,covered,pass,pass,pass,pass,not applicable,Starting survival and Prologue unlock restriction are supported.
+local,Q02,1,covered,pass,pass,pass,pass,not applicable,Claw and Strange Hand top-card setup and remainder shuffling are supported.
+sol,Q02,1,covered,pass,pass,pass,pass,not applicable,Claw and Strange Hand top-card setup and remainder shuffling are supported.
+local,Q03,1,covered,pass,pass,pass,pass,not applicable,Completed activation can precede movement within the act.
+sol,Q03,1,covered,pass,pass,pass,pass,not applicable,Completed activation can precede movement within the act.
+local,Q04,1,covered,pass,partial,partial,pass,not applicable,Local gives profile/sling text but omits the wound-roll formula; Sol combines related notes into 1d10 + 1.
+sol,Q04,1,covered,pass,pass,pass,pass,not applicable,Local gives profile/sling text but omits the wound-roll formula; Sol combines related notes into 1d10 + 1.
+local,Q05,1,required gap,fail,fail,fail,fail,not applicable,Local returns Clever Ploy instead of victory rules; Sol identifies the missing monster-death rule.
+sol,Q05,1,required gap,fail,pass,pass,fail,not applicable,Local returns Clever Ploy instead of victory rules; Sol identifies the missing monster-death rule.
+local,Q06,1,required gap,fail,fail,fail,fail,not applicable,Both modes ask an unrelated Age milestone question instead of addressing aftermath or its missing sources.
+sol,Q06,1,required gap,fail,fail,fail,fail,not applicable,Both modes ask an unrelated Age milestone question instead of addressing aftermath or its missing sources.
+local,Q07,1,covered,pass,partial,partial,pass,not applicable,Local omits controller tie choice from rendered related text; Sol uses the supporting record notes.
+sol,Q07,1,covered,pass,pass,pass,pass,not applicable,Local omits controller tie choice from rendered related text; Sol uses the supporting record notes.
+local,Q08,1,covered,pass,pass,pass,pass,not applicable,After Damage requires damage; a dodged only hit does not cause the knockback.
+sol,Q08,1,covered,pass,pass,pass,pass,not applicable,After Damage requires damage; a dodged only hit does not cause the knockback.
+local,Q09,1,covered,pass,partial,partial,pass,not applicable,Local states the effect but omits insanity arithmetic; Sol gives insanity 1 and knockdown.
+sol,Q09,1,covered,pass,pass,pass,pass,not applicable,Local states the effect but omits insanity arithmetic; Sol gives insanity 1 and knockdown.
+local,Q10,1,covered,pass,pass,pass,pass,not applicable,Prior Grab victim remains first target condition and selecting them does not repeat Grab.
+sol,Q10,1,covered,pass,pass,pass,pass,not applicable,Prior Grab victim remains first target condition and selecting them does not repeat Grab.
+local,Q11,1,covered,pass,partial,partial,pass,not applicable,Local omits the supplied damage-token calculation; Sol gives Damage 4 and no repeated Grab.
+sol,Q11,1,covered,pass,pass,pass,pass,not applicable,Local omits the supplied damage-token calculation; Sol gives Damage 4 and no repeated Grab.
+local,Q12,1,covered,pass,pass,pass,pass,not applicable,Lost Hand replaces normal actions; lifetime understanding limit remains applicable.
+sol,Q12,1,covered,pass,pass,pass,pass,not applicable,Lost Hand replaces normal actions; lifetime understanding limit remains applicable.
+local,Q13,1,covered,pass,pass,pass,pass,not applicable,Sol gives correct trigger but claims the diagram is missing despite the app card citation linking it.
+sol,Q13,1,covered,partial,partial,partial,partial,not applicable,Sol gives correct trigger but claims the diagram is missing despite the app card citation linking it.
+local,Q14,1,covered,pass,pass,pass,pass,not applicable,No survival payment means no strength reward; Lost Hand still remains in play.
+sol,Q14,1,covered,pass,pass,pass,pass,not applicable,No survival payment means no strength reward; Lost Hand still remains in play.
+local,Q15,1,covered,pass,pass,pass,pass,not applicable,"Trap stands the monster, ends both attacks, and restricts survival until resolved."
+sol,Q15,1,covered,pass,pass,pass,pass,not applicable,"Trap stands the monster, ends both attacks, and restricts survival until resolved."
+local,Q16,1,required gap,fail,fail,fail,fail,not applicable,Local returns Claw instructions for Chomp; Sol declines the missing Chomp card.
+sol,Q16,1,required gap,fail,pass,pass,fail,not applicable,Local returns Claw instructions for Chomp; Sol declines the missing Chomp card.
+local,Q17,1,required gap,fail,fail,fail,fail,not applicable,Local repeats the setup list; Sol identifies missing Terrifying Roar instructions.
+sol,Q17,1,required gap,fail,pass,pass,fail,not applicable,Local repeats the setup list; Sol identifies missing Terrifying Roar instructions.
+local,Q18,1,required gap,partial,pass,pass,partial,not applicable,Both acknowledge the full Enraged card is unreviewed; the existing example remains bounded.
+sol,Q18,1,required gap,partial,pass,pass,partial,not applicable,Both acknowledge the full Enraged card is unreviewed; the existing example remains bounded.
+local,Q19,1,clarification,pass,pass,pass,pass,not applicable,Asks which card determines the no-target instruction.
+sol,Q19,1,clarification,pass,pass,pass,pass,not applicable,Asks which card determines the no-target instruction.
+local,Q19,2,covered,pass,partial,partial,pass,pass,Local names Sniff but does not explain that it replaces the attack; Sol states no move-and-attack.
+sol,Q19,2,covered,pass,pass,pass,pass,pass,Local names Sniff but does not explain that it replaces the attack; Sol states no move-and-attack.
+local,Q20,1,covered,fail,fail,fail,fail,not applicable,Prologue wording selects standard deployment; Sol falsely requests an available First Story record.
+sol,Q20,1,covered,fail,fail,fail,fail,not applicable,Prologue wording selects standard deployment; Sol falsely requests an available First Story record.
+local,Q20,2,required gap,partial,partial,partial,partial,pass,Standard deployment is available but deck composition is outside the record; Sol states that limit.
+sol,Q20,2,required gap,partial,pass,pass,partial,pass,Standard deployment is available but deck composition is outside the record; Sol states that limit.
+local,Q21,1,required gap,fail,fail,fail,fail,not applicable,Local returns fight setup for settlement sequence; Sol requests the actual settlement sources.
+sol,Q21,1,required gap,fail,pass,pass,fail,not applicable,Local returns fight setup for settlement sequence; Sol requests the actual settlement sources.
+local,Q22,1,required gap,fail,fail,fail,fail,not applicable,Local returns combat rules for population/First Day; Sol acknowledges the missing event.
+sol,Q22,1,required gap,fail,pass,pass,fail,not applicable,Local returns combat rules for population/First Day; Sol acknowledges the missing event.
+local,Q23,1,required gap,fail,fail,fail,fail,not applicable,Local gives starting-survivor rules for Language; Sol identifies missing innovation evidence.
+sol,Q23,1,required gap,fail,pass,pass,fail,not applicable,Local gives starting-survivor rules for Language; Sol identifies missing innovation evidence.
+local,Q24,1,required gap,fail,fail,fail,fail,not applicable,Local gives starting gear rather than crafting; Sol identifies missing procedure and recipe sources.
+sol,Q24,1,required gap,fail,pass,pass,fail,not applicable,Local gives starting gear rather than crafting; Sol identifies missing procedure and recipe sources.
+local,Q25,1,excluded event,fail,fail,fail,fail,not applicable,Hunt event 84 is misrouted to Age clarification in both modes.
+sol,Q25,1,excluded event,fail,fail,fail,fail,not applicable,Hunt event 84 is misrouted to Age clarification in both modes.
+local,Q26,1,required gap,partial,partial,partial,partial,not applicable,Tile count is supported; Sol identifies missing Tall Grass effect instead of claiming complete coverage.
+sol,Q26,1,required gap,partial,pass,pass,partial,not applicable,Tile count is supported; Sol identifies missing Tall Grass effect instead of claiming complete coverage.
+local,Q27,1,required gap,fail,fail,fail,fail,not applicable,Local returns showdown deployment for hunt procedure; Sol identifies the hunt-rule gap.
+sol,Q27,1,required gap,fail,pass,pass,fail,not applicable,Local returns showdown deployment for hunt procedure; Sol identifies the hunt-rule gap.
+local,Q28,1,covered,pass,pass,pass,pass,not applicable,Ordinary hunt overflow causes no severe-injury roll and checked boxes persist.
+sol,Q28,1,covered,pass,pass,pass,pass,not applicable,Ordinary hunt overflow causes no severe-injury roll and checked boxes persist.
+local,Q29,1,covered,pass,fail,fail,pass,not applicable,First heavy-bordered Hunt XP wording is not recognized; both ask for a milestone already identified.
+sol,Q29,1,covered,pass,fail,fail,pass,not applicable,First heavy-bordered Hunt XP wording is not recognized; both ask for a milestone already identified.
+local,Q30,1,covered,pass,partial,partial,pass,not applicable,Local does not resolve final 6; Sol gives the correct experiment 4-6 band and no Branding roll.
+sol,Q30,1,covered,pass,pass,pass,pass,not applicable,Local does not resolve final 6; Sol gives the correct experiment 4-6 band and no Branding roll.
+local,Q30,2,covered,pass,partial,partial,pass,fail,Local still offers generic table selection; Sol selects Branding 4-7 but asks for a new roll despite the supplied current 6.
+sol,Q30,2,covered,pass,partial,partial,pass,pass,Local still offers generic table selection; Sol selects Branding 4-7 but asks for a new roll despite the supplied current 6.
+local,Q31,1,required gap,pass,pass,pass,pass,not applicable,Correctly declines the unreviewed Arms table without substituting Head.
+sol,Q31,1,required gap,pass,pass,pass,pass,not applicable,Correctly declines the unreviewed Arms table without substituting Head.
+local,Q31,2,covered,fail,fail,fail,fail,fail,Corrected Head follow-up selects hunt damage. Sol falsely says Head table is absent and mentions two Head injury boxes.
+sol,Q31,2,covered,fail,fail,fail,fail,fail,Corrected Head follow-up selects hunt damage. Sol falsely says Head table is absent and mentions two Head injury boxes.
+local,Q32,1,edition boundary,pass,pass,pass,pass,not applicable,Declines to certify 1.6 from the 1.5 collection.
+sol,Q32,1,edition boundary,pass,pass,pass,pass,not applicable,Declines to certify 1.6 from the 1.5 collection.

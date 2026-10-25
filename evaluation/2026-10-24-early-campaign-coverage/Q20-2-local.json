@@ -1,0 +1,86 @@
+{
+  "question": "Now we mean the next hunt, a standard level 1 White Lion, not the Prologue. Should we copy that same deployment and fixed deck?",
+  "response": {
+    "chat_id": "ea94167f045aa8193b179512",
+    "record": {
+      "id": "white-lion-deployment",
+      "title": "White Lion: standard showdown deployment",
+      "original": 183,
+      "keywords": "white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1",
+      "layout": "The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.",
+      "summary": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.",
+      "notes": [
+        "Place the White Lion in the center of the board.",
+        "Use 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.",
+        "This record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "reference",
+    "answer": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.\n\nPlace the White Lion in the center of the board.\nUse 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.\nThis record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record.\n\nRelated reviewed rules:\nFirst Story victory and rewards: In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+    "context": {
+      "record_id": "white-lion-deployment"
+    },
+    "related_records": [
+      {
+        "id": "prologue-victory",
+        "title": "First Story victory and rewards",
+        "original": 37,
+        "keywords": "prologue first story opening fight victory victorious win won aftermath rewards hunt xp gear resources dead survivor",
+        "layout": "Left column finishes the fight; center distinguishes the killing wound and survivor aftermath; blue right panel gives the First Story rewards and dead-survivor gear exception.",
+        "summary": "In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+        "notes": [
+          "The First Story rewards are in addition to resources earned from critical wounds. Shuffle each resource deck before drawing its four cards and put the resources face up.",
+          "Players who lost their survivor in the First Story can create new survivors in the settlement. Their dead survivor's gear and resources return with the remaining survivors. This is a First Story exception, not a general recovery rule for every death.",
+          "If the survivors perish, the First Story instructs players to try again until victorious. A first successful fight gives one Hunt XP; it does not immediately reach the first Age milestone."
+        ],
+        "related_ids": [
+          "monster-defeat"
+        ],
+        "tables": [],
+        "source": {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        },
+        "sources": [
+          {
+            "revised": 15,
+            "original": 37,
+            "printed": 33,
+            "edition": "1.5",
+            "title": "Empty AI decks and the killing wound",
+            "reviewed": true,
+            "record_id": "monster-defeat"
+          }
+        ],
+        "image": "/pages/15.jpg"
+      }
+    ]
+  }
+}

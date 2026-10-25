@@ -1,0 +1,100 @@
+{
+  "question": "We have finished the Prologue and are sitting down for our first settlement phase. In what order do we handle returning survivors, First Day, endeavors, and the lantern-year timeline?",
+  "response": {
+    "chat_id": "fe498e770ab06e3c54ea012f",
+    "record": {
+      "id": "first-settlement-return",
+      "title": "First settlement: returning survivors and timeline",
+      "original": 38,
+      "supporting_originals": [
+        39
+      ],
+      "keywords": "first settlement phase steps sequence setup returning survivors return naming name survival limit heal light heavy injuries permanent endeavors death count timeline lantern year first day language population milestones",
+      "layout": "Printed page 34 gives steps 1-6, with First Day and Returning Survivors inserted under Update Timeline. Printed page 35 continues steps 7-11.",
+      "summary": "Begin the first settlement with the surviving First Story survivors. Name the settlement, return survivors, gain endeavors, update the timeline, update the death count, and check milestones before development. Each returning survivor gains +1 survival within the survival limit, heals filled light/heavy injury boxes, and generates 1 endeavor. Permanent injuries remain.",
+      "notes": [
+        "Add returning survivors to the settlement population list. Unspent endeavors are lost at the end of the settlement phase.",
+        "Check the first lantern year on the timeline. Resolve First Day, then the Returning Survivors story event, and return to the settlement sequence. First Day determines the new settlement's population and is always played for a new settlement; its actual card outcomes are not reviewed here.",
+        "The overview says Returning Survivors gives Language, builds the Innovation Deck, and adds Lantern Hoard. Its full story-event instructions and the Language innovation face remain separate unreviewed sources. This record does not establish a Language action unlock.",
+        "For each First Story survivor lost, fill a death-count box. The first death-count update triggers Principle: Death; follow that story event and gain the resulting principle card. Its choices and effects are not reviewed here.",
+        "Continue with development, prepare departing survivors, skip step 9 during this First Story settlement, then record/archive resources and finish. This first-settlement sequence does not transcribe the repeating settlement rules."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 16,
+        "original": 38,
+        "printed": 34,
+        "edition": "1.5",
+        "title": "First settlement: returning survivors and timeline",
+        "reviewed": true,
+        "record_id": "first-settlement-return"
+      },
+      "sources": [
+        {
+          "revised": 16,
+          "original": 38,
+          "printed": 34,
+          "edition": "1.5",
+          "title": "First settlement: returning survivors and timeline",
+          "reviewed": true,
+          "record_id": "first-settlement-return"
+        },
+        {
+          "revised": 17,
+          "original": 39,
+          "printed": 35,
+          "edition": "1.5",
+          "title": "First settlement: development, crafting, and storage",
+          "reviewed": true,
+          "record_id": "first-settlement-develop"
+        }
+      ],
+      "image": "/pages/16.jpg"
+    },
+    "status": "reference",
+    "answer": "Begin the first settlement with the surviving First Story survivors. Name the settlement, return survivors, gain endeavors, update the timeline, update the death count, and check milestones before development. Each returning survivor gains +1 survival within the survival limit, heals filled light/heavy injury boxes, and generates 1 endeavor. Permanent injuries remain.\n\nAdd returning survivors to the settlement population list. Unspent endeavors are lost at the end of the settlement phase.\nCheck the first lantern year on the timeline. Resolve First Day, then the Returning Survivors story event, and return to the settlement sequence. First Day determines the new settlement's population and is always played for a new settlement; its actual card outcomes are not reviewed here.\nThe overview says Returning Survivors gives Language, builds the Innovation Deck, and adds Lantern Hoard. Its full story-event instructions and the Language innovation face remain separate unreviewed sources. This record does not establish a Language action unlock.\nFor each First Story survivor lost, fill a death-count box. The first death-count update triggers Principle: Death; follow that story event and gain the resulting principle card. Its choices and effects are not reviewed here.\nContinue with development, prepare departing survivors, skip step 9 during this First Story settlement, then record/archive resources and finish. This first-settlement sequence does not transcribe the repeating settlement rules.\n\nRelated reviewed rules:\nFirst Story victory and rewards: In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+    "context": {
+      "record_id": "first-settlement-return"
+    },
+    "related_records": [
+      {
+        "id": "prologue-victory",
+        "title": "First Story victory and rewards",
+        "original": 37,
+        "keywords": "prologue first story opening fight victory victorious win won aftermath rewards hunt xp gear resources dead survivor",
+        "layout": "Left column finishes the fight; center distinguishes the killing wound and survivor aftermath; blue right panel gives the First Story rewards and dead-survivor gear exception.",
+        "summary": "In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+        "notes": [
+          "The First Story rewards are in addition to resources earned from critical wounds. Shuffle each resource deck before drawing its four cards and put the resources face up.",
+          "Players who lost their survivor in the First Story can create new survivors in the settlement. Their dead survivor's gear and resources return with the remaining survivors. This is a First Story exception, not a general recovery rule for every death.",
+          "If the survivors perish, the First Story instructs players to try again until victorious. A first successful fight gives one Hunt XP; it does not immediately reach the first Age milestone."
+        ],
+        "related_ids": [
+          "monster-defeat"
+        ],
+        "tables": [],
+        "source": {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        },
+        "sources": [
+          {
+            "revised": 15,
+            "original": 37,
+            "printed": 33,
+            "edition": "1.5",
+            "title": "Empty AI decks and the killing wound",
+            "reviewed": true,
+            "record_id": "monster-defeat"
+          }
+        ],
+        "image": "/pages/15.jpg"
+      }
+    ]
+  }
+}

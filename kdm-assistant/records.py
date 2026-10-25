@@ -1,5 +1,16 @@
 """Reviewed summaries of the supplied 1.5 scan. Original PDF pages are identifiers."""
 from core_records import CORE_RECORDS
+from early_campaign_records import EARLY_CAMPAIGN_RECORDS
+
+# Named sources whose complete instructions are outside reviewed retrieval.
+# These identify coverage boundaries, not transcriptions or rules.
+SOURCE_GAPS = {
+    'Chomp': (),
+    'Terrifying Roar': (),
+    'Enraged': ('drawn', 'draw', 'enters', 'enter', 'entry', 'discard', 'full'),
+    'First Day': ('card', 'instructions', 'text', 'population', 'outcome', 'outcomes', 'roll', 'rolled', 'result', 'results', 'does'),
+    'Language': (),
+}
 
 RECORDS = [
     {
@@ -55,9 +66,10 @@ RECORDS = [
     },
     {
         "id": "white-lion-setup", "title": "First Story: White Lion", "original": 30,
+        "scope": "prologue",
         "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
         "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
         "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
         "notes": ["Set Claw aside, shuffle the rest face down, then place Claw face down on top.", "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.", "Place the double-sided Basic Action / Monster Reference card on the monster control panel.", "Arrange survivor records and gear grids around the showdown board.", "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."], "tables": [],
     },
-] + CORE_RECORDS
+] + CORE_RECORDS + EARLY_CAMPAIGN_RECORDS

@@ -1,0 +1,16 @@
+{
+  "case": "Q27",
+  "turn": 1,
+  "mode": "local",
+  "question": "We're leaving the settlement to hunt a level 1 White Lion for the first time. How do we prepare the hunt board and advance through movement and events until the showdown starts?",
+  "ended_utc": "2026-10-25T02:44:54.504861+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "35b789f9df24c98c9df4180f",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete Hunt board instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

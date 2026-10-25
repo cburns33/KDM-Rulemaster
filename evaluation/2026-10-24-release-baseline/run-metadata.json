@@ -1,0 +1,20 @@
+{
+  "started_utc": "2026-10-25T02:09:53.013320+00:00",
+  "root": "D:\\Documents\\KDM\\KDM-Rulemaster-v2",
+  "branch": "rules-v2",
+  "commit": "dc6f3124d5d65bcb5047fe8fd25b09f0b510a16e",
+  "worktree_status": " D 781787312-KDM-Rulebook-1-5.pdf\n D ITERATION_2.md\n D KDM_Assistant_Expanded_Preview.png\n D KDM_Assistant_Preview.png\n D KDM_Community_Test_Questions.md\n D KDM_Early_Game_Card_Shortlist.md\n D KDM_New_Player_Intro_and_Prologue_Reference.md\n D KDM_OCR_Benchmark_Selection.md\n D KDM_OCR_Benchmark_Source_Audit.md\n D KDM_OCR_Queue.md\n D KDM_Project_Status.md\n D KDM_Rulebook_1.5_Rules_Focused.pdf\n D KDM_Rules_Focused_Page_Map.md\n M kdm-assistant/README.md\n M kdm-assistant/core_records.py\n M kdm-assistant/engine.py\n M kdm-assistant/prepare.py\n M kdm-assistant/test_hosted_api.py\n M kdm-assistant/test_server.py\n?? AGENTS.md\n?? README.md\n?? docs/\n?? evaluation/2026-10-24-folder-audit/\n?? evaluation/2026-10-24-folder-cleanup/\n?? evaluation/2026-10-24-next-card-coverage/\n?? evaluation/2026-10-24-release-baseline/\n?? evaluation/INDEX.md\n?? evaluation/community/\n?? kdm-assistant/test_card_coverage.py\n?? kdm-assistant/test_prepare.py\n?? sources/\n",
+  "question_version": 1,
+  "fingerprints": {
+    "evaluation\\2026-10-24-release-baseline\\QUESTIONS.md": "6f941ef7bbf0de608e5a82c8fa9715d69bb4ce16d632d958626d39a76ab37e18",
+    "kdm-assistant\\server.py": "3e06c30d41798008e153c136cf322591cd8628c8eaca6bce1f1862c90e0900cd",
+    "kdm-assistant\\engine.py": "9d16b60b3f3bf4fdb22cd9db278fe9e2a40c94a7b2ea7537b0aebea30262300e",
+    "kdm-assistant\\records.py": "9caa113b9c664466ee35e855b49efcebe4028e39928ac14cac73b3758864b37f",
+    "kdm-assistant\\core_records.py": "73b7322a3ef45ba340e9e9d87160a3b483ce10745ecb0d030f61723faccea554",
+    "kdm-assistant\\sol_answer.py": "dc96a86439ac973448eeb01e1dc521209f16b33c9d40b1320073fce6b78d74d8"
+  },
+  "history": "temporary database, discarded after run",
+  "key_source": "user-authorized external file, memory only",
+  "scenario_count": 32,
+  "turns_per_mode": 36
+}

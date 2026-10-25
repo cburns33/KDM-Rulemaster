@@ -1,0 +1,129 @@
+{
+  "case": "Q16",
+  "turn": 1,
+  "mode": "local",
+  "question": "Claw has finished and the next AI card is Chomp. Please walk us through Chomp's target list, attack numbers, and any additional instructions using its own card.",
+  "ended_utc": "2026-10-25T02:09:53.462476+00:00",
+  "elapsed_seconds": 0.015,
+  "response": {
+    "chat_id": "3b1600791266b78d495dc7e9",
+    "record": {
+      "id": "white-lion-claw",
+      "title": "White Lion: Claw AI card",
+      "original": 31,
+      "supporting_originals": [
+        32
+      ],
+      "card_sources": [
+        {
+          "title": "Claw (group physical card)",
+          "url": "/cards/white-lion-claw-physical-1.5.jpeg",
+          "edition": "1.5",
+          "provenance": "Photo of the group physical set"
+        }
+      ],
+      "keywords": "white lion claw ai card instructions pick target closest threat facing range field of view sniff move attack speed accuracy damage",
+      "layout": "Printed page 27 pictures the complete Claw card and explains target selection. Printed page 28 continues through movement, attack rolls, damage, and discarding the card.",
+      "related_ids": [
+        "monster-movement"
+      ],
+      "summary": "Claw first targets the closest threat in the area the White Lion faces and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.",
+      "notes": [
+        "The second target condition may select a threat beyond the lion’s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.",
+        "The White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn.",
+        "The pictured White Lion Basic Action uses a different target list: closest survivor in field of view; if no target, Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1. A knocked-down survivor can be its closest survivor even though they are not a threat.",
+        "Sniff ends the turn. Until the end of the next round, all survivors are threats, even if knocked down or affected by an effect that says otherwise."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 9,
+        "original": 31,
+        "printed": 27,
+        "edition": "1.5",
+        "title": "White Lion: Claw AI card",
+        "reviewed": true,
+        "record_id": "white-lion-claw"
+      },
+      "sources": [
+        {
+          "revised": 9,
+          "original": 31,
+          "printed": 27,
+          "edition": "1.5",
+          "title": "White Lion: Claw AI card",
+          "reviewed": true,
+          "record_id": "white-lion-claw"
+        },
+        {
+          "revised": 10,
+          "original": 32,
+          "printed": 28,
+          "edition": "1.5",
+          "title": "White Lion: Claw AI card",
+          "reviewed": true,
+          "record_id": "white-lion-claw"
+        }
+      ],
+      "image": "/pages/9.jpg"
+    },
+    "status": "reference",
+    "answer": "Claw first targets the closest threat in the area the White Lion faces and in its movement range. If none qualifies, target the closest threat in field of view; if none, Sniff. Then move toward and attack the target with Speed 2, Accuracy 2+, Damage 1 per hit.\n\nThe second target condition may select a threat beyond the lion’s movement range. Move toward that target as far as allowed, face it, and end the turn if unable to reach it.\nThe White Lion moves up to its movement value, must be adjacent to attack, and uses the attack profile shown on Claw. Discard Claw at the end of its turn.\nThe pictured White Lion Basic Action uses a different target list: closest survivor in field of view; if no target, Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1. A knocked-down survivor can be its closest survivor even though they are not a threat.\nSniff ends the turn. Until the end of the next round, all survivors are threats, even if knocked down or affected by an effect that says otherwise.\n\nRelated reviewed rules:\nMonster movement and target definitions: Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.",
+    "context": {
+      "record_id": "white-lion-claw"
+    },
+    "related_records": [
+      {
+        "id": "monster-movement",
+        "title": "Monster movement and target definitions",
+        "original": 73,
+        "supporting_originals": [
+          72
+        ],
+        "related_ids": [
+          "white-lion-claw"
+        ],
+        "keywords": "monster movement move again round basic action reaction target threat survivor facing range field view knocked down",
+        "layout": "Printed page 69 defines Move & Attack Target and Monster Movement. The Pick Target definitions on printed page 68 supply the target conditions. White Lion card text is in the linked Claw record.",
+        "summary": "Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.",
+        "notes": [
+          "Actions dictate when the monster moves, including actions instructed by reactions. Move along a shortest path, one cardinal space at a time, with no diagonal movement; choose among equally short paths. If already adjacent, turn and attack without moving. After moving, face the survivor and resolve collisions before the attack. For an attack with reach, move only the minimum spaces needed to attack.",
+          "An instruction only to attack does not grant movement. Full move uses the current movement value including positive and negative modifiers.",
+          "A threat is a survivor who is not knocked down and is not using an effect that prevents being a threat. Closest survivor includes knocked-down survivors; closest threat excludes them unless an effect such as Sniff overrides that restriction.",
+          "Facing means the area in front of the monster, the area the monster faces. It does not refer to a survivor facing toward the monster. Field of view excludes the blind spot and sight blocked by Obstacle terrain. In range uses current movement, including modifiers, unless the condition specifies a number.",
+          "Check the Pick Target list from top to bottom and stop at the first condition with an eligible target. If multiple survivors satisfy it, the monster controller chooses. A no-target instruction replaces the other actions on that card. Priority targeting and card-specific overrides need their own applicable rules."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 46,
+          "original": 73,
+          "printed": 69,
+          "edition": "1.5",
+          "title": "Monster movement and target definitions",
+          "reviewed": true,
+          "record_id": "monster-movement"
+        },
+        "sources": [
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          },
+          {
+            "revised": 45,
+            "original": 72,
+            "printed": 68,
+            "edition": "1.5",
+            "title": "Priority targeting and its exceptions",
+            "reviewed": true,
+            "record_id": "priority-target"
+          }
+        ],
+        "image": "/pages/46.jpg"
+      }
+    ]
+  }
+}

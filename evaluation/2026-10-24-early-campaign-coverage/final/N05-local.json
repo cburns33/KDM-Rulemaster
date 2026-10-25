@@ -1,0 +1,62 @@
+{
+  "question": "For our first settlement, in what order do we handle returning survivors, First Day, endeavors, and the timeline?",
+  "response": {
+    "chat_id": "630c5d8c4d1cdcbea2bb4b48",
+    "record": {
+      "id": "first-settlement-return",
+      "title": "First settlement: returning survivors and timeline",
+      "scope": "first-settlement",
+      "original": 38,
+      "supporting_originals": [
+        39
+      ],
+      "keywords": "first settlement phase steps sequence setup returning survivors return naming name survival limit heal light heavy injuries permanent endeavors death count timeline lantern year first day language population milestones",
+      "layout": "Printed page 34 gives steps 1-6, with First Day and Returning Survivors inserted under Update Timeline. Printed page 35 continues steps 7-11.",
+      "summary": "Begin the first settlement with the surviving First Story survivors. Name the settlement, return survivors, gain endeavors, update the timeline, update the death count, and check milestones before development. Each returning survivor gains +1 survival within the survival limit, heals filled light/heavy injury boxes, and generates 1 endeavor. Permanent injuries remain.",
+      "notes": [
+        "Add returning survivors to the settlement population list. Unspent endeavors are lost at the end of the settlement phase.",
+        "Check the first lantern year on the timeline. Resolve First Day, then the Returning Survivors story event, and return to the settlement sequence. First Day determines the new settlement's population and is always played for a new settlement; its actual card outcomes are not reviewed here.",
+        "The overview says Returning Survivors gives Language, builds the Innovation Deck, and adds Lantern Hoard. Its full story-event instructions and the Language innovation face remain separate unreviewed sources. This record does not establish a Language action unlock.",
+        "For each First Story survivor lost, fill a death-count box. The first death-count update triggers Principle: Death; follow that story event and gain the resulting principle card. Its choices and effects are not reviewed here.",
+        "Continue with development, prepare departing survivors, skip step 9 during this First Story settlement, then record/archive resources and finish. This first-settlement sequence does not transcribe the repeating settlement rules."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 16,
+        "original": 38,
+        "printed": 34,
+        "edition": "1.5",
+        "title": "First settlement: returning survivors and timeline",
+        "reviewed": true,
+        "record_id": "first-settlement-return"
+      },
+      "sources": [
+        {
+          "revised": 16,
+          "original": 38,
+          "printed": 34,
+          "edition": "1.5",
+          "title": "First settlement: returning survivors and timeline",
+          "reviewed": true,
+          "record_id": "first-settlement-return"
+        },
+        {
+          "revised": 17,
+          "original": 39,
+          "printed": 35,
+          "edition": "1.5",
+          "title": "First settlement: development, crafting, and storage",
+          "reviewed": true,
+          "record_id": "first-settlement-develop"
+        }
+      ],
+      "image": "/pages/16.jpg"
+    },
+    "status": "reference",
+    "answer": "Begin the first settlement with the surviving First Story survivors. Name the settlement, return survivors, gain endeavors, update the timeline, update the death count, and check milestones before development. Each returning survivor gains +1 survival within the survival limit, heals filled light/heavy injury boxes, and generates 1 endeavor. Permanent injuries remain.\n\nAdd returning survivors to the settlement population list. Unspent endeavors are lost at the end of the settlement phase.\nCheck the first lantern year on the timeline. Resolve First Day, then the Returning Survivors story event, and return to the settlement sequence. First Day determines the new settlement's population and is always played for a new settlement; its actual card outcomes are not reviewed here.\nThe overview says Returning Survivors gives Language, builds the Innovation Deck, and adds Lantern Hoard. Its full story-event instructions and the Language innovation face remain separate unreviewed sources. This record does not establish a Language action unlock.\nFor each First Story survivor lost, fill a death-count box. The first death-count update triggers Principle: Death; follow that story event and gain the resulting principle card. Its choices and effects are not reviewed here.\nContinue with development, prepare departing survivors, skip step 9 during this First Story settlement, then record/archive resources and finish. This first-settlement sequence does not transcribe the repeating settlement rules.",
+    "context": {
+      "record_id": "first-settlement-return"
+    },
+    "related_records": []
+  }
+}

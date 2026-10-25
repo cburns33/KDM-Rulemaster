@@ -1,5 +1,9 @@
 # Rules assistant, iteration 2
 
+## Next card batch, 24 October 2026
+
+The app now has 25 reviewed topics on 28 source pages. Founding Stone, Strange Hand, and Clever Ploy use full card faces pictured in the supplied 1.5 rulebook, with linked page images and supporting rules. Ground Fighting now links its face and Zone of Death diagram. Combo Claw includes the Lost Hand replacement of normal actions. Exact card-name selection extends to gear and hit locations; general combat routing preserves a named card's evidence. Details and development cases are in `evaluation/2026-10-24-next-card-coverage/`. Cunning remains an unverified gap and is excluded from this phase. Work remains local on `rules-v2`; the separate `main` checkout is untouched.
+
 ## Card retrieval update, 24 October 2026
 
 The group-photo audit led to four reviewed White Lion AI card records: Maul, Combo Claw, Power Swat, and Size Up. Claw and Grasp now cite photos from the same physical 1.5 set. The images are in `kdm-assistant/public/cards/`, while the staged wiki drafts remain outside runtime retrieval. The source-selection check, limitations, and 91-test result are in `evaluation/2026-10-24-white-lion-promotion/REPORT.md`. Cunning is still unsupported because its effect has no checked source. The next evaluation needs unseen phrasings and compound card and rulebook questions.
@@ -46,7 +50,7 @@ The local `kdm-assistant/wiki_preview.py` command is an isolated model-backed dr
 
 The same evaluation folder contains `SOURCE_AUDIT.md` and `combined-grab-preview.md`. A visual check of the available Grasp image and rulebook pages established Grab's effect in the Grasp context. The combined preview kept that evidence separate from the unreviewed Maul wiki text and declined a physical 1.5 Maul certification. The Maul, Combo Claw, and White Lion Data Card photos are not present as local files for a new edition check.
 
-The October 7 [card-source search](evaluation/2026-10-07-wiki-selection/CARD_SOURCE_SEARCH.md) found Cunning listed in the focused 1.5 rulebook's White Lion level rows, but no definition there. A targeted official-site search did not yield the missing card faces or Cunning text. The next source check needs readable physical 1.5 images of Maul, Combo Claw, White Lion Data Card, and Cunning. These drafts remain unreviewed.
+The October 7 [card-source search](../../../evaluation/2026-10-07-wiki-selection/CARD_SOURCE_SEARCH.md) found Cunning listed in the focused 1.5 rulebook's White Lion level rows, but no definition there. A targeted official-site search did not yield the missing card faces or Cunning text. The next source check needs readable physical 1.5 images of Maul, Combo Claw, White Lion Data Card, and Cunning. These drafts remain unreviewed.
 
 The access-gate work was not copied into this branch. Keep hosted Sol disabled and do not deploy this branch until hosting access is reviewed. The core Simulator bundle is encrypted, so additional image extraction remains blocked.
 

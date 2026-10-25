@@ -1,0 +1,189 @@
+{
+  "case": "Q30",
+  "turn": 1,
+  "mode": "local",
+  "question": "We reached Hands of Heat, do not have Lantern Oven, and rolled a final 6. Which branch and result do we resolve?",
+  "ended_utc": "2026-10-25T02:09:53.715022+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "5b43ea3251540cac50c6ae98",
+    "record": {
+      "id": "hands-of-heat",
+      "title": "Hands of Heat",
+      "original": 129,
+      "keywords": "experiment lanterns lantern branding lantern oven red fist bone witch courage",
+      "layout": "Three regions: left entry condition and event; center Experiment with Lanterns; right Lantern Branding. Diamond numerals label center outcomes; right table uses printed ranges.",
+      "summary": "If the settlement already has Lantern Oven, skip the experiment and use Lantern Branding. Otherwise nominate a survivor, grant +1 courage, and roll 1d10 on Experiment with Lanterns.",
+      "notes": [
+        "Lantern Branding costs half the settlement's total resources, including storage, rounded down; nominate a survivor and roll 1d10.",
+        "Only the experiment's 7+ outcome directs a further Lantern Branding roll. A 4-6 outcome does not.",
+        "Do not reuse an experiment roll as the new branding roll."
+      ],
+      "tables": [
+        {
+          "id": "experiment",
+          "title": "Experiment with Lanterns",
+          "die": "1d10",
+          "crop": [
+            0.345,
+            0.29,
+            0.605,
+            0.93
+          ],
+          "rows": [
+            {
+              "min": 1,
+              "max": 3,
+              "label": "1-3",
+              "effects": [
+                "The nominated survivor is exiled; settlement loses 1 population.",
+                "Settlement gains Lantern Oven.",
+                "Add Bone Witch to the timeline 3 lantern years from now."
+              ]
+            },
+            {
+              "min": 4,
+              "max": 6,
+              "label": "4-6",
+              "effects": [
+                "Nominated survivor gains +1 permanent strength.",
+                "Nominated survivor gains the Red Fist secret fighting art.",
+                "Settlement gains the Lantern Oven innovation."
+              ]
+            },
+            {
+              "min": 7,
+              "max": null,
+              "label": "7+",
+              "effects": [
+                "Settlement gains Lantern Oven.",
+                "Nominated survivor gains the Red Fist secret fighting art.",
+                "Proceed to Lantern Branding and make its separate roll."
+              ],
+              "next_table": "branding"
+            }
+          ]
+        },
+        {
+          "id": "branding",
+          "title": "Lantern Branding",
+          "die": "1d10",
+          "crop": [
+            0.61,
+            0.53,
+            0.87,
+            0.925
+          ],
+          "rows": [
+            {
+              "min": 1,
+              "max": 3,
+              "label": "1-3",
+              "effects": [
+                "All departing survivors gain +10 survival.",
+                "Add Hands of Heat to the timeline 1d10 years from now."
+              ]
+            },
+            {
+              "min": 4,
+              "max": 7,
+              "label": "4-7",
+              "effects": [
+                "Nominated survivor gains +1 permanent speed (branded feet)."
+              ]
+            },
+            {
+              "min": 8,
+              "max": 9,
+              "label": "8-9",
+              "effects": [
+                "Nominated survivor gains +1 permanent strength (branded hand)."
+              ]
+            },
+            {
+              "min": 10,
+              "max": null,
+              "label": "10+",
+              "effects": [
+                "Nominated survivor suffers the blind severe head injury and gains +1 permanent luck."
+              ]
+            }
+          ]
+        }
+      ],
+      "source": {
+        "revised": 90,
+        "original": 129,
+        "printed": 125,
+        "edition": "1.5",
+        "title": "Hands of Heat",
+        "reviewed": true,
+        "record_id": "hands-of-heat"
+      },
+      "sources": [
+        {
+          "revised": 90,
+          "original": 129,
+          "printed": 125,
+          "edition": "1.5",
+          "title": "Hands of Heat",
+          "reviewed": true,
+          "record_id": "hands-of-heat"
+        }
+      ],
+      "image": "/pages/90.jpg"
+    },
+    "status": "reference",
+    "answer": "If the settlement already has Lantern Oven, skip the experiment and use Lantern Branding. Otherwise nominate a survivor, grant +1 courage, and roll 1d10 on Experiment with Lanterns.\n\nLantern Branding costs half the settlement's total resources, including storage, rounded down; nominate a survivor and roll 1d10.\nOnly the experiment's 7+ outcome directs a further Lantern Branding roll. A 4-6 outcome does not.\nDo not reuse an experiment roll as the new branding roll.\n\nChoose a table and enter its roll to resolve an outcome.",
+    "context": {
+      "record_id": "hands-of-heat",
+      "table_id": "experiment",
+      "oven": "no"
+    },
+    "table": {
+      "id": "experiment",
+      "title": "Experiment with Lanterns",
+      "die": "1d10",
+      "crop": [
+        0.345,
+        0.29,
+        0.605,
+        0.93
+      ],
+      "rows": [
+        {
+          "min": 1,
+          "max": 3,
+          "label": "1-3",
+          "effects": [
+            "The nominated survivor is exiled; settlement loses 1 population.",
+            "Settlement gains Lantern Oven.",
+            "Add Bone Witch to the timeline 3 lantern years from now."
+          ]
+        },
+        {
+          "min": 4,
+          "max": 6,
+          "label": "4-6",
+          "effects": [
+            "Nominated survivor gains +1 permanent strength.",
+            "Nominated survivor gains the Red Fist secret fighting art.",
+            "Settlement gains the Lantern Oven innovation."
+          ]
+        },
+        {
+          "min": 7,
+          "max": null,
+          "label": "7+",
+          "effects": [
+            "Settlement gains Lantern Oven.",
+            "Nominated survivor gains the Red Fist secret fighting art.",
+            "Proceed to Lantern Branding and make its separate roll."
+          ],
+          "next_table": "branding"
+        }
+      ]
+    },
+    "related_records": []
+  }
+}

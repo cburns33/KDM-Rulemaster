@@ -1,0 +1,163 @@
+{
+  "question": "We won the Prologue with one survivor dead. What happens to their gear and resources, and what rewards and XP do the survivors receive?",
+  "response": {
+    "chat_id": "0c7870a950817d4e335d66df",
+    "record": {
+      "id": "prologue-victory",
+      "title": "First Story victory and rewards",
+      "original": 37,
+      "keywords": "prologue first story opening fight victory victorious win won aftermath rewards hunt xp gear resources dead survivor",
+      "layout": "Left column finishes the fight; center distinguishes the killing wound and survivor aftermath; blue right panel gives the First Story rewards and dead-survivor gear exception.",
+      "summary": "In the First Story victory aftermath, surviving survivors gain 1 Hunt XP, and the group draws 4 White Lion resources and 4 basic resources.",
+      "notes": [
+        "The First Story rewards are in addition to resources earned from critical wounds. Shuffle each resource deck before drawing its four cards and put the resources face up.",
+        "Players who lost their survivor in the First Story can create new survivors in the settlement. Their dead survivor's gear and resources return with the remaining survivors. This is a First Story exception, not a general recovery rule for every death.",
+        "If the survivors perish, the First Story instructs players to try again until victorious. A first successful fight gives one Hunt XP; it does not immediately reach the first Age milestone."
+      ],
+      "related_ids": [
+        "monster-defeat"
+      ],
+      "tables": [],
+      "source": {
+        "revised": 15,
+        "original": 37,
+        "printed": 33,
+        "edition": "1.5",
+        "title": "Empty AI decks and the killing wound",
+        "reviewed": true,
+        "record_id": "monster-defeat"
+      },
+      "sources": [
+        {
+          "revised": 15,
+          "original": 37,
+          "printed": 33,
+          "edition": "1.5",
+          "title": "Empty AI decks and the killing wound",
+          "reviewed": true,
+          "record_id": "monster-defeat"
+        }
+      ],
+      "image": "/pages/15.jpg"
+    },
+    "status": "model-reference",
+    "answer": "Because you won the Prologue, the dead survivor’s gear and resources return with the surviving survivors. This is a **First Story exception**, not a rule for every death. The player whose survivor died can create a new survivor in the settlement.\n\nEach **surviving** survivor gains **1 Hunt XP**. The group draws **4 White Lion resources and 4 basic resources**, in addition to any resources earned from critical wounds. Shuffle each resource deck before drawing, and place the drawn resources face up. The dead survivor does not receive the Hunt XP.",
+    "context": {
+      "record_id": "prologue-victory"
+    },
+    "related_records": [
+      {
+        "id": "white-lion-aftermath",
+        "title": "White Lion level 1 aftermath and rewards",
+        "original": 183,
+        "supporting_originals": [
+          47,
+          55
+        ],
+        "keywords": "standard white lion level one level 1 aftermath victory victorious defeated defeat rewards resources hunt xp weapon proficiency level catarium jewelry loss return",
+        "layout": "The story-event Aftermath column gives level 1 victory and defeat. The right reward panel gives the level-specific resource counts and first-victory Catarium addition. Printed page 43 supplies proficiency eligibility.",
+        "summary": "On a standard level 1 White Lion victory, survivors gain +1 Hunt XP and eligible survivors gain +1 weapon proficiency level. The group gains 4 basic resources and 4 White Lion resources. The first time the group defeats a White Lion, add Catarium to the settlement locations. Apply proficiency eligibility rather than granting it to every survivor.",
+        "notes": [
+          "To gain the proficiency level, a survivor must have selected a weapon type and wounded a monster at least once with that type during the showdown, then be victorious. Without a selected type the survivor cannot gain proficiency unless a rule states otherwise.",
+          "The White Lion defeat instruction applies when the survivors lose: roll 1d10; on 6+, archive one jewelry gear of your choice. If survivors have no jewelry, nothing happens. Consult other applicable death/return rules separately.",
+          "The First Story has its own victory instructions and dead-survivor gear exception. Do not apply that exception to every later showdown.",
+          "These records cover the level 1 aftermath; level 2/3 rewards and Saga effects remain outside this unit."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        },
+        "sources": [
+          {
+            "revised": 120,
+            "original": 183,
+            "printed": 179,
+            "edition": "1.5",
+            "title": "White Lion: standard showdown deployment",
+            "reviewed": true,
+            "record_id": "white-lion-deployment"
+          },
+          {
+            "revised": 24,
+            "original": 47,
+            "printed": 43,
+            "edition": "1.5",
+            "title": "Age: first Hunt XP milestone",
+            "reviewed": true,
+            "record_id": "age-first-milestone"
+          },
+          {
+            "revised": 31,
+            "original": 55,
+            "printed": 51,
+            "edition": "1.5",
+            "title": "White Lion Basic Action and Monster Reference card",
+            "reviewed": true,
+            "record_id": "white-lion-basic-action"
+          }
+        ],
+        "image": "/pages/120.jpg"
+      },
+      {
+        "id": "first-settlement-develop",
+        "title": "First settlement: development, crafting, and storage",
+        "original": 39,
+        "supporting_originals": [
+          38
+        ],
+        "keywords": "first settlement develop development craft crafting gear spend resources resource recipe cost archive storage unspent unworn endeavors lantern hoard bonesmith organ grinder skinnery innovate innovation departing survivors prepare gear armor",
+        "layout": "Step 7 starts in the left column and continues at the top of the middle column; Craft Gear and step 8 follow. Step 8 continues at the top of the right column before steps 10-11.",
+        "summary": "During first-settlement development, spend endeavors at Lantern Hoard to build initial locations. Each location costs 1 endeavor: Bonesmith, Organ Grinder, and Skinnery can all be built with 3. Crafting spends the resources listed on the chosen location, archives those resource cards, and takes the crafted gear from the box. Record unspent resources and unworn gear in settlement storage before archiving their cards.",
+        "notes": [
+          "With fewer than 3 starting endeavors, choose which initial locations to build. Place built location cards below the settlement board. Each spent endeavor reduces the available total by 1.",
+          "If endeavors remain, an Organ Grinder permits Augury for 1 endeavor; follow its own rules. A birth triggers Principle: New Life. Those detailed outcomes are not included in this record.",
+          "The first-settlement overview permits innovating at Lantern Hoard by spending 1 endeavor and 3 resources, one bone, one organ, and one hide. Draw the top 2 innovation cards and choose 1 to add permanently. Full innovation and resource-substitution rules require their own reviewed sources.",
+          "A specific crafting recipe or crafted gear effect requires its location/gear source. This procedure does not establish the cost of an unreviewed recipe or whether a particular resource is a legal substitute.",
+          "Before departure, choose an available quarry and departing survivors, place acquired gear on their grids, update armor points, and apply departing bonuses. After First Story only White Lion is available until story events add more quarries.",
+          "Skip step 9 in the First Story settlement. Record unspent resources and unworn gear in storage and return their cards to the box; they may be retrieved later. Preserve the settlement record when putting the game away."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 17,
+          "original": 39,
+          "printed": 35,
+          "edition": "1.5",
+          "title": "First settlement: development, crafting, and storage",
+          "reviewed": true,
+          "record_id": "first-settlement-develop"
+        },
+        "sources": [
+          {
+            "revised": 17,
+            "original": 39,
+            "printed": 35,
+            "edition": "1.5",
+            "title": "First settlement: development, crafting, and storage",
+            "reviewed": true,
+            "record_id": "first-settlement-develop"
+          },
+          {
+            "revised": 16,
+            "original": 38,
+            "printed": 34,
+            "edition": "1.5",
+            "title": "First settlement: returning survivors and timeline",
+            "reviewed": true,
+            "record_id": "first-settlement-return"
+          }
+        ],
+        "image": "/pages/17.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

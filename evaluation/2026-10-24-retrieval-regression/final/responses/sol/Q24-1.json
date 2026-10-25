@@ -1,0 +1,16 @@
+{
+  "case": "Q24",
+  "turn": 1,
+  "mode": "sol",
+  "question": "At our first settlement, we have resources in storage and a location card with a gear recipe. Walk us through how to check whether we can craft it, pay for it, and put the gear on a survivor. What additional card text would you need to tell us the recipe's exact cost?",
+  "ended_utc": "2026-10-25T02:48:18.921909+00:00",
+  "elapsed_seconds": 0.039,
+  "response": {
+    "chat_id": "e40a3cb4399ad1f122d39698",
+    "status": "unsupported",
+    "answer": "I do not have a reviewed rule record for this question yet. Use the source browser to inspect the book. I cannot make a supported ruling from the current collection.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

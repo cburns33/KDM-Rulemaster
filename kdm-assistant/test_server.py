@@ -41,6 +41,27 @@ class ServerTests(unittest.TestCase):
     def test_health(self):
         self.assertEqual(self.request('/api/health')['app'],'lantern-archive')
 
+    def test_saved_injury_context_allows_location_correction(self):
+        initial = self.request('/api/ask', {'question': 'Severe Arms injury, final roll is 8'})
+        self.assertEqual(initial['status'], 'unsupported')
+        corrected = self.request('/api/ask', {'question': 'Actually Head instead. The final roll is still 8.',
+                                            'chat_id': initial['chat_id']})
+        self.assertEqual(corrected['status'], 'resolved')
+        self.assertEqual(corrected['record']['id'], 'severe-head-injury')
+        self.assertIn('Concussion', corrected['answer'])
+
+    def test_new_card_sources_have_mapped_and_served_images(self):
+        for name, revised, printed in [('Founding Stone', 12, 30), ('Strange Hand', 13, 31),
+                                       ('Clever Ploy', 14, 32), ('Ground Fighting', 44, 67)]:
+            with self.subTest(name=name):
+                result = self.request('/api/ask', {'question': name + ' card'})
+                self.assertEqual(result['record']['sources'][0]['revised'], revised)
+                self.assertEqual(result['record']['sources'][0]['printed'], printed)
+                self.assertEqual(result['record']['card_sources'][0]['url'], f'/pages/{revised}.jpg')
+                with urllib.request.urlopen(self.url + f'/pages/{revised}.jpg') as response:
+                    self.assertEqual(response.headers.get_content_type(), 'image/jpeg')
+                    self.assertEqual(response.read(3), b'\xff\xd8\xff')
+
     def test_grasp_card_source_is_served(self):
         with urllib.request.urlopen(self.url + '/cards/white-lion-grasp.png') as response:
             self.assertEqual(response.headers.get_content_type(), 'image/png')
@@ -103,8 +124,8 @@ class ServerTests(unittest.TestCase):
 
     def test_coverage_and_continuation_citations(self):
         library = self.request('/api/library')
-        self.assertEqual(len(library['records']), 22)
-        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 24)
+        self.assertEqual(len(library['records']), 33)
+        self.assertEqual(sum(p['reviewed'] for p in library['pages']), 36)
         continuation = next(p for p in library['pages'] if p['revised'] == 56)
         self.assertTrue(continuation['reviewed'])
         self.assertEqual(continuation['record_id'], 'survival-actions')

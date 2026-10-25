@@ -1,0 +1,16 @@
+{
+  "started_utc": "2026-10-25T03:13:06.516904+00:00",
+  "baseline_before": {
+    "files": 81,
+    "sha256": "cb83fceb0887be0f9bf7a995fc071fa87653a81225b769330719cb31108e2e0d"
+  },
+  "fingerprints": {
+    "engine.py": "2023195242d4e3defb83f13886cc90de51645686a79b7d0726c031a075dbd618",
+    "records.py": "f435cfaa7354582d4c7c033b31257c9f224b567bb9520ed9dcb16ad458e0358e",
+    "core_records.py": "26a2f3e1dca84c9f5960c3ff48b162ae65f5bb48e88844257d63840c7af3505d",
+    "early_campaign_records.py": "0f668f5b3aad437ef07e886ae9eeda3385765a4da19d86b1c2c922aa14478062",
+    "sol_answer.py": "17220f14a37e0eec4cc33a6bde5dd140de2fb5de0b6153df620dd9b620e148ed",
+    "server.py": "3e06c30d41798008e153c136cf322591cd8628c8eaca6bce1f1862c90e0900cd"
+  },
+  "protocol": "16 new local cases; 6 of those also use Sol; 8 affected baseline scenarios locally. No retries. Development evidence."
+}

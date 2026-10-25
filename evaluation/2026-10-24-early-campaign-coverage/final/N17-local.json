@@ -1,0 +1,121 @@
+{
+  "question": "Now a standard level 1 White Lion, not the Prologue. Do we copy the deployment and fixed deck?",
+  "response": {
+    "chat_id": "0376eb8028f7a377adf9ce8f",
+    "record": {
+      "id": "white-lion-deployment",
+      "title": "White Lion: standard showdown deployment",
+      "original": 183,
+      "scope": "standard-white-lion",
+      "related_ids": [
+        "white-lion-level-one"
+      ],
+      "keywords": "white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1",
+      "layout": "The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.",
+      "summary": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.",
+      "notes": [
+        "Place the White Lion in the center of the board.",
+        "Use 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.",
+        "This record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "reference",
+    "answer": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.\n\nPlace the White Lion in the center of the board.\nUse 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.\nThis record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record.\n\nRelated reviewed rules:\nWhite Lion level 1 attributes and deck construction: A standard level 1 White Lion uses 7 random Basic AI cards, 3 random Advanced AI cards, and no Legendary AI cards. It has movement 6 and toughness 8, with no listed extra speed or damage. Build this deck from the monster's separate shuffled type stacks, then combine and shuffle the selected cards. The First Story uses its own fixed deck and toughness 6.",
+    "context": {
+      "record_id": "white-lion-deployment"
+    },
+    "related_records": [
+      {
+        "id": "white-lion-level-one",
+        "title": "White Lion level 1 attributes and deck construction",
+        "scope": "standard-white-lion",
+        "original": 183,
+        "supporting_originals": [
+          54,
+          69,
+          55
+        ],
+        "keywords": "standard white lion level one level 1 attributes movement toughness speed damage ai deck construction build seven basic three advanced legendary hit location shuffle special cards setup",
+        "layout": "The level 1 row on the White Lion story event lists B/A/L counts and attributes. Printed page 65 gives AI and hit-location deck construction; printed page 50 defines the columns. The reference card repeats the row.",
+        "summary": "A standard level 1 White Lion uses 7 random Basic AI cards, 3 random Advanced AI cards, and no Legendary AI cards. It has movement 6 and toughness 8, with no listed extra speed or damage. Build this deck from the monster's separate shuffled type stacks, then combine and shuffle the selected cards. The First Story uses its own fixed deck and toughness 6.",
+        "notes": [
+          "Set aside special AI cards before shuffling the Basic, Advanced, and Legendary stacks. Draw the indicated counts without looking. Put the resulting shuffled AI deck face down on the monster control panel.",
+          "Set up special cards and additional modifiers listed for the encounter separately in play; these do not enter the AI deck. The level 1 row has no listed special cards.",
+          "The standard hit-location deck uses all hit-location cards for that monster, shuffled face down. First Story instead sets Strange Hand on top as specified by its setup.",
+          "The reviewed row establishes card counts and attributes. A complete edition-specific inventory of every eligible AI and hit-location face is still missing, so this is not a complete deck-coverage claim."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        },
+        "sources": [
+          {
+            "revised": 120,
+            "original": 183,
+            "printed": 179,
+            "edition": "1.5",
+            "title": "White Lion: standard showdown deployment",
+            "reviewed": true,
+            "record_id": "white-lion-deployment"
+          },
+          {
+            "revised": 30,
+            "original": 54,
+            "printed": 50,
+            "edition": "1.5",
+            "title": "White Lion level 1 attributes and deck construction",
+            "reviewed": true,
+            "record_id": "white-lion-level-one"
+          },
+          {
+            "revised": 42,
+            "original": 69,
+            "printed": 65,
+            "edition": "1.5",
+            "title": "White Lion level 1 attributes and deck construction",
+            "reviewed": true,
+            "record_id": "white-lion-level-one"
+          },
+          {
+            "revised": 31,
+            "original": 55,
+            "printed": 51,
+            "edition": "1.5",
+            "title": "White Lion Basic Action and Monster Reference card",
+            "reviewed": true,
+            "record_id": "white-lion-basic-action"
+          }
+        ],
+        "image": "/pages/120.jpg"
+      }
+    ]
+  }
+}

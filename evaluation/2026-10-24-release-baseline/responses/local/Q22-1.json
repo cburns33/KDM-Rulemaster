@@ -1,0 +1,163 @@
+{
+  "case": "Q22",
+  "turn": 1,
+  "mode": "local",
+  "question": "Do the four people who fought the Prologue determine our entire starting population, or does First Day establish that? Walk us through the actual First Day instructions before we record the settlement.",
+  "ended_utc": "2026-10-25T02:09:53.595222+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "afcab7aa9be53d2b35c53f59",
+    "record": {
+      "id": "survivor-attack-sequence",
+      "title": "Survivor acts and attack sequence",
+      "original": 77,
+      "supporting_originals": [
+        78
+      ],
+      "related_ids": [
+        "survival-actions",
+        "critical-wound-examples"
+      ],
+      "keywords": "survivor act attack activation movement move adjacent melee reach ranged range wound steps reaction first strike before after",
+      "layout": "Printed page 73 separates Survivors' Turn and Act Overview from Movement, Activation, and How Survivors Attack. Printed page 74 has the attack sequence in the left column and a shaded wound-steps panel across the middle and right columns. Read that panel down the middle and then down the right.",
+      "summary": "A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+      "notes": [
+        "Survivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.",
+        "If a survivor is knocked down during their attack, their unresolved hits are canceled. Standing again through Encourage does not restore those canceled hits. A knocked-down survivor is not a threat, cannot spend movement or activation, and may only spend survival to dodge, remaining knocked down. They stand at the end of the next monster turn or when another survivor Encourages them. Already knocked-down survivors cannot be knocked down again.",
+        "Normal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.",
+        "Melee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.",
+        "For an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.",
+        "Resolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.",
+        "A wound attempt totals the wound roll (1d10) + weapon strength + survivor strength modifier. It succeeds if the total meets or exceeds monster toughness including toughness modifiers; otherwise it fails. Survivor modifiers include attributes, tokens, gear, abilities, injuries, and other applicable effects. Then check critical wounds and their exceptions using the linked critical-wound rules.",
+        "Wound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 50,
+        "original": 77,
+        "printed": 73,
+        "edition": "1.5",
+        "title": "Survivor acts and attack sequence",
+        "reviewed": true,
+        "record_id": "survivor-attack-sequence"
+      },
+      "sources": [
+        {
+          "revised": 50,
+          "original": 77,
+          "printed": 73,
+          "edition": "1.5",
+          "title": "Survivor acts and attack sequence",
+          "reviewed": true,
+          "record_id": "survivor-attack-sequence"
+        },
+        {
+          "revised": 51,
+          "original": 78,
+          "printed": 74,
+          "edition": "1.5",
+          "title": "Survivor acts and attack sequence",
+          "reviewed": true,
+          "record_id": "survivor-attack-sequence"
+        }
+      ],
+      "image": "/pages/50.jpg"
+    },
+    "status": "reference",
+    "answer": "A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.\n\nSurvivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.\nIf a survivor is knocked down during their attack, their unresolved hits are canceled. Standing again through Encourage does not restore those canceled hits. A knocked-down survivor is not a threat, cannot spend movement or activation, and may only spend survival to dodge, remaining knocked down. They stand at the end of the next monster turn or when another survivor Encourages them. Already knocked-down survivors cannot be knocked down again.\nNormal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.\nMelee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.\nFor an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.\nResolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.\nA wound attempt totals the wound roll (1d10) + weapon strength + survivor strength modifier. It succeeds if the total meets or exceeds monster toughness including toughness modifiers; otherwise it fails. Survivor modifiers include attributes, tokens, gear, abilities, injuries, and other applicable effects. Then check critical wounds and their exceptions using the linked critical-wound rules.\nWound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages.\n\nRelated reviewed rules:\nFirst Story: White Lion: The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.\n\nSurvival actions and timing: Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. Dash and Surge require survival opportunities, including before or after completed movement or activation during the survivors' turn. A standing survivor may encourage at any time subject to the survival-action restrictions. A survivor who is attacking cannot perform survival actions, including dodge.",
+    "context": {
+      "record_id": "survivor-attack-sequence"
+    },
+    "related_records": [
+      {
+        "id": "white-lion-setup",
+        "title": "First Story: White Lion",
+        "original": 30,
+        "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
+        "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
+        "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
+        "notes": [
+          "Set Claw aside, shuffle the rest face down, then place Claw face down on top.",
+          "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.",
+          "Place the double-sided Basic Action / Monster Reference card on the monster control panel.",
+          "Arrange survivor records and gear grids around the showdown board.",
+          "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 8,
+          "original": 30,
+          "printed": 26,
+          "edition": "1.5",
+          "title": "First Story: White Lion",
+          "reviewed": true,
+          "record_id": "white-lion-setup"
+        },
+        "sources": [
+          {
+            "revised": 8,
+            "original": 30,
+            "printed": 26,
+            "edition": "1.5",
+            "title": "First Story: White Lion",
+            "reviewed": true,
+            "record_id": "white-lion-setup"
+          }
+        ],
+        "image": "/pages/8.jpg"
+      },
+      {
+        "id": "survival-actions",
+        "title": "Survival actions and timing",
+        "original": 82,
+        "supporting_originals": [
+          83
+        ],
+        "keywords": "survival actions surge dash dodge encourage endure attacking attacker fellow survivor before after movement activation tall grass hide timing opportunity opportunities interrupt",
+        "layout": "Printed page 78 has three columns: action definitions, survival opportunities, then limitations and examples. Its monster-flow example continues at the top left of printed page 79. The During Survivor Attacks heading on page 79 defines two separate interrupt windows.",
+        "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. Dash and Surge require survival opportunities, including before or after completed movement or activation during the survivors' turn. A standing survivor may encourage at any time subject to the survival-action restrictions. A survivor who is attacking cannot perform survival actions, including dodge.",
+        "notes": [
+          "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+          "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+          "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+          "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+          "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+          "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+          "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. A survivor may encourage at any time during the survivors' turn, including outside Dash and Surge opportunity windows. Deaf survivors may not be encouraged. The action must be unlocked, its cost paid, and its once-per-round and attacking-survivor restrictions observed; it cannot interrupt an unresolved survival action. On the monster turn, the separate flow or knocked-down-monster limitation still applies.",
+          "Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Luck includes the permanent attribute, tokens, gear, abilities, and other current modifiers."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 55,
+          "original": 82,
+          "printed": 78,
+          "edition": "1.5",
+          "title": "Survival actions and timing",
+          "reviewed": true,
+          "record_id": "survival-actions"
+        },
+        "sources": [
+          {
+            "revised": 55,
+            "original": 82,
+            "printed": 78,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          },
+          {
+            "revised": 56,
+            "original": 83,
+            "printed": 79,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          }
+        ],
+        "image": "/pages/55.jpg"
+      }
+    ]
+  }
+}

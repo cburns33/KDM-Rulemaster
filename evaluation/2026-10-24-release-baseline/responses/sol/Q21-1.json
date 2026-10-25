@@ -1,0 +1,58 @@
+{
+  "case": "Q21",
+  "turn": 1,
+  "mode": "sol",
+  "question": "We have finished the Prologue and are sitting down for our first settlement phase. In what order do we handle returning survivors, First Day, endeavors, and the lantern-year timeline?",
+  "ended_utc": "2026-10-25T02:10:42.717306+00:00",
+  "elapsed_seconds": 2.408,
+  "response": {
+    "chat_id": "29657f4227345c1b31aa4d0b",
+    "record": {
+      "id": "white-lion-setup",
+      "title": "First Story: White Lion",
+      "original": 30,
+      "keywords": "prologue showdown setup ai deck claw chomp size up power swat grasp maul terrifying roar enraged strange hand six spaces",
+      "layout": "Numbered instructions connect to blue numbered markers in a board diagram. AI deck list has Basic, Advanced, and Legendary groupings. Card-back images distinguish AI, hit location, and resource cards.",
+      "summary": "The First Story uses a predetermined White Lion AI deck. Basic: Claw, Chomp, Size Up, Power Swat, Grasp. Advanced: Maul, Terrifying Roar, Enraged. No Legendary cards.",
+      "notes": [
+        "Set Claw aside, shuffle the rest face down, then place Claw face down on top.",
+        "Set Strange Hand aside from hit locations, shuffle the rest face down, then place Strange Hand face down on top.",
+        "Place the double-sided Basic Action / Monster Reference card on the monster control panel.",
+        "Arrange survivor records and gear grids around the showdown board.",
+        "Place the White Lion in the board center. Place each survivor 6 spaces away, counting cardinally, not diagonally, on the blue diagram spaces."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 8,
+        "original": 30,
+        "printed": 26,
+        "edition": "1.5",
+        "title": "First Story: White Lion",
+        "reviewed": true,
+        "record_id": "white-lion-setup"
+      },
+      "sources": [
+        {
+          "revised": 8,
+          "original": 30,
+          "printed": 26,
+          "edition": "1.5",
+          "title": "First Story: White Lion",
+          "reviewed": true,
+          "record_id": "white-lion-setup"
+        }
+      ],
+      "image": "/pages/8.jpg"
+    },
+    "status": "model-reference",
+    "answer": "The reviewed record covers setup for the First Story: White Lion, not what happens after the Prologue. It does not establish the order for returning survivors, First Day, endeavors, or advancing the lantern-year timeline, so I can’t verify that sequence from the supplied sources.\n\nThe missing sources are the **Settlement Phase** rules and the **First Day** and **Lantern Year Timeline** instructions for edition 1.5.",
+    "context": {
+      "record_id": "white-lion-setup"
+    },
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    },
+    "related_records": []
+  }
+}

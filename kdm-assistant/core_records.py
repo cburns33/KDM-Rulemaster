@@ -6,6 +6,37 @@ Community questions are evaluation prompts, never rule authorities.
 
 CORE_RECORDS = [
     {
+        'id': 'founding-stone', 'title': 'Founding Stone gear card', 'card_name': 'Founding Stone', 'original': 34,
+        'supporting_originals': [79, 80],
+        'card_sources': [{'title': 'Founding Stone face and attack example (book 30)', 'url': '/pages/12.jpg', 'edition': '1.5', 'provenance': 'Card face pictured in the supplied 1.5 rulebook scan'}],
+        'keywords': 'founding stone starting gear weapon melee stone sling archive throw activation automatic hit critical wound speed accuracy strength',
+        'layout': 'Printed page 30 shows the full gear face, labeled attack profile, and normal melee attack example. Printed pages 75 and 76 supply Impervious and critical-wound limits.',
+        'summary': 'Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.',
+        'notes': ['A normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.', 'Resolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply.'],
+        'tables': [],
+    },
+    {
+        'id': 'white-lion-strange-hand', 'title': 'White Lion: Strange Hand hit location card', 'card_name': 'Strange Hand', 'original': 35,
+        'supporting_originals': [71, 80],
+        'card_sources': [{'title': 'Strange Hand face and critical-wound example (book 31)', 'url': '/pages/13.jpg', 'edition': '1.5', 'provenance': 'Card face pictured in the supplied 1.5 rulebook scan'}, {'title': 'Combo Claw (Lost Hand action)', 'url': '/cards/white-lion-combo-claw-physical-1.5.jpeg', 'edition': '1.5', 'provenance': 'Group photo reviewed in the earlier physical-card audit'}],
+        'related_ids': ['moods-and-flows'],
+        'keywords': 'white lion strange hand hit location failure reaction basic action attacker critical wound survival permanent strength persistent injury lost hand combo claw',
+        'layout': 'Printed page 31 shows the complete Strange Hand face and explains its optional survival payment and Lost Hand. Printed page 67 explains AI persistent-injury actions; page 76 gives the keep-in-play rule.',
+        'summary': 'Strange Hand has a Failure reaction: perform Basic Action targeting the attacker. On a critical wound, the attacker may spend 1 survival to gain +1 permanent strength. The critical wound also leaves Strange Hand in play with the persistent injury Lost Hand, which affects some AI cards.',
+        'notes': ['The strength reward requires the optional survival payment. Lost Hand remains in play after the critical wound even if that payment is not made. Cancel the Failure reaction on a critical wound.', 'When an AI card has a persistent-injury action matching an in-play hit location, perform that action and ignore its other actions. The rulebook example uses Combo Claw: Lost Hand replaces the normal card actions, adjacent survivors gain +1 understanding, and Combo Claw is discarded. The photographed Combo Claw face limits that understanding gain to once per lifetime.'],
+        'tables': [],
+    },
+    {
+        'id': 'white-lion-clever-ploy', 'title': 'White Lion: Clever Ploy trap card', 'card_name': 'Clever Ploy', 'original': 36,
+        'supporting_originals': [79],
+        'card_sources': [{'title': 'Clever Ploy face and trap rules (book 32)', 'url': '/pages/14.jpg', 'edition': '1.5', 'provenance': 'Card face pictured in the supplied 1.5 rulebook scan'}],
+        'keywords': 'white lion clever ploy hit location trap doomed attacker basic action dodge survival remaining hits unresolved locations knocked down stand reshuffle discard',
+        'layout': 'Printed page 32 shows the complete Clever Ploy face and its reminder text. Printed page 75 supplies the general Trap and Doomed rules, including simultaneous attacks and the end of the restriction.',
+        'summary': 'Clever Ploy is the White Lion hit-location Trap. The attacker is doomed: perform Basic Action targeting the attacker, who cannot spend survival until this card is resolved. Resolve the trap, then reshuffle all hit locations, including Clever Ploy.',
+        'notes': ['Resolve a drawn Trap immediately. If the monster is knocked down, it stands to resolve it. End all survivors\' current attacks and discard unresolved hit locations, then perform the trap actions. This ends the attacks, while the survivor\'s act can continue.', 'The attacker cannot dodge this Basic Action because the card makes them doomed and forbids spending survival until it is resolved. General Doomed rules also prevent actions during that interval.', 'After resolving the trap, shuffle all hit-location cards in the deck and discard pile together, including the trap card. Do not leave Clever Ploy out of the reshuffled deck.'],
+        'tables': [],
+    },
+    {
         'id': 'hunt-event-damage', 'title': 'Hunt event damage and explicit injuries', 'original': 67,
         'supporting_originals': [74, 75],
         'keywords': 'hunt event damage nonlethal non lethal body head arms waist legs brain trauma insanity armor armour light heavy injury injuries boxes filled severe persist carryover showdown',
@@ -91,7 +122,8 @@ CORE_RECORDS = [
         'keywords': 'white lion combo claw basic ai card target threat facing range field view sniff speed accuracy damage twice draw ai lost hand persistent injury understanding',
         'layout': 'The photographed Combo Claw face supplies the ordered targets, attack profile, extra AI draw condition, and Lost Hand persistent injury. Printed page 71 gives general AI flow; printed page 76 defines persistent injuries.',
         'summary': 'Combo Claw is Basic AI. It targets the closest threat facing the lion and in range, then the closest threat in field of view; with no target, it uses Sniff. It moves and attacks with Speed 2, Accuracy 4+, Damage 1. If this attack deals damage more than once, draw an AI card.',
-        'notes': ['One damaging hit does not meet the more-than-once condition. Resolve the current card before the additional AI draw.', 'Lost Hand is a persistent injury: adjacent survivors gain +1 understanding, once per lifetime.'],
+        'related_ids': ['moods-and-flows'],
+        'notes': ['One damaging hit does not meet the more-than-once condition. Resolve the current card before the additional AI draw.', 'Lost Hand is a persistent injury: adjacent survivors gain +1 understanding, once per lifetime. If Strange Hand is in play with Lost Hand, perform this matching persistent-injury action and ignore the normal Combo Claw actions, including its attack and conditional extra AI draw; then discard Combo Claw.'],
         'tables': [],
     },
     {
@@ -116,6 +148,7 @@ CORE_RECORDS = [
     },
     {
         'id': 'white-lion-deployment', 'title': 'White Lion: standard showdown deployment', 'original': 183,
+        'scope': 'standard-white-lion', 'related_ids': ['white-lion-level-one'],
         'keywords': 'white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1',
         'layout': 'The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.',
         'summary': 'For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.',
@@ -167,7 +200,9 @@ CORE_RECORDS = [
         ], 'tables': [],
     },
     {
-        'id': 'moods-and-flows', 'title': 'AI flows, moods, and Ground Fighting', 'original': 71, 'supporting_originals': [70],
+        'id': 'moods-and-flows', 'title': 'AI flows, moods, and Ground Fighting', 'card_name': 'Ground Fighting', 'original': 71, 'supporting_originals': [70],
+        'card_sources': [{'title': 'Ground Fighting face and Zone of Death diagram (book 67)', 'url': '/pages/44.jpg', 'edition': '1.5', 'provenance': 'Card face and spatial diagram pictured in the supplied 1.5 rulebook scan'}],
+        'image_notes': ['The Ground Fighting card face and Zone of Death diagram are available through the app citations. Exact square coordinates have not been transcribed into this record. Consult that diagram to decide whether a particular space is in the zone.'],
         'related_ids': ['priority-target'],
         'keywords': 'white lion ground fighting groundfighting mood moods trait ai flow draw card basic action zone death activation priority',
         'layout': 'Printed page 66 shows Combo Claw with action and flow labels. Page 67 continues that example through the left and center columns; the right column has a separate Playing Moods & Traits section with a pictured Ground Fighting card and explanatory paragraph.',
@@ -175,7 +210,7 @@ CORE_RECORDS = [
         'notes': [
             'Normally a monster turn has Start Turn, Draw AI, and End Turn. Read the full AI card, then complete its actions in order. If instructed to draw another AI card, finish applicable actions on the current card first.',
             'Flows between AI actions create survival opportunities for eligible survivors. Finish survival actions before continuing the next monster action.',
-            'Ground Fighting instructs a Basic Action targeting a survivor who spends activation in its Zone of Death before resolving that activation, with +2 speed and +1 damage for that attack. Its pictured zone must be consulted. It stops drawing AI cards while in play.',
+            'Ground Fighting instructs a Basic Action targeting a survivor who spends activation in its Zone of Death before resolving that activation, with +2 speed and +1 damage for that attack. Consult the linked Ground Fighting card image for its Zone of Death; exact square coordinates are not transcribed here. It stops drawing AI cards while in play.',
             'After Ground Fighting is discarded by a wound, the book says the White Lion\'s behavior returns to normal.',
             'For an interaction involving a permanent priority target, also read the Priority targeting record and its linked Fuzzy Groin card source.',
         ], 'tables': [],

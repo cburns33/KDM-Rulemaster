@@ -1,0 +1,281 @@
+[
+  {
+    "case": "N01-local",
+    "expected": "monster-defeat",
+    "actual": "monster-defeat",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N02-local",
+    "expected": "prologue-victory",
+    "actual": "prologue-victory",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N02-sol",
+    "expected": "prologue-victory",
+    "actual": "prologue-victory",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N03-local",
+    "expected": "white-lion-basic-action",
+    "actual": "white-lion-basic-action",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N04-local",
+    "expected": "white-lion-level-one",
+    "actual": "white-lion-level-one",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N05-local",
+    "expected": "first-settlement-return",
+    "actual": "first-settlement-return",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N05-sol",
+    "expected": "first-settlement-return",
+    "actual": "first-settlement-return",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N06-local",
+    "expected": "first-settlement-develop",
+    "actual": "first-settlement-develop",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N06-sol",
+    "expected": "first-settlement-develop",
+    "actual": "first-settlement-develop",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N07-local",
+    "expected": "hunt-phase",
+    "actual": "hunt-phase",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N08-local",
+    "expected": "white-lion-aftermath",
+    "actual": "white-lion-aftermath",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N08-sol",
+    "expected": "white-lion-aftermath",
+    "actual": "white-lion-aftermath",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N09-local",
+    "expected": "moods-and-flows",
+    "actual": "moods-and-flows",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N09-sol",
+    "expected": "moods-and-flows",
+    "actual": "moods-and-flows",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N10-local",
+    "expected": "moods-and-flows",
+    "actual": "moods-and-flows",
+    "status": "reference",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N10-sol",
+    "expected": "moods-and-flows",
+    "actual": "moods-and-flows",
+    "status": "model-reference",
+    "selection_pass": true,
+    "model_requested": true,
+    "model_used": true
+  },
+  {
+    "case": "N11-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N12-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N13-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N14-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N15-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "N16-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": true,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q05-1-local",
+    "expected": null,
+    "actual": "monster-defeat",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q06-1-local",
+    "expected": null,
+    "actual": "prologue-victory",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q13-1-local",
+    "expected": null,
+    "actual": "moods-and-flows",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q20-1-local",
+    "expected": null,
+    "actual": "white-lion-setup",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q20-2-local",
+    "expected": null,
+    "actual": "white-lion-deployment",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q21-1-local",
+    "expected": null,
+    "actual": "first-settlement-return",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q22-1-local",
+    "expected": null,
+    "actual": null,
+    "status": "unsupported",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q24-1-local",
+    "expected": null,
+    "actual": "first-settlement-develop",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  },
+  {
+    "case": "Q27-1-local",
+    "expected": null,
+    "actual": "hunt-phase",
+    "status": "reference",
+    "selection_pass": null,
+    "model_requested": false,
+    "model_used": false
+  }
+]

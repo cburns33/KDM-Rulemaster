@@ -37,13 +37,20 @@ class HostedApiTests(unittest.TestCase):
     def test_library_marks_the_hosted_mode(self):
         result = hosted_api.library()
         self.assertEqual(result['hosting'], 'vercel')
-        self.assertEqual(len(result['records']), 22)
+        self.assertEqual(len(result['records']), 33)
 
     def test_ask_keeps_context_sent_by_the_browser(self):
         first = hosted_api.ask({'question': 'Hands of Heat roll 6'})
         second = hosted_api.ask({'question': 'What about 7?', 'context': first['context']})
         self.assertEqual(second['row']['label'], '7+')
         self.assertEqual(second['record']['source']['revised'], 90)
+
+    def test_browser_context_keeps_injury_identity_after_missing_table(self):
+        first = hosted_api.ask({'question': 'Severe Legs injury roll 8'})
+        self.assertEqual(first['status'], 'unsupported')
+        corrected = hosted_api.ask({'question': 'Head instead, final roll is 8.', 'context': first['context']})
+        self.assertEqual(corrected['status'], 'resolved')
+        self.assertIn('Concussion', corrected['answer'])
 
     def test_model_remains_opt_in(self):
         with patch.dict(os.environ, {'KDM_ENABLE_SOL': 'true'}), patch.object(hosted_api, 'sol_status', return_value={'configured': True}), patch.object(hosted_api, 'sol_answer', return_value='Reviewed explanation.') as sol:

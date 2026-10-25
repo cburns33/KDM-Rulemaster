@@ -1,0 +1,159 @@
+{
+  "case": "Q19",
+  "turn": 2,
+  "mode": "local",
+  "question": "The card is Power Swat. Nobody matches either of its target conditions.",
+  "ended_utc": "2026-10-25T02:44:54.389785+00:00",
+  "elapsed_seconds": 0.013,
+  "response": {
+    "chat_id": "fd6b649be9e5a3cf3a47f3fc",
+    "record": {
+      "id": "white-lion-power-swat",
+      "title": "White Lion: Power Swat AI card",
+      "original": 75,
+      "related_ids": [
+        "attack-effects"
+      ],
+      "card_sources": [
+        {
+          "title": "Power Swat (group physical card)",
+          "url": "/cards/white-lion-power-swat-physical-1.5.jpeg",
+          "edition": "1.5",
+          "provenance": "Photo of the group physical set"
+        }
+      ],
+      "keywords": "white lion power swat basic ai card target threat facing range field view sniff speed accuracy damage after damage knockback 6",
+      "layout": "The photographed Power Swat face supplies its target order, attack profile, and Knockback 6 text. Printed page 71 defines After Damage and Knockback.",
+      "summary": "Power Swat is Basic AI. It targets the closest threat facing the lion and in range, then the closest threat in field of view; with no target, it uses Sniff. It moves and attacks with Speed 1, Accuracy 2+, Damage 2. After Damage, Knockback 6 moves the target 6 spaces in a straight line directly away from the monster.",
+      "notes": [
+        "The After Damage effect requires the attack to deal damage. The card specifies the knockback direction."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 48,
+        "original": 75,
+        "printed": 71,
+        "edition": "1.5",
+        "title": "White Lion: Grasp, Enraged, and damage tokens",
+        "reviewed": true,
+        "record_id": "white-lion-grasp-damage"
+      },
+      "sources": [
+        {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "White Lion: Grasp, Enraged, and damage tokens",
+          "reviewed": true,
+          "record_id": "white-lion-grasp-damage"
+        }
+      ],
+      "image": "/pages/48.jpg"
+    },
+    "status": "reference",
+    "answer": "Power Swat is Basic AI. It targets the closest threat facing the lion and in range, then the closest threat in field of view; with no target, it uses Sniff. It moves and attacks with Speed 1, Accuracy 2+, Damage 2. After Damage, Knockback 6 moves the target 6 spaces in a straight line directly away from the monster.\n\nThe After Damage effect requires the attack to deal damage. The card specifies the knockback direction.\n\nRelated reviewed rules:\nPriority targeting and its exceptions: The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.\n\nAttack effects and damage outside attacks: Attack-profile effects trigger once per attack at their specified step. Damage outside an attack profile cannot be dodged because it does not come from a hit.",
+    "context": {
+      "record_id": "white-lion-power-swat"
+    },
+    "related_records": [
+      {
+        "id": "priority-target",
+        "title": "Priority targeting and its exceptions",
+        "original": 72,
+        "supporting_originals": [
+          73
+        ],
+        "card_sources": [
+          {
+            "title": "Fuzzy Groin (White Lion hit location)",
+            "url": "https://kingdomdeath.fandom.com/wiki/Fuzzy_Groin",
+            "edition": "1.5",
+            "provenance": "community card transcription"
+          }
+        ],
+        "keywords": "priority target token targeting permanent fuzzy groin ground fighting groundfighting pick target exceptions reaction",
+        "layout": "Printed page 68 puts Priority Target Token at the bottom of the right column. Its restrictions continue at the top left of printed page 69, before Move & Attack Target Actions. Those continuation paragraphs belong to priority targeting.",
+        "summary": "The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.",
+        "notes": [
+          "Only one survivor holds the priority-target token at a time. Under the ordinary token rule, the survivor discards it when picked as the target.",
+          "The continuation excludes AI cards targeting multiple or all survivors, monster-AI targeting outside a Pick Target action, and hit-location targeting. A reaction that targets the attacker is unaffected by the token.",
+          "The continuation is printed page 69 (original PDF 73). The main Pick Target and token rules are printed page 68 (original PDF 72).",
+          "Fuzzy Groin critical wound gives the attacker a permanent priority-target token and directs the White Lion to attack that survivor until one of them dies. It also grants the monster +1 damage token. The ordinary token discard rule does not end this card-specific persistent effect."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 45,
+          "original": 72,
+          "printed": 68,
+          "edition": "1.5",
+          "title": "Priority targeting and its exceptions",
+          "reviewed": true,
+          "record_id": "priority-target"
+        },
+        "sources": [
+          {
+            "revised": 45,
+            "original": 72,
+            "printed": 68,
+            "edition": "1.5",
+            "title": "Priority targeting and its exceptions",
+            "reviewed": true,
+            "record_id": "priority-target"
+          },
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          }
+        ],
+        "image": "/pages/45.jpg"
+      },
+      {
+        "id": "attack-effects",
+        "title": "Attack effects and damage outside attacks",
+        "original": 75,
+        "related_ids": [
+          "monster-hit-damage",
+          "survival-actions"
+        ],
+        "keywords": "trigger after hit before damage after damage dodge grab intimidate brain damage insanity bash bleed knockback outside attack profile monster token survivor",
+        "layout": "The left column lists attack triggers and common effects. Intimidate continues into the center column, followed by Brain Damage. Damage Outside of Attack Actions is a separate right-column heading. Duration and survivor-status AI sections are outside this record.",
+        "summary": "Attack-profile effects trigger once per attack at their specified step. Damage outside an attack profile cannot be dodged because it does not come from a hit.",
+        "notes": [
+          "After Hit: if there are successful hits, apply the effect before rolling hit-location dice. Before Damage: apply after attack and location rolls, before damage. After Damage: resolve all hits' damage first; apply the effect if the attack dealt damage.",
+          "Bash knocks the survivor down. Bleed X grants X bleeding tokens, or 1 if no number is specified. Knockback X pushes the target X spaces in the stated direction; the monster controller chooses the direction when none is stated.",
+          "Intimidate actions are not attacks, cause brain damage instead of physical-location damage, and cannot be dodged. Follow the action's specific rules.",
+          "Brain damage uses insanity as armor, then the brain injury box, then Brain Trauma rolls. It is distinct from physical head damage.",
+          "Damage outside attack profiles is resolved normally but is not modified by monster attributes or tokens. If no location is specified, roll a hit-location die. The book gives White Lion Grab as an example of additional damage."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 48,
+          "original": 75,
+          "printed": 71,
+          "edition": "1.5",
+          "title": "White Lion: Grasp, Enraged, and damage tokens",
+          "reviewed": true,
+          "record_id": "white-lion-grasp-damage"
+        },
+        "sources": [
+          {
+            "revised": 48,
+            "original": 75,
+            "printed": 71,
+            "edition": "1.5",
+            "title": "White Lion: Grasp, Enraged, and damage tokens",
+            "reviewed": true,
+            "record_id": "white-lion-grasp-damage"
+          }
+        ],
+        "image": "/pages/48.jpg"
+      }
+    ]
+  }
+}

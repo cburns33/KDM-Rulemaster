@@ -1,0 +1,191 @@
+{
+  "question": "What does the White Lion Basic Action card say about targeting, its attack profile, and no target?",
+  "response": {
+    "chat_id": "5871e19b9c84fa3fe3e5862d",
+    "record": {
+      "id": "white-lion-basic-action",
+      "title": "White Lion Basic Action and Monster Reference card",
+      "card_name": "Basic Action",
+      "original": 55,
+      "supporting_originals": [
+        73,
+        183
+      ],
+      "card_sources": [
+        {
+          "title": "Basic Action and White Lion Monster Reference faces",
+          "url": "/pages/31.jpg",
+          "edition": "1.5",
+          "provenance": "Both faces pictured in the supplied 1.5 rulebook scan"
+        }
+      ],
+      "keywords": "white lion basic action reference card closest survivor field view target no target sniff speed accuracy damage first story prologue toughness movement",
+      "layout": "The right column shows both faces, including the Basic Action target, flow, attack profile, and the reference face with First Story and level rows. Sniff is also readable at full size on the showdown story event.",
+      "summary": "White Lion Basic Action picks the closest survivor in field of view; if there is no target, perform Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1, before applicable modifiers.",
+      "notes": [
+        "When another rule supplies a specific Basic Action target, use that target instead of choosing one. Performing Basic Action does not count as drawing an AI card.",
+        "Sniff ends the monster turn. Until the end of the next round, all survivors are threats despite any other effects. The level 3+ extra accuracy instruction is outside the level 1 scope.",
+        "The pictured reference face gives the First Story White Lion movement 6 and toughness 6 with a custom AI deck. The standard level 1 White Lion has movement 6 and toughness 8. These are distinct encounters.",
+        "Move & Attack uses the monster movement rules; it is not an instruction to spend all movement when the target is already in range."
+      ],
+      "related_ids": [
+        "monster-movement"
+      ],
+      "tables": [],
+      "source": {
+        "revised": 31,
+        "original": 55,
+        "printed": 51,
+        "edition": "1.5",
+        "title": "White Lion Basic Action and Monster Reference card",
+        "reviewed": true,
+        "record_id": "white-lion-basic-action"
+      },
+      "sources": [
+        {
+          "revised": 31,
+          "original": 55,
+          "printed": 51,
+          "edition": "1.5",
+          "title": "White Lion Basic Action and Monster Reference card",
+          "reviewed": true,
+          "record_id": "white-lion-basic-action"
+        },
+        {
+          "revised": 46,
+          "original": 73,
+          "printed": 69,
+          "edition": "1.5",
+          "title": "Monster movement and target definitions",
+          "reviewed": true,
+          "record_id": "monster-movement"
+        },
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/31.jpg"
+    },
+    "status": "reference",
+    "answer": "White Lion Basic Action picks the closest survivor in field of view; if there is no target, perform Sniff. Its Move & Attack Target profile is Speed 2, Accuracy 2+, Damage 1, before applicable modifiers.\n\nWhen another rule supplies a specific Basic Action target, use that target instead of choosing one. Performing Basic Action does not count as drawing an AI card.\nSniff ends the monster turn. Until the end of the next round, all survivors are threats despite any other effects. The level 3+ extra accuracy instruction is outside the level 1 scope.\nThe pictured reference face gives the First Story White Lion movement 6 and toughness 6 with a custom AI deck. The standard level 1 White Lion has movement 6 and toughness 8. These are distinct encounters.\nMove & Attack uses the monster movement rules; it is not an instruction to spend all movement when the target is already in range.\n\nRelated reviewed rules:\nPriority targeting and its exceptions: The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.\n\nMonster movement and target definitions: Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.",
+    "context": {
+      "record_id": "white-lion-basic-action"
+    },
+    "related_records": [
+      {
+        "id": "priority-target",
+        "title": "Priority targeting and its exceptions",
+        "original": 72,
+        "supporting_originals": [
+          73
+        ],
+        "card_sources": [
+          {
+            "title": "Fuzzy Groin (White Lion hit location)",
+            "url": "https://kingdomdeath.fandom.com/wiki/Fuzzy_Groin",
+            "edition": "1.5",
+            "provenance": "community card transcription"
+          }
+        ],
+        "keywords": "priority target token targeting permanent fuzzy groin ground fighting groundfighting pick target exceptions reaction",
+        "layout": "Printed page 68 puts Priority Target Token at the bottom of the right column. Its restrictions continue at the top left of printed page 69, before Move & Attack Target Actions. Those continuation paragraphs belong to priority targeting.",
+        "summary": "The priority-target token overrides other targeting conditions when a monster performs a Pick Target action on an AI or special card. It does not replace every form of targeting or create an instruction to draw AI or move.",
+        "notes": [
+          "Only one survivor holds the priority-target token at a time. Under the ordinary token rule, the survivor discards it when picked as the target.",
+          "The continuation excludes AI cards targeting multiple or all survivors, monster-AI targeting outside a Pick Target action, and hit-location targeting. A reaction that targets the attacker is unaffected by the token.",
+          "The continuation is printed page 69 (original PDF 73). The main Pick Target and token rules are printed page 68 (original PDF 72).",
+          "Fuzzy Groin critical wound gives the attacker a permanent priority-target token and directs the White Lion to attack that survivor until one of them dies. It also grants the monster +1 damage token. The ordinary token discard rule does not end this card-specific persistent effect."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 45,
+          "original": 72,
+          "printed": 68,
+          "edition": "1.5",
+          "title": "Priority targeting and its exceptions",
+          "reviewed": true,
+          "record_id": "priority-target"
+        },
+        "sources": [
+          {
+            "revised": 45,
+            "original": 72,
+            "printed": 68,
+            "edition": "1.5",
+            "title": "Priority targeting and its exceptions",
+            "reviewed": true,
+            "record_id": "priority-target"
+          },
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          }
+        ],
+        "image": "/pages/45.jpg"
+      },
+      {
+        "id": "monster-movement",
+        "title": "Monster movement and target definitions",
+        "original": 73,
+        "supporting_originals": [
+          72
+        ],
+        "related_ids": [
+          "white-lion-claw"
+        ],
+        "keywords": "monster movement move again round basic action reaction target threat survivor facing range field view knocked down",
+        "layout": "Printed page 69 defines Move & Attack Target and Monster Movement. The Pick Target definitions on printed page 68 supply the target conditions. White Lion card text is in the linked Claw record.",
+        "summary": "Move & Attack Target instructs the monster to move toward its target up to its current movement value or until adjacent, turn to face it, then attack. Movement applies to each instructed action; prior movement does not exhaust a once-per-round allowance. Follow the specific action text.",
+        "notes": [
+          "Actions dictate when the monster moves, including actions instructed by reactions. Move along a shortest path, one cardinal space at a time, with no diagonal movement; choose among equally short paths. If already adjacent, turn and attack without moving. After moving, face the survivor and resolve collisions before the attack. For an attack with reach, move only the minimum spaces needed to attack.",
+          "An instruction only to attack does not grant movement. Full move uses the current movement value including positive and negative modifiers.",
+          "A threat is a survivor who is not knocked down and is not using an effect that prevents being a threat. Closest survivor includes knocked-down survivors; closest threat excludes them unless an effect such as Sniff overrides that restriction.",
+          "Facing means the area in front of the monster, the area the monster faces. It does not refer to a survivor facing toward the monster. Field of view excludes the blind spot and sight blocked by Obstacle terrain. In range uses current movement, including modifiers, unless the condition specifies a number.",
+          "Check the Pick Target list from top to bottom and stop at the first condition with an eligible target. If multiple survivors satisfy it, the monster controller chooses. A no-target instruction replaces the other actions on that card. Priority targeting and card-specific overrides need their own applicable rules."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 46,
+          "original": 73,
+          "printed": 69,
+          "edition": "1.5",
+          "title": "Monster movement and target definitions",
+          "reviewed": true,
+          "record_id": "monster-movement"
+        },
+        "sources": [
+          {
+            "revised": 46,
+            "original": 73,
+            "printed": 69,
+            "edition": "1.5",
+            "title": "Monster movement and target definitions",
+            "reviewed": true,
+            "record_id": "monster-movement"
+          },
+          {
+            "revised": 45,
+            "original": 72,
+            "printed": 68,
+            "edition": "1.5",
+            "title": "Priority targeting and its exceptions",
+            "reviewed": true,
+            "record_id": "priority-target"
+          }
+        ],
+        "image": "/pages/46.jpg"
+      }
+    ]
+  }
+}

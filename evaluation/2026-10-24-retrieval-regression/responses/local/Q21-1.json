@@ -1,0 +1,16 @@
+{
+  "case": "Q21",
+  "turn": 1,
+  "mode": "local",
+  "question": "We have finished the Prologue and are sitting down for our first settlement phase. In what order do we handle returning survivors, First Day, endeavors, and the lantern-year timeline?",
+  "ended_utc": "2026-10-25T02:44:54.431789+00:00",
+  "elapsed_seconds": 0.015,
+  "response": {
+    "chat_id": "e0d1a385ae076531e8529871",
+    "status": "unsupported",
+    "answer": "The reviewed collection does not include the complete First Day instructions. Consult that source; I cannot substitute another card or rule for its effect.",
+    "record": null,
+    "context": {},
+    "related_records": []
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "case": "Q14",
+  "turn": 1,
+  "mode": "sol",
+  "question": "I critically wound Strange Hand with zero survival left. Do I gain strength, and where should the hit-location card go after this attack?",
+  "ended_utc": "2026-10-25T02:10:25.143375+00:00",
+  "elapsed_seconds": 1.562,
+  "response": {
+    "chat_id": "437b39b8722e38c478720510",
+    "record": {
+      "id": "white-lion-strange-hand",
+      "title": "White Lion: Strange Hand hit location card",
+      "card_name": "Strange Hand",
+      "original": 35,
+      "supporting_originals": [
+        71,
+        80
+      ],
+      "card_sources": [
+        {
+          "title": "Strange Hand face and critical-wound example (book 31)",
+          "url": "/pages/13.jpg",
+          "edition": "1.5",
+          "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+        },
+        {
+          "title": "Combo Claw (Lost Hand action)",
+          "url": "/cards/white-lion-combo-claw-physical-1.5.jpeg",
+          "edition": "1.5",
+          "provenance": "Group photo reviewed in the earlier physical-card audit"
+        }
+      ],
+      "related_ids": [
+        "moods-and-flows"
+      ],
+      "keywords": "white lion strange hand hit location failure reaction basic action attacker critical wound survival permanent strength persistent injury lost hand combo claw",
+      "layout": "Printed page 31 shows the complete Strange Hand face and explains its optional survival payment and Lost Hand. Printed page 67 explains AI persistent-injury actions; page 76 gives the keep-in-play rule.",
+      "summary": "Strange Hand has a Failure reaction: perform Basic Action targeting the attacker. On a critical wound, the attacker may spend 1 survival to gain +1 permanent strength. The critical wound also leaves Strange Hand in play with the persistent injury Lost Hand, which affects some AI cards.",
+      "notes": [
+        "The strength reward requires the optional survival payment. Lost Hand remains in play after the critical wound even if that payment is not made. Cancel the Failure reaction on a critical wound.",
+        "When an AI card has a persistent-injury action matching an in-play hit location, perform that action and ignore its other actions. The rulebook example uses Combo Claw: Lost Hand replaces the normal card actions, adjacent survivors gain +1 understanding, and Combo Claw is discarded. The photographed Combo Claw face limits that understanding gain to once per lifetime."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 13,
+        "original": 35,
+        "printed": 31,
+        "edition": "1.5",
+        "title": "White Lion: Strange Hand hit location card",
+        "reviewed": true,
+        "record_id": "white-lion-strange-hand"
+      },
+      "sources": [
+        {
+          "revised": 13,
+          "original": 35,
+          "printed": 31,
+          "edition": "1.5",
+          "title": "White Lion: Strange Hand hit location card",
+          "reviewed": true,
+          "record_id": "white-lion-strange-hand"
+        },
+        {
+          "revised": 44,
+          "original": 71,
+          "printed": 67,
+          "edition": "1.5",
+          "title": "AI flows, moods, and Ground Fighting",
+          "reviewed": true,
+          "record_id": "moods-and-flows"
+        },
+        {
+          "revised": 53,
+          "original": 80,
+          "printed": 76,
+          "edition": "1.5",
+          "title": "Critical wound examples",
+          "reviewed": true,
+          "record_id": "critical-wound-examples"
+        }
+      ],
+      "image": "/pages/13.jpg"
+    },
+    "status": "model-reference",
+    "answer": "No. Strange Hand’s +1 permanent strength is optional and requires spending 1 survival, so you cannot gain it with zero survival.\n\nThe critical wound still leaves Strange Hand in play as the persistent injury **Lost Hand**. Do not discard the hit-location card after this attack. The critical wound also cancels its Failure reaction.",
+    "context": {
+      "record_id": "white-lion-strange-hand"
+    },
+    "related_records": [
+      {
+        "id": "moods-and-flows",
+        "title": "AI flows, moods, and Ground Fighting",
+        "card_name": "Ground Fighting",
+        "original": 71,
+        "supporting_originals": [
+          70
+        ],
+        "card_sources": [
+          {
+            "title": "Ground Fighting face and Zone of Death diagram (book 67)",
+            "url": "/pages/44.jpg",
+            "edition": "1.5",
+            "provenance": "Card face and spatial diagram pictured in the supplied 1.5 rulebook scan"
+          }
+        ],
+        "related_ids": [
+          "priority-target"
+        ],
+        "keywords": "white lion ground fighting groundfighting mood moods trait ai flow draw card basic action zone death activation priority",
+        "layout": "Printed page 66 shows Combo Claw with action and flow labels. Page 67 continues that example through the left and center columns; the right column has a separate Playing Moods & Traits section with a pictured Ground Fighting card and explanatory paragraph.",
+        "summary": "Moods and traits have persistent effects while their cards remain in play. Apply their conditional actions when triggered. The book's Ground Fighting example stops normal AI draws, monitors the pictured Zone of Death for survivors spending activation, and is discarded when the White Lion is wounded.",
+        "notes": [
+          "Normally a monster turn has Start Turn, Draw AI, and End Turn. Read the full AI card, then complete its actions in order. If instructed to draw another AI card, finish applicable actions on the current card first.",
+          "Flows between AI actions create survival opportunities for eligible survivors. Finish survival actions before continuing the next monster action.",
+          "Ground Fighting instructs a Basic Action targeting a survivor who spends activation in its Zone of Death before resolving that activation, with +2 speed and +1 damage for that attack. Its pictured zone must be consulted. It stops drawing AI cards while in play.",
+          "After Ground Fighting is discarded by a wound, the book says the White Lion's behavior returns to normal.",
+          "For an interaction involving a permanent priority target, also read the Priority targeting record and its linked Fuzzy Groin card source."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 44,
+          "original": 71,
+          "printed": 67,
+          "edition": "1.5",
+          "title": "AI flows, moods, and Ground Fighting",
+          "reviewed": true,
+          "record_id": "moods-and-flows"
+        },
+        "sources": [
+          {
+            "revised": 44,
+            "original": 71,
+            "printed": 67,
+            "edition": "1.5",
+            "title": "AI flows, moods, and Ground Fighting",
+            "reviewed": true,
+            "record_id": "moods-and-flows"
+          },
+          {
+            "revised": 43,
+            "original": 70,
+            "printed": 66,
+            "edition": "1.5",
+            "title": "AI flows, moods, and Ground Fighting",
+            "reviewed": true,
+            "record_id": "moods-and-flows"
+          }
+        ],
+        "image": "/pages/44.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

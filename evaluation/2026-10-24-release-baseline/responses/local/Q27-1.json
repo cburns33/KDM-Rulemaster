@@ -1,0 +1,208 @@
+{
+  "case": "Q27",
+  "turn": 1,
+  "mode": "local",
+  "question": "We're leaving the settlement to hunt a level 1 White Lion for the first time. How do we prepare the hunt board and advance through movement and events until the showdown starts?",
+  "ended_utc": "2026-10-25T02:09:53.668621+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "522f60e7cfc9b25c17deadba",
+    "record": {
+      "id": "white-lion-deployment",
+      "title": "White Lion: standard showdown deployment",
+      "original": 183,
+      "keywords": "white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1",
+      "layout": "The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.",
+      "summary": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.",
+      "notes": [
+        "Place the White Lion in the center of the board.",
+        "Use 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.",
+        "This record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "reference",
+    "answer": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.\n\nPlace the White Lion in the center of the board.\nUse 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.\nThis record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record.\n\nRelated reviewed rules:\nHunt event damage and explicit injuries: Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.\n\nAge: first Hunt XP milestone: When a survivor fills the first heavy-bordered Hunt XP milestone (2 Hunt XP), resolve Age milestone 1, Weapon Proficiency. Choose a weapon type, then roll 2d10 on its table. Each milestone benefit is gained only once per survivor lifetime.",
+    "context": {
+      "record_id": "white-lion-deployment"
+    },
+    "related_records": [
+      {
+        "id": "hunt-event-damage",
+        "title": "Hunt event damage and explicit injuries",
+        "original": 67,
+        "supporting_originals": [
+          74,
+          75
+        ],
+        "keywords": "hunt event damage nonlethal non lethal body head arms waist legs brain trauma insanity armor armour light heavy injury injuries boxes filled severe persist carryover showdown",
+        "layout": "Printed page 63 has Event Damage at the bottom of the left column. Its token-duration paragraph continues at the top of the center column, immediately before Severe Injuries and Brain Trauma. Those two headings form the hunt-specific rule unit. Printed page 70 supplies damage order; printed page 71 distinguishes brain damage from physical damage.",
+        "summary": "Ordinary hunt-event damage is nonlethal: it reduces armor or insanity and can fill light and heavy injury boxes, but does not cause severe injuries or brain trauma. This damage persists into the showdown. An event can explicitly instruct a severe injury or brain trauma; follow that instruction when present.",
+        "notes": [
+          "For damage to a physical location, reduce armor at that location to zero, then fill its available injury boxes in order: light, then heavy. Each point removes one armor point or fills one available box. Boxes already checked cannot absorb damage again. Any remaining ordinary hunt-event damage causes no severe injury.",
+          "Insanity protects only the brain. Physical damage to the body, head, arms, waist, or legs does not reduce insanity. Brain damage reduces insanity first, then fills the brain injury box. Remaining ordinary hunt-event brain damage causes no brain trauma.",
+          "State any assumption about existing injury boxes. With both body injury boxes empty, 3 body damage against 1 body armor removes that armor and fills both boxes. If either box is already checked, fill only the remaining available box; the hunt-event exception still prevents a severe injury. Insanity is unchanged by this body damage.",
+          "Tokens gained during the hunt remain through the aftermath of the following showdown or the beginning of the next settlement phase, whichever comes first.",
+          "When an event explicitly causes a severe injury or brain trauma, carry its attribute modifiers, impairments, restrictions, and bleeding tokens into the following showdown. An instruction to skip the next hunt refers to the next hunt, not the remainder of the current one. The specific injury or trauma outcome needs its own reviewed source.",
+          "The nonlethal exception applies to ordinary hunt-event damage. During a showdown, normal damage beyond armor and available injury boxes can cause a severe injury; brain damage beyond insanity and the brain injury box can cause brain trauma."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 41,
+          "original": 67,
+          "printed": 63,
+          "edition": "1.5",
+          "title": "Hunt event damage and explicit injuries",
+          "reviewed": true,
+          "record_id": "hunt-event-damage"
+        },
+        "sources": [
+          {
+            "revised": 41,
+            "original": 67,
+            "printed": 63,
+            "edition": "1.5",
+            "title": "Hunt event damage and explicit injuries",
+            "reviewed": true,
+            "record_id": "hunt-event-damage"
+          },
+          {
+            "revised": 47,
+            "original": 74,
+            "printed": 70,
+            "edition": "1.5",
+            "title": "Monster hits, damage, and injury order",
+            "reviewed": true,
+            "record_id": "monster-hit-damage"
+          },
+          {
+            "revised": 48,
+            "original": 75,
+            "printed": 71,
+            "edition": "1.5",
+            "title": "White Lion: Grasp, Enraged, and damage tokens",
+            "reviewed": true,
+            "record_id": "white-lion-grasp-damage"
+          }
+        ],
+        "image": "/pages/41.jpg"
+      },
+      {
+        "id": "age-first-milestone",
+        "title": "Age: first Hunt XP milestone",
+        "original": 111,
+        "supporting_originals": [
+          47
+        ],
+        "keywords": "age hunt xp experience milestone 2 weapon proficiency story event first 2d10",
+        "layout": "Printed page 43 shows heavy-bordered Hunt XP milestone boxes and explains the Age trigger. Printed page 107 has the Age event; the first milestone occupies its upper middle region and has a five-row 2d10 table.",
+        "summary": "When a survivor fills the first heavy-bordered Hunt XP milestone (2 Hunt XP), resolve Age milestone 1, Weapon Proficiency. Choose a weapon type, then roll 2d10 on its table. Each milestone benefit is gained only once per survivor lifetime.",
+        "notes": [
+          "The chosen weapon type makes the survivor eligible to gain proficiency from wounding with that type in victorious showdowns; it does not immediately grant a proficiency level.",
+          "The first milestone table yields: 2 +1 permanent evasion; 3-6 +1 permanent strength; 7-15 one random fighting art; 16-19 +1 permanent accuracy; 20 +1 permanent luck.",
+          "Later Age milestones have separate tables on the same event page and are outside this record."
+        ],
+        "tables": [
+          {
+            "id": "first",
+            "title": "Age 1: Weapon Proficiency",
+            "die": "2d10",
+            "rows": [
+              {
+                "min": 2,
+                "max": 2,
+                "label": "2",
+                "effects": [
+                  "Gain +1 permanent evasion."
+                ]
+              },
+              {
+                "min": 3,
+                "max": 6,
+                "label": "3-6",
+                "effects": [
+                  "Gain +1 permanent strength."
+                ]
+              },
+              {
+                "min": 7,
+                "max": 15,
+                "label": "7-15",
+                "effects": [
+                  "Gain 1 random fighting art."
+                ]
+              },
+              {
+                "min": 16,
+                "max": 19,
+                "label": "16-19",
+                "effects": [
+                  "Gain +1 permanent accuracy."
+                ]
+              },
+              {
+                "min": 20,
+                "max": 20,
+                "label": "20",
+                "effects": [
+                  "Gain +1 permanent luck."
+                ]
+              }
+            ]
+          }
+        ],
+        "source": {
+          "revised": 81,
+          "original": 111,
+          "printed": 107,
+          "edition": "1.5",
+          "title": "Age: first Hunt XP milestone",
+          "reviewed": true,
+          "record_id": "age-first-milestone"
+        },
+        "sources": [
+          {
+            "revised": 81,
+            "original": 111,
+            "printed": 107,
+            "edition": "1.5",
+            "title": "Age: first Hunt XP milestone",
+            "reviewed": true,
+            "record_id": "age-first-milestone"
+          },
+          {
+            "revised": 24,
+            "original": 47,
+            "printed": 43,
+            "edition": "1.5",
+            "title": "Age: first Hunt XP milestone",
+            "reviewed": true,
+            "record_id": "age-first-milestone"
+          }
+        ],
+        "image": "/pages/81.jpg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "responses": 33,
+  "new_selection_checks": 24,
+  "new_selection_passes": 24,
+  "model_requests": 7,
+  "model_used": 7,
+  "api_responses": 7,
+  "input_tokens": 5682,
+  "output_tokens": 1041,
+  "citation_images_checked": 20,
+  "baseline_after": {
+    "files": 81,
+    "sha256": "cb83fceb0887be0f9bf7a995fc071fa87653a81225b769330719cb31108e2e0d"
+  },
+  "baseline_unchanged": true,
+  "answering_inputs_unchanged": true
+}

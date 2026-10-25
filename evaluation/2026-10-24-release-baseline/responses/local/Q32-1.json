@@ -1,0 +1,82 @@
+{
+  "case": "Q32",
+  "turn": 1,
+  "mode": "local",
+  "question": "We are switching this game to edition 1.6. Can we use your opening-fight card instructions as verified 1.6 rules, or which compatibility checks are still missing?",
+  "ended_utc": "2026-10-25T02:09:53.780532+00:00",
+  "elapsed_seconds": 0.021,
+  "response": {
+    "chat_id": "2c41d20c640f9a7a652a5bee",
+    "record": {
+      "id": "founding-stone",
+      "title": "Founding Stone gear card",
+      "card_name": "Founding Stone",
+      "original": 34,
+      "supporting_originals": [
+        79,
+        80
+      ],
+      "card_sources": [
+        {
+          "title": "Founding Stone face and attack example (book 30)",
+          "url": "/pages/12.jpg",
+          "edition": "1.5",
+          "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+        }
+      ],
+      "keywords": "founding stone starting gear weapon melee stone sling archive throw activation automatic hit critical wound speed accuracy strength",
+      "layout": "Printed page 30 shows the full gear face, labeled attack profile, and normal melee attack example. Printed pages 75 and 76 supply Impervious and critical-wound limits.",
+      "summary": "Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.",
+      "notes": [
+        "A normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.",
+        "Resolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 12,
+        "original": 34,
+        "printed": 30,
+        "edition": "1.5",
+        "title": "Founding Stone gear card",
+        "reviewed": true,
+        "record_id": "founding-stone"
+      },
+      "sources": [
+        {
+          "revised": 12,
+          "original": 34,
+          "printed": 30,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        {
+          "revised": 52,
+          "original": 79,
+          "printed": 75,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        {
+          "revised": 53,
+          "original": 80,
+          "printed": 76,
+          "edition": "1.5",
+          "title": "Critical wound examples",
+          "reviewed": true,
+          "record_id": "critical-wound-examples"
+        }
+      ],
+      "image": "/pages/12.jpg"
+    },
+    "status": "edition-check",
+    "answer": "This record is verified against the supplied 1.5 scan. No 1.6 errata or replacement source has been verified here, so I cannot confirm this as a 1.6 ruling.",
+    "context": {
+      "record_id": "founding-stone"
+    },
+    "related_records": []
+  }
+}

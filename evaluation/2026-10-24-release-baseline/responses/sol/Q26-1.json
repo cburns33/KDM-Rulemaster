@@ -1,0 +1,109 @@
+{
+  "case": "Q26",
+  "turn": 1,
+  "mode": "sol",
+  "question": "The standard lion setup gives us Tall Grass. How many tiles does that card set up, and what must a survivor do to gain its hiding benefit? Can you show both the setup evidence and the terrain effect?",
+  "ended_utc": "2026-10-25T02:10:51.655471+00:00",
+  "elapsed_seconds": 2.14,
+  "response": {
+    "chat_id": "7ef920cbb34983af80bf5518",
+    "record": {
+      "id": "white-lion-deployment",
+      "title": "White Lion: standard showdown deployment",
+      "original": 183,
+      "keywords": "white lion showdown setup start starting blue zone squares enclosed area placement deployment level 1",
+      "layout": "The showdown diagram has a blue outline of individual survivor spaces and one red monster marker. The legend identifies colored spaces. The terrain instructions below it refer back to this diagram. This is the standard showdown story event, separate from First Story setup.",
+      "summary": "For the standard White Lion showdown, place survivors on the blue marked squares in the setup diagram. The uncolored interior of the blue outline is not marked as survivor deployment space. This reading combines the diagram, its legend, and the instruction to place survivors in the blue zone.",
+      "notes": [
+        "Place the White Lion in the center of the board.",
+        "Use 1 Tall Grass terrain card, which supplies 2 Tall Grass tiles, and 2 random terrain cards set up normally.",
+        "This record covers deployment only. Use First Story: White Lion for the prologue setup; the standard showdown page also contains level and aftermath rules outside this record."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 120,
+        "original": 183,
+        "printed": 179,
+        "edition": "1.5",
+        "title": "White Lion: standard showdown deployment",
+        "reviewed": true,
+        "record_id": "white-lion-deployment"
+      },
+      "sources": [
+        {
+          "revised": 120,
+          "original": 183,
+          "printed": 179,
+          "edition": "1.5",
+          "title": "White Lion: standard showdown deployment",
+          "reviewed": true,
+          "record_id": "white-lion-deployment"
+        }
+      ],
+      "image": "/pages/120.jpg"
+    },
+    "status": "model-reference",
+    "answer": "The standard White Lion showdown uses **1 Tall Grass terrain card, which sets up 2 Tall Grass tiles**.\n\nThe reviewed records do **not** establish what a survivor must do to gain Tall Grass’s hiding benefit. The survival-action example shows a survivor near Tall Grass using an activation to hide, but it does not give the terrain’s full rule or positioning requirements. To confirm those conditions, I’d need the **Tall Grass terrain card’s effect text**.",
+    "context": {
+      "record_id": "white-lion-deployment"
+    },
+    "related_records": [
+      {
+        "id": "survival-actions",
+        "title": "Survival actions and timing",
+        "original": 82,
+        "supporting_originals": [
+          83
+        ],
+        "keywords": "survival actions surge dash dodge encourage endure attacking attacker fellow survivor before after movement activation tall grass hide timing opportunity opportunities interrupt",
+        "layout": "Printed page 78 has three columns: action definitions, survival opportunities, then limitations and examples. Its monster-flow example continues at the top left of printed page 79. The During Survivor Attacks heading on page 79 defines two separate interrupt windows.",
+        "summary": "Surge spends 1 survival to gain an activation that must be used immediately. Dash spends 1 survival to gain movement that must be used immediately. Dash and Surge require survival opportunities, including before or after completed movement or activation during the survivors' turn. A standing survivor may encourage at any time subject to the survival-action restrictions. A survivor who is attacking cannot perform survival actions, including dodge.",
+        "notes": [
+          "The book example has Erza complete movement next to the monster. Zachary, already near Tall Grass, then surges and uses the activation to hide. Erza resumes her act and activates her weapon. The example does not use Surge to grant movement.",
+          "During another survivor's attack, a fellow survivor has an opportunity after the wound roll but before the monster's reaction; if the hit location has no reaction, this window is absent. A second window occurs after critical wound effects are applied and before the hit-location card is discarded.",
+          "Resolve a survival action and all its consequences before resuming the interrupted turn or attack. No new survival action can begin while a current survival action remains unresolved.",
+          "Monster AI flows, including flows on Basic Action, provide opportunities. Outside a flow on the monster turn, a survival action opportunity exists when the monster is knocked down.",
+          "Dodge costs 1 survival and cancels one monster hit, chosen after hit locations are rolled and before severe injury rolls. Other undodged hits resolve normally. Knocked-down survivors can dodge; dodge is their only available survival action.",
+          "A survivor may perform each survival action once per round. The campaign starts with dodge; the other survival actions are learned from innovations. Being an attacker and being doomed are distinct restrictions.",
+          "Encourage costs 1 survival and requires a standing survivor; it lets another knocked-down survivor stand. A survivor may encourage at any time during the survivors' turn, including outside Dash and Surge opportunity windows. Deaf survivors may not be encouraged. The action must be unlocked, its cost paid, and its once-per-round and attacking-survivor restrictions observed; it cannot interrupt an unresolved survival action. On the monster turn, the separate flow or knocked-down-monster limitation still applies.",
+          "Endure costs 7 survival minus Luck to ignore a severe injury before rolling its result. Luck includes the permanent attribute, tokens, gear, abilities, and other current modifiers."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 55,
+          "original": 82,
+          "printed": 78,
+          "edition": "1.5",
+          "title": "Survival actions and timing",
+          "reviewed": true,
+          "record_id": "survival-actions"
+        },
+        "sources": [
+          {
+            "revised": 55,
+            "original": 82,
+            "printed": 78,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          },
+          {
+            "revised": 56,
+            "original": 83,
+            "printed": 79,
+            "edition": "1.5",
+            "title": "Survival actions and timing",
+            "reviewed": true,
+            "record_id": "survival-actions"
+          }
+        ],
+        "image": "/pages/55.jpg"
+      }
+    ],
+    "model": {
+      "used": true,
+      "name": "GPT-6 Sol"
+    }
+  }
+}

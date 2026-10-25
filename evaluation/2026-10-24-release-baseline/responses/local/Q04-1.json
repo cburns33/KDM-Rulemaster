@@ -1,0 +1,213 @@
+{
+  "case": "Q04",
+  "turn": 1,
+  "mode": "local",
+  "question": "My named starter has a Founding Stone, no strength modifiers, and is next to the lion. For a normal attack, what do I roll to hit, and what gets added when I try to wound? Is that the same procedure as slinging it?",
+  "ended_utc": "2026-10-25T02:09:53.237572+00:00",
+  "elapsed_seconds": 0.014,
+  "response": {
+    "chat_id": "9f39dd51fa174addd5d9a4ed",
+    "record": {
+      "id": "founding-stone",
+      "title": "Founding Stone gear card",
+      "card_name": "Founding Stone",
+      "original": 34,
+      "supporting_originals": [
+        79,
+        80
+      ],
+      "card_sources": [
+        {
+          "title": "Founding Stone face and attack example (book 30)",
+          "url": "/pages/12.jpg",
+          "edition": "1.5",
+          "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+        }
+      ],
+      "keywords": "founding stone starting gear weapon melee stone sling archive throw activation automatic hit critical wound speed accuracy strength",
+      "layout": "Printed page 30 shows the full gear face, labeled attack profile, and normal melee attack example. Printed pages 75 and 76 supply Impervious and critical-wound limits.",
+      "summary": "Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.",
+      "notes": [
+        "A normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.",
+        "Resolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply."
+      ],
+      "tables": [],
+      "source": {
+        "revised": 12,
+        "original": 34,
+        "printed": 30,
+        "edition": "1.5",
+        "title": "Founding Stone gear card",
+        "reviewed": true,
+        "record_id": "founding-stone"
+      },
+      "sources": [
+        {
+          "revised": 12,
+          "original": 34,
+          "printed": 30,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        {
+          "revised": 52,
+          "original": 79,
+          "printed": 75,
+          "edition": "1.5",
+          "title": "Founding Stone gear card",
+          "reviewed": true,
+          "record_id": "founding-stone"
+        },
+        {
+          "revised": 53,
+          "original": 80,
+          "printed": 76,
+          "edition": "1.5",
+          "title": "Critical wound examples",
+          "reviewed": true,
+          "record_id": "critical-wound-examples"
+        }
+      ],
+      "image": "/pages/12.jpg"
+    },
+    "status": "reference",
+    "answer": "Founding Stone is a melee stone weapon with Speed 2, Accuracy 7+, and Strength 1. Its separate sling ability spends 1 activation from anywhere on the board: archive the card for 1 automatic hit that inflicts a critical wound.\n\nA normal adjacent melee attack spends 1 activation and uses the weapon profile. Slinging uses the special card instruction; archive means return the card to the game box.\nResolve the hit location using its applicable rules. A location without a critical wound effect cannot be critically wounded. An Impervious location prevents the monster wound even on a critical wound, but its critical effects still apply.\n\nRelated reviewed rules:\nWhite Lion: Strange Hand hit location card: Strange Hand has a Failure reaction: perform Basic Action targeting the attacker. On a critical wound, the attacker may spend 1 survival to gain +1 permanent strength. The critical wound also leaves Strange Hand in play with the persistent injury Lost Hand, which affects some AI cards.\n\nSurvivor acts and attack sequence: A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+    "context": {
+      "record_id": "founding-stone"
+    },
+    "related_records": [
+      {
+        "id": "white-lion-strange-hand",
+        "title": "White Lion: Strange Hand hit location card",
+        "card_name": "Strange Hand",
+        "original": 35,
+        "supporting_originals": [
+          71,
+          80
+        ],
+        "card_sources": [
+          {
+            "title": "Strange Hand face and critical-wound example (book 31)",
+            "url": "/pages/13.jpg",
+            "edition": "1.5",
+            "provenance": "Card face pictured in the supplied 1.5 rulebook scan"
+          },
+          {
+            "title": "Combo Claw (Lost Hand action)",
+            "url": "/cards/white-lion-combo-claw-physical-1.5.jpeg",
+            "edition": "1.5",
+            "provenance": "Group photo reviewed in the earlier physical-card audit"
+          }
+        ],
+        "related_ids": [
+          "moods-and-flows"
+        ],
+        "keywords": "white lion strange hand hit location failure reaction basic action attacker critical wound survival permanent strength persistent injury lost hand combo claw",
+        "layout": "Printed page 31 shows the complete Strange Hand face and explains its optional survival payment and Lost Hand. Printed page 67 explains AI persistent-injury actions; page 76 gives the keep-in-play rule.",
+        "summary": "Strange Hand has a Failure reaction: perform Basic Action targeting the attacker. On a critical wound, the attacker may spend 1 survival to gain +1 permanent strength. The critical wound also leaves Strange Hand in play with the persistent injury Lost Hand, which affects some AI cards.",
+        "notes": [
+          "The strength reward requires the optional survival payment. Lost Hand remains in play after the critical wound even if that payment is not made. Cancel the Failure reaction on a critical wound.",
+          "When an AI card has a persistent-injury action matching an in-play hit location, perform that action and ignore its other actions. The rulebook example uses Combo Claw: Lost Hand replaces the normal card actions, adjacent survivors gain +1 understanding, and Combo Claw is discarded. The photographed Combo Claw face limits that understanding gain to once per lifetime."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 13,
+          "original": 35,
+          "printed": 31,
+          "edition": "1.5",
+          "title": "White Lion: Strange Hand hit location card",
+          "reviewed": true,
+          "record_id": "white-lion-strange-hand"
+        },
+        "sources": [
+          {
+            "revised": 13,
+            "original": 35,
+            "printed": 31,
+            "edition": "1.5",
+            "title": "White Lion: Strange Hand hit location card",
+            "reviewed": true,
+            "record_id": "white-lion-strange-hand"
+          },
+          {
+            "revised": 44,
+            "original": 71,
+            "printed": 67,
+            "edition": "1.5",
+            "title": "AI flows, moods, and Ground Fighting",
+            "reviewed": true,
+            "record_id": "moods-and-flows"
+          },
+          {
+            "revised": 53,
+            "original": 80,
+            "printed": 76,
+            "edition": "1.5",
+            "title": "Critical wound examples",
+            "reviewed": true,
+            "record_id": "critical-wound-examples"
+          }
+        ],
+        "image": "/pages/13.jpg"
+      },
+      {
+        "id": "survivor-attack-sequence",
+        "title": "Survivor acts and attack sequence",
+        "original": 77,
+        "supporting_originals": [
+          78
+        ],
+        "related_ids": [
+          "survival-actions",
+          "critical-wound-examples"
+        ],
+        "keywords": "survivor act attack activation movement move adjacent melee reach ranged range wound steps reaction first strike before after",
+        "layout": "Printed page 73 separates Survivors' Turn and Act Overview from Movement, Activation, and How Survivors Attack. Printed page 74 has the attack sequence in the left column and a shaded wound-steps panel across the middle and right columns. Read that panel down the middle and then down the right.",
+        "summary": "A survivor's act grants one movement and one activation. They can be spent in either order, completing one action before another begins. An attack begins by activating a weapon; completing movement next to a monster is distinct from making that attack.",
+        "notes": [
+          "Survivors act one at a time in any chosen order and lose unspent movement and activation at the end of their act. Specific survival opportunities allow interruptions, as covered by the linked survival rules.",
+          "If a survivor is knocked down during their attack, their unresolved hits are canceled. Standing again through Encourage does not restore those canceled hits. A knocked-down survivor is not a threat, cannot spend movement or activation, and may only spend survival to dodge, remaining knocked down. They stand at the end of the next monster turn or when another survivor Encourages them. Already knocked-down survivors cannot be knocked down again.",
+          "Normal movement uses cardinal steps into adjacent unoccupied spaces. Survivors cannot move through monsters or other survivors, including knocked-down models.",
+          "Melee weapons require adjacency unless they have reach. Ranged weapons use their range and cannot attack through blocked field of view; Obstacle terrain blocks field of view.",
+          "For an attack, roll dice equal to weapon speed plus survivor speed modifier, determine hits using accuracy and monster evasion, then draw a hit location for each hit. Read all hit locations. A drawn Trap ends the attack(s) and is resolved immediately.",
+          "Resolve First Strike locations first. For each location: perform its special rules, attempt a wound, check critical wounds, wound the monster when applicable, allow eligible fellow-survivor reactions, perform applicable monster reactions, and discard the resolved location. Continue for unresolved locations.",
+          "A wound attempt totals the wound roll (1d10) + weapon strength + survivor strength modifier. It succeeds if the total meets or exceeds monster toughness including toughness modifiers; otherwise it fails. Survivor modifiers include attributes, tokens, gear, abilities, injuries, and other applicable effects. Then check critical wounds and their exceptions using the linked critical-wound rules.",
+          "Wound reactions apply on success, Failure on failure, and Reflex normally always applies unless canceled by a critical wound. The precise survival windows and restrictions are on the linked survival pages."
+        ],
+        "tables": [],
+        "source": {
+          "revised": 50,
+          "original": 77,
+          "printed": 73,
+          "edition": "1.5",
+          "title": "Survivor acts and attack sequence",
+          "reviewed": true,
+          "record_id": "survivor-attack-sequence"
+        },
+        "sources": [
+          {
+            "revised": 50,
+            "original": 77,
+            "printed": 73,
+            "edition": "1.5",
+            "title": "Survivor acts and attack sequence",
+            "reviewed": true,
+            "record_id": "survivor-attack-sequence"
+          },
+          {
+            "revised": 51,
+            "original": 78,
+            "printed": 74,
+            "edition": "1.5",
+            "title": "Survivor acts and attack sequence",
+            "reviewed": true,
+            "record_id": "survivor-attack-sequence"
+          }
+        ],
+        "image": "/pages/50.jpg"
+      }
+    ]
+  }
+}
